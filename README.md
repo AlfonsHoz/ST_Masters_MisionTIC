@@ -6,6 +6,8 @@ Se propone analizar, diseñar y construir una aplicación software que permita c
 
 Arquitectura a utilizar en el proyecto:
 API REST
+![image](https://user-images.githubusercontent.com/90301382/133475058-33195f5b-db13-427f-bc5c-ed43143fc67d.png)
+
 
 Metodología
 
