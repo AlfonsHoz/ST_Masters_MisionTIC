@@ -1,3 +1,34 @@
 # ST_Masters_MisionTIC
 
 Descripción del proyecto
+
+Se propone analizar, diseñar y construir una aplicación software que permita controlar las ventas físicas y virtuales de una empresa de manufactura y hacerles el correspondiente seguimiento.
+
+Arquitectura a utilizar en el proyecto:
+API REST
+
+Metodología
+
+Se utilizaran metodologías ágiles, usando el marco de trabajo SCRUM consistente en un proceso que se aplica de manera regular y frecuente a las buenas prácticas para trabajar colaborativamente en equipo
+
+Herramientas para desarrollar el proyecto:
+o React JS
+o HTML 5
+o CSS3
+o Lenguaje JavaScript
+o Lenguaje TypeScript
+o Node Js
+o Plataformas de desarrollo para Backend (Node JS)
+o Stack MERN
+o (OAuth2)
+o (Heroku)
+o (Git / GitHub)
+
+Módulos de la aplicación web:
+o Módulo de administrador de ventas
+o Módulo para registrar el estado de la venta
+o Gestión de vendedores
+o Gestión del sistema de información
+o Gestión de usuarios y roles
+
+Presentaciones de los integrantes
