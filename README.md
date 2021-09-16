@@ -36,6 +36,7 @@ o Gestión de usuarios y roles
 Presentaciones de los integrantes
 
 o DANIEL FELIPE SOLARTE MARIN
+
 Mi nombre es Daniel Felipe Solarte Marín, soy de la ciudad de Palmira, Valle del Cauca.
 Tengo 22 años y soy graduado de la Universidad del Valle con el titulo de Tecnólogo en Sistemas de Información.
 Actualmente estoy aprendiendo de manera autonoma nuevos lenguajes de programación, como Python, Django y React. Tengo conocimientos en HTML, CSS, JavaScript, PHP y Java. Tambien manejo lenguaje SQL y he administrado bases de datos Oracle, MySQL, PostgreSQL y SQL Server
