@@ -44,3 +44,9 @@ Una de mis actividades favoritas es hacer ejercicio por lo que me ejercito en el
 Soy amante de la musica en especial la electronica y el pop.
 Mi pasion son las motos y me gusta mucho salir a rodar.
 Para terminar soy una persona muy alegre, siempre dispuesta a ayudar y trabajar por el bien comun.
+
+o ÁLVARO JOSÉ TOBAR MAYORQUÍN
+
+Mi nombre es Álvaro José Tobar Mayorquin pero pueden llamarme Jose, soy Tecnólogo en sistemas de información graduado de la Universidad del Valle, tengo 23 años y vivo en la ciudad de Palmira.
+Tengo conocimientos en el lenguaje de Java, postres y actualmente me encuentro aprendiendo NodeJS y React, me considero alguien responsable y colaborador, en mis tiempos libres toco la guitarra, juego videojuegos o practico calistenia con mis amigos.
+Soy una persona a la que le encanta aprender y entregar lo mejor de mi. Me complace mucho pertenecer a este equipo, me interesa mucho conocer a mis compañeros y lograr un muy buen producto final.
