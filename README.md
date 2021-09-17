@@ -8,7 +8,6 @@ Arquitectura a utilizar en el proyecto:
 API REST
 ![image](https://user-images.githubusercontent.com/90301382/133475058-33195f5b-db13-427f-bc5c-ed43143fc67d.png)
 
-
 Metodología
 
 Se utilizaran metodologías ágiles, usando el marco de trabajo SCRUM consistente en un proceso que se aplica de manera regular y frecuente a las buenas prácticas para trabajar colaborativamente en equipo
@@ -54,9 +53,13 @@ Soy una persona a la que le encanta aprender y entregar lo mejor de mi. Me compl
 o ISMAEL ALEXANDER CARVAJAL GONZÁLEZ
 
 Mi nombre es Ismael Alexander Carvajal González y tengo 25 años.
-Debo decir que soy un estudiante de derecho que se encuentra 
-particularmente interesado en la programación por lo que 
+Debo decir que soy un estudiante de derecho que se encuentra
+particularmente interesado en la programación por lo que
 que vivo en constante aprendizaje.
 
-En cuanto a mis conocimientos tengo un levemente conocimiento 
+En cuanto a mis conocimientos tengo un levemente conocimiento
 de las siguientes tecnologías: GitHub, HTML, CSS y Javascript.
+
+o ALFONSO LEONARDO DE LA HOZ BERNAl
+
+Mi nombre es Alfonso De La Hoz y tengo 24 años. Soy estudiante de Ingenieria de Sistemas y tengo conocimientos en distintos lenguajes de programación como JAVA, C++, HTML, CSS Y JAVASCRIPT. También manejo de bases de datos con SQL y bases de REACT. ME gusta aprender sobre tecnología y en mis tiempos libres intento montar bicicleta.
