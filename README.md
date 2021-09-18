@@ -52,13 +52,9 @@ Soy una persona a la que le encanta aprender y entregar lo mejor de mi. Me compl
 
 o ISMAEL ALEXANDER CARVAJAL GONZÁLEZ
 
-Mi nombre es Ismael Alexander Carvajal González y tengo 25 años.
-Soy un estudiante de derecho y me encuentro
-particularmente interesado en la programación por lo que me gusta decir
-que vivo en constante aprendizaje.
+Mi nombre es Ismael Alexander Carvajal González, tengo 25 años y soy estudiante de derecho. Actualmente me encuentro interesado en aprender programación por lo que me gusta decir que vivo en constante aprendizaje.
 
-En cuanto a conocimientos puedo decir que tengo un leve conocimiento
-en tecnologías como: GitHub, HTML, CSS y Javascript. 
+En cuanto a mis conocimientos puedo decir que conozco un poco de tecnologías como: GitHub, HTML, CSS y Javascript. 
 
 o ALFONSO LEONARDO DE LA HOZ BERNAl
 
