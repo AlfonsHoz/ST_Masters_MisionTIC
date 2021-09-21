@@ -60,5 +60,3 @@ En cuanto a mis conocimientos puedo decir que conozco un poco de tecnologías co
 o ALFONSO LEONARDO DE LA HOZ BERNAl
 
 Mi nombre es Alfonso De La Hoz y tengo 24 años. Soy estudiante de Ingenieria de Sistemas y tengo conocimientos en distintos lenguajes de programación como JAVA, C++, HTML, CSS Y JAVASCRIPT. También manejo bases de datos con SQL y bases de REACT. ME gusta aprender sobre tecnología y en mis tiempos libres intento montar bicicleta.
-=======
->>>>>>> 6f093ebf2d7bd855c0a18f02a0c76c8769edef23
