@@ -52,14 +52,10 @@ Soy una persona a la que le encanta aprender y entregar lo mejor de mi. Me compl
 
 o ISMAEL ALEXANDER CARVAJAL GONZÁLEZ
 
-Mi nombre es Ismael Alexander Carvajal González y tengo 25 años.
-Debo decir que soy un estudiante de derecho que se encuentra
-particularmente interesado en la programación por lo que
-que vivo en constante aprendizaje.
+Mi nombre es Ismael Alexander Carvajal González, tengo 25 años y soy estudiante de derecho. Actualmente me encuentro interesado en aprender programación por lo que me gusta decir que vivo en constante aprendizaje.
 
-En cuanto a mis conocimientos tengo un levemente conocimiento
-de las siguientes tecnologías: GitHub, HTML, CSS y Javascript.
+En cuanto a mis conocimientos puedo decir que conozco un poco de tecnologías como: GitHub, HTML, CSS y Javascript. 
 
 o ALFONSO LEONARDO DE LA HOZ BERNAl
 
-Mi nombre es Alfonso De La Hoz y tengo 24 años. Soy estudiante de Ingenieria de Sistemas y tengo conocimientos en distintos lenguajes de programación como JAVA, C++, HTML, CSS Y JAVASCRIPT. También manejo de bases de datos con SQL y bases de REACT. ME gusta aprender sobre tecnología y en mis tiempos libres intento montar bicicleta.
+Mi nombre es Alfonso De La Hoz y tengo 24 años. Soy estudiante de Ingenieria de Sistemas y tengo conocimientos en distintos lenguajes de programación como JAVA, C++, HTML, CSS Y JAVASCRIPT. También manejo bases de datos con SQL y bases de REACT. ME gusta aprender sobre tecnología y en mis tiempos libres intento montar bicicleta.
