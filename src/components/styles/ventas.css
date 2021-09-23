@@ -1,0 +1,23 @@
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-right: 0;
+  margin-left: 3%;
+  margin-top: 1vh;
+  margin-bottom: 0;
+  font-weight: bold;
+  background-color: #2A2E32;
+  padding: 15px 30px;
+  list-style: none;
+}
+
+.info-container li{
+  margin-left: 6%;
+}
+
+.info-container img{
+  padding: 0 2%;
+}
+

@@ -1,0 +1,25 @@
+nav ul{
+  display: flex;
+  list-style: none;
+  justify-content:space-around;
+  align-items: center;
+  margin: 0;
+  padding: 5px 0px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+nav{
+  background-color: #1A1E20;
+  color: azure;
+  height: max-content;
+}
+
+nav li:hover {
+  color: #DAB74A;
+}
+
+nav img{
+  width: 6%;
+  height: 6%;
+}
