@@ -18,11 +18,11 @@ const Listadoventas = () => {
     <div className="listadoventas-container">
       <h2>Listado de ventas realizadas</h2>
       <div id="column-titles">
-        <span>Fecha</span>
-        <span>Código</span>
-        <span>Precio total</span>
-        <span>Vendedor</span>
-        <span>Acciones</span>
+        <li id="li1">Fecha</li>
+        <li id="li2">Código</li>
+        <li id="li3">Precio total</li>
+        <li id="li4">Vendedor</li>
+        <li id="li5">Acciones</li>
       </div>
       {
         data.map((x, key) => {

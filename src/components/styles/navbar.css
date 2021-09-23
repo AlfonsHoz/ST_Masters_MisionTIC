@@ -15,11 +15,11 @@ nav{
   height: max-content;
 }
 
-li:hover {
+nav li:hover {
   color: #DAB74A;
 }
 
-img{
+nav img{
   width: 6%;
   height: 6%;
 }

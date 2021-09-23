@@ -1,6 +1,8 @@
 .listadoventas-container {
   background-color: #1A1E20;
   color: azure;
+  padding-bottom: 15%;
+  font-size: 14px;
 }
 
 
@@ -14,7 +16,7 @@
 
 #column-titles {
   display: flex;
-  justify-content:space-around;
+  justify-content:space-between;
   align-items: center;
   background-color: #25272A;
   font-weight: bold;
@@ -24,5 +26,30 @@
   margin-left: 3%;
   margin-top: 1vh;
   margin-bottom: 0;
-  font-size: 12px;
+  list-style: none;
+  font-size: large;
+}
+
+#column-titles li{
+  margin-left: 6%;
+}
+
+#li1 {
+  width: 15%;
+}
+
+#li2 {
+  width: 15%;
+}
+
+#li3 {
+  width: 15%;
+}
+
+#li4 {
+  width: 40%;
+}
+
+#li5 {
+  width: 15%;
 }
