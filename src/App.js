@@ -1,9 +1,12 @@
 import "./App.css";
+import Listadoventas from "./components/Listadoventas";
+import Navbar from "./components/Navbar.jsx";
 
 function App() {
   return (
-    <div className='App'>
-      <h1> HOLA MUNDO DESDE REACT</h1>
+    <div className="App">
+      <Navbar />
+      <Listadoventas />
     </div>
   );
 }

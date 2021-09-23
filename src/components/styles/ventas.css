@@ -1,0 +1,17 @@
+.info-container {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  width: 90%;
+  margin-right: 0;
+  margin-left: 3%;
+  margin-top: 1vh;
+  margin-bottom: 0;
+  font-size: 12px;
+  background-color: #2A2E32;
+  padding: 15px 30px;
+}
+
+.info-container span{
+  text-align: start;
+}
