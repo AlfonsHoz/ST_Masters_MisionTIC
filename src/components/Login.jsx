@@ -24,7 +24,7 @@ export const Login = () => {
             </form>
         </div>
         <div id="col-der">
-        <h1>Hey</h1>
+        <h1>Guerrero's zone</h1>
         </div>
         </section>
     );
