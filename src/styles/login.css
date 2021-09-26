@@ -1,19 +1,21 @@
 #login {
     display: flex;
+    overflow-y: hidden;
+    background-color: #1A1E20;
 }
 
 #col-izq {
     display: flex;
     flex-direction: column;
     background-color: #1A1E20;
-    height: 100vh;
+    height: 89.2vh;
     width: 40vw;
     padding: 80px 0 0 45px;
+    overflow-y: hidden;
 }
 
 #col-der {
-    background-color: #03070A;
-    height: 100vh;
+    background-color: #caa840;
     width: 60vw;
 }
 
@@ -96,7 +98,7 @@ h3 {
     font-weight: bold;
     background-color: #DAB74A;
     height: 50px;
-    font-size: 15px;
+    font-size: 18px;
     outline: none;
 }
 
@@ -104,4 +106,5 @@ h3 {
     cursor: pointer;
     background-color: #caa840;
 }
+
 

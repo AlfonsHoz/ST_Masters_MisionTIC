@@ -14,16 +14,17 @@ export const Login = () => {
                 <input type="password" placeholder="Ingresa tu contraseña"/>
                 <div id="ayudas">
                 <div id="checkbox">
-                    <input type="checkbox" name="recordar" id="recordar" /> <spam id="texto-checkbox">Recuérdame</spam>
+                    <input type="checkbox" name="recordar" id="recordar" /> <span id="texto-checkbox">Recuérdame</span>
                 </div>
                 <div>
-                    <a id="olvido-contraseña" href="https://www.instagram.com/mjtm_1505/">Olvidé mi contraseña</a>
+                    <a id="olvido-contraseña" href="#">Olvidé mi contraseña</a>
                 </div>
                 </div>
                 <button id="boton-login" type="submit">Iniciar sesión</button>
             </form>
         </div>
         <div id="col-der">
+            <h2>Guerrerooo guerreroo</h2>
         </div>
         </section>
     );
