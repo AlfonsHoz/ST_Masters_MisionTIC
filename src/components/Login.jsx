@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/login.css";
 import logo from "../assets/img/logo.svg";
+import logo_google from "../assets/img/logo-google.svg";
 
 export const Login = () => {
   return (
@@ -23,15 +24,18 @@ export const Login = () => {
                 Olvidé mi contraseña
               </a>
             </div>
-            <button id="boton-login" type="submit">
+            <button id="boton-login" class="boton-generico" type="submit">
               Iniciar sesión
+            </button>
+            <button id="boton-gmail" class="boton-generico" type="submit"><img id="logo_google" src={logo_google} alt="logo de google" />
+              Iniciar con Gmail
             </button>
           </form>
         </div>
       </div>
       <div id="col-der">
         <img id="logo" src={logo}></img>
-        <h1>Manufacturing SAS</h1>
+        <h1>ST Masters</h1>
       </div>
     </section>
   );

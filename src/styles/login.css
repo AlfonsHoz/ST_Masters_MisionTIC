@@ -9,12 +9,14 @@
   height: 100vh;
   width: 40vw;
   padding: 0px 0 0 45px;
+  align-items: center;
+  justify-content: center;
 }
 
 #content-izq {
   position: absolute;
-  top: 25vh;
-  left: 10vh;
+  display: flex;
+  flex-direction: column;
 }
 
 #col-der {
@@ -36,7 +38,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.79);
 }
 
 #col-der img {
@@ -113,7 +115,6 @@ h3 {
 }
 
 #olvido-contraseña {
-  margin-right: 90px;
   color: #e2be4c;
   text-decoration: underline;
 }
@@ -123,20 +124,43 @@ h3 {
   cursor: pointer;
 }
 
-#boton-login {
+.boton-generico {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 490px;
   border-radius: 21px;
   border: none;
   margin-top: 35px;
-  color: #1a1e20;
   font-weight: bold;
-  background-color: #dab74a;
   height: 50px;
   font-size: 18px;
   outline: none;
+}
+
+#boton-login {
+  color: #1a1e20;
+  background-color: #dab74a;
 }
 
 #boton-login:hover {
   cursor: pointer;
   background-color: #caa840;
 }
+
+#boton-gmail {
+  color: #ffffff;
+  background-color: #303436;
+}
+
+#boton-gmail:hover {
+    cursor: pointer;
+    background-color: #2f3335;
+}
+
+#logo_google {
+    width: 19px;
+    margin-right: 10px;
+    margin-bottom: 3px;
+}
+
