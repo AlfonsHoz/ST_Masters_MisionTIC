@@ -1,0 +1,65 @@
+h2 {
+    color: #e2be4c;
+}
+
+#contenedorListadoUsuarios {
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+    padding-top: 1.5%;
+    background-color: #1A1E20;
+}
+
+#tablaUsuarios {
+    color: white;
+    width: 95%;  
+    margin: auto;
+}
+
+#tablaUsuarios > table {
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 14px;
+    padding-left: 70px;
+}
+
+th {
+    background-color: #25272A;
+}
+
+td {
+    background-color: #2A2E32;
+}
+
+thead {
+    border-bottom: solid 3px #1A1E20;
+}
+
+td > img:hover {
+    cursor: pointer;
+}
+
+tr:hover td {
+    background-color: #2a2e32d5;
+}
+
+#volver {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 90px;
+    text-align: end;
+    text-decoration: underline;
+    color: #e2be4c;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#volver:hover {
+    cursor: pointer;
+    color: #caa840;
+}
+

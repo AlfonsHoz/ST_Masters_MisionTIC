@@ -1,11 +1,11 @@
 import "./App.css";
 import { Login } from './components/Login';
-import { ConsultarProducto } from './components/ConsultarProducto';
+import { ListadoUsuarios } from './components/ListadoUsuarios';
 
 function App() {
   return (
     <>
-      <ConsultarProducto />
+      <ListadoUsuarios />
     </>
   );
 }
