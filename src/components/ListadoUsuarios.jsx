@@ -14,9 +14,11 @@ export const ListadoUsuarios = ({id = 'Sin coincidencias', nombre= 'Sin coincide
                             <th>Identificación</th><th>Nombre</th><th>Rol</th><th>Acciones</th>
                         </tr>
                     </thead>
-                    <tr>
-                        <td>{id}</td><td>{nombre}</td><td>{rol}</td><td><img src={eliminar} alt="" /> <img src={lapiz} alt="" /></td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>{id}</td><td>{nombre}</td><td>{rol}</td><td><img src={eliminar} alt="" /> <img src={lapiz} alt="" /></td>
+                        </tr>
+                    </tbody>
                 </table>
                 <span id="volver">Volver arriba</span>
             </div>
