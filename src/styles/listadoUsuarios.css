@@ -34,6 +34,7 @@ th {
 
 td {
     background-color: #2A2E32;
+    border-bottom: solid 3px #1A1E20;
 }
 
 thead {

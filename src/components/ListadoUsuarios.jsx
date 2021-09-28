@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/listadoUsuarios.css';
-import eliminar from '../assets/img/eliminar.svg';
-import lapiz from '../assets/img/lapiz.svg';
+import { TablaUsuarios } from './TablaUsuarios';
 
-export const ListadoUsuarios = ({id = 'Sin coincidencias', nombre= 'Sin coincidencias', rol= 'Sin coincidencias'}) => {
+export const ListadoUsuarios = () => {
+
+    const [data, setdata] = useState([])
+
+    useEffect(() => {
+      fetch('https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db')
+        .then(response => response.json())
+        .then(dat => setdata(dat.usuarios));
+    }, []);
+
     return (
         <div id="contenedorListadoUsuarios">
             <h2>Listado de usuarios</h2>
@@ -15,9 +23,11 @@ export const ListadoUsuarios = ({id = 'Sin coincidencias', nombre= 'Sin coincide
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>{id}</td><td>{nombre}</td><td>{rol}</td><td><img src={eliminar} alt="" /> <img src={lapiz} alt="" /></td>
-                        </tr>
+                            {
+                                data.map((datos, key) => {
+                                return <TablaUsuarios key={key} props={datos} />;
+                                })
+                            }
                     </tbody>
                 </table>
                 <span id="volver">Volver arriba</span>
