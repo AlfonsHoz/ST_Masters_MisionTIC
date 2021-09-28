@@ -64,7 +64,7 @@ tr:hover td {
     color: #caa840;
 }
 
-@media screen and (max-width: 740px) {
+/* @media screen and (max-width: 740px) {
     table {
         width:100%;
     }
@@ -88,6 +88,13 @@ tr:hover td {
         display: block;
         text-align:center;
     }
+} */
+
+@media screen and (max-width: 740px) {
+    table {
+        display: block;
+        overflow-x: auto;
+      }
 }
 
 
