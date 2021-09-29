@@ -2,14 +2,14 @@
 import React from 'react';
 import '../styles/header.css';
 
-export const Header = () => {
+export const Header = ({titulo='Sin título', contenido='Sin contenido', boton='Sin texto'}) => {
     return (
         <section>
             <header>
                 <div className="contenido">
-                    <h2 id="tituloHeader">Gestionar ventas</h2>
-                    <p>En este módulo podrás consultar toda la información relacionada a las ventas.</p>
-                    <button id="boton-header">Nueva venta</button>
+                    <h2 id="tituloHeader">{titulo}</h2>
+                    <p>{contenido}</p>
+                    <button id="boton-header">{boton}</button>
                 </div>
             </header>
         </section>
