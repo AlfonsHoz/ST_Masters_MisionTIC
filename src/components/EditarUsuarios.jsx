@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Row, Col, Form, Dropdown } from "react-bootstrap";
+import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import "../styles/editar_usuarios.css";
 
 export default function EditarUsuarios() {
@@ -14,7 +14,7 @@ export default function EditarUsuarios() {
         <Row>
           <Col id="contenido_form" className="col-12">
             <Row>
-              <Col id="col-izq" className="xs-12 sm-12 md-12 lg-12">
+              <Col id="col-izquierda" className="xs-12 sm-12 md-12 lg-12">
                 <Row>
                   <Col>
                     <Form.Group className="mb-3" controlId="grupo_email">
@@ -63,7 +63,7 @@ export default function EditarUsuarios() {
                   </Col>
                 </Row>
               </Col>
-              <Col id="col-der" className="xs-12 sm-12 md-12 lg-12">
+              <Col id="col-derecha" className="xs-12 sm-12 md-12 lg-12">
                 <Row>
                   <Col>
                     <Form.Group className="mb-3" controlId="grupo_rol">
