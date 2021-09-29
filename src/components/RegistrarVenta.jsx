@@ -62,7 +62,7 @@ export const RegistrarVenta = () => {
                     <table>
                         <thead>
                             <tr>
-                                <th>Código Producto</th><th>Nombre Producto</th><th>Precio Unitario</th><th>Cantidad</th><th>Acciones</th>
+                                <th>Código Producto</th><th>Nombre Producto</th><th>Precio Unitario</th><th>Cantidad</th><th>Precio Total</th><th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
