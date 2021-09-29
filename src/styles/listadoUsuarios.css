@@ -5,10 +5,10 @@ h2 {
 #contenedorListadoUsuarios {
     display: flex;
     flex-direction: column;
-    padding-left: 3%;
+    padding-left: 5.8%;
     padding-right: 3%;
-    padding-top: 1.5%;
-    background-color: #1A1E20;
+    padding-top: 1%;
+    background-color: #191c1f;
 }
 
 #tablaUsuarios {
