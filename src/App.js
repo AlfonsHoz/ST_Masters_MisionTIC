@@ -1,16 +1,12 @@
 import "./App.css";
-import { Login } from './components/Login';
-import Navbar from './components/Navbar';
-import { Header } from './components/Header';
-import { RegistrarVenta } from './components/RegistrarVenta';
-import { ListadoUsuarios } from './components/ListadoUsuarios';
+import { Login } from './pages/Login';
+import { GestionarVentas } from './pages/GestionarVentas';
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <RegistrarVenta />
-    </>
+    <div className="app">
+      <GestionarVentas />
+    </div>
   );
 }
 

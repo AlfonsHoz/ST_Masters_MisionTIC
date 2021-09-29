@@ -1,11 +1,9 @@
 import React from 'react';
 import '../styles/navbar.css';
 import logo from '../assets/img/logo.svg';
-import { Header } from './Header';
 
 const Navbar = () => {
   return (
-    <>
     <nav>
       <ul>
         <li>Gestionar ventas</li>
@@ -15,8 +13,6 @@ const Navbar = () => {
         <li>Cerrar sesión</li>
       </ul>
     </nav>
-    <Header />
-    </>
   );
 }
 
