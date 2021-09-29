@@ -10,12 +10,13 @@ nav ul{
   
   nav{
     float: right;
-    position: absolute;
+    position: fixed;
     background-color: #1A1E20;
     color: azure;
     height: max-content;
     background-color: rgba(20, 22, 24, 0.623);
     z-index: 1;
+    width: 100%;
   }
   
   nav li:hover {
