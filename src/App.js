@@ -1,10 +1,11 @@
 import "./App.css";
-import { Login } from './components/Login';
+import "bootstrap/dist/css/bootstrap.min.css";
+import EditarUsuarios from "./components/EditarUsuarios.jsx";
 
 function App() {
   return (
     <>
-      <Login />
+      <EditarUsuarios />
     </>
   );
 }

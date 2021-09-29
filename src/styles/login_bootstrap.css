@@ -1,0 +1,126 @@
+@media (min-width: 992px) {
+  .alto-100 {
+    height: 100vh;
+  }
+}
+
+#col-izq {
+  background-color: #1a1e20;
+  height: 100vh;
+}
+
+#content-izq {
+  margin-top: 25%;
+}
+
+#col-der {
+  background-image: url("../assets/img/pexels-pixabay-73833.jpg");
+  color: white;
+  text-align: center;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#col-der:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#col-der img {
+  position: relative;
+  width: 40vh;
+  height: 40vh;
+  top: 25vh;
+}
+
+#col-der h1 {
+  color: #e2be4c;
+  position: relative;
+  top: 18vh;
+  font-size: 40px;
+}
+
+label {
+  color: white;
+  margin-bottom: 8px;
+}
+
+h3 {
+  color: white;
+  margin-bottom: 0;
+}
+
+#titulo-principal {
+  font-size: 28px;
+  margin-top: 0;
+  color: #e2be4c;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#formulario input {
+  width: 100%;
+  margin-bottom: 32px;
+  border: 1.6px solid #303436;
+  border-radius: 5px;
+  background-color: #1a1e20;
+  color: white;
+  outline: none;
+  font-size: 15.8px;
+}
+
+#ayudas {
+  color: white;
+}
+
+#checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#checkbox > input {
+  margin: 0;
+  margin-right: 5px;
+  padding: 0;
+  background-color: #1a1e20;
+}
+
+#texto-checkbox {
+  padding-bottom: 4px;
+}
+
+#olvido-contraseña {
+  margin-right: 90px;
+  color: #e2be4c;
+  text-decoration: underline;
+}
+
+#olvido-contraseña:hover {
+  color: #caa840;
+  cursor: pointer;
+}
+
+#boton-login {
+  border-radius: 21px;
+  border: none;
+  margin-top: 35px;
+  color: #1a1e20;
+  font-weight: bold;
+  background-color: #dab74a;
+  height: 50px;
+  font-size: 18px;
+  outline: none;
+}
+
+#boton-login:hover {
+  cursor: pointer;
+  background-color: #caa840;
+}
