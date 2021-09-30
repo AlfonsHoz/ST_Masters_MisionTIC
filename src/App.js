@@ -1,17 +1,10 @@
 import "./App.css";
-import Listadoventas from "./components/Listadoventas";
-import Navbar from "./components/Navbar.jsx";
+import RegistroUsuarios from "./components/RegistroUsuarios";
 
 function App() {
-<<<<<<< HEAD
-  return (
-    <div className="App">
-
-    </div>
-  );
-=======
-  return <></>;
->>>>>>> daniel
+  return <>
+    <RegistroUsuarios />
+  </>;
 }
 
 export default App;

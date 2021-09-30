@@ -1,0 +1,101 @@
+#reg-usr-container{
+  background-color: #1A1E20;  
+}
+
+.lbl-reg-usr {
+  color: azure;
+  font-size: 13px;
+  font-weight: 450;
+  width: 30%;
+  padding-bottom: 4%;
+}
+
+#reg-usr-container h3{
+  color: #DAB74A;
+  font-size: medium;
+  padding-left: 6%;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  margin: 0;
+}
+
+.form-reg-usrs {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 6%;
+}
+
+.form-reg-usrs-2 {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 6%;
+}
+
+#bottom-btns-container{
+  padding-bottom: 4%;
+  margin: 0 10%;
+  display: flex;
+  justify-content: center;
+  padding: 5% 0;
+}
+
+#bottom-btns-container button{
+  border-radius: 20px;
+  font-weight: 600;
+  border: 0;
+  font-size: 13px;
+}
+
+#btn-registrar{
+  background-color: #DAB74A;
+  padding: 1% 4.5em;
+  margin-right: 4%;
+}
+
+#btn-limpiar {
+  background-color: #2A2E32;
+  color: azure;
+  padding: 1% 6.5em;  
+  margin-left: 4%;
+}
+
+.text-field{
+  background-color: transparent;
+  border: solid 3px #2A2E32;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 3% 0;
+  padding-left: 3%;
+  width: 85%;
+  color: azure;
+}
+
+#selector-rol {
+  background-color: transparent;
+  border: solid 3px #2A2E32;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 3% 0;
+  padding-left: 3%;
+  color: azure;
+  text-align: center;
+  width: 100%;
+}
+
+#selector-rol:focus-within {
+  background-color: #1A1E20;
+  border: solid 3px #2A2E32;
+  font-size: 12px;
+  padding: 3% 0;
+  padding-left: 3%;
+  color: azure;
+  text-align: center;
+  font-weight: bold;
+}
+
+.form-reg-usrs-2 p{
+  margin: 0;
+  text-align: center;
+  background-color: #2A2E32 !important;
+  padding: 0;
+}
