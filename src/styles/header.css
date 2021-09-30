@@ -43,11 +43,7 @@ header img {
     padding-left: 5.8%;
 }
 
-<<<<<<< HEAD
-#boton-header {
-=======
 .boton-generico-header {
->>>>>>> 8df8e702d4a203ecee5ec17702adc39f90ab9ef4
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,11 +59,7 @@ header img {
     background-color: #dab74a;
   }
 
-<<<<<<< HEAD
-#boton-header:hover {
-=======
   .boton-generico-header:hover {
->>>>>>> 8df8e702d4a203ecee5ec17702adc39f90ab9ef4
     cursor: pointer;
     background-color: #caa840;
   }
