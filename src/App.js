@@ -7,7 +7,7 @@ import VentasReg from "./pages/ventas/VentasRegistrarPage"
 import VentasCons from "./pages/ventas/VentasConsultarPage"
 import VentasEdit from "./pages/ventas/VentasEditarPage"
 
-import Usuarios from "./pages/UsuariosPage";
+import Usuarios from "./pages/usuarios/UsuariosPage";
 import Productos from "./pages/ProductosPage";
 
 function App() {
