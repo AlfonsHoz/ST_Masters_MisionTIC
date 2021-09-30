@@ -1,5 +1,5 @@
 .Consultarventas{
-    background-color: #2a2e32;
+    background-color: #1A1E20;
     padding: 10px 5px;
 
 }
@@ -15,12 +15,14 @@
 }
 
 #titulo{
-    margin-left: 20px; 
+    margin-left: 6%; 
+    color: azure;
 }
 
 #FiltrarPor{
     display:inline-block;
     margin: 12px 78px 0px 0px;
+    margin-left: 6%;
     font-weight: 400;
     color:azure;
 }
@@ -86,4 +88,9 @@
 #ID{
     background-color: #222a2e32;
     color:#000; 
+}
+
+#Filtrar2 {
+    margin-left: 6%;
+    padding-bottom: 3%;
 }

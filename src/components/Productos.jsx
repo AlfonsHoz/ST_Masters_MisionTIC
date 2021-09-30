@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/productos.css'
+import '../styles/productos.css'
 import ojo from './images/ojo.svg'
 import borrar from './images/eliminar.svg'
 

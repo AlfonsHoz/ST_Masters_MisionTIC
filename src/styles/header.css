@@ -6,7 +6,7 @@ section {
 header {
     background-image: url('../assets/img/fondo-nuevo.jpg');
     width: 100vw;
-    height: 50vh;
+    height: 300px;
     color: white;
     /* text-align: center; */
     background-position: center center;
@@ -39,7 +39,7 @@ header img {
     padding-left: 5.8%;
 }
 
-.boton-generico {
+.boton-generico-header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +55,7 @@ header img {
     background-color: #dab74a;
   }
 
-  .boton-generico:hover {
+  .boton-generico-header:hover {
     cursor: pointer;
     background-color: #caa840;
   }
