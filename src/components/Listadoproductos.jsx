@@ -13,8 +13,6 @@ const Listadoproductos = () => {
       .then(dat => setdata(dat.productos));
   }, [])
 
-  console.log(data);
-
   return (
     <div className="listadoproductos-container">
       <h2>Listado de productos</h2>

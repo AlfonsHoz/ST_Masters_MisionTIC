@@ -6,7 +6,7 @@ import borrar from './images/eliminar.svg'
 const Ventas = ({ props }) => {
   const { fecha, codigo, total, vendedor } = props;
   return (
-    <ul className="info-container">
+    <ul className="info-cont">
       <li id="li1">{fecha}</li>
       <li id="li2">{codigo}</li>
       <li id="li3">{total}</li>

@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/consultarventas.css';
 
 const Consultarventas = () => {
+
     return (
         <div className="Consultarventas">
             <div id="texto-container">
@@ -19,7 +20,9 @@ const Consultarventas = () => {
                         </select></span>
                     <span><input id="IngreseDatos" type="text" name="text" placeholder="Ingrese datos">
                     </input></span>
-                    <button className="boton-generico-header">Consultar</button>
+                    <button
+                        className="boton-generico-header"
+                    >Consultar</button>
                 </div>
 
             </div>
