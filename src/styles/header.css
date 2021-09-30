@@ -13,6 +13,7 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    padding-bottom: 4%;
 }
 
 header:before {

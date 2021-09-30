@@ -7,9 +7,9 @@ export const ListadoUsuarios = () => {
     const [data, setdata] = useState([])
 
     useEffect(() => {
-      fetch('https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db')
-        .then(response => response.json())
-        .then(dat => setdata(dat.usuarios));
+        fetch('https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db')
+            .then(response => response.json())
+            .then(dat => setdata(dat.usuarios));
     }, []);
 
     return (
@@ -23,11 +23,11 @@ export const ListadoUsuarios = () => {
                         </tr>
                     </thead>
                     <tbody>
-                            {
-                                data.map((datos, key) => {
+                        {
+                            data.map((datos, key) => {
                                 return <TablaUsuarios key={key} props={datos} />;
-                                })
-                            }
+                            })
+                        }
                     </tbody>
                 </table>
                 <span id="volver">Volver arriba</span>
@@ -35,3 +35,5 @@ export const ListadoUsuarios = () => {
         </div>
     );
 }
+
+export default ListadoUsuarios;

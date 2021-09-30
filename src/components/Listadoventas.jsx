@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './styles/listadoventas.css'
+import '../styles/listadoventas.css'
 import Ventas from './Ventas';
 
 const Listadoventas = () => {
@@ -11,8 +11,6 @@ const Listadoventas = () => {
       .then(response => response.json())
       .then(dat => setdata(dat.ventas));
   }, [])
-
-  console.log(data);
 
   return (
     <div className="listadoventas-container">

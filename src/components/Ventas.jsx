@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/ventas.css'
+import '../styles/ventas.css'
 import ojo from './images/ojo.svg'
 import borrar from './images/eliminar.svg'
 
@@ -12,8 +12,8 @@ const Ventas = ({ props }) => {
       <li id="li3">{total}</li>
       <li id="li4">{vendedor}</li>
       <li id="li5">
-        <img src={ojo} />
-        <img src={borrar} />
+        <img src={ojo} alt="" />
+        <img src={borrar} alt="" />
       </li>
     </ul>
   )

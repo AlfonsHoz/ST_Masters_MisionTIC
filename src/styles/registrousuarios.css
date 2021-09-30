@@ -4,7 +4,7 @@
 
 .lbl-reg-usr {
   color: azure;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 450;
   width: 30%;
   padding-bottom: 4%;
@@ -12,7 +12,7 @@
 
 #reg-usr-container h3{
   color: #DAB74A;
-  font-size: medium;
+  font-size: 24px;
   padding-left: 6%;
   padding-top: 2%;
   padding-bottom: 3%;
@@ -25,47 +25,51 @@
   margin: 0 6%;
 }
 
-.form-reg-usrs-2 {
-  display: flex;
-  justify-content: space-around;
-  margin: 0 6%;
-}
-
 #bottom-btns-container{
   padding-bottom: 4%;
   margin: 0 10%;
   display: flex;
   justify-content: center;
-  padding: 5% 0;
 }
 
 #bottom-btns-container button{
   border-radius: 20px;
-  font-weight: 600;
+  font-weight: bold;
   border: 0;
-  font-size: 13px;
+  font-size: 18px;
 }
 
 #btn-registrar{
+  border: solid 1px #1A1E20;
   background-color: #DAB74A;
   padding: 1% 4.5em;
   margin-right: 4%;
 }
 
+#btn-registrar:hover{
+  opacity: 80%;  
+}
+
 #btn-limpiar {
+  border: solid 3px #1A1E20;
   background-color: #2A2E32;
   color: azure;
   padding: 1% 6.5em;  
   margin-left: 4%;
 }
 
+#btn-limpiar:hover{
+  opacity: 80%; 
+}
+
 .text-field{
   background-color: transparent;
   border: solid 3px #2A2E32;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 14px;
   padding: 3% 0;
   padding-left: 3%;
+  margin-top: 3%;
   width: 85%;
   color: azure;
 }
@@ -74,7 +78,7 @@
   background-color: transparent;
   border: solid 3px #2A2E32;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 14px;
   padding: 3% 0;
   padding-left: 3%;
   color: azure;
@@ -85,7 +89,7 @@
 #selector-rol:focus-within {
   background-color: #1A1E20;
   border: solid 3px #2A2E32;
-  font-size: 12px;
+  font-size: 14px;
   padding: 3% 0;
   padding-left: 3%;
   color: azure;
@@ -93,9 +97,8 @@
   font-weight: bold;
 }
 
-.form-reg-usrs-2 p{
-  margin: 0;
+.form-reg-usrs p{
+  margin: 3% 0 0 0;
   text-align: center;
   background-color: #2A2E32 !important;
-  padding: 0;
 }

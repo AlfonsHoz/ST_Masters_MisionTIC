@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import './styles/registrousuarios.css';
+import '../styles/registrousuarios.css';
 
 const RegistroUsuarios = () => {
 
@@ -35,8 +35,10 @@ const RegistroUsuarios = () => {
 
   const submitTextFields = () => {
     console.log(id.value, name.value, rol.value, pass.value);
-    alert("Se han agregado el ususario.");
-    cleanUpTextFields();
+    if (!(id.value === '' || name.value === '' || pass.value === '')) {
+      alert("Se han agregado el ususario.");
+      cleanUpTextFields();
+    }
   }
 
   return (
@@ -70,7 +72,7 @@ const RegistroUsuarios = () => {
             </label>
           </div>
         </form>
-        <div className="form-reg-usrs-2">
+        <div className="form-reg-usrs">
           <label className="lbl-reg-usr">Estado:
             <p className="text-field">Activo</p>
           </label>
