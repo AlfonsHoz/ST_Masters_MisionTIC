@@ -1,0 +1,59 @@
+.GestionarVenta{
+    background-image: url('../images/fondo.jpeg');
+    position:relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter:brightness(50%);
+}
+
+.GestionarVenta::before{
+    content: " ";
+    position:absolute;
+    background-color: #1A1E20;
+
+}
+
+#texto-container{
+    padding-left: 3%;
+    padding-bottom: 5%;
+
+
+}
+
+
+#titulo{
+    position: relative;
+    color:white;
+    font-weight: 500;
+    size: 20px;
+    margin: 0;
+    padding-top: 4%;
+
+}
+
+
+#parrafo{
+    position: relative;
+    color:#fff;
+    margin-top: 5px;
+    margin-left: 17px;
+    margin-bottom: 25px;
+
+
+
+}
+
+#boton1{
+    position: relative;
+    border-radius: 35px;
+    padding: 10px 45px;
+    margin-left: 17px;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #dab74a;
+    border: solid 0px;
+
+}
+
+
