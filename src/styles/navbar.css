@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 nav ul{
     display: flex;
     list-style: none;
@@ -29,3 +30,35 @@ nav ul{
     height: 6%;
     cursor: pointer;
   }
+=======
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 5px 0px;
+  font-size: 1.05em;
+}
+
+nav {
+  float: right;
+  position: absolute;
+  background-color: #1a1e20;
+  color: azure;
+  height: max-content;
+  background-color: rgba(20, 22, 24, 0.623);
+  z-index: 1;
+}
+
+nav li:hover {
+  color: #dab74a;
+  cursor: pointer;
+}
+
+nav img {
+  width: 6%;
+  height: 6%;
+  cursor: pointer;
+}
+>>>>>>> 8df8e702d4a203ecee5ec17702adc39f90ab9ef4
