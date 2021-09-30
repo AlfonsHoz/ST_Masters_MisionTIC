@@ -1,16 +1,30 @@
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { EditarUsuarios } from "./components/EditarUsuarios.jsx";
 import { Login } from "./components/Login_Bootstrap";
-import Navbar from "./components/Navbar";
-import { ConsultarProducto } from "./components/ConsultarProducto";
-import { ListadoUsuarios } from "./components/ListadoUsuarios";
-import EditarProductos from "./components/EditarProductos";
+import Ventas from "./pages/VentasPage";
+import Usuarios from "./pages/UsuariosPage";
+import Productos from "./pages/ProductosPage";
 
 function App() {
   return (
     <>
-      <Login />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Login />
+          </Route>
+          <Route exact path="/ventas">
+            <Ventas />
+          </Route>
+          <Route exact path="/productos">
+            <Productos />
+          </Route>
+          <Route exact path="/usuarios">
+            <Usuarios />
+          </Route>
+        </Switch>
+      </Router>
     </>
   );
 }

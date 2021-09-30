@@ -1,68 +1,70 @@
 h2 {
-    color: #e2be4c;
+  color: #e2be4c;
+  margin-left: 3%;
 }
 
 #contenedorListadoUsuarios {
-    display: flex;
-    flex-direction: column;
-    padding-left: 5.8%;
-    padding-right: 3%;
-    padding-top: 1%;
-    background-color: #191c1f;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5.8%;
+  padding-right: 3%;
+  padding-top: 1%;
+  background-color: #191c1f;
 }
 
 #tablaUsuarios {
-    color: white;
-    width: 95%;  
-    margin: auto;
+  color: white;
+  width: 95%;
+  margin: auto;
 }
 
 #tablaUsuarios > table {
-    text-align: left;
-    border-collapse: collapse;
-    width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-th, td {
-    padding: 14px;
-    padding-left: 70px;
+th,
+td {
+  padding: 14px;
+  padding-left: 70px;
 }
 
 th {
-    background-color: #25272A;
+  background-color: #25272a;
 }
 
 td {
-    background-color: #2A2E32;
-    border-bottom: solid 3px #1A1E20;
+  background-color: #2a2e32;
+  border-bottom: solid 3px #1a1e20;
 }
 
 thead {
-    border-bottom: solid 3px #1A1E20;
+  border-bottom: solid 3px #1a1e20;
 }
 
 td > img:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 tr:hover td {
-    background-color: #2a2e32d5;
+  background-color: #2a2e32d5;
 }
 
 #volver {
-    display: block;
-    margin-top: 12px;
-    margin-bottom: 90px;
-    text-align: end;
-    text-decoration: underline;
-    color: #e2be4c;
-    font-size: 15px;
-    font-weight: bold;
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 90px;
+  text-align: end;
+  text-decoration: underline;
+  color: #e2be4c;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 #volver:hover {
-    cursor: pointer;
-    color: #caa840;
+  cursor: pointer;
+  color: #caa840;
 }
 
 /* @media screen and (max-width: 740px) {
@@ -92,10 +94,8 @@ tr:hover td {
 } */
 
 @media screen and (max-width: 740px) {
-    table {
-        display: block;
-        overflow-x: auto;
-      }
+  table {
+    display: block;
+    overflow-x: auto;
+  }
 }
-
-

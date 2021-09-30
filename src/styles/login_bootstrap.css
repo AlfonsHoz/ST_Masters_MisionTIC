@@ -67,13 +67,18 @@ h3 {
   margin-bottom: 30px;
 }
 
-#formulario .form-control {
+.form-control {
   border: 1.6px solid #303436;
   border-radius: 5px;
   background-color: #1a1e20;
   color: white;
   outline: none;
   font-size: 15.8px;
+}
+
+.form-control:focus {
+  background-color: #303436;
+  color: white;
 }
 
 #olvido-contraseña {

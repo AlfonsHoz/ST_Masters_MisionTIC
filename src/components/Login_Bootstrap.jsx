@@ -1,8 +1,9 @@
 import React from "react";
 import logo from "../assets/img/logo.svg";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
-import "../styles/login_bootstrap.css";
 import logo_google from "../assets/img/logo-google.svg";
+import { Link } from "react-router-dom";
+import "../styles/login_bootstrap.css";
 
 export const Login = () => {
   return (
@@ -49,26 +50,30 @@ export const Login = () => {
                     </Col>
                   </Row>
                   <Row>
-                    <Col className="d-flex justify-content-center">
-                      <Button id="boton-login" type="submit">
-                        Iniciar sesión
-                      </Button>
+                    <Col>
+                      <Link to="/ventas">
+                        <Button id="boton-login" type="submit">
+                          Iniciar sesión
+                        </Button>
+                      </Link>
                     </Col>
                   </Row>
                   <Row>
                     <Col>
-                      <Button
-                        id="boton-gmail"
-                        class="boton-generico"
-                        type="submit"
-                      >
-                        <img
-                          id="logo_google"
-                          src={logo_google}
-                          alt="logo de google"
-                        />
-                        Iniciar con Gmail
-                      </Button>
+                      <Link to="/ventas">
+                        <Button
+                          id="boton-gmail"
+                          class="boton-generico"
+                          type="submit"
+                        >
+                          <img
+                            id="logo_google"
+                            src={logo_google}
+                            alt="logo de google"
+                          />
+                          Iniciar con Gmail
+                        </Button>
+                      </Link>
                     </Col>
                   </Row>
                 </Form>
