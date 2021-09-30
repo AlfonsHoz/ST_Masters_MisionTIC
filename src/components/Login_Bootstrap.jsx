@@ -1,112 +1,86 @@
 import React from "react";
 import logo from "../assets/img/logo.svg";
-//import "../styles/login.css";
-import { Button, Container, Row, Col } from "react-bootstrap";
+import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import "../styles/login_bootstrap.css";
+import logo_google from "../assets/img/logo-google.svg";
 
 export const Login = () => {
   return (
     <section id="login">
-      <Container fluid className="alto-100">
-        <Row>
-          <Col id="col-izq" col={12} md={12} lg={5}>
-            <Row>
-              <Col id="content-izq" className="col-12 col-lg-12 col-md-12">
-                <Container fluid>
+      <Container fluid>
+        <Row id="principal">
+          <Col
+            id="col-izq"
+            className="position-relative"
+            col={12}
+            sm={12}
+            md={12}
+            lg={5}
+          >
+            <Row className="position-relative top-50 start-50 translate-middle">
+              <Col id="content-izq">
+                <Row>
+                  <h3>Bienvenido a</h3>
+                  <h1 id="titulo-principal">ST Masters</h1>
+                </Row>
+                <Form>
                   <Row>
-                    <Col className="col-12 col-lg-12 d-flex justify-content-center">
-                      <h3>Bienvenido a</h3>
+                    <Col className="">
+                      <Form.Group className="mb-3">
+                        <Form.Label>Usuario:</Form.Label>
+                        <Form.Control
+                          type="text"
+                          placeholder="Ingresa tu nombre de usuario"
+                        ></Form.Control>
+                      </Form.Group>
+                      <Form.Group className="mb-3">
+                        <Form.Label>Contraseña:</Form.Label>
+                        <Form.Control
+                          type="password"
+                          placeholder="Ingresa tu contraseña"
+                        ></Form.Control>
+                      </Form.Group>
+                      <Form.Group className="d-flex justify-content-between">
+                        <Form.Check label="Recuerdame"></Form.Check>
+                        <a id="olvido-contraseña" href="#">
+                          Olvidé mi contraseña
+                        </a>
+                      </Form.Group>
                     </Col>
                   </Row>
                   <Row>
-                    <Col className="col-12 col-lg-12 d-flex justify-content-center">
-                      <h1 id="titulo-principal">ST Masters</h1>
+                    <Col className="d-flex justify-content-center">
+                      <Button id="boton-login" type="submit">
+                        Iniciar sesión
+                      </Button>
                     </Col>
                   </Row>
                   <Row>
-                    <Col className="col-12 col-lg-12 d-flex justify-content-center">
-                      <form id="formulario" action="">
-                        <Row>
-                          <Col className="col-4 d-flex justify-content-center p-0">
-                            <label htmlFor="usuario">Usuario:</label>
-                          </Col>
-                          <Col className="col-8 d-flex p-0">
-                            <input
-                              type="text"
-                              placeholder="Ingresa tu nombre de usuario"
-                            />
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col className="col-4 d-flex justify-content-center p-0">
-                            <label htmlFor="contraseña">Contraseña:</label>
-                          </Col>
-                          <Col className="col-8 d-flex p-0">
-                            <input
-                              type="password"
-                              placeholder="Ingresa tu contraseña"
-                            />
-                          </Col>
-                        </Row>
-                        <Row id="ayudas">
-                          <Col id="checkbox">
-                            <input
-                              type="checkbox"
-                              name="recordar"
-                              id="recordar"
-                            />{" "}
-                            <span id="texto-checkbox">Recuérdame</span>
-                          </Col>
-                          <a id="olvido-contraseña" href="#">
-                            Olvidé mi contraseña
-                          </a>
-                        </Row>
-                        <Button id="boton-login" type="submit">
-                          Iniciar sesión
-                        </Button>
-                      </form>
+                    <Col>
+                      <Button
+                        id="boton-gmail"
+                        class="boton-generico"
+                        type="submit"
+                      >
+                        <img
+                          id="logo_google"
+                          src={logo_google}
+                          alt="logo de google"
+                        />
+                        Iniciar con Gmail
+                      </Button>
                     </Col>
                   </Row>
-                </Container>
+                </Form>
               </Col>
             </Row>
           </Col>
-          <Col id="col-der" col={12} md={12} lg={7}></Col>
+          <Col id="col-der" lg={7}>
+            <img id="logo" src={logo}></img>
+            <h1>ST Masters</h1>
+          </Col>
         </Row>
       </Container>
     </section>
   );
 };
-
-/*
-<section id="login">
-<div id="col-izq">
-  <div id="content-izq">
-    <h3>Bienvenido a</h3>
-    <h1 id="titulo-principal">ST Masters</h1>
-    <form id="formulario" action="">
-      <label htmlFor="usuario">Usuario:</label>
-      <input type="text" placeholder="Ingresa tu nombre de usuario" />
-      <label htmlFor="contraseña">Contraseña:</label>
-      <input type="password" placeholder="Ingresa tu contraseña" />
-      <div id="ayudas">
-        <div id="checkbox">
-          <input type="checkbox" name="recordar" id="recordar" />{" "}
-          <span id="texto-checkbox">Recuérdame</span>
-        </div>
-        <a id="olvido-contraseña" href="#">
-          Olvidé mi contraseña
-        </a>
-      </div>
-      <Button className="submit" type="submit">
-        Iniciar sesión
-      </Button>
-    </form>
-  </div>
-</div>
-<div id="col-der">
-  <img id="logo" src={logo}></img>
-  <h1>Manufacturing SAS</h1>
-</div>
-</section>
-*/
