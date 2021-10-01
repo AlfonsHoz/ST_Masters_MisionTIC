@@ -1,13 +1,6 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-<<<<<<< HEAD
-import { Login } from "./components/Login_Bootstrap";
-import Ventas from "./pages/VentasPage";
-import Usuarios from "./pages/UsuariosPage";
-import Productos from "./pages/ProductosPage";
-=======
 import { Login } from "./components/Login";
->>>>>>> 8ccc6872254e7f858ec750b2564c4b146f787f3a
 
 import Ventas from "./pages/ventas/VentasPage";
 import VentasReg from "./pages/ventas/VentasRegistrarPage"
