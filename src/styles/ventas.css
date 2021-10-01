@@ -13,10 +13,10 @@
   list-style: none;
 }
 
-.info-cont > li {
+.info-cont li {
   margin-left: 6%;
 }
 
-.info-cont > img {
+.info-cont img {
   padding: 0 2%;
 }

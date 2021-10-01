@@ -1,15 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Productos from './Productos'
 import '../styles/editarventas.css'
-import ojo from './images/ojo.svg'
-import borrar from './images/eliminar.svg'
 
-const EditarVentas = ({ props }) => {
+const EditarVentas = () => {
+
 
   const [producto, setProducto] = useState({})
+  const [productos, setProductos] = useState({})
   const [cantidad, setCantidad] = useState({})
+
   const refProd = useRef()
   const refCant = useRef()
+
+  const updateVenta = () => {
+    alert('Se ha actualizado la venta')
+  }
 
   useEffect(() => {
     refProd.current.focus();
@@ -49,14 +54,8 @@ const EditarVentas = ({ props }) => {
           <li id="li4-edv">cantidad</li>
           <li id="li5-edv">Acciones</li>
         </div>
-        {
-          /*
-          props.productos.map((x, key) => {
-            return <Productos key={key} props={x} />;
-          })
-        */
-        }
-        <button type="submit" className="boton-generico-header" id="boton-editar-ventas">Actualizar</button>
+
+        <button onClick={updateVenta} type="submit" className="boton-generico-header" id="boton-editar-ventas">Actualizar</button>
       </div>
 
     </div >

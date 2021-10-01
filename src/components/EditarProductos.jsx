@@ -3,6 +3,11 @@ import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import "../styles/editar_productos.css";
 
 export const EditarProductos = () => {
+
+  const updateProd = () => {
+    alert('Se ha actualizado el producto')
+  }
+
   return (
     <Container fluid id="container" className="m-0">
       <Row>
@@ -58,7 +63,9 @@ export const EditarProductos = () => {
             </Row>
             <Row>
               <Col col={6} id="col-actu" className="d-flex justify-content-end">
-                <Button id="boton_actualizar">Actualizar producto</Button>
+                <Button id="boton_actualizar"
+                  onClick={updateProd}
+                >Actualizar producto</Button>
               </Col>
               <Col
                 col={6}

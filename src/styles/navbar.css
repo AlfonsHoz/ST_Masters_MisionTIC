@@ -18,6 +18,12 @@ nav {
   z-index: 1;
 }
 
+nav li {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 nav li:hover {
   color: #dab74a;
   cursor: pointer;
