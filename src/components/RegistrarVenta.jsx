@@ -13,6 +13,10 @@ export const RegistrarVenta = () => {
             .then(dat => setdata(dat.productos));
     }, []);
 
+    const register = () => {
+        alert("Se ha registrado la venta.");
+    }
+
     return (
         <div id="contenedor">
             <h2>Nueva venta</h2>
@@ -72,7 +76,9 @@ export const RegistrarVenta = () => {
                                 })
                             }
                         </tbody>
-                        <button className="boton-generico-header">Agregar venta</button>
+                        <button className="boton-generico-header"
+                            onClick={register}
+                        >Agregar venta</button>
                     </table>
                     <span id="volver">Volver arriba</span>
                 </div>
