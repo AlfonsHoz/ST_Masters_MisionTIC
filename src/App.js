@@ -7,7 +7,11 @@ import VentasReg from "./pages/ventas/VentasRegistrarPage"
 import VentasCons from "./pages/ventas/VentasConsultarPage"
 import VentasEdit from "./pages/ventas/VentasEditarPage"
 
-import Usuarios from "./pages/UsuariosPage";
+import UsuariosPage from "./pages/usuarios/UsuariosPage";
+import UsuariosRegistrarPage from "./pages/usuarios/UsuariosRegistrarPage";
+import UsuariosConsultarPage from "./pages/usuarios/UsuariosConsultarPage";
+import UsuariosEditarPage from "./pages/usuarios/UsuariosEditarPage";
+
 import Productos from "./pages/ProductosPage";
 
 function App() {
@@ -39,9 +43,22 @@ function App() {
         exact path="/productos">
         <Productos />
       </Route>
+
       <Route
         exact path="/usuarios">
-        <Usuarios />
+        <UsuariosPage />
+      </Route>
+      <Route
+        exact path="/usuarios/registrar">
+        <UsuariosRegistrarPage />
+      </Route>
+      <Route
+        exact path="/usuarios/consultar">
+        <UsuariosConsultarPage />
+      </Route>
+      <Route
+        exact path="/usuarios/editar">
+        <UsuariosEditarPage />
       </Route>
     </Router>
   </>;

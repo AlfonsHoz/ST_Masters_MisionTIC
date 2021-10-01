@@ -9,7 +9,9 @@ const Navbar = () => {
       <nav>
         <ul>
           <li>Gestionar ventas</li>
-          <li>Gestionar usuarios</li>
+          <Link to="/usuarios">
+            <li>Gestionar usuarios</li>
+          </Link>
           <img src={logo} alt="Logo" />
           <li>Gestionar productos</li>
           <Link to="/">

@@ -14,7 +14,7 @@ export const ListadoUsuarios = () => {
 
     return (
         <div id="contenedorListadoUsuarios">
-            <h2>Listado de usuarios</h2>
+            <h2 id="tituloListadoUsuarios">Listado de usuarios</h2>
             <div id="tablaUsuarios">
                 <table>
                     <thead>
