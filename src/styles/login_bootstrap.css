@@ -1,6 +1,6 @@
-@media (min-width: 992px) {
-  .alto-100 {
-    height: 100vh;
+@media screen and (max-width: 992px) {
+  #col-der {
+    display: none;
   }
 }
 
@@ -10,7 +10,7 @@
 }
 
 #content-izq {
-  margin-top: 25%;
+  padding: 50px;
 }
 
 #col-der {
@@ -43,8 +43,9 @@
 #col-der h1 {
   color: #e2be4c;
   position: relative;
-  top: 18vh;
+  top: 21vh;
   font-size: 40px;
+  font-weight: bold;
 }
 
 label {
@@ -53,6 +54,7 @@ label {
 }
 
 h3 {
+  font-size: 28px;
   color: white;
   margin-bottom: 0;
 }
@@ -65,9 +67,7 @@ h3 {
   margin-bottom: 30px;
 }
 
-#formulario input {
-  width: 100%;
-  margin-bottom: 32px;
+.form-control {
   border: 1.6px solid #303436;
   border-radius: 5px;
   background-color: #1a1e20;
@@ -76,29 +76,12 @@ h3 {
   font-size: 15.8px;
 }
 
-#ayudas {
+.form-control:focus {
+  background-color: #303436;
   color: white;
 }
 
-#checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-#checkbox > input {
-  margin: 0;
-  margin-right: 5px;
-  padding: 0;
-  background-color: #1a1e20;
-}
-
-#texto-checkbox {
-  padding-bottom: 4px;
-}
-
 #olvido-contraseña {
-  margin-right: 90px;
   color: #e2be4c;
   text-decoration: underline;
 }
@@ -109,6 +92,7 @@ h3 {
 }
 
 #boton-login {
+  width: 100%;
   border-radius: 21px;
   border: none;
   margin-top: 35px;
@@ -123,4 +107,25 @@ h3 {
 #boton-login:hover {
   cursor: pointer;
   background-color: #caa840;
+}
+
+#boton-gmail {
+  width: 100%;
+  height: 50px;
+  border-radius: 21px;
+  border: none;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #303436;
+}
+
+#boton-gmail:hover {
+  cursor: pointer;
+  background-color: #2f3335;
+}
+
+#logo_google {
+  width: 19px;
+  margin-right: 10px;
 }

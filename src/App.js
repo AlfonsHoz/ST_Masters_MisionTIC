@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import { Login } from "./components/Login";
+import { Login } from "./pages/Login_Bootstrap";
 
 import Ventas from "./pages/ventas/VentasPage";
 import VentasReg from "./pages/ventas/VentasRegistrarPage"
@@ -8,7 +8,7 @@ import VentasCons from "./pages/ventas/VentasConsultarPage"
 import VentasEdit from "./pages/ventas/VentasEditarPage"
 
 import Usuarios from "./pages/usuarios/UsuariosPage";
-import Productos from "./pages/ProductosPage";
+import Productos from "./pages/productos/ProductosPage";
 
 function App() {
   return <>
@@ -39,6 +39,8 @@ function App() {
         exact path="/productos">
         <Productos />
       </Route>
+
+
       <Route
         exact path="/usuarios">
         <Usuarios />
