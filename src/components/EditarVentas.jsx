@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
-import Productos from './Productos'
 import '../styles/editarventas.css'
+import ProdsEditVent from './ProdsEditVent'
 
 const EditarVentas = () => {
 
@@ -64,7 +64,7 @@ const EditarVentas = () => {
         </div>
 
         {data.map((x, key) => {
-          if (x.codigo === "V0001") return x.productos.map((y, key) => <Productos key={key} props={y} />);
+          if (x.codigo === "V0001") return x.productos.map((y, key) => <ProdsEditVent key={key} props={y} />);
         })}
 
         <button onClick={updateVenta} type="submit" className="boton-generico-header" id="boton-editar-ventas">Actualizar</button>

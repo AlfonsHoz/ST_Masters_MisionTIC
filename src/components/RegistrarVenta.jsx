@@ -72,7 +72,7 @@ export const RegistrarVenta = () => {
                                 })
                             }
                         </tbody>
-                        <button className="boton-generico-header">Agregar nueva venta</button>
+                        <button className="boton-generico-header">Agregar venta</button>
                     </table>
                     <span id="volver">Volver arriba</span>
                 </div>
