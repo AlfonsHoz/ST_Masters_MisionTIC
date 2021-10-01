@@ -2,14 +2,14 @@ import React from "react";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import ConsultarProducto from "../../components/ConsultarProducto";
-import ListadoProductos from "../../components/ListadoProductos";
+import ListadoProductos from "../../components/Listadoproductos";
 
 const ProductosPage = () => {
   return (
     <>
       <Navbar />
       <Header
-        textoBoton={"Consultar productos"}
+        textoBoton={"Nuevo producto"}
         texto={"productos"}
         link={"/productos/consultar"}
       />

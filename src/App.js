@@ -35,6 +35,15 @@ function App() {
         <Route exact path="/productos">
           <Productos />
         </Route>
+        <Route exact path="/productos/registrar">
+          <Productos />
+        </Route>
+        <Route exact path="/productos/consultar">
+          <Productos />
+        </Route>
+        <Route exact path="/productos/editar">
+          <Productos />
+        </Route>
 
         <Route exact path="/usuarios">
           <Usuarios />
