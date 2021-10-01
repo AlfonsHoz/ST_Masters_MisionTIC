@@ -1,12 +1,12 @@
 import React from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import "../styles/editar_usuarios.css";
+import { Link } from "react-router-dom";
 
-export default function EditarUsuarios() {
-
-  const updateUser = () => {
-    alert('Se ha actualizado el usuario')
-  }
+const EditarUsuarios = () => {
+  const editarUsuario = () => {
+    alert("Se ha actualizado el usuario.");
+  };
 
   return (
     <Container fluid id="container" className="m-0">
@@ -96,18 +96,24 @@ export default function EditarUsuarios() {
             </Row>
             <Row>
               <Col col={6} id="col-actu" className="d-flex justify-content-end">
-                <Button id="boton_actualizar"
-                  onClick={updateUser}
-                >Actualizar usuario</Button>
+                <Button
+                  className="cursor-pointer"
+                  id="boton_actualizar"
+                  onClick={editarUsuario}
+                >
+                  Actualizar usuario
+                </Button>
               </Col>
               <Col
                 col={6}
                 id="col-cancel"
                 className="d-flex justify-content-start"
               >
-                <Button id="boton_cancelar" p-10>
-                  Cancelar
-                </Button>
+                <Link to="/usuarios">
+                  <Button className="cursor-pointer" id="boton_cancelar" p-10>
+                    Cancelar
+                  </Button>
+                </Link>
               </Col>
             </Row>
           </Col>
@@ -115,4 +121,6 @@ export default function EditarUsuarios() {
       </Form>
     </Container>
   );
-}
+};
+
+export default EditarUsuarios;

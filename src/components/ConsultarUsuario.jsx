@@ -1,10 +1,11 @@
 import React from 'react';
 import '../styles/consultarUsuario.css';
+import {Link} from 'react-router-dom';
 
-export const ConsultarUsuario = () => {
+const ConsultarUsuario = () => {
     return (
         <div id="contenedorBuscar">
-            <h2 id="titulo">Consultar usuarios</h2>
+            <h2 id="tituloUsuario">Consultar usuarios</h2>
             <div id="contenedorForm">
                 <div id="campoLabel">
                     <label htmlFor="filtroUsuario">Filtrar por:</label>
@@ -20,6 +21,11 @@ export const ConsultarUsuario = () => {
                     <input id="campoBuscar" name="buscarUsuario" type="text" placeholder="Ingresa el nombre o identificación del usuario" />
                 </div>
             </div>
+            <Link to="usuarios/consultar">
+                <button class="boton-generico-header">Consultar</button>
+            </Link>
         </div>
     );
 }
+
+export default ConsultarUsuario;
