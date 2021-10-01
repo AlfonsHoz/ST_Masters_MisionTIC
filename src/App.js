@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import { Login } from "./pages/Login_Bootstrap";
+import { Login } from "./pages/Login";
 
 import Ventas from "./pages/ventas/VentasPage";
 import VentasReg from "./pages/ventas/VentasRegistrarPage"
@@ -8,7 +8,7 @@ import VentasCons from "./pages/ventas/VentasConsultarPage"
 import VentasEdit from "./pages/ventas/VentasEditarPage"
 
 import Usuarios from "./pages/usuarios/UsuariosPage";
-import Productos from "./pages/productos/ProductosPage";
+import { Productos } from "./pages/productos/ProductosPage";
 
 function App() {
   return <>
