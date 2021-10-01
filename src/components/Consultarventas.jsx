@@ -1,6 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import '../styles/consultarventas.css';
-import ResConsultaVentas from './ResConsultaVentas';
 
 const Consultarventas = () => {
 
@@ -21,14 +21,13 @@ const Consultarventas = () => {
             </select></span>
           <span><input id="IngreseDatos" type="text" name="text" placeholder="Ingrese datos">
           </input></span>
-          <button
-            className="boton-generico-header"
-          >Consultar</button>
+          <Link to={"/ventas/consultar"}>
+            <button
+              className="boton-generico-header"
+            >Consultar</button>
+          </Link>
         </div>
       </div>
-
-      <ResConsultaVentas />
-
     </div>
 
   )

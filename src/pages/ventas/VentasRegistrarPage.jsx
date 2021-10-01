@@ -8,7 +8,7 @@ const VentasPage = () => {
   return (
     <>
       <Navbar />
-      <Header textoBoton={"Consultar ventas"} texto={"ventas"} link={"/ventas/consultar"} />
+      <Header textoBoton={"Consultar ventas"} texto={"ventas"} link={"/ventas"} />
       <RegistrarVenta />
     </>
   )

@@ -1,0 +1,10 @@
+.res-cons-cont {
+  background-color: #1a1e20;
+  color: azure;
+  margin-top: 0;
+  padding-bottom: 3%;
+}
+
+.res-cons-cont > #column-titles {
+  margin-top: 0 !important;
+}

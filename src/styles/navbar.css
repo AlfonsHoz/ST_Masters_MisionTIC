@@ -34,3 +34,8 @@ nav img {
   height: 6%;
   cursor: pointer;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
