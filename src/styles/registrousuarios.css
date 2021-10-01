@@ -1,5 +1,5 @@
-#reg-usr-container{
-  background-color: #1A1E20;  
+#reg-usr-container {
+  background-color: #1a1e20;
 }
 
 .lbl-reg-usr {
@@ -10,8 +10,8 @@
   padding-bottom: 4%;
 }
 
-#reg-usr-container h3{
-  color: #DAB74A;
+#reg-usr-container h3 {
+  color: #dab74a;
   font-size: 24px;
   padding-left: 6%;
   padding-top: 2%;
@@ -25,46 +25,46 @@
   margin: 0 6%;
 }
 
-#bottom-btns-container{
+#bottom-btns-container {
   padding-bottom: 4%;
   margin: 0 10%;
   display: flex;
   justify-content: center;
 }
 
-#bottom-btns-container button{
+#bottom-btns-container button {
   border-radius: 20px;
   font-weight: bold;
   border: 0;
   font-size: 18px;
 }
 
-#btn-registrar{
-  border: solid 1px #1A1E20;
-  background-color: #DAB74A;
+#btn-registrar {
+  border: solid 1px #1a1e20;
+  background-color: #dab74a;
   padding: 1% 4.5em;
   margin-right: 4%;
 }
 
-#btn-registrar:hover{
-  opacity: 80%;  
+#btn-registrar:hover {
+  opacity: 80%;
 }
 
 #btn-limpiar {
-  border: solid 3px #1A1E20;
-  background-color: #2A2E32;
+  border: solid 3px #1a1e20;
+  background-color: #2a2e32;
   color: azure;
-  padding: 1% 6.5em;  
+  padding: 1% 6.5em;
   margin-left: 4%;
 }
 
-#btn-limpiar:hover{
-  opacity: 80%; 
+#btn-limpiar:hover {
+  opacity: 80%;
 }
 
-.text-field{
+.text-field {
   background-color: transparent;
-  border: solid 3px #2A2E32;
+  border: solid 3px #2a2e32;
   border-radius: 8px;
   font-size: 14px;
   padding: 3% 0;
@@ -76,7 +76,7 @@
 
 #selector-rol {
   background-color: transparent;
-  border: solid 3px #2A2E32;
+  border: solid 3px #2a2e32;
   border-radius: 8px;
   font-size: 14px;
   padding: 3% 0;
@@ -87,8 +87,8 @@
 }
 
 #selector-rol:focus-within {
-  background-color: #1A1E20;
-  border: solid 3px #2A2E32;
+  background-color: #1a1e20;
+  border: solid 3px #2a2e32;
   font-size: 14px;
   padding: 3% 0;
   padding-left: 3%;
@@ -97,8 +97,8 @@
   font-weight: bold;
 }
 
-.form-reg-usrs p{
+.form-reg-usrs p {
   margin: 3% 0 0 0;
   text-align: center;
-  background-color: #2A2E32 !important;
+  background-color: #2a2e32 !important;
 }

@@ -22,13 +22,10 @@ const Listadoventas = () => {
         <li id="li4">Vendedor</li>
         <li id="li5">Acciones</li>
       </div>
-      {
-        data.map((x, key) => {
-          return <Ventas key={key} props={x} />;
-        })
-      }
-
+      {data.map((x, key) => {
+        return <Ventas key={key} props={x} />;
+      })}
     </div>
-  )
-}
-export default Listadoventas
+  );
+};
+export default Listadoventas;

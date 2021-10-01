@@ -1,12 +1,12 @@
-import React from 'react'
-import '../styles/ventas.css'
-import ojo from './images/ojo.svg'
-import borrar from './images/eliminar.svg'
+import React from "react";
+import "../styles/ventas.css";
+import ojo from "../assets/img/ojo.svg";
+import borrar from "../assets/img/eliminar.svg";
 
 const Ventas = ({ props }) => {
   const { fecha, codigo, total, vendedor } = props;
   return (
-    <ul className="info-cont">
+    <ul className="info-container">
       <li id="li1">{fecha}</li>
       <li id="li2">{codigo}</li>
       <li id="li3">{total}</li>
@@ -16,7 +16,7 @@ const Ventas = ({ props }) => {
         <img src={borrar} alt="" />
       </li>
     </ul>
-  )
-}
+  );
+};
 
-export default Ventas
+export default Ventas;

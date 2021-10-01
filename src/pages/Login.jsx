@@ -25,16 +25,13 @@ export const Login = () => {
                 Olvidé mi contraseña
               </a>
             </div>
-            <Link to="/ventas">
-              <button id="boton-login" class="boton-generico" type="submit">
-                Iniciar sesión
-              </button>
-            </Link>
-            <Link to="/ventas">
-              <button id="boton-gmail" class="boton-generico" type="submit"><img id="logo_google" src={logo_google} alt="logo de google" />
-                Iniciar con Gmail
-              </button>
-            </ Link>
+            <button id="boton-login" class="boton-generico" type="submit">
+              Iniciar sesión
+            </button>
+            <button id="boton-gmail" class="boton-generico" type="submit">
+              <img id="logo_google" src={logo_google} alt="logo de google" />
+              Iniciar con Gmail
+            </button>
           </form>
         </div>
       </div>

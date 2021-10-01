@@ -1,6 +1,5 @@
-
 section {
-    display: flex;
+  display: flex;
 }
 
 #tituloHeader {
@@ -8,59 +7,58 @@ section {
 }
 
 header {
-    background-image: url('../assets/img/fondo-nuevo.jpg');
-    width: 100vw;
-    height: 300px;
-    color: white;
-    /* text-align: center; */
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    padding-bottom: 4%;
+  background-image: url("../assets/img/fondo-nuevo.jpg");
+  width: 100vw;
+  height: 300px;
+  color: white;
+  /* text-align: center; */
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-bottom: 4%;
 }
 
 header:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(20, 22, 24, 0.712);
-  }
-  
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(20, 22, 24, 0.712);
+}
+
 header img {
-    position: relative;
-    width: 40vh;
-    height: 40vh;
-    top: 25vh;
-  }
+  position: relative;
+  width: 40vh;
+  height: 40vh;
+  top: 25vh;
+}
 
 .contenido {
-    position: absolute;
-    padding-top: 7.5%;
-    padding-left: 5.8%;
+  position: absolute;
+  padding-top: 6%;
+  padding-left: 5.8%;
 }
 
 .boton-generico-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 190px;
-    border-radius: 21px;
-    border: none;
-    margin-top: 30px;
-    font-weight: bold;
-    height: 40px;
-    font-size: 18px;
-    outline: none;
-    color: #1A1E20;
-    background-color: #dab74a;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 190px;
+  border-radius: 21px;
+  border: none;
+  margin-top: 30px;
+  font-weight: bold;
+  height: 40px;
+  font-size: 18px;
+  outline: none;
+  color: #1a1e20;
+  background-color: #dab74a;
+}
 
-  .boton-generico-header:hover {
-    cursor: pointer;
-    background-color: #caa840;
-  }
-  
+.boton-generico-header:hover {
+  cursor: pointer;
+  background-color: #caa840;
+}
