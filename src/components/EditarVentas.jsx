@@ -13,7 +13,7 @@ const EditarVentas = () => {
   const refCant = useRef()
 
   const updateVenta = () => {
-    alert('Se ha actualizado el producto')
+    alert('Se ha actualizado la venta')
   }
 
   useEffect(() => {

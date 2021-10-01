@@ -67,7 +67,7 @@ export const RegistrarVenta = () => {
                         </thead>
                         <tbody>
                             {
-                                data?.map((datos, key) => {
+                                data.map((datos, key) => {
                                     return <TablaProductosVenta key={key} props={datos} />;
                                 })
                             }

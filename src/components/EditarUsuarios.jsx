@@ -3,6 +3,11 @@ import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import "../styles/editar_usuarios.css";
 
 export default function EditarUsuarios() {
+
+  const updateUser = () => {
+    alert('Se ha actualizado el usuario')
+  }
+
   return (
     <Container fluid id="container" className="m-0">
       <Row>
@@ -91,7 +96,9 @@ export default function EditarUsuarios() {
             </Row>
             <Row>
               <Col col={6} id="col-actu" className="d-flex justify-content-end">
-                <Button id="boton_actualizar">Actualizar usuario</Button>
+                <Button id="boton_actualizar"
+                  onClick={updateUser}
+                >Actualizar usuario</Button>
               </Col>
               <Col
                 col={6}

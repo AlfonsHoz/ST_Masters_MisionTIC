@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/consultarventas.css';
+import ResConsultaVentas from './ResConsultaVentas';
 
 const Consultarventas = () => {
 
@@ -24,8 +25,10 @@ const Consultarventas = () => {
             className="boton-generico-header"
           >Consultar</button>
         </div>
-
       </div>
+
+      <ResConsultaVentas />
+
     </div>
 
   )
