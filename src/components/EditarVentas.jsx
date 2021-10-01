@@ -4,6 +4,14 @@ import '../styles/editarventas.css'
 
 const EditarVentas = () => {
 
+  const [data, setdata] = useState([])
+
+  useEffect(() => {
+    fetch('https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db')
+      .then(response => response.json())
+      .then(dat => setdata(dat.ventas));
+  }, [])
+
 
   const [producto, setProducto] = useState({})
   const [productos, setProductos] = useState({})
@@ -54,6 +62,10 @@ const EditarVentas = () => {
           <li id="li4-edv">cantidad</li>
           <li id="li5-edv">Acciones</li>
         </div>
+
+        {data.map((x, key) => {
+          if (x.codigo === "V0001") return x.productos.map((y, key) => <Productos key={key} props={y} />);
+        })}
 
         <button onClick={updateVenta} type="submit" className="boton-generico-header" id="boton-editar-ventas">Actualizar</button>
       </div>
