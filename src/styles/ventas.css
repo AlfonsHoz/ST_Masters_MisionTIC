@@ -1,4 +1,4 @@
-.info-container {
+.info-cont {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,10 +13,10 @@
   list-style: none;
 }
 
-.info-container li {
+.info-cont > li {
   margin-left: 6%;
 }
 
-.info-container img {
+.info-cont > img {
   padding: 0 2%;
 }

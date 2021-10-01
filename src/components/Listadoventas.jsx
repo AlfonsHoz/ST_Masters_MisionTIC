@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
-import "../styles/listadoventas.css";
-import Ventas from "./Ventas";
+import React, { useEffect, useState } from 'react'
+import '../styles/listadoventas.css'
+import Ventas from './Ventas';
 
 const Listadoventas = () => {
-  const [data, setdata] = useState([]);
+
+  const [data, setdata] = useState([])
 
   useEffect(() => {
-    fetch("https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db")
-      .then((response) => response.json())
-      .then((dat) => setdata(dat.ventas));
-  }, []);
+    fetch('https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db')
+      .then(response => response.json())
+      .then(dat => setdata(dat.ventas));
+  }, [])
 
   return (
     <div className="listadoventas-container">
@@ -21,10 +22,13 @@ const Listadoventas = () => {
         <li id="li4">Vendedor</li>
         <li id="li5">Acciones</li>
       </div>
-      {data.map((x, key) => {
-        return <Ventas key={key} props={x} />;
-      })}
+      {
+        data.map((x, key) => {
+          return <Ventas key={key} props={x} />;
+        })
+      }
+
     </div>
-  );
-};
-export default Listadoventas;
+  )
+}
+export default Listadoventas

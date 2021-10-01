@@ -1,0 +1,38 @@
+#li1-edv{
+  width: 15%;
+}
+
+#li2-edv{
+  width: 40%;
+}
+
+#li3-edv{
+  width: 15%;
+}
+
+#li4-edv{
+  width: 15%;
+}
+
+#li5-edv{
+  width: 15%;
+}
+
+.edit-prods-container{
+  display: flex;
+  justify-content: space-around;
+  background-color: #1A1E20;
+  width: 85%;
+  margin-left: 6%;
+  list-style: none;
+  color: azure;
+  padding: 1%;
+  font-size: 16;
+  font-weight: bold;
+  margin-bottom: 8px;
+  margin-top: 2%;
+}
+
+#boton-editar-ventas{
+  margin-left: 6%;
+}
