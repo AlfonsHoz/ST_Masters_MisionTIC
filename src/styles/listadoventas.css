@@ -1,0 +1,55 @@
+.listadoventas-container {
+  background-color: #1a1e20;
+  color: azure;
+  padding-bottom: 15%;
+  font-size: 14px;
+  padding-top: 3%;
+}
+
+.listadoventas-container h2 {
+  color: #dab74a;
+  margin-top: 0;
+  font-size: 1.6em;
+  margin-left: 6%;
+  margin-bottom: 5vh;
+}
+
+#column-titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #25272a;
+  font-weight: bold;
+  padding: 15px 30px;
+  width: 85%;
+  margin-right: 0;
+  margin-left: 6%;
+  margin-top: 1vh;
+  margin-bottom: 0;
+  list-style: none;
+  font-size: large;
+}
+
+#column-titles li {
+  margin-left: 6%;
+}
+
+#li1-li-vt {
+  width: 15%;
+}
+
+#li2-li-vt {
+  width: 15%;
+}
+
+#li3-li-vt {
+  width: 15%;
+}
+
+#li4-li-vt {
+  width: 40%;
+}
+
+#li5-li-vt {
+  width: 15%;
+}

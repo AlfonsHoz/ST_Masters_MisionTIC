@@ -1,0 +1,29 @@
+/* 
+* {
+    padding-left: 20px;
+} */
+
+#titulo {
+    color: white;
+    margin-bottom: 25px;
+    /* font-size: 20px; */
+}
+
+#contenedorConsulta {
+    background-color: #191c1f;
+    padding: 0.8% 0 0 5.8%;
+    display: flex;
+    flex-direction: column;
+}
+
+#campoBuscar {
+    color: white;
+    background-color: #191c1f;
+    border: 1.5px solid #54575a;
+    border-radius: 10px;
+    width: 17rem;
+    outline: none;
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+}

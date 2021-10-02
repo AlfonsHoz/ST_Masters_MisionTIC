@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './styles/listadoventas.css'
+import '../styles/listadoventas.css'
 import Ventas from './Ventas';
 
 const Listadoventas = () => {
@@ -12,25 +12,20 @@ const Listadoventas = () => {
       .then(dat => setdata(dat.ventas));
   }, [])
 
-  console.log(data);
-
   return (
     <div className="listadoventas-container">
       <h2>Listado de ventas realizadas</h2>
       <div id="column-titles">
-        <li id="li1">Fecha</li>
-        <li id="li2">Código</li>
-        <li id="li3">Precio total</li>
-        <li id="li4">Vendedor</li>
-        <li id="li5">Acciones</li>
+        <li id="li1-li-vt">Fecha</li>
+        <li id="li2-li-vt">Código</li>
+        <li id="li3-li-vt">Precio total</li>
+        <li id="li4-li-vt">Vendedor</li>
+        <li id="li5-li-vt">Acciones</li>
       </div>
-      {
-        data.map((x, key) => {
-          return <Ventas key={key} props={x} />;
-        })
-      }
-
+      {data.map((x, key) => {
+        return <Ventas key={key} props={x} />;
+      })}
     </div>
-  )
-}
-export default Listadoventas
+  );
+};
+export default Listadoventas;
