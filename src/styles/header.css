@@ -38,15 +38,9 @@ header img {
 }
 
 .contenido {
-<<<<<<< HEAD
     position: absolute;
     padding-top: 6%;
     padding-left: 5.8%;
-=======
-  position: absolute;
-  padding-top: 6%;
-  padding-left: 5.8%;
->>>>>>> d97a3ae7e87fb9eb52c4b7439d69cb18b3231c9f
 }
 
 .boton-generico-header {

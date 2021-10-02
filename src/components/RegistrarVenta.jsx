@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import '../styles/registrarVenta.css';
+import '../styles/ventas.css';
 import { TablaProductosVenta } from './TablaProductosVenta';
 
 export const RegistrarVenta = () => {
