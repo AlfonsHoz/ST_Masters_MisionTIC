@@ -12,7 +12,7 @@ import UsuariosRegistrarPage from "./pages/usuarios/UsuariosRegistrarPage";
 import UsuariosConsultarPage from "./pages/usuarios/UsuariosConsultarPage";
 import UsuariosEditarPage from "./pages/usuarios/UsuariosEditarPage";
 
-import Productos from "./pages/ProductosPage";
+import Productos from "./pages/productos/ProductosPage";
 
 function App() {
   return <>

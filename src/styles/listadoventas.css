@@ -1,14 +1,13 @@
 .listadoventas-container {
-  background-color: #1A1E20;
+  background-color: #1a1e20;
   color: azure;
   padding-bottom: 15%;
   font-size: 14px;
   padding-top: 3%;
 }
 
-
 .listadoventas-container h2 {
-  color: #DAB74A;
+  color: #dab74a;
   margin-top: 0;
   font-size: 1.6em;
   margin-left: 6%;
@@ -19,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #25272A;
+  background-color: #25272a;
   font-weight: bold;
   padding: 15px 30px;
   width: 85%;
@@ -31,26 +30,26 @@
   font-size: large;
 }
 
-#column-titles li{
+#column-titles li {
   margin-left: 6%;
 }
 
-#li1 {
+#li1-li-vt {
   width: 15%;
 }
 
-#li2 {
+#li2-li-vt {
   width: 15%;
 }
 
-#li3 {
+#li3-li-vt {
   width: 15%;
 }
 
-#li4 {
+#li4-li-vt {
   width: 40%;
 }
 
-#li5 {
+#li5-li-vt {
   width: 15%;
 }

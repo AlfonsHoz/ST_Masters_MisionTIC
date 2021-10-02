@@ -1,6 +1,15 @@
 import React from 'react'
 
 const ResConsultaProductos = ({ props }) => {
+
+  const [data, setdata] = useState([])
+
+  useEffect(() => {
+    fetch('https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db')
+      .then(response => response.json())
+      .then(dat => setdata(dat.productos));
+  }, [])
+
   return (
     <div>
       <div id="column-titles">
@@ -9,7 +18,10 @@ const ResConsultaProductos = ({ props }) => {
         <li id="li3">Precio Unitario</li>
         <li id="li4">Acciones</li>
       </div>
-      <Productos props={props} />
+      {data.map((x) => {
+        return (x.codigo_producto === "PN0001") ? <Productos props={x} /> : ``;
+      }
+      )}
     </div>
   )
 }

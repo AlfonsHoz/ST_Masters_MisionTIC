@@ -9,6 +9,12 @@ const EditarUsuarios = () => {
       alert("Se ha actualizado el usuario.");
   }
 
+export default function EditarUsuarios() {
+
+  const updateUser = () => {
+    alert('Se ha actualizado el usuario')
+  }
+
   return (
     <Container fluid id="container" className="m-0">
       <Row>

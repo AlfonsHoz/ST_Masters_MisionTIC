@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import '../styles/listadoUsuarios.css';
-import { TablaUsuarios } from './TablaUsuarios';
+import React, { useEffect, useState } from "react";
+import "../styles/listadoUsuarios.css";
+import { TablaUsuarios } from "./TablaUsuarios";
 
 export const ListadoUsuarios = () => {
+  const [data, setdata] = useState([]);
 
-    const [data, setdata] = useState([])
-
-    useEffect(() => {
-        fetch('https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db')
-            .then(response => response.json())
-            .then(dat => setdata(dat.usuarios));
-    }, []);
+  useEffect(() => {
+    fetch("https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db")
+      .then((response) => response.json())
+      .then((dat) => setdata(dat.usuarios));
+  }, []);
 
     return (
         <div id="contenedorListadoUsuarios">

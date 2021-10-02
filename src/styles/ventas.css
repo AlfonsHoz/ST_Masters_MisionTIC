@@ -8,16 +8,15 @@
   margin-top: 1vh;
   margin-bottom: 0;
   font-weight: bold;
-  background-color: #2A2E32;
+  background-color: #2a2e32;
   padding: 15px 30px;
   list-style: none;
 }
 
-.info-cont > li{
+.info-cont li {
   margin-left: 6%;
 }
 
-.info-cont > img{
+.info-cont img {
   padding: 0 2%;
 }
-

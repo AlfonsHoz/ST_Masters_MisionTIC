@@ -22,13 +22,10 @@ const Listadoproductos = () => {
         <li id="li3">Precio Unitario</li>
         <li id="li4">Acciones</li>
       </div>
-      {
-        data.map((x, key) => {
-          return <Productos key={key} props={x} />;
-        })
-      }
-
+      {data.map((x, key) => {
+        return <Productos key={key} props={x} />;
+      })}
     </div>
-  )
-}
-export default Listadoproductos
+  );
+};
+export default Listadoproductos;
