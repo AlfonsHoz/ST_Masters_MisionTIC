@@ -1,13 +1,12 @@
 import React from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import "../styles/editar_usuarios.css";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const EditarUsuarios = () => {
-
   const editarUsuario = () => {
-      alert("Se ha actualizado el usuario.");
-  }
+    alert("Se ha actualizado el usuario.");
+  };
 
   return (
     <Container fluid id="container" className="m-0">
@@ -97,7 +96,13 @@ const EditarUsuarios = () => {
             </Row>
             <Row>
               <Col col={6} id="col-actu" className="d-flex justify-content-end">
-                <Button className="cursor-pointer" id="boton_actualizar" onClick={editarUsuario}>Actualizar usuario</Button>
+                <Button
+                  className="cursor-pointer"
+                  id="boton_actualizar"
+                  onClick={editarUsuario}
+                >
+                  Actualizar usuario
+                </Button>
               </Col>
               <Col
                 col={6}
@@ -105,9 +110,9 @@ const EditarUsuarios = () => {
                 className="d-flex justify-content-start"
               >
                 <Link to="/usuarios">
-                <Button className="cursor-pointer" id="boton_cancelar" p-10>
-                  Cancelar
-                </Button>
+                  <Button className="cursor-pointer" id="boton_cancelar" p-10>
+                    Cancelar
+                  </Button>
                 </Link>
               </Col>
             </Row>
@@ -116,6 +121,6 @@ const EditarUsuarios = () => {
       </Form>
     </Container>
   );
-}
+};
 
 export default EditarUsuarios;

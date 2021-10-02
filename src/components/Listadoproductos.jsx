@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import '../styles/listadoproducto.css'
-import Productos from './Productos';
+import React, { useEffect, useState } from "react";
+import "../styles/listadoproducto.css";
+import Productos from "./Productos";
 
-
-const Listadoproductos = () => {
-
-  const [data, setdata] = useState([])
+const ListadoProductos = () => {
+  const [data, setdata] = useState([]);
 
   useEffect(() => {
-    fetch('https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db')
-      .then(response => response.json())
-      .then(dat => setdata(dat.productos));
-  }, [])
+    fetch("https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db")
+      .then((response) => response.json())
+      .then((dat) => setdata(dat.productos));
+  }, []);
 
   return (
     <div className="listadoproductos-container">
@@ -28,4 +26,4 @@ const Listadoproductos = () => {
     </div>
   );
 };
-export default Listadoproductos;
+export default ListadoProductos;

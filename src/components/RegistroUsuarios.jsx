@@ -38,7 +38,7 @@ const RegistroUsuarios = () => {
       alert("Se ha agregado el usuario.");
       cleanUpTextFields();
     } else {
-      alert('Ingrese toda la información, por favor.');
+      alert("Ingrese toda la información, por favor.");
     }
   };
 

@@ -2,21 +2,19 @@ import React from "react";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import ConsultarProducto from "../../components/ConsultarProducto";
-import ListadoProductos from "../../components/Listadoproductos";
 
-const ProductosPage = () => {
+const VentasPage = () => {
   return (
     <>
       <Navbar />
       <Header
-        textoBoton={"Nuevo producto"}
-        texto={"productos"}
-        link={"/productos/consultar"}
+        textoBoton={"Nueva venta"}
+        texto={"ventas"}
+        link={"/ventas/registrar"}
       />
       <ConsultarProducto />
-      <ListadoProductos />
     </>
   );
 };
 
-export default ProductosPage;
+export default VentasPage;

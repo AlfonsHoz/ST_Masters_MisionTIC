@@ -25,7 +25,11 @@ export const Login = () => {
                 Olvidé mi contraseña
               </a>
             </div>
+<<<<<<< HEAD:src/components/Login.jsx
+            <Link to="/ventas">
+=======
             <Link to={"/ventas"}>
+>>>>>>> 6c491186edfa9f6779ad697c958ee4023af1eec1:src/pages/Login.jsx
               <button id="boton-login" class="boton-generico" type="submit">
                 Iniciar sesión
               </button>
@@ -35,7 +39,11 @@ export const Login = () => {
                 <img id="logo_google" src={logo_google} alt="logo de google" />
                 Iniciar con Gmail
               </button>
+<<<<<<< HEAD:src/components/Login.jsx
+            </ Link>
+=======
             </Link>
+>>>>>>> 6c491186edfa9f6779ad697c958ee4023af1eec1:src/pages/Login.jsx
           </form>
         </div>
       </div>
