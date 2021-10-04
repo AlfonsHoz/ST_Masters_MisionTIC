@@ -1,8 +1,8 @@
-
-#titulo {
+#tituloUsuario {
     color: white;
     margin-bottom: 25px;
     /* font-size: 20px; */
+    margin-left: 0;
 }
 
 #contenedorBuscar {
