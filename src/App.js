@@ -8,7 +8,8 @@ import VentasCons from "./pages/ventas/VentasConsultarPage"
 import VentasEdit from "./pages/ventas/VentasEditarPage"
 
 import Usuarios from "./pages/usuarios/UsuariosPage";
-import { Productos } from "./pages/productos/ProductosPage";
+
+import Productos from "./pages/productos/ProductosPage";
 
 function App() {
   return <>
@@ -39,6 +40,7 @@ function App() {
         exact path="/productos">
         <Productos />
       </Route>
+
 
 
       <Route
