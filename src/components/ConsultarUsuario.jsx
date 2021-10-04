@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/consultarUsuario.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ConsultarUsuario = () => {
     return (
@@ -21,7 +21,7 @@ const ConsultarUsuario = () => {
                     <input id="campoBuscar" name="buscarUsuario" type="text" placeholder="Ingresa el nombre o identificación del usuario" />
                 </div>
             </div>
-            <Link to="usuarios/consultar">
+            <Link to="/usuarios/consultar">
                 <button class="boton-generico-header">Consultar</button>
             </Link>
         </div>

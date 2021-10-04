@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
-import EditarVentas from "../../components/EditarVentas";
+import { EditarProductos } from "../../components/EditarProductos";
 
 const ProductosPage = () => {
   return (
@@ -12,9 +12,9 @@ const ProductosPage = () => {
         texto={"productos"}
         link={"/ventas/consultar"}
       />
-      <EditarVentas />
+      <EditarProductos />
     </>
   );
 };
 
-export default VentasPage;
+export default ProductosPage;

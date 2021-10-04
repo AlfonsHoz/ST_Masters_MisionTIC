@@ -14,6 +14,8 @@ import UsuariosConsultarPage from "./pages/usuarios/UsuariosConsultarPage";
 import UsuariosEditarPage from "./pages/usuarios/UsuariosEditarPage";
 
 import Productos from "./pages/productos/ProductosPage";
+import ProductosConsultar from "./pages/productos/ProductosConsultarPage";
+import ProductosEditar from "./pages/productos/ProductosEditarPage";
 
 function App() {
   return (
@@ -40,13 +42,13 @@ function App() {
           <Productos />
         </Route>
         <Route exact path="/productos/registrar">
-          <Productos />
+
         </Route>
         <Route exact path="/productos/consultar">
-          <Productos />
+          <ProductosConsultar />
         </Route>
         <Route exact path="/productos/editar">
-          <Productos />
+          <ProductosEditar />
         </Route>
 
         <Route exact path="/usuarios">

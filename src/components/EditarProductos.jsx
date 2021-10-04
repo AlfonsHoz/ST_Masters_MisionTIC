@@ -17,7 +17,8 @@ export const EditarProductos = () => {
       </Row>
       <Form>
         <Row>
-          // -------------CONTENIDO DEL FORMULARIO ---------------
+          {// -------------CONTENIDO DEL FORMULARIO ---------------
+          }
           <Col id="contenido_form" className="col-12">
             <Row>
               <Col id="col-izquierda" className="xs-12 sm-12 md-12 lg-12">
@@ -78,7 +79,8 @@ export const EditarProductos = () => {
               </Col>
             </Row>
           </Col>
-          // ---------------------------------------------------------
+          {// ---------------------------------------------------------
+          }
         </Row>
       </Form>
     </Container>
