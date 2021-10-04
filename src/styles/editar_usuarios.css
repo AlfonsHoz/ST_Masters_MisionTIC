@@ -57,6 +57,8 @@ h2 {
 }
 
 #boton_cancelar {
+  width: 390.19px;
+  height: 39px;
   border-radius: 50px;
   border: none;
   background-color: #2a2e32;

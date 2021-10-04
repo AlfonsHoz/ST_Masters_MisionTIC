@@ -1,3 +1,30 @@
+#img_navbar {
+  cursor: pointer;
+  height: 4%;
+  width: 4%;
+}
+
+.Link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #dab74a;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  padding: 0px 5.8% 0px 5.8%;
+}
+
+/*
+
 nav ul {
   display: flex;
   list-style: none;
@@ -9,6 +36,7 @@ nav ul {
 }
 
 nav {
+  width: 100%;
   float: right;
   position: absolute;
   background-color: #1a1e20;
@@ -35,7 +63,9 @@ nav img {
   cursor: pointer;
 }
 
-a {
+a .nav-link {
   text-decoration: none;
-  color: inherit;
+  color: white;
 }
+
+*/
