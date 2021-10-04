@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import EditarVentas from "./components/EditarVentas"
-import ListadoProductos from "./components/Listadoproductos";
 import { Login } from "./pages/Login";
 
 import Ventas from "./pages/ventas/VentasPage";

@@ -32,13 +32,13 @@ const EditarVentas = () => {
   }, [])
 
   return (
-    <div>
+    <div id="EditarVentas">
       <div>
-        <h2>Actualizar ventas </h2>
-        <label>Código venta <br />
+        <h2 id="act-ven">Actualizar ventas </h2>
+        <label id="cod-ven">Código venta <br />
           <p></p>
         </label>
-        <label>ID Vendedor: <br />
+        <label id="id-ven">ID Vendedor: <br />
           <input type="number" placeholder="Ingrese el id"></input>
         </label>
         <label>Nombre vendedor: <br />
@@ -55,13 +55,6 @@ const EditarVentas = () => {
         <button type="submit"> Agregar producto </button>
       </div>
       <div>
-        <div className="edit-prods-container">
-          <li id="li1-edv">Código producto</li>
-          <li id="li2-edv">Nombre</li>
-          <li id="li3-edv">Precio Unitario</li>
-          <li id="li4-edv">cantidad</li>
-          <li id="li5-edv">Acciones</li>
-        </div>
 
         {data.map((x, key) => {
           if (x.codigo === "V0001") return x.productos.map((y, key) => <ProdsEditVent key={key} props={y} />);
