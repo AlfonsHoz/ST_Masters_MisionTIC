@@ -34,7 +34,7 @@ const RegistroUsuarios = () => {
 
   const submitTextFields = () => {
     console.log(id.value, name.value, rol.value, pass.value);
-    if (!(id.value === '' || name.value === '' || pass.value === '')) {
+    if (!(id.value === "" || name.value === "" || pass.value === "")) {
       alert("Se ha agregado el usuario.");
       cleanUpTextFields();
     } else {

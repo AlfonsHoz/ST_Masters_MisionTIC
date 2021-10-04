@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
+import NavBar from "../../components/Navbar";
 import Header from "../../components/Header";
 import ConsultarProducto from "../../components/ConsultarProducto";
 import ListadoProductos from "../../components/Listadoproductos";
@@ -7,7 +7,7 @@ import ListadoProductos from "../../components/Listadoproductos";
 const ProductosPage = () => {
   return (
     <>
-      <Navbar />
+      <NavBar />
       <Header
         textoBoton={"Nuevo producto"}
         texto={"productos"}

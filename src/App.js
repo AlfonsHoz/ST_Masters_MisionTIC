@@ -8,7 +8,7 @@ import VentasReg from "./pages/ventas/VentasRegistrarPage";
 import VentasCons from "./pages/ventas/VentasConsultarPage";
 import VentasEdit from "./pages/ventas/VentasEditarPage";
 
-import UsuariosPage from "./pages/usuarios/UsuariosPage";
+import Usuarios from "./pages/usuarios/UsuariosPage";
 import UsuariosRegistrarPage from "./pages/usuarios/UsuariosRegistrarPage";
 import UsuariosConsultarPage from "./pages/usuarios/UsuariosConsultarPage";
 import UsuariosEditarPage from "./pages/usuarios/UsuariosEditarPage";
@@ -49,23 +49,19 @@ function App() {
           <Productos />
         </Route>
 
-        <Route
-          exact path="/usuarios">
-          <UsuariosPage />
+        <Route exact path="/usuarios">
+          <Usuarios />
         </Route>
-        <Route
-          exact path="/usuarios/registrar">
+        <Route exact path="/usuarios/registrar">
           <UsuariosRegistrarPage />
         </Route>
-        <Route
-          exact path="/usuarios/consultar">
+        <Route exact path="/usuarios/consultar">
           <UsuariosConsultarPage />
         </Route>
-        <Route
-          exact path="/usuarios/editar">
+        <Route exact path="/usuarios/editar">
           <UsuariosEditarPage />
         </Route>
-      </Router >
+      </Router>
     </>
   );
 }

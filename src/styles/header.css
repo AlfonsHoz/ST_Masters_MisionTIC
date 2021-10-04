@@ -1,6 +1,5 @@
-
-#tituloHeader {
-  margin-left: 0;
+section {
+  display: flex;
 }
 
 section {
@@ -8,12 +7,12 @@ section {
 }
 
 header {
-  background-image: url("../assets/img/fondo-nuevo.jpg");
+  background-image: url("../assets/img/fondo-cabecera.jpeg");
   width: 100vw;
-  height: 300px;
+  height: 360px;
   color: white;
   /* text-align: center; */
-  background-position: center center;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -37,10 +36,10 @@ header img {
   top: 25vh;
 }
 
-.contenido {
-    position: absolute;
-    padding-top: 6%;
-    padding-left: 5.8%;
+#contenido-header {
+  position: absolute;
+  padding-top: 7.5rem;
+  padding-left: 5.8%;
 }
 
 .boton-generico-header {
