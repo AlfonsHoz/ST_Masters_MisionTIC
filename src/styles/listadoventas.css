@@ -1,9 +1,9 @@
 .listadoventas-container {
-  background-color: #1a1e20;
+  background-color: #191c1f;
   color: azure;
   padding-bottom: 15%;
   font-size: 14px;
-  padding-top: 3%;
+  padding-top: 2rem;
 }
 
 .listadoventas-container h2 {

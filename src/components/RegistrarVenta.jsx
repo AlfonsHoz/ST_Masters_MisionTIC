@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/registrarVenta.css';
 import { TablaProductosVenta } from './TablaProductosVenta';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const RegistrarVenta = () => {
 
@@ -17,9 +19,22 @@ export const RegistrarVenta = () => {
         alert("Se ha registrado la venta.");
     }
 
+    const mostrarMensaje = () => {
+        toast.success('Venta registrada correctamente!', {
+            position: 'bottom-center',
+            background: '#191c1f !important',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
+
     return (
         <div id="contenedor">
-            <h2>Nueva venta</h2>
+            <h2 id="tituloNuevaVenta">Nueva venta</h2>
             <div className="columna">
                 <div className="campoLabel">
                     <label htmlFor="codigoVenta">Código de venta:</label>
@@ -77,12 +92,13 @@ export const RegistrarVenta = () => {
                             }
                         </tbody>
                         <button className="boton-generico-header"
-                            onClick={register}
+                            onClick={mostrarMensaje}
                         >Agregar venta</button>
                     </table>
                     <span id="volver">Volver arriba</span>
                 </div>
             </div>
+            <ToastContainer theme='dark' />
         </div>
     );
 }

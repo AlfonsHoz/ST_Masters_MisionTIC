@@ -7,12 +7,12 @@ section {
 }
 
 header {
-  background-image: url("../assets/img/fondo-nuevo.jpg");
+  background-image: url("../assets/img/fondo-cabecera.jpeg");
   width: 100vw;
-  height: 300px;
+  height: 360px;
   color: white;
   /* text-align: center; */
-  background-position: center center;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -36,9 +36,9 @@ header img {
   top: 25vh;
 }
 
-.contenido {
+#contenido-header {
   position: absolute;
-  padding-top: 100px;
+  padding-top: 7.5rem;
   padding-left: 5.8%;
 }
 
@@ -46,10 +46,10 @@ header img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 190px;
   border-radius: 21px;
   border: none;
-  margin-top: 30px;
+  padding: 20px;
+  /*margin-top: 30px;*/
   font-weight: bold;
   height: 40px;
   font-size: 18px;
@@ -61,4 +61,16 @@ header img {
 .boton-generico-header:hover {
   cursor: pointer;
   background-color: #caa840;
+}
+
+.boton-generico-header:focus {
+  background-color: #caa840;
+}
+
+.boton-generico-cancelar {
+  background-color: #2a2e32;
+  color: white;
+  padding: 0 20px 0 20px;
+  border-radius: 21px;
+  border: none;
 }

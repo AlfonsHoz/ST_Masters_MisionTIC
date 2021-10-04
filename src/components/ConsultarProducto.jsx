@@ -18,6 +18,7 @@ const ConsultarProducto = () => {
                 placeholder="Ingresa el codigo o nombre del producto"
               ></Form.Control>
             </FormGroup>
+            <Button className="boton-generico-header">Consultar</Button>
           </Form>
         </Col>
       </Row>
