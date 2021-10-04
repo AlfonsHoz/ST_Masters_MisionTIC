@@ -43,19 +43,20 @@ header img {
 }
 
 .boton-generico-header {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 190px;
   border-radius: 21px;
   border: none;
-  margin-top: 30px;
-  font-weight: bold;
-  height: 40px;
+  font-weight: 495;
   font-size: 18px;
+  height: 40px;
+  width: 190px;
   outline: none;
   color: #1a1e20;
   background-color: #dab74a;
+  margin-right: 0;
 }
 
 .boton-generico-header:hover {

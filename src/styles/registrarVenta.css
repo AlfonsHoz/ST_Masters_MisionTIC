@@ -16,6 +16,10 @@ ToastContainer {
   flex-direction: column;
 }
 
+#boton-registrar-venta {
+  margin-top: 1rem;
+}
+
 .columna {
   display: flex;
 }

@@ -5,12 +5,14 @@
   width: 85%;
   margin-right: 6%;
   margin-left: 6%;
-  margin-top: 1vh;
+  margin-top: 1px;
   margin-bottom: 0;
-  font-weight: bold;
+  /* font-weight: bold; */
   background-color: #2a2e32;
   padding: 15px 30px;
   list-style: none;
+  font-size: 16px;
+  height: 44.9px;
 }
 
 .info-cont li {

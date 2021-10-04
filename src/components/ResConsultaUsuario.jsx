@@ -13,7 +13,7 @@ const ResConsultaUsuario = ({ props }) => {
 
   return (
     <>
-      <div id="tablaUsuarios">
+      <div id="tablaConsUsuarios">
         <table>
           <thead>
             <tr>

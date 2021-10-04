@@ -14,7 +14,7 @@ const Listadoventas = () => {
 
   return (
     <div className="listadoventas-container">
-      <h2>Listado de ventas realizadas</h2>
+      <h2 id="tituloTablaVentas">Listado de ventas realizadas</h2>
       <div id="column-titles">
         <li id="li1-li-vt">Fecha</li>
         <li id="li2-li-vt">Código</li>

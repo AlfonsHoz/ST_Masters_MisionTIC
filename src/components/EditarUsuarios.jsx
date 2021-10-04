@@ -2,17 +2,32 @@ import React from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import "../styles/editar_usuarios.css";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EditarUsuarios = () => {
   const editarUsuario = () => {
     alert("Se ha actualizado el usuario.");
   };
 
+  const mostrarMensaje = () => {
+    toast.success('Usuario actualizado correctamente!', {
+        position: 'bottom-center',
+        background: '#191c1f !important',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+}
+
   return (
     <Container fluid id="container" className="m-0">
       <Row>
         <Col id="titulo" className="col-12 mt-6">
-          <h2>Actualizar usuario</h2>
+          <h2 id="titulo-actualizar-usuario">Actualizar usuario</h2>
         </Col>
       </Row>
       <Form>
@@ -99,7 +114,7 @@ const EditarUsuarios = () => {
                 <Button
                   className="cursor-pointer"
                   id="boton_actualizar"
-                  onClick={editarUsuario}
+                  onClick={mostrarMensaje}
                 >
                   Actualizar usuario
                 </Button>
@@ -109,7 +124,7 @@ const EditarUsuarios = () => {
                 id="col-cancel"
                 className="d-flex justify-content-start"
               >
-                <Link to="/usuarios">
+                <Link id="link" to="/usuarios">
                   <Button className="cursor-pointer" id="boton_cancelar" p-10>
                     Cancelar
                   </Button>
@@ -119,6 +134,7 @@ const EditarUsuarios = () => {
           </Col>
         </Row>
       </Form>
+      <ToastContainer theme="dark" />
     </Container>
   );
 };

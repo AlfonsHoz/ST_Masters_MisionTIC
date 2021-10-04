@@ -1,7 +1,5 @@
 import React from "react";
 import "../styles/productos.css";
-import { tr, td } from "react-bootstrap";
-import ojo from "./images/ojo.svg";
 import lapiz from "../assets/img/lapiz.svg";
 import borrar from "./images/eliminar.svg";
 

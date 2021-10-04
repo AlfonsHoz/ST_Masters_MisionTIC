@@ -13,12 +13,13 @@ const ConsultarProducto = () => {
           <Form>
             <FormGroup className="mb-3">
               <Form.Label>Buscar producto:</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Ingresa el codigo o nombre del producto"
-              ></Form.Control>
+                <Form.Control
+                  className="campo-buscar-producto"
+                  type="text"
+                  placeholder="Ingresa el codigo o nombre del producto"
+                ></Form.Control>
+              <Button id="boton-producto" className="boton-generico-header">Consultar</Button>
             </FormGroup>
-            <Button className="boton-generico-header">Consultar</Button>
           </Form>
         </Col>
       </Row>

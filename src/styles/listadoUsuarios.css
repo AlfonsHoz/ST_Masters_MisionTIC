@@ -1,6 +1,8 @@
 #tituloListadoUsuarios {
   color: #e2be4c;
   margin-left: 0;
+  /* margin-top: 2rem; */
+  font-size: 22.4px;
 }
 
 #contenedorListadoUsuarios {
@@ -8,11 +10,13 @@
   flex-direction: column;
   padding-left: 5.8%;
   padding-right: 3%;
-  padding-top: 1%;
+  padding-top: 2rem;
   background-color: #191c1f;
 }
 
 #tablaUsuarios {
+  /* margin-left: 5.8%; */
+  /* margin-top: 2rem; */
   color: white;
   width: 95%;
 }
@@ -23,23 +27,39 @@
   width: 100%;
 }
 
+#tablaConsUsuarios {
+  margin-left: 5.8%;
+  margin-top: 2rem;
+  color: white;
+  width: 90%;
+}
+
+#tablaConsUsuarios > table {
+  text-align: left;
+  border-collapse: collapse;
+  width: 100%;
+}
+
 th,
 td {
-  padding: 14px;
+  /* padding: 14px; */
   padding-left: 70px;
+  height: 41.5px;
 }
 
 th {
-  background-color: #25272a;
+  background-color: #212529;
+  height: 41.5px;
 }
 
 td {
   background-color: #2a2e32;
-  border-bottom: solid 3px #1a1e20;
+  border-bottom: solid 0.1px #191c1f;
 }
 
 thead {
-  border-bottom: solid 3px #1a1e20;
+  border-bottom: solid 0.2rem #1a1e20;
+  height: 41.5px;
 }
 
 td > img:hover {
@@ -65,32 +85,6 @@ tr:hover td {
   cursor: pointer;
   color: #caa840;
 }
-
-/* @media screen and (max-width: 740px) {
-    table {
-        width:100%;
-    }
-    thead {
-        display: none;
-    }
-    tr:nth-of-type(2n) {
-        background-color: inherit;
-    }
-    tr th:first-child {
-        background: #1A1E20;
-        font-weight:bold;
-        font-size:1.3em;
-    }
-    tbody td {
-        display: block;
-        text-align:center;
-    }
-    tbody td:before {
-        content: attr(data-th);
-        display: block;
-        text-align:center;
-    }
-} */
 
 @media screen and (max-width: 740px) {
   table {

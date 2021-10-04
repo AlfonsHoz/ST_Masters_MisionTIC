@@ -15,10 +15,6 @@ export const RegistrarVenta = () => {
             .then(dat => setdata(dat.productos));
     }, []);
 
-    const register = () => {
-        alert("Se ha registrado la venta.");
-    }
-
     const mostrarMensaje = () => {
         toast.success('Venta registrada correctamente!', {
             position: 'bottom-center',
@@ -91,7 +87,7 @@ export const RegistrarVenta = () => {
                                 })
                             }
                         </tbody>
-                        <button className="boton-generico-header"
+                        <button id="boton-registrar-venta" className="boton-generico-header"
                             onClick={mostrarMensaje}
                         >Agregar venta</button>
                     </table>

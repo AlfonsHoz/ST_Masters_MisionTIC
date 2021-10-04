@@ -1,38 +1,43 @@
 #tituloUsuario {
-    color: white;
-    margin-bottom: 25px;
-    /* font-size: 20px; */
-    margin-left: 0;
+  color: white;
+  /* margin-bottom: 25px; */
+  font-size: 22.4px;
+  margin-left: 0;
+  margin-bottom: 1rem;
 }
 
-#contenedorBuscar {
-    background-color: #191c1f;
-    padding: 0.8% 0 0 5.8%;
-    display: flex;
-    flex-direction: column;
+#consultarUsuarios {
+  background-color: #191c1f;
+  padding: 2rem 0 0 5.8%;
+  display: flex;
+  flex-direction: column;
 }
-
 
 #campoLabel {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #contenedorForm {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
 }
 
-#campoBuscar {
-    text-align: center;
-    color: white;
-    background-color: #191c1f;
-    border: 1.5px solid #54575a;
-    border-radius: 10px;
-    width: 19rem;
-    outline: none;
-    font-size: 15px;
-    padding: 10px;
-    margin-bottom: 15px;
-    margin-right: 2rem;
+.campo-buscar-usuario {
+  text-align: center;
+  color: white;
+  background-color: #191c1f;
+  border: 1.5px solid #54575a;
+  border-radius: 10px;
+  width: 23rem;
+  outline: none;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-right: 2rem;
+}
+
+#boton-registrar-usuario {
+  position: static;
 }

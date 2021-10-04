@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/registrousuarios.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RegistroUsuarios = () => {
   const [id, setId] = useState({});
@@ -42,6 +44,26 @@ const RegistroUsuarios = () => {
     }
   };
 
+  const configMensaje = {
+    position: 'bottom-center',
+    background: '#191c1f !important',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  }
+
+  const mostrarMensaje = () => {
+    if (!(id.value === "" || name.value === "" || pass.value === "")) {
+      toast.success('Usuario registrado correctamente!', configMensaje);
+      cleanUpTextFields();
+    } else {
+      toast.error('Llene todos los campos!', configMensaje);
+    }
+}
+
   return (
     <>
       <div id="reg-usr-container">
@@ -79,7 +101,7 @@ const RegistroUsuarios = () => {
         <div className="form-reg-usrs">
           <label className="lbl-reg-usr">
             Estado:
-            <p className="text-field">Activo</p>
+            <input type="text"  disabled className="text-field" value="Activo" />
           </label>
           <label className="lbl-reg-usr">
             Contraseña: <br />
@@ -96,13 +118,14 @@ const RegistroUsuarios = () => {
           <label className="lbl-reg-usr"></label>
         </div>
         <div id="bottom-btns-container">
-          <button type="submit" onClick={submitTextFields} id="btn-registrar">
+          <button type="submit" onClick={mostrarMensaje} id="btn-registrar">
             Registar usuario
           </button>
           <button id="btn-limpiar" onClick={cleanUpTextFields}>
             Limpiar
           </button>
         </div>
+        <ToastContainer theme='dark' />
       </div>
     </>
   );

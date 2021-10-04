@@ -17,7 +17,7 @@ const ListadoProductos = () => {
     <Container fluid id="content-tbl-prod">
       <Row className="mb-4">
         <Col>
-          <h2>Listado productos</h2>
+          <h2 id="titulo-consultar-producto">Listado productos</h2>
         </Col>
       </Row>
       <Row>
