@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/login.css";
 import logo from "../assets/img/logo.svg";
 import logo_google from "../assets/img/logo-google.svg";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export const Login = () => {
   return (
@@ -25,7 +25,7 @@ export const Login = () => {
                 Olvidé mi contraseña
               </a>
             </div>
-            <Link to={"/ventas"}>
+            <Link to="/ventas">
               <button id="boton-login" class="boton-generico" type="submit">
                 Iniciar sesión
               </button>
