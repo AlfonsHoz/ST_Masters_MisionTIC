@@ -40,6 +40,7 @@
 
 #boton-registrar-usuario {
   position: static;
+  width: 250px;
 }
 
 #link-consultar-usuario {

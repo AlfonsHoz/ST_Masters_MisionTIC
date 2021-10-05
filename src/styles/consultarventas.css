@@ -49,7 +49,12 @@
   outline: none;
 }
 
-#botonConsultarVentas {
-  margin-left: 5.8%;
+#botonConsultarVentas,
+#consultar-ventas-link {
   position: static;
+  width: 250px;
+}
+
+#consultar-ventas-link {
+  margin-left: 5.8%;
 }

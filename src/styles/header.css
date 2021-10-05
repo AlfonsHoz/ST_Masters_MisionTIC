@@ -43,23 +43,39 @@ header img {
 }
 
 .boton-generico-header {
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 21px;
   border: none;
-  font-weight: 495;
-  font-size: 18px;
+  padding: 20px;
+  /*margin-top: 30px;*/
+  font-weight: 490;
   height: 40px;
-  width: 190px;
+  font-size: 18px;
   outline: none;
   color: #1a1e20;
   background-color: #dab74a;
-  margin-right: 0;
 }
 
 .boton-generico-header:hover {
   cursor: pointer;
   background-color: #caa840;
+}
+
+.boton-generico-header:focus {
+  background-color: #caa840;
+}
+
+.boton-generico-cancelar {
+  background-color: #2a2e32;
+  color: white;
+  padding: 0 20px 0 20px;
+  border-radius: 21px;
+  border: none;
+}
+
+#boton-header {
+  width: 250px;
+  position: absolute;
 }

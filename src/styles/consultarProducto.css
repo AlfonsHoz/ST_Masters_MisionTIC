@@ -22,6 +22,7 @@
 
 #boton-producto {
   position: static;
+  width: 250px;
 }
 
 #form-productos {

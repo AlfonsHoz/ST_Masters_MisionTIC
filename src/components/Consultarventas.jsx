@@ -23,7 +23,7 @@ const Consultarventas = () => {
                   <input className="campoConsultarVenta" id="ingreseDatos" type="text" name="text" placeholder="Ingrese datos"></input>
             </div>
             </div>
-                <Link to={"/ventas/consultar"}>
+                <Link id="consultar-ventas-link" to={"/ventas/consultar"}>
                   <button
                     id="botonConsultarVentas"
                     className="boton-generico-header"
