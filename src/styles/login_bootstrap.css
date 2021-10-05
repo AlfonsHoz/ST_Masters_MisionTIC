@@ -30,7 +30,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 #col-der img {
@@ -98,7 +98,7 @@ h3 {
   border: none;
   margin-top: 35px;
   color: #1a1e20;
-  font-weight: bold;
+  font-weight: 500;
   background-color: #dab74a;
   height: 50px;
   font-size: 18px;
