@@ -31,16 +31,6 @@ const RegistroUsuarios = () => {
     pass.value = "";
   };
 
-  const submitTextFields = () => {
-    console.log(id.value, name.value, rol.value, pass.value);
-    if (!(id.value === "" || name.value === "" || pass.value === "")) {
-      alert("Se ha agregado el usuario.");
-      cleanUpTextFields();
-    } else {
-      alert("Ingrese toda la información, por favor.");
-    }
-  };
-
   const configMensaje = {
     position: "bottom-center",
     background: "#191c1f !important",
@@ -123,33 +113,6 @@ const RegistroUsuarios = () => {
             </button>
           </div>
         </form>
-        <div className="form-reg-usrs">
-          <label className="lbl-reg-usr">
-            Estado:
-            <input type="text" disabled className="text-field" value="Activo" />
-          </label>
-          <label className="lbl-reg-usr">
-            Contraseña: <br />
-            <input
-              ref={passRef}
-              className="text-field"
-              type="password"
-              placeholder="Ingresa la contraseña"
-            />
-          </label>
-          {
-            // label vacio para arreglar el espacio en blanco.
-          }
-          <label className="lbl-reg-usr"></label>
-        </div>
-        <div id="bottom-btns-container">
-          <button type="submit" onClick={mostrarMensaje} id="btn-registrar">
-            Registar usuario
-          </button>
-          <button id="btn-limpiar" onClick={cleanUpTextFields}>
-            Limpiar
-          </button>
-        </div>
         <ToastContainer theme="dark" />
       </div>
     </>
