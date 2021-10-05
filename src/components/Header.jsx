@@ -6,7 +6,7 @@ const Header = ({ textoBoton, texto, link }) => {
   return (
     <section>
       <header>
-        <div className="contenido">
+        <div id="contenido-header">
           <h2 id="tituloHeader">{`Gestionar ${texto}`}</h2>
           <p>{`En este módulo podrás consultar toda la información relacionada a ${texto}.`}</p>
           <Link to={link}>

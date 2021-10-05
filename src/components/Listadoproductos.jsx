@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Table, Row, Col } from "react-bootstrap";
+import { Container, Table, Row, Col, Button } from "react-bootstrap";
 import "../styles/listadoproducto.css";
 import Productos from "./Productos";
 

@@ -1,0 +1,24 @@
+#container_reg_prod {
+  padding: 0.8% 5.8% 0 5.8%;
+}
+
+Form {
+  margin: 50px 0 50px 0;
+}
+
+#fila_inputs_reg_prod {
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+
+#fila_botones_reg_prod {
+  margin: 10px 0 10px 0;
+}
+
+#btn_reg_pro {
+  width: 70%;
+}
+
+#btn_cancel_pro {
+  width: 70%;
+}

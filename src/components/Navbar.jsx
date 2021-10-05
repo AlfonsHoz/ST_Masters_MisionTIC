@@ -7,7 +7,7 @@ import "../styles/navbar.css";
 const NavBar = () => {
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
+      <Navbar collapseOnSelect expand="lg" variant="dark" fixed="top">
         <Container fluid>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse className="justify-content-center">
