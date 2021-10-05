@@ -63,3 +63,15 @@ header img {
   cursor: pointer;
   background-color: #caa840;
 }
+
+.boton-generico-header:focus {
+  background-color: #caa840;
+}
+
+.boton-generico-cancelar {
+  background-color: #2a2e32;
+  color: white;
+  padding: 0 20px 0 20px;
+  border-radius: 21px;
+  border: none;
+}

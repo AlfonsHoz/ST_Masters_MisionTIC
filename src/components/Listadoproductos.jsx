@@ -12,7 +12,6 @@ const ListadoProductos = () => {
       .then((dat) => setdata(dat.productos));
   }, []);
 
-
   return (
     <Container fluid id="content-tbl-prod">
       <Row className="mb-4">
