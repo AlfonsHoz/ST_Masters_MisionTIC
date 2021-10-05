@@ -1,8 +1,11 @@
 import React from 'react';
+import { useUsuariosContext } from '../context/usuariosContext';
 import '../styles/consultarUsuario.css';
-import {Link} from 'react-router-dom';
 
 const ConsultarUsuario = () => {
+
+    const { usuariosConsultar, setUsuariosConsultar } = useUsuariosContext();
+
     return (
         <div id="consultarUsuarios">
             <h2 id="tituloUsuario">Consultar usuarios</h2>
@@ -21,9 +24,16 @@ const ConsultarUsuario = () => {
                     <input className="campo-buscar-usuario" name="buscarUsuario" type="text" placeholder="Ingresa el nombre o identificación del usuario" />
                 </div>
             </div>
-            <Link id="link-consultar-usuario" to="/usuarios/consultar">
-                <button id="boton-registrar-usuario" class="boton-generico-header">Consultar</button>
-            </Link>
+            <button id="boton-registrar-usuario" class="boton-generico-header" onClick={(e) => {
+                e.preventDefault();
+                setUsuariosConsultar(!usuariosConsultar);
+            }}>
+                {usuariosConsultar ?
+                    "Todos los usuarios"
+                    :
+                    "Consultar"
+                }
+            </button>
         </div>
     );
 }

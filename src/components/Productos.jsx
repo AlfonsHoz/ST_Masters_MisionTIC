@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/productos.css";
 import lapiz from "../assets/img/lapiz.svg";
-import borrar from "./images/eliminar.svg";
+import borrar from "../assets/img/eliminar.svg";
 
 const Productos = ({ props }) => {
   const { codigo_producto, nombre_producto, precio_unitario, Acciones } = props;

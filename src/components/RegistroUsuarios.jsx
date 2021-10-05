@@ -18,9 +18,6 @@ const RegistroUsuarios = () => {
 
   useEffect(() => {
     idRef.current.focus();
-    nameRef.current.focus();
-    rolRef.current.focus();
-    passRef.current.focus();
     setId(idRef.current);
     setName(nameRef.current);
     setRol(rolRef.current);
@@ -55,14 +52,15 @@ const RegistroUsuarios = () => {
     progress: undefined,
   }
 
-  const mostrarMensaje = () => {
+  const mostrarMensaje = (e) => {
     if (!(id.value === "" || name.value === "" || pass.value === "")) {
       toast.success('Usuario registrado correctamente!', configMensaje);
       cleanUpTextFields();
+      e.preventDefault();
     } else {
       toast.error('Llene todos los campos!', configMensaje);
     }
-}
+  }
 
   return (
     <>
@@ -97,34 +95,34 @@ const RegistroUsuarios = () => {
               </select>
             </label>
           </div>
+          <div className="form-reg-usrs">
+            <label className="lbl-reg-usr">
+              Estado:
+              <input type="text" disabled className="text-field" value="Activo" />
+            </label>
+            <label className="lbl-reg-usr">
+              Contraseña: <br />
+              <input
+                ref={passRef}
+                className="text-field"
+                type="password"
+                placeholder="Ingresa la contraseña"
+              />
+            </label>
+            {
+              // label vacio para arreglar el espacio en blanco.
+            }
+            <label className="lbl-reg-usr"></label>
+          </div>
+          <div id="bottom-btns-container">
+            <button type="button" onClick={mostrarMensaje} id="btn-registrar">
+              Registar usuario
+            </button>
+            <button id="btn-limpiar" onClick={cleanUpTextFields}>
+              Limpiar
+            </button>
+          </div>
         </form>
-        <div className="form-reg-usrs">
-          <label className="lbl-reg-usr">
-            Estado:
-            <input type="text"  disabled className="text-field" value="Activo" />
-          </label>
-          <label className="lbl-reg-usr">
-            Contraseña: <br />
-            <input
-              ref={passRef}
-              className="text-field"
-              type="password"
-              placeholder="Ingresa la contraseña"
-            />
-          </label>
-          {
-            // label vacio para arreglar el espacio en blanco.
-          }
-          <label className="lbl-reg-usr"></label>
-        </div>
-        <div id="bottom-btns-container">
-          <button type="submit" onClick={mostrarMensaje} id="btn-registrar">
-            Registar usuario
-          </button>
-          <button id="btn-limpiar" onClick={cleanUpTextFields}>
-            Limpiar
-          </button>
-        </div>
         <ToastContainer theme='dark' />
       </div>
     </>

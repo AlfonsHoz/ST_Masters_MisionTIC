@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../styles/listadoUsuarios.css";
 import { TablaUsuarios } from "./TablaUsuarios";
-import {Table} from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
+import { useUsuariosContext } from '../context/usuariosContext';
 
 export const ListadoUsuarios = () => {
   const [data, setdata] = useState([]);
+  const { usuariosConsultar } = useUsuariosContext();
 
   useEffect(() => {
     fetch("https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db")
@@ -27,7 +29,11 @@ export const ListadoUsuarios = () => {
           </thead>
           <tbody>
             {data.map((datos, key) => {
-              return <TablaUsuarios key={key} props={datos} />;
+              if (usuariosConsultar) {
+                return datos.identificacion === 1113692937 ? <TablaUsuarios props={datos} /> : ``;
+              } else {
+                return <TablaUsuarios key={key} props={datos} />;
+              }
             })}
           </tbody>
         </Table>

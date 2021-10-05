@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Container, Table, Row, Col, Button } from "react-bootstrap";
+import { Container, Table, Row, Col } from "react-bootstrap";
 import "../styles/listadoproducto.css";
 import Productos from "./Productos";
+import { useProductosContext } from '../context/productosContext';
 
 const ListadoProductos = () => {
+
   const [data, setdata] = useState([]);
+  const { productosConsultar } = useProductosContext();
 
   useEffect(() => {
     fetch("https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db")
@@ -32,8 +35,12 @@ const ListadoProductos = () => {
               </tr>
             </thead>
             <tbody>
-              {data.map((x, key) => {
-                return <Productos key={key} props={x} />;
+              {data.map((datos, key) => {
+                if (productosConsultar) {
+                  return datos.codigo_producto === 'PN0001' ? <Productos props={datos} /> : ``;
+                } else {
+                  return <Productos key={key} props={datos} />;
+                }
               })}
             </tbody>
           </Table>
