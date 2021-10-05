@@ -11,7 +11,7 @@ const ProductosPage = () => {
       <Header
         textoBoton={"Nuevo producto"}
         texto={"productos"}
-        link={"/productos/registrar"}
+        link={"/productos/consultar"}
       />
       <ConsultarProducto />
       <ListadoProductos />

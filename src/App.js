@@ -14,7 +14,6 @@ import UsuariosConsultarPage from "./pages/usuarios/UsuariosConsultarPage";
 import UsuariosEditarPage from "./pages/usuarios/UsuariosEditarPage";
 
 import Productos from "./pages/productos/ProductosPage";
-import ProductosRegistrarPage from "./pages/productos/ProductosRegistrarPage";
 
 function App() {
   return (
@@ -41,7 +40,7 @@ function App() {
           <Productos />
         </Route>
         <Route exact path="/productos/registrar">
-          <ProductosRegistrarPage />
+          <Productos />
         </Route>
         <Route exact path="/productos/consultar">
           <Productos />

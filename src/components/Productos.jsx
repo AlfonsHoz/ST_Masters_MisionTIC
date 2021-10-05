@@ -19,16 +19,3 @@ const Productos = ({ props }) => {
 };
 
 export default Productos;
-
-/*
-<ul className="info-container">
-<li id="li1">{codigo_producto}</li>
-<li id="li2">{nombre_producto}</li>
-<li id="li3">{precio_unitario}</li>
-<li id="li4">
-  {Acciones}
-  <img src={ojo} />
-  <img src={borrar} />
-</li>
-</ul>
-*/
