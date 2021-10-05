@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/listadoUsuarios.css";
 import { TablaUsuarios } from "./TablaUsuarios";
+import {Table} from 'react-bootstrap';
 
 export const ListadoUsuarios = () => {
   const [data, setdata] = useState([]);
@@ -15,7 +16,7 @@ export const ListadoUsuarios = () => {
     <div id="contenedorListadoUsuarios">
       <h2 id="tituloListadoUsuarios">Listado de usuarios</h2>
       <div id="tablaUsuarios">
-        <table>
+        <Table id="tabla-usuarios-registrados" striped hover variant="dark" className="text-center">
           <thead>
             <tr>
               <th>Identificación</th>
@@ -29,7 +30,7 @@ export const ListadoUsuarios = () => {
               return <TablaUsuarios key={key} props={datos} />;
             })}
           </tbody>
-        </table>
+        </Table>
         <span id="volver">Volver arriba</span>
       </div>
     </div>

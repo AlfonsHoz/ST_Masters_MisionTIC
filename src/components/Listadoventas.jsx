@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/listadoventas.css'
 import Ventas from './Ventas';
+import {Table} from 'react-bootstrap';
 
 const Listadoventas = () => {
 
@@ -15,17 +16,23 @@ const Listadoventas = () => {
   return (
     <div className="listadoventas-container">
       <h2 id="tituloTablaVentas">Listado de ventas realizadas</h2>
-      <div id="column-titles">
-        <li id="li1-li-vt">Fecha</li>
-        <li id="li2-li-vt">Código</li>
-        <li id="li3-li-vt">Precio total</li>
-        <li id="li4-li-vt">Vendedor</li>
-        <li id="li5-li-vt">Acciones</li>
+        <Table id="tabla-ventas-registradas" striped hover variant="dark" className="text-center">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Código</th>
+              <th>Precio total</th>
+              <th>Vendedor</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((x, key) => {
+              return <Ventas key={key} props={x} />;
+            })}
+          </tbody>
+        </Table>
       </div>
-      {data.map((x, key) => {
-        return <Ventas key={key} props={x} />;
-      })}
-    </div>
   );
 };
 export default Listadoventas;

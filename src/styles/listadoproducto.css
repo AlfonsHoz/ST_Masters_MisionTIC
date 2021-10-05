@@ -8,3 +8,9 @@
   font-size: 22.4px;
   margin-bottom: 0;
 }
+
+#tabla-productos-registrados,
+#tabla-productos-registrados td,
+#tabla-productos-registrados th {
+  border-color: #191c1f;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Ventas from './Ventas';
-import '../styles/resconsultaventas.css'
+import '../styles/resconsultaventas.css';
+import {Table} from 'react-bootstrap';
 
 const ResConsultaVentas = () => {
 
@@ -14,17 +15,23 @@ const ResConsultaVentas = () => {
 
   return (
     <div className="res-cons-cont">
-      <div id="column-titles">
-        <li id="li1-li-vt">Fecha</li>
-        <li id="li2-li-vt">Código</li>
-        <li id="li3-li-vt">Precio total</li>
-        <li id="li4-li-vt">Vendedor</li>
-        <li id="li5-li-vt">Acciones</li>
-      </div>
-      {data.map((x) => {
-        return (x.codigo === "V0001") ? <Ventas props={x} /> : ``;
-      }
-      )}
+      <Table id="tabla-consultar-venta" striped hover variant="dark" className="text-center">
+        <thead>
+          <tr>
+              <th>Fecha</th>
+              <th>Código</th>
+              <th>Precio total</th>
+              <th>Vendedor</th>
+              <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((x) => {
+            return (x.codigo === "V0001") ? <Ventas props={x} /> : ``;
+          }
+          )}
+        </tbody>
+      </Table>
     </div>
   )
 }

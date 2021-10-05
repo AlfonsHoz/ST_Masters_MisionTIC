@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/listadoUsuarios.css";
 import { TablaUsuarios } from "./TablaUsuarios";
+import {Table} from 'react-bootstrap';
 
 const ResConsultaUsuario = ({ props }) => {
   const [data, setdata] = useState([]);
@@ -14,7 +15,7 @@ const ResConsultaUsuario = ({ props }) => {
   return (
     <>
       <div id="tablaConsUsuarios">
-        <table>
+        <Table id="tabla-consulta-usuarios" striped hover variant="dark" className="text-center">
           <thead>
             <tr>
               <th>Identificación</th>
@@ -32,7 +33,7 @@ const ResConsultaUsuario = ({ props }) => {
               );
             })}
           </tbody>
-        </table>
+        </Table>
         <span id="volver">Volver arriba</span>
       </div>
     </>

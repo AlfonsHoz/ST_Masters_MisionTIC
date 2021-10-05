@@ -22,7 +22,7 @@ const ListadoProductos = () => {
       </Row>
       <Row>
         <Col>
-          <Table striped hover variant="dark" className="text-center">
+          <Table id="tabla-productos-registrados" striped hover variant="dark" className="text-center">
             <thead>
               <tr>
                 <th>Identificador</th>
@@ -44,18 +44,3 @@ const ListadoProductos = () => {
 };
 export default ListadoProductos;
 
-/*
-<div className="listadoproductos-container">
-<h2>Listado de productos</h2>
-<div id="column-titles">
-  <li id="li1">Identificador</li>
-  <li id="li2">Descripcion</li>
-  <li id="li3">Precio Unitario</li>
-  <li id="li4">Acciones</li>
-</div>
-{data.map((x, key) => {
-  return <Productos key={key} props={x} />;
-})}
-</div>
-
-*/

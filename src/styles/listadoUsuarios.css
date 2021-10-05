@@ -14,60 +14,11 @@
   background-color: #191c1f;
 }
 
-#tablaUsuarios {
-  /* margin-left: 5.8%; */
-  /* margin-top: 2rem; */
-  color: white;
-  width: 95%;
-}
-
-#tablaUsuarios > table {
-  text-align: left;
-  border-collapse: collapse;
-  width: 100%;
-}
-
 #tablaConsUsuarios {
   margin-left: 5.8%;
+  margin-right: 5.8%;
   margin-top: 2rem;
   color: white;
-  width: 90%;
-}
-
-#tablaConsUsuarios > table {
-  text-align: left;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th,
-td {
-  /* padding: 14px; */
-  padding-left: 70px;
-  height: 41.5px;
-}
-
-th {
-  background-color: #212529;
-  height: 41.5px;
-}
-
-td {
-  background-color: #2a2e32;
-  border-bottom: solid 0.1px #191c1f;
-}
-
-thead {
-  border-bottom: solid 0.2rem #1a1e20;
-  height: 41.5px;
-}
-
-td > img:hover {
-  cursor: pointer;
-}
-
-tr:hover td {
-  background-color: #2a2e32d5;
 }
 
 #volver {
@@ -86,9 +37,21 @@ tr:hover td {
   color: #caa840;
 }
 
-@media screen and (max-width: 740px) {
+#tabla-usuarios-registrados,
+#tabla-usuarios-registrados td,
+#tabla-usuarios-registrados th {
+  border-color: #191c1f;
+}
+
+#tabla-consulta-usuarios,
+#tabla-consulta-usuarios td,
+#tabla-consulta-usuarios th {
+  border-color: #191c1f;
+}
+
+/* @media screen and (max-width: 740px) {
   table {
     display: block;
     overflow-x: auto;
   }
-}
+} */

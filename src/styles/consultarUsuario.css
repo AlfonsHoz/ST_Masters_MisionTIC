@@ -41,3 +41,7 @@
 #boton-registrar-usuario {
   position: static;
 }
+
+#link-consultar-usuario {
+  width: 190px;
+}

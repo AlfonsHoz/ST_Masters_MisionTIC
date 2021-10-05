@@ -4,6 +4,7 @@ import '../styles/registrarVenta.css';
 import { TablaProductosVenta } from './TablaProductosVenta';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {Table} from 'react-bootstrap';
 
 export const RegistrarVenta = () => {
 
@@ -74,7 +75,7 @@ export const RegistrarVenta = () => {
             </div>
             <div id="contenedorListadoProductos">
                 <div id="tablaProductos">
-                    <table>
+                    <Table id="tabla-registrar-venta" striped hover variant="dark" className="text-center">
                         <thead>
                             <tr>
                                 <th>Código Producto</th><th>Nombre Producto</th><th>Precio Unitario</th><th>Cantidad</th><th>Precio Total</th><th>Acciones</th>
@@ -90,7 +91,7 @@ export const RegistrarVenta = () => {
                         <button id="boton-registrar-venta" className="boton-generico-header"
                             onClick={mostrarMensaje}
                         >Agregar venta</button>
-                    </table>
+                    </Table>
                     <span id="volver">Volver arriba</span>
                 </div>
             </div>

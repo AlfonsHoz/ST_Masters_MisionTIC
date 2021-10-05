@@ -5,7 +5,7 @@
 }
 
 #col-izq {
-  background-color: #1a1e20;
+  background-color: #191c1f;
   height: 100vh;
 }
 
@@ -67,17 +67,18 @@ h3 {
   margin-bottom: 30px;
 }
 
-.form-control {
+#campo-login {
   border: 1.6px solid #303436;
   border-radius: 5px;
-  background-color: #1a1e20;
+  background-color: #191c1f;
   color: white;
   outline: none;
   font-size: 15.8px;
+  width: 100%;
 }
 
-.form-control:focus {
-  background-color: #303436;
+#campo-login:focus {
+  background-color: #191c1f;
   color: white;
 }
 

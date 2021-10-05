@@ -1,56 +1,19 @@
 .listadoventas-container {
-  background-color: #191c1f;
   color: azure;
   padding-bottom: 15%;
   font-size: 14px;
-  padding-top: 2rem;
+  margin-left: 5.8%;
+  margin-right: 5.8%;
 }
 
 .listadoventas-container #tituloTablaVentas {
   color: #dab74a;
-  margin-top: 2rem;
-  font-size: 1.6em;
-  margin-left: 6%;
-  /* margin-bottom: 5vh; */
+  margin-top: 1rem;
+  font-size: 22.4px;
 }
 
-#column-titles {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #212529;
-  font-weight: bold;
-  padding: 15px 30px;
-  width: 85%;
-  margin-right: 0;
-  margin-left: 6%;
-  margin-top: 1vh;
-  margin-bottom: 0.2rem;
-  list-style: none;
-  font-size: 16px;
-  height: 41.5px;
-}
-
-#column-titles li {
-  margin-left: 6%;
-}
-
-#li1-li-vt {
-  width: 15%;
-}
-
-#li2-li-vt {
-  width: 15%;
-}
-
-#li3-li-vt {
-  width: 15%;
-}
-
-#li4-li-vt {
-  width: 40%;
-}
-
-#li5-li-vt {
-  width: 15%;
+#tabla-ventas-registradas,
+#tabla-ventas-registradas td,
+#tabla-ventas-registradas th {
+  border-color: #191c1f;
 }

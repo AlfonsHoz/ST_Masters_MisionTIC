@@ -21,7 +21,7 @@ const ConsultarUsuario = () => {
                     <input className="campo-buscar-usuario" name="buscarUsuario" type="text" placeholder="Ingresa el nombre o identificación del usuario" />
                 </div>
             </div>
-            <Link to="/usuarios/consultar">
+            <Link id="link-consultar-usuario" to="/usuarios/consultar">
                 <button id="boton-registrar-usuario" class="boton-generico-header">Consultar</button>
             </Link>
         </div>
