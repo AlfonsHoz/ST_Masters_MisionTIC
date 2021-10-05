@@ -11,7 +11,7 @@ const ResConsultaVentas = () => {
     fetch('https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db')
       .then(response => response.json())
       .then(dat => setdata(dat.ventas));
-  }, [])
+  }, []);
 
   return (
     <div className="res-cons-cont">

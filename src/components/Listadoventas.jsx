@@ -2,16 +2,18 @@ import React, { useEffect, useState } from 'react'
 import '../styles/listadoventas.css'
 import Ventas from './Ventas';
 import {Table} from 'react-bootstrap';
+import { useVentasContext } from '../context/ventasContext';
 
 const Listadoventas = () => {
 
-  const [data, setdata] = useState([])
+  const [data, setdata] = useState([]);
+  const {ventasConsultar} = useVentasContext();
 
   useEffect(() => {
     fetch('https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db')
       .then(response => response.json())
       .then(dat => setdata(dat.ventas));
-  }, [])
+    }, []);
 
   return (
     <div className="listadoventas-container">
@@ -28,7 +30,11 @@ const Listadoventas = () => {
           </thead>
           <tbody>
             {data.map((x, key) => {
-              return <Ventas key={key} props={x} />;
+              if (ventasConsultar) {
+                return (x.codigo === "V0001") ? <Ventas props={x} /> : ``;
+              } else {
+                return <Ventas key={key} props={x} />;
+              }
             })}
           </tbody>
         </Table>

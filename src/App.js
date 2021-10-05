@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { VentasContext } from "./context/ventasContext";
+
 import { Login } from "./components/Login_Bootstrap";
 
 import Ventas from "./pages/ventas/VentasPage";
@@ -15,8 +17,10 @@ import UsuariosEditarPage from "./pages/usuarios/UsuariosEditarPage";
 
 import Productos from "./pages/productos/ProductosPage";
 import RegistrarProducto from "./pages/productos/ProductosRegistrarPage";
+import { useState } from "react";
 
 function App() {
+  const [ventasConsultar, setVentasConsultar] = useState(false);
   return (
     <>
       <Router>
@@ -24,18 +28,20 @@ function App() {
           <Login />
         </Route>
 
-        <Route exact path="/ventas">
-          <Ventas />
-        </Route>
-        <Route exact path="/ventas/registrar">
-          <VentasReg />
-        </Route>
-        <Route exact path="/ventas/consultar">
-          <VentasCons />
-        </Route>
-        <Route exact path="/ventas/editar">
-          <VentasEdit />
-        </Route>
+        <VentasContext.Provider value={{ ventasConsultar, setVentasConsultar }}>
+          <Route exact path="/ventas">
+            <Ventas />
+          </Route>
+          <Route exact path="/ventas/registrar">
+            <VentasReg />
+          </Route>
+          <Route exact path="/ventas/consultar">
+            <VentasCons />
+          </Route>
+          <Route exact path="/ventas/editar">
+            <VentasEdit />
+          </Route>
+        </VentasContext.Provider>
 
         <Route exact path="/productos">
           <Productos />

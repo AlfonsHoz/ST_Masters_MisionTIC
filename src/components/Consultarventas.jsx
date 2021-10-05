@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useVentasContext } from '../context/ventasContext';
 import '../styles/consultarventas.css';
 
 const Consultarventas = () => {
+
+  const {ventasConsultar, setVentasConsultar} = useVentasContext();
 
   return (
     <div className="consultarventas">
@@ -23,13 +26,14 @@ const Consultarventas = () => {
                   <input className="campoConsultarVenta" id="ingreseDatos" type="text" name="text" placeholder="Ingrese datos"></input>
             </div>
             </div>
-                <Link id="consultar-ventas-link" to={"/ventas/consultar"}>
                   <button
                     id="botonConsultarVentas"
                     className="boton-generico-header"
-                  >Consultar</button>
-                </Link>
-            
+                    onClick={(e) => {
+                      setVentasConsultar(!ventasConsultar);
+                      e.preventDefault();
+                    }}
+                  >{ventasConsultar ? "Todas las ventas" : "Consultar" }</button>
           </form>
       </div>
     </div>
