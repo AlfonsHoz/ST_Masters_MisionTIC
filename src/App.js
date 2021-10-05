@@ -18,7 +18,8 @@ import UsuariosRegistrarPage from "./pages/usuarios/UsuariosRegistrarPage";
 import UsuariosEditarPage from "./pages/usuarios/UsuariosEditarPage";
 
 import Productos from "./pages/productos/ProductosPage";
-import RegistrarProducto from "./pages/productos/ProductosRegistrarPage";
+import ProductoRegistrar from "./pages/productos/ProductosRegistrarPage";
+import ProductosEditarPage from "./pages/productos/ProductosEditarPage";
 
 function App() {
 
@@ -50,10 +51,10 @@ function App() {
             <Productos />
           </Route>
           <Route exact path="/productos/registrar">
-            <RegistrarProducto />
+            <ProductoRegistrar />
           </Route>
           <Route exact path="/productos/editar">
-            <Productos />
+            <ProductosEditarPage />
           </Route>
         </ProductosContext.Provider>
 

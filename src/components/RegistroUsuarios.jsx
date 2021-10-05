@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/registrousuarios.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const RegistroUsuarios = () => {
   const [id, setId] = useState({});
@@ -42,25 +42,25 @@ const RegistroUsuarios = () => {
   };
 
   const configMensaje = {
-    position: 'bottom-center',
-    background: '#191c1f !important',
+    position: "bottom-center",
+    background: "#191c1f !important",
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-  }
+  };
 
   const mostrarMensaje = (e) => {
     if (!(id.value === "" || name.value === "" || pass.value === "")) {
-      toast.success('Usuario registrado correctamente!', configMensaje);
+      toast.success("Usuario registrado correctamente!", configMensaje);
       cleanUpTextFields();
       e.preventDefault();
     } else {
-      toast.error('Llene todos los campos!', configMensaje);
+      toast.error("Llene todos los campos!", configMensaje);
     }
-  }
+  };
 
   return (
     <>
@@ -123,7 +123,34 @@ const RegistroUsuarios = () => {
             </button>
           </div>
         </form>
-        <ToastContainer theme='dark' />
+        <div className="form-reg-usrs">
+          <label className="lbl-reg-usr">
+            Estado:
+            <input type="text" disabled className="text-field" value="Activo" />
+          </label>
+          <label className="lbl-reg-usr">
+            Contraseña: <br />
+            <input
+              ref={passRef}
+              className="text-field"
+              type="password"
+              placeholder="Ingresa la contraseña"
+            />
+          </label>
+          {
+            // label vacio para arreglar el espacio en blanco.
+          }
+          <label className="lbl-reg-usr"></label>
+        </div>
+        <div id="bottom-btns-container">
+          <button type="submit" onClick={mostrarMensaje} id="btn-registrar">
+            Registar usuario
+          </button>
+          <button id="btn-limpiar" onClick={cleanUpTextFields}>
+            Limpiar
+          </button>
+        </div>
+        <ToastContainer theme="dark" />
       </div>
     </>
   );

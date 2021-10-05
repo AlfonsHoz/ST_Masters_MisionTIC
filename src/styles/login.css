@@ -38,7 +38,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.79);
+  background-color: rgba(34, 14, 14, 0.79);
 }
 
 #col-der img {
@@ -133,7 +133,7 @@ h3 {
   border-radius: 21px;
   border: none;
   margin-top: 35px;
-  font-weight: bold;
+  /* font-weight: bold; */
   height: 50px;
   font-size: 18px;
   outline: none;
@@ -142,6 +142,7 @@ h3 {
 #boton-login {
   color: #1a1e20;
   background-color: #dab74a;
+  /* font-weight: 490 !important; */
 }
 
 #boton-login:hover {
@@ -155,13 +156,12 @@ h3 {
 }
 
 #boton-gmail:hover {
-    cursor: pointer;
-    background-color: #2f3335;
+  cursor: pointer;
+  background-color: #2f3335;
 }
 
 #logo_google {
-    width: 19px;
-    margin-right: 10px;
-    margin-bottom: 3px;
+  width: 19px;
+  margin-right: 10px;
+  margin-bottom: 3px;
 }
-

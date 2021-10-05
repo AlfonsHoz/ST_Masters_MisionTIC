@@ -2,26 +2,22 @@ import React from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import "../styles/editar_usuarios.css";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const EditarUsuarios = () => {
-  const editarUsuario = () => {
-    alert("Se ha actualizado el usuario.");
-  };
-
   const mostrarMensaje = () => {
-    toast.success('Usuario actualizado correctamente!', {
-        position: 'bottom-center',
-        background: '#191c1f !important',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+    toast.success("Usuario actualizado correctamente!", {
+      position: "bottom-center",
+      background: "#191c1f !important",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
     });
-}
+  };
 
   return (
     <Container fluid id="container" className="m-0">
