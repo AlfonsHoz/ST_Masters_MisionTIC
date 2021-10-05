@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/registrousuarios.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const RegistroUsuarios = () => {
   const [id, setId] = useState({});
@@ -45,24 +45,24 @@ const RegistroUsuarios = () => {
   };
 
   const configMensaje = {
-    position: 'bottom-center',
-    background: '#191c1f !important',
+    position: "bottom-center",
+    background: "#191c1f !important",
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-  }
+  };
 
   const mostrarMensaje = () => {
     if (!(id.value === "" || name.value === "" || pass.value === "")) {
-      toast.success('Usuario registrado correctamente!', configMensaje);
+      toast.success("Usuario registrado correctamente!", configMensaje);
       cleanUpTextFields();
     } else {
-      toast.error('Llene todos los campos!', configMensaje);
+      toast.error("Llene todos los campos!", configMensaje);
     }
-}
+  };
 
   return (
     <>
@@ -101,7 +101,7 @@ const RegistroUsuarios = () => {
         <div className="form-reg-usrs">
           <label className="lbl-reg-usr">
             Estado:
-            <input type="text"  disabled className="text-field" value="Activo" />
+            <input type="text" disabled className="text-field" value="Activo" />
           </label>
           <label className="lbl-reg-usr">
             Contraseña: <br />
@@ -125,7 +125,7 @@ const RegistroUsuarios = () => {
             Limpiar
           </button>
         </div>
-        <ToastContainer theme='dark' />
+        <ToastContainer theme="dark" />
       </div>
     </>
   );

@@ -14,7 +14,9 @@ import UsuariosConsultarPage from "./pages/usuarios/UsuariosConsultarPage";
 import UsuariosEditarPage from "./pages/usuarios/UsuariosEditarPage";
 
 import Productos from "./pages/productos/ProductosPage";
-import RegistrarProducto from "./pages/productos/ProductosRegistrarPage";
+import ProductoRegistrar from "./pages/productos/ProductosRegistrarPage";
+import ProductosConsultarPage from "./pages/productos/ProductosConsultarPage";
+import ProductosEditarPage from "./pages/productos/ProductosEditarPage";
 
 function App() {
   return (
@@ -41,13 +43,13 @@ function App() {
           <Productos />
         </Route>
         <Route exact path="/productos/registrar">
-          <RegistrarProducto />
+          <ProductoRegistrar />
         </Route>
         <Route exact path="/productos/consultar">
-          <Productos />
+          <ProductosConsultarPage />
         </Route>
         <Route exact path="/productos/editar">
-          <Productos />
+          <ProductosEditarPage />
         </Route>
 
         <Route exact path="/usuarios">
