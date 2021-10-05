@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import "../styles/editarventas.css";
 
 const EditarVentas = ({ props }) => {
@@ -70,10 +71,12 @@ const EditarVentas = ({ props }) => {
         </label>
         </div>
         <div id="tercerDiv"></div>
+        <Link to={"/ventas/consultar"}>
         <button type="submit" className="agre-prod">
           {" "}
           Agregar producto{" "}
         </button>
+        </Link>
         <button type="submit" className="boton-actualizar">
           Actualizar
         </button>
