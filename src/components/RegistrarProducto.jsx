@@ -39,7 +39,7 @@ export const RegistrarProducto = () => {
         <Row id="fila_botones_reg_prod">
           <Col col-6 className="d-flex justify-content-end">
             <Button id="btn_reg_pro" className="boton-generico-header">
-              Registrar producto
+              Registrar productoS
             </Button>
           </Col>
           <Col col-6 className="d-flex justify-content-start">
