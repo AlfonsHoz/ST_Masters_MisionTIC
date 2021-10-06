@@ -1,93 +1,57 @@
-.Consultarventas {
-  background-color: #1a1e20;
+.consultarventas {
+  background-color: #191c1f;
   padding: 10px 5px;
 }
 
-#texto-conteiner {
-  display: none;
-}
-
-#calendario {
+.campoLabel {
   display: flex;
-  margin: 4px;
-  padding: 4px 16px;
 }
 
-#titulo {
+#texto-container {
+  padding-top: 2rem;
+}
+
+#formularioConsultarVentas {
+  display: flex;
+  flex-direction: column;
+}
+
+#contenedorConsultarVentas {
+  padding: 0.8% 0 1.3rem 5.8%;
+  display: flex;
+  flex-direction: row;
+}
+
+#titulo-ventas {
   margin-left: 6%;
   color: azure;
+  font-size: 22.4px;
 }
 
-#FiltrarPor {
-  display: inline-block;
-  margin: 12px 78px 0px 0px;
-  margin-left: 6%;
-  font-weight: 400;
-  color: azure;
-}
-
-#Buscar {
-  display: inline-block;
-  margin: 12px 20px 0px 180px;
-  font-weight: 400;
-  color: azure;
-}
-
-#calendario2 {
-  display: flex;
-  margin: 2px;
-  padding: 8px 16px;
-}
-
-#IngreseDatos {
-  display: inline-block;
-  border-radius: 15px;
-  padding: 12px 18px;
-  font-size: 16px;
-  background-color: #222a2e32;
-  border: 1px solid #d6d8d4;
-  justify-content: center;
-  color: #d6d8d4;
-  margin-top: 15px;
-  margin-right: 30px;
-  margin-left: 50px;
-}
-
-#IngreseDatos:focus {
+#ingreseDatos:focus {
   outline: none;
 }
 
-#Selector {
+.campoConsultarVenta {
   display: inline-block;
-  background-color: #222a2e32;
-  border-radius: 15px;
-  border: 1px solid #d6d8d4;
+  background-color: #191c1f;
+  border-radius: 10px;
+  border: 1px solid #54575a;
   font-size: 16px;
-  padding: 12px 18px;
+  padding: 10px;
   color: #d6d8d4;
-  margin-top: 15px;
+  margin-right: 2rem;
+  text-align: center;
+  width: 19rem;
 }
 
-#Selector:focus {
+#selector-ventas:focus {
   outline: none;
 }
 
-#identificador {
-  background-color: #222a2e32;
-  color: #000;
-}
-
-#nombreUsuario {
-  background-color: #222a2e32;
-  color: #000;
-}
-
-#ID {
-  background-color: #222a2e32;
-  color: #000;
-}
-
-#Filtrar2 {
-  margin-left: 6%;
-  padding-bottom: 3%;
+#botonConsultarVentas,
+#consultar-ventas-link {
+  position: static;
+  width: 250px;
+  margin-left: 5.8%;
 }

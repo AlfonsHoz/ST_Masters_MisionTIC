@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import "../styles/editarventas.css";
 
 const EditarVentas = ({ props }) => {
@@ -17,7 +18,8 @@ const EditarVentas = ({ props }) => {
   return (
     <div className="EditarVentas">
       <div>
-        <h2 id="act-ven">Actualizar ventas </h2>
+        <h2 id="act-ven">Detalle de venta </h2>
+        <div id="primerDiv">
         <label id="cod-ven">
           Código venta <br />
           <input
@@ -46,6 +48,8 @@ const EditarVentas = ({ props }) => {
           ></input>
         </label>
       </div>
+      </div>
+      <div id="segundoDiv">
       <div id="botones">
         <label id="prod">
           Producto: <br />
@@ -65,16 +69,18 @@ const EditarVentas = ({ props }) => {
             placeholder="Ingresa la cantidad"
           />
         </label>
-        <button type="submit" id="agre-prod">
+        </div>
+        <div id="tercerDiv"></div>
+        <Link to={"/ventas/consultar"}>
+        <button type="submit" className="agre-prod">
           {" "}
           Agregar producto{" "}
         </button>
-      </div>
-      <div>
+        </Link>
         <button type="submit" className="boton-actualizar">
           Actualizar
         </button>
-      </div>
+        </div>
     </div>
   );
 };

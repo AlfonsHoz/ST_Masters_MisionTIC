@@ -1,8 +1,12 @@
 import React from "react";
 import { Col, Container, Form, FormGroup, Row, Button } from "react-bootstrap";
 import "../styles/consultarProducto.css";
+import { useProductosContext } from "../context/productosContext";
 
 const ConsultarProducto = () => {
+
+  const { productosConsultar, setProductosConsultar } = useProductosContext();
+
   return (
     <Container fluid id="cont-cons-pro">
       <Row className={"col-4"}>
@@ -14,9 +18,19 @@ const ConsultarProducto = () => {
             <FormGroup className="mb-3">
               <Form.Label>Buscar producto:</Form.Label>
               <Form.Control
+                className="campo-buscar-producto"
                 type="text"
                 placeholder="Ingresa el codigo o nombre del producto"
               ></Form.Control>
+              <Button onClick={(e) => {
+                setProductosConsultar(!productosConsultar);
+                e.preventDefault();
+              }} id="boton-producto" className="boton-generico-header">{
+                  productosConsultar ?
+                    "Todos los productos"
+                    :
+                    "Consultar"
+                }</Button>
             </FormGroup>
           </Form>
         </Col>

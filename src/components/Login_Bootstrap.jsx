@@ -30,6 +30,7 @@ export const Login = () => {
                       <Form.Group className="mb-3">
                         <Form.Label>Usuario:</Form.Label>
                         <Form.Control
+                          id="campo-login"
                           type="text"
                           placeholder="Ingresa tu nombre de usuario"
                         ></Form.Control>
@@ -37,12 +38,13 @@ export const Login = () => {
                       <Form.Group className="mb-3">
                         <Form.Label>Contraseña:</Form.Label>
                         <Form.Control
+                          id="campo-login"
                           type="password"
                           placeholder="Ingresa tu contraseña"
                         ></Form.Control>
                       </Form.Group>
                       <Form.Group className="d-flex justify-content-between">
-                        <Form.Check label="Recuerdame"></Form.Check>
+                        <Form.Check label="Recuérdame"></Form.Check>
                         <a id="olvido-contraseña" href="#">
                           Olvidé mi contraseña
                         </a>
