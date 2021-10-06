@@ -2,13 +2,18 @@
   padding: 0.8% 5.8% 0 5.8%;
 }
 
-Form {
+#titulo-registrar-producto {
+  font-size: 22.4px;
+  color: #dab74a;
+}
+
+#formulario-registrar-productos {
   margin: 50px 0 50px 0;
 }
 
 #fila_inputs_reg_prod {
-  margin-top: 25px;
-  margin-bottom: 45px;
+  margin-top: 15px;
+  margin-bottom: 25px;
 }
 
 #fila_botones_reg_prod {

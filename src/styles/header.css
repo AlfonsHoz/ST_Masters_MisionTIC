@@ -48,9 +48,10 @@ header img {
   align-items: center;
   border-radius: 21px;
   border: none;
-  padding: 20px;
+  padding: 0 20px 0 20px;
+  margin: 10px 0px 10px 0px;
   /*margin-top: 30px;*/
-  font-weight: bold;
+  font-weight: 490;
   height: 40px;
   font-size: 18px;
   outline: none;
@@ -70,7 +71,24 @@ header img {
 .boton-generico-cancelar {
   background-color: #2a2e32;
   color: white;
+<<<<<<< HEAD
   padding: 15px 20px 0 20px;
+=======
+  font-weight: 490;
+  font-size: 18px;
+  padding: 0 20px 0 20px;
+  margin: 10px 0px 10px 0px;
+>>>>>>> 962d8f5fa7a88762557f4ad4dcf23935420499ed
   border-radius: 21px;
   border: none;
+  height: 40px;
+}
+
+#boton-header {
+  width: 250px;
+  position: absolute;
+}
+
+#tituloHeader {
+  font-size: 30px;
 }

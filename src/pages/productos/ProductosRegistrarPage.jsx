@@ -8,7 +8,7 @@ const ProductosRegistrarPage = () => {
     <>
       <NavBar />
       <Header
-        textoBoton="Consultar Productos"
+        textoBoton="Consultar productos"
         texto="productos"
         link="/productos/"
       />

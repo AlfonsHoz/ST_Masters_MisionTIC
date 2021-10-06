@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Container, Table, Row, Col, Button } from "react-bootstrap";
+import { Container, Table, Row, Col } from "react-bootstrap";
 import "../styles/listadoproducto.css";
 import Productos from "./Productos";
+import { useProductosContext } from '../context/productosContext';
 
 const ListadoProductos = () => {
+
   const [data, setdata] = useState([]);
+  const { productosConsultar } = useProductosContext();
 
   useEffect(() => {
     fetch("https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db")
@@ -12,16 +15,17 @@ const ListadoProductos = () => {
       .then((dat) => setdata(dat.productos));
   }, []);
 
+
   return (
     <Container fluid id="content-tbl-prod">
       <Row className="mb-4">
         <Col>
-          <h2>Listado productos</h2>
+          <h2 id="titulo-consultar-producto">Listado productos</h2>
         </Col>
       </Row>
       <Row>
         <Col>
-          <Table striped hover variant="dark" className="text-center">
+          <Table id="tabla-productos-registrados" striped hover variant="dark" className="text-center">
             <thead>
               <tr>
                 <th>Identificador</th>
@@ -31,8 +35,12 @@ const ListadoProductos = () => {
               </tr>
             </thead>
             <tbody>
-              {data.map((x, key) => {
-                return <Productos key={key} props={x} />;
+              {data.map((datos, key) => {
+                if (productosConsultar) {
+                  return datos.codigo_producto === 'PN0001' ? <Productos props={datos} /> : ``;
+                } else {
+                  return <Productos key={key} props={datos} />;
+                }
               })}
             </tbody>
           </Table>
@@ -43,18 +51,3 @@ const ListadoProductos = () => {
 };
 export default ListadoProductos;
 
-/*
-<div className="listadoproductos-container">
-<h2>Listado de productos</h2>
-<div id="column-titles">
-  <li id="li1">Identificador</li>
-  <li id="li2">Descripcion</li>
-  <li id="li3">Precio Unitario</li>
-  <li id="li4">Acciones</li>
-</div>
-{data.map((x, key) => {
-  return <Productos key={key} props={x} />;
-})}
-</div>
-
-*/
