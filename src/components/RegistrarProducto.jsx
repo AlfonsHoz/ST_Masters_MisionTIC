@@ -96,17 +96,12 @@ export const RegistrarProducto = () => {
         </Row>
         <Row id="fila_botones_reg_prod">
           <Col col-6 className="d-flex justify-content-end">
-<<<<<<< HEAD
-            <Button id="btn_reg_pro" className="boton-generico-header">
-              Registrar productoS
-=======
             <Button
               id="btn_reg_pro"
               onClick={mostrarMensaje}
               className="boton-generico-header"
             >
               Registrar producto
->>>>>>> 962d8f5fa7a88762557f4ad4dcf23935420499ed
             </Button>
           </Col>
           <Col col-6 className="d-flex justify-content-start">
