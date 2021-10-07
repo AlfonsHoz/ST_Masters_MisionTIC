@@ -17,7 +17,9 @@ exports.crearProducto = async (req, res) => {
 
     try {
 
-        let producto = Producto.findOne({ codigo_producto });
+        let producto = await Producto.findOne({ codigo_producto });
+
+        console.log(producto);
 
         if (producto) {
             return res.status(400).json({
