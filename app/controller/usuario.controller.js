@@ -4,7 +4,7 @@ const { response } = require('express');
 exports.obtenerUsuarios = async (req, res = response) => {
 
     try {
-        const usuarios = await Usuario.find({ estado: "activo" });
+        const usuarios = await Usuario.find();
 
         res.status(200).json({
             ok: true,
@@ -18,6 +18,30 @@ exports.obtenerUsuarios = async (req, res = response) => {
             msg: 'Error interno, hable con el administrador.'
         });
     }
+}
+
+exports.buscarPorRol = async (req, res = response) => {
+
+    const rol = req.params.rol;
+
+    try {
+
+        const usuarios = await Usuario.find({ rol });
+
+        res.status(200).json({
+            ok: true,
+            msg: 'Lista de usuarios por rol',
+            usuarios
+        });
+
+    } catch (err) {
+        console.log(error);
+        res.status(500).json({
+            ok: false,
+            msg: 'Error interno, hable con el administrador.'
+        });
+    }
+
 }
 
 exports.crearUsuario = async (req, res = response) => {
@@ -90,10 +114,35 @@ exports.actualizarUsuario = async (req, res = response) => {
             msg: 'Error interno, hable con el administrador.'
         });
     }
-
-
 }
 
-exports.eliminarUsuario = async () => {
+exports.eliminarUsuario = async (req, res = response) => {
 
+    const identificacion = req.params.id;
+
+    try {
+
+        let usuario = await Usuario.findOne({ identificacion });
+
+        if (!usuario) {
+            return res.status(404).json({
+                ok: false,
+                msg: `No existe el usuario con identificación (${identificacion}).`
+            });
+        }
+
+        await Usuario.findOneAndRemove({ identificacion });
+
+        res.status(200).json({
+            ok: true,
+            msg: 'Usuario eliminado exitosamente.'
+        });
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            ok: false,
+            msg: 'Error interno, hable con el administrador.'
+        });
+    }
 }
