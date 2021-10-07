@@ -1,7 +1,7 @@
 const express = require('express');
 const { check } = require('express-validator');
 
-const controller = require('../controller/producto.controller');
+const { obtenerProductos, crearProducto } = require('../controller/producto.controller');
 
 const { validarCampos } = require('../middlewares/validar_campos');
 
@@ -9,7 +9,7 @@ const router = express.Router();
 
 const path = 'producto';
 
-router.get(`/${path}`, controller.getData);
+router.get(`/${path}`, obtenerProductos);
 
 router.post(
     `/${path}`,
@@ -22,6 +22,6 @@ router.post(
         check('cantidad', 'La cantidad debe ser un valor numérico.').isNumeric(),
         validarCampos
     ],
-    controller.insertData);
+    crearProducto);
 
 module.exports = router;
