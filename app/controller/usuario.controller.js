@@ -23,6 +23,8 @@ exports.obtenerUsuarios = async (req, res = response) => {
 exports.buscarPorRol = async (req, res = response) => {
 
     const rol = req.params.rol;
+    const nombre = req.params.nombre;
+    const identificacion = req.params.identificacion;
 
     try {
 
