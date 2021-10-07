@@ -1,14 +1,17 @@
-const express = require('express')
+const express = require('express');
 
-const controller = require('../controller/usuario.controller')
+const controller = require('../controller/usuario.controller');
 
-const router = express.Router()
+const router = express.Router();
 
-const path = 'usuario'
+const path = 'usuario';
 
 router.get(
     `/${path}`,
-    controller.getData
-)
+    [
 
-module.exports = router
+    ],
+    controller.getData
+);
+
+module.exports = router;
