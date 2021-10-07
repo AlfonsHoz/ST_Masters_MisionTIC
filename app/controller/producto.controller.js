@@ -7,15 +7,14 @@ exports.getData = (req, res) => {
         });
         console.log(docs);
     });
-
 }
 
 exports.insertData = async (req, res) => {
 
     const { codigo_producto, nombre_producto, precio_unitario, cantidad } = req.body;
-    const producto = new Producto({ codigo_producto, nombre_producto, precio_unitario, cantidad });
+    const producto = { codigo_producto, nombre_producto, precio_unitario, cantidad };
 
-    await producto.save();
+    Producto.create(producto);
 
     res.json({
         ok: true,
