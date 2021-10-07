@@ -11,7 +11,7 @@ const path = 'usuarios';
 
 router.get(`/${path}`, obtenerUsuarios);
 
-router.get(`/${path}/:rol?/:nombre?/:identificacion?`, buscarPorRol);
+router.get(`/${path}/:rol?/:filtro?`, buscarPorRol);
 
 router.post(`/${path}`,
     [ // Middlewares

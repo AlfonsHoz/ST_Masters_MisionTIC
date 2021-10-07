@@ -1,5 +1,6 @@
 const Usuario = require('../models/usuario');
 const { response } = require('express');
+const bcrypt = require('bcryptjs');
 
 exports.obtenerUsuarios = async (req, res = response) => {
 
@@ -23,12 +24,16 @@ exports.obtenerUsuarios = async (req, res = response) => {
 exports.buscarPorRol = async (req, res = response) => {
 
     const rol = req.params.rol;
-    const nombre = req.params.nombre;
-    const identificacion = req.params.identificacion;
+    const filtro = req.params.filtro;
 
     try {
 
-        const usuarios = await Usuario.find({ rol });
+        const usuarios = await Usuario.find({
+            $or: [
+                { "rol": rol, "identificacion": filtro },
+                { "rol": rol, "nombre": filtro }
+            ]
+        });
 
         res.status(200).json({
             ok: true,
@@ -65,6 +70,10 @@ exports.crearUsuario = async (req, res = response) => {
 
         usuario = new Usuario({ identificacion, nombre, rol, estado, password });
 
+        // Encriptar la contraseña
+        const salt = bcrypt.genSaltSync();
+        usuario.password = bcrypt.hashSync(password, salt);
+
         await usuario.save();
 
         res.status(201).json({
@@ -74,7 +83,7 @@ exports.crearUsuario = async (req, res = response) => {
         });
 
     } catch (err) {
-        console.log(err);
+        // console.log(err);
         res.status(500).json({
             ok: false,
             msg: 'Error interno, por favor hable con el administrador.'
