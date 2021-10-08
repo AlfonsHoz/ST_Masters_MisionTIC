@@ -91,22 +91,30 @@ exports.actualizarProducto = async (req, res = response) => { //
     }
 }
     
-/*    res.status(200).send('Usuario actualizado');
-    } catch (error) {
-        res.status(400).send("No se pudo actualizar el usuario");
+
+exports.eliminarProducto = async(req, res = response) => {
+    const id = req.params.id
+    try{
+        let producto = await Producto.findOne({codigo_producto: id})
+        
+        if (!producto) {
+            return res.status(404).json({
+                ok: false,
+                msg: `No existe el producto con código (${id})`
+            })
+        }
+        await Producto.findOneAndRemove({codigo_producto: id}, );
+
+        res.status(200).json({
+            ok: true,
+            msg: 'Producto eliminado exitosamente'
+        });
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            ok: false,
+            msg: 'Error interno, hable con el administrador'
+        });
     }
 }
-
-exports.delete = ('/:id', async(req, res) => {
-    try{
-        let id = req.params.id;
-        await db.Producto.destroy({
-            where: {
-                id,
-            },
-        })
-        res.status(200).send("Usuario eliminado correctamente");
-    } catch (error){
-    res.status(400).send("No se pudo eliminar el usuario");
-    }
-})*/
