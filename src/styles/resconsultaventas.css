@@ -1,10 +1,13 @@
 .res-cons-cont {
-  background-color: #1a1e20;
+  background-color: #191c1f;
   color: azure;
-  margin-top: 0;
-  padding-bottom: 3%;
+  margin-top: 1rem;
+  margin-left: 5.8%;
+  margin-right: 5.8%;
 }
 
-.res-cons-cont > #column-titles {
-  margin-top: 0 !important;
+#tabla-consultar-venta,
+#tabla-consultar-venta td,
+#tabla-consultar-venta th {
+  border-color: #191c1f;
 }

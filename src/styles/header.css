@@ -46,11 +46,12 @@ header img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 190px;
   border-radius: 21px;
   border: none;
-  margin-top: 30px;
-  font-weight: bold;
+  padding: 0 20px 0 20px;
+  margin: 10px 0px 10px 0px;
+  /*margin-top: 30px;*/
+  font-weight: 490;
   height: 40px;
   font-size: 18px;
   outline: none;
@@ -61,4 +62,29 @@ header img {
 .boton-generico-header:hover {
   cursor: pointer;
   background-color: #caa840;
+}
+
+.boton-generico-header:focus {
+  background-color: #caa840;
+}
+
+.boton-generico-cancelar {
+  background-color: #2a2e32;
+  color: white;
+  font-weight: 490;
+  font-size: 18px;
+  padding: 0 20px 0 20px;
+  margin: 10px 0px 10px 0px;
+  border-radius: 21px;
+  border: none;
+  height: 40px;
+}
+
+#boton-header {
+  width: 250px;
+  position: absolute;
+}
+
+#tituloHeader {
+  font-size: 30px;
 }

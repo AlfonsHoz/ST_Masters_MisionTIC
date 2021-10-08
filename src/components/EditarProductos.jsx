@@ -1,12 +1,22 @@
 import React from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import "../styles/editar_productos.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export const EditarProductos = () => {
-
-  const updateProd = () => {
-    alert('Se ha actualizado el producto')
-  }
+const ProductosEditar = () => {
+  const mostrarMensaje = () => {
+    toast.success("Producto actualizado correctamente!", {
+      position: "bottom-center",
+      background: "#191c1f !important",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
 
   return (
     <Container fluid id="container" className="m-0">
@@ -17,8 +27,7 @@ export const EditarProductos = () => {
       </Row>
       <Form>
         <Row>
-          {// -------------CONTENIDO DEL FORMULARIO ---------------
-          }
+          {/*-------------CONTENIDO DEL FORMULARIO ---------------*/}
           <Col id="contenido_form" className="col-12">
             <Row>
               <Col id="col-izquierda" className="xs-12 sm-12 md-12 lg-12">
@@ -64,9 +73,9 @@ export const EditarProductos = () => {
             </Row>
             <Row>
               <Col col={6} id="col-actu" className="d-flex justify-content-end">
-                <Button id="boton_actualizar"
-                  onClick={updateProd}
-                >Actualizar producto</Button>
+                <Button id="boton_actualizar" onClick={mostrarMensaje}>
+                  Actualizar producto
+                </Button>
               </Col>
               <Col
                 col={6}
@@ -79,10 +88,12 @@ export const EditarProductos = () => {
               </Col>
             </Row>
           </Col>
-          {// ---------------------------------------------------------
-          }
+          {/* --------------------------------------------------------- */}
         </Row>
       </Form>
+      <ToastContainer />
     </Container>
   );
 };
+
+export default ProductosEditar;
