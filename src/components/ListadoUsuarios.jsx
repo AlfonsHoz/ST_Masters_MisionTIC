@@ -3,15 +3,27 @@ import "../styles/listadoUsuarios.css";
 import { TablaUsuarios } from "./TablaUsuarios";
 import { Table } from 'react-bootstrap';
 import { useUsuariosContext } from '../context/usuariosContext';
+import axios from 'axios';
 
 export const ListadoUsuarios = () => {
   const [data, setdata] = useState([]);
+  const [ok, setok] = useState(false);
   const { usuariosConsultar } = useUsuariosContext();
 
   useEffect(() => {
-    fetch("https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db")
-      .then((response) => response.json())
-      .then((dat) => setdata(dat.usuarios));
+    const fetchData = async id => {
+      try {
+        const apiData = await axios.get(
+          `http://localhost:3001/usuarios`
+        );
+        setok(apiData.data.ok)
+        setdata(apiData.data.usuarios)
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData(1);
   }, []);
 
   return (

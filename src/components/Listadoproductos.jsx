@@ -3,16 +3,28 @@ import { Container, Table, Row, Col } from "react-bootstrap";
 import "../styles/listadoproducto.css";
 import Productos from "./Productos";
 import { useProductosContext } from '../context/productosContext';
+import axios from 'axios';
 
 const ListadoProductos = () => {
 
   const [data, setdata] = useState([]);
+  const [ok, setok] = useState(false);
   const { productosConsultar } = useProductosContext();
 
   useEffect(() => {
-    fetch("https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db")
-      .then((response) => response.json())
-      .then((dat) => setdata(dat.productos));
+    const fetchData = async id => {
+      try {
+        const apiData = await axios.get(
+          `http://localhost:3001/producto`
+        );
+        setok(apiData.data.ok)
+        setdata(apiData.data.productos)
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData(1);
   }, []);
 
 
