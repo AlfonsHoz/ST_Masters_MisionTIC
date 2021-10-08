@@ -57,29 +57,29 @@ exports.crearProducto = async (req, res = response) => {
 }
 
 exports.actualizarProducto = async (req, res = response) => { //
-    const codigo = req.params.codigo_producto;
+    const id = req.params.id;
 
-    try{
+    try {
 
-        let producto = await Producto.findOne({codigo});
+        let producto = await Producto.findOne({ codigo_producto: id });
 
         if (!producto) {
             return res.status(404).json({
                 ok: false,
-                msg: `No existe el producto con código (${codigo})`
+                msg: `No existe el producto con codigo (${id}).`
             });
         }
-        
+
         const nuevoProducto = {
             ...req.body
         }
 
-        const productoActualizado = await Producto.findOneAndUpdate({ codigo }, nuevoProducto );
+        const productoActualizado = await Producto.findOneAndUpdate({ codigo_producto: id}, nuevoProducto);
 
         res.status(201).json({
             ok: true,
-            msg: 'Usuario actualizado exitosamente.',
-            producto: productoActualizado
+            msg: 'Producto actualizado exitosamente.',
+            producto: nuevoProducto
         });
 
     } catch (err) {
