@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import ListadoUsuarios from "../../components/ListadoUsuarios";
@@ -9,9 +9,9 @@ const UsuariosPage = () => {
     <>
       <Navbar />
       <Header
-        textoBoton="Nuevo usuario"
-        texto="usuarios"
-        link="/usuarios/registrar"
+        textoBoton='Nuevo usuario'
+        texto='usuarios'
+        link='/usuarios/registrar'
       />
       <ConsultarUsuario />
       <ListadoUsuarios />

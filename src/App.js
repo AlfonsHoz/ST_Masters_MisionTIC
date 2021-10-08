@@ -8,6 +8,7 @@ import { Login } from "./components/Login_Bootstrap";
 import { VentasContext } from "./context/ventasContext";
 import { UsuariosContext } from "./context/usuariosContext";
 import { ProductosContext } from "./context/productosContext";
+import { UsuariosEditarContext } from "./context/editarusuarioContext";
 
 import Ventas from "./pages/ventas/VentasPage";
 import VentasReg from "./pages/ventas/VentasRegistrarPage";
@@ -25,6 +26,7 @@ function App() {
   const [ventasConsultar, setVentasConsultar] = useState(false);
   const [usuariosConsultar, setUsuariosConsultar] = useState(false);
   const [productosConsultar, setProductosConsultar] = useState(false);
+  const [usuariosEditar, setUsuariosEditar] = useState("");
 
   return (
     <>
@@ -40,6 +42,7 @@ function App() {
           <Route exact path='/ventas/registrar'>
             <VentasReg />
           </Route>
+
           <Route exact path='/ventas/editar'>
             <VentasEdit />
           </Route>
@@ -60,15 +63,18 @@ function App() {
 
         <UsuariosContext.Provider
           value={{ usuariosConsultar, setUsuariosConsultar }}>
-          <Route exact path='/usuarios'>
-            <Usuarios />
-          </Route>
-          <Route exact path='/usuarios/registrar'>
-            <UsuariosRegistrarPage />
-          </Route>
-          <Route exact path='/usuarios/editar'>
-            <UsuariosEditarPage />
-          </Route>
+          <UsuariosEditarContext.Provider
+            value={{ usuariosEditar, setUsuariosEditar }}>
+            <Route exact path='/usuarios'>
+              <Usuarios />
+            </Route>
+            <Route exact path='/usuarios/registrar'>
+              <UsuariosRegistrarPage />
+            </Route>
+            <Route exact path='/usuarios/editar'>
+              <UsuariosEditarPage />
+            </Route>
+          </UsuariosEditarContext.Provider>
         </UsuariosContext.Provider>
       </Router>
     </>
