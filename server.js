@@ -1,7 +1,8 @@
 require('dotenv').config();
-const express = require('express')
-const initDB = require('./config/db')
-const app = express()
+const express = require('express');
+const initDB = require('./config/db');
+const app = express();
+const Cors = require('cors');
 
 const port = process.env.PORT
 
@@ -9,6 +10,7 @@ const usuariosRoutes = require('./app/routes/usuario.routes')
 const productosRoutes = require('./app/routes/producto.routes')
 
 app.use(express.json());
+app.use(Cors())
 
 app.use(express.urlencoded());
 
