@@ -1,16 +1,14 @@
 import React from "react";
 import { Col, Container, Form, FormGroup, Row, Button } from "react-bootstrap";
 import "../styles/consultarProducto.css";
-import { useProductosContext } from "../context/productosContext";
 import { useConsultarProductoContext } from "../context/consultarProductoContext";
 import { useForm } from "../hooks/useForm";
 
 const ConsultarProducto = () => {
 
-  const { productosConsultar, setProductosConsultar } = useProductosContext();
   const { setConsultaProducto } = useConsultarProductoContext();
 
-  const [formFindProductsValues, handleFindProductsInputChange, resetFindProductsForm] = useForm({
+  const [formFindProductsValues, handleFindProductsInputChange] = useForm({
     busqueda: '',
   });
 
@@ -37,14 +35,10 @@ const ConsultarProducto = () => {
               ></Form.Control>
               <Button type='submit' onClick={(e) => {
                 setConsultaProducto(busqueda);
-                setProductosConsultar(!productosConsultar);
                 e.preventDefault();
-              }} id="boton-producto" className="boton-generico-header">{
-                  busqueda !== '' ?
-                    "Todos los productos"
-                    :
-                    "Consultar"
-                }</Button>
+              }} id="boton-producto" className="boton-generico-header">
+                Consultar
+              </Button>
             </FormGroup>
           </Form>
         </Col>

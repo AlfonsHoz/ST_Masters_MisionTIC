@@ -3,14 +3,12 @@ import { Container, Table, Row, Col } from "react-bootstrap";
 import "../styles/listadoproducto.css";
 import Productos from "./Productos";
 import { axiosPetition, respuesta } from '../helper/fetch';
-import { useProductosContext } from '../context/productosContext';
 import { useConsultarProductoContext } from '../context/consultarProductoContext';
 import { toast } from "react-toastify";
 import ConsultarProducto from "./ConsultarProducto";
 
 const ListadoProductos = () => {
 
-  const { productosConsultar } = useProductosContext();
   const { consultaProducto } = useConsultarProductoContext();
   const [data, setData] = useState([]);
 
@@ -26,10 +24,6 @@ const ListadoProductos = () => {
   };
 
   useEffect(async () => {
-
-    if (ConsultarProducto === '') {
-
-    }
 
     await axiosPetition('producto');
     setData(respuesta.productos);

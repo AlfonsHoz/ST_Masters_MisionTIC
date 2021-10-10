@@ -10,7 +10,7 @@ const ProductosEditarPage = () => {
       <Header
         textoBoton={"Consultar productos"}
         texto={"productos"}
-        link={"/productos/consultar"}
+        link={"/productos"}
       />
       <EditarProductos />
     </>
