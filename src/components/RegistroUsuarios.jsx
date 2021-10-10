@@ -47,27 +47,42 @@ const RegistroUsuarios = () => {
   };
 
   const mostrarMensaje = (e) => {
-    e.preventDefault();
-    if (!(id.value === "" || name.value === "" || pass.value === "")) {
-      axios
-        .post(`http://localhost:3001/usuarios`, {
-          identificacion: parseInt(id.value),
-          nombre: name.value,
-          rol: rol.value,
-          estado: "activo",
-          password: pass.value,
-        })
-        .then(function (response) {
-          console.log(response.headers);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      toast.success("Usuario registrado correctamente!", configMensaje);
-      cleanUpTextFields();
+    try {
       e.preventDefault();
-    } else {
-      toast.error("Llene todos los campos!", configMensaje);
+      if (!(id.value === "" || name.value === "" || pass.value === "")) {
+        axios
+          .post(`http://localhost:3001/usuarios`, {
+            identificacion: parseInt(id.value),
+            nombre: name.value,
+            rol: rol.value,
+            estado: "activo",
+            password: pass.value,
+          })
+          .then(function (response) {
+            console.log(response.data);
+            if (response.data.ok) {
+              toast.success("Usuario registrado correctamente!", configMensaje);
+              cleanUpTextFields();
+            }
+          })
+          .catch(function (error) {
+            if (error.response) {
+              const errores = error.response.data;
+              console.log(errores);
+              toast.error(error.response.data.errores.msg, configMensaje);
+            } else if (error.request) {
+              // console.log(error.request);
+            } else {
+              // console.log("Error", error.message);
+            }
+            // console.log(error.config);
+          });
+        e.preventDefault();
+      } else {
+        toast.error("Llene todos los campos!", configMensaje);
+      }
+    } catch (err) {
+
     }
   };
 

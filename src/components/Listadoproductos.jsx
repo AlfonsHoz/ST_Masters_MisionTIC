@@ -2,29 +2,40 @@ import React, { useEffect, useState } from "react";
 import { Container, Table, Row, Col } from "react-bootstrap";
 import "../styles/listadoproducto.css";
 import Productos from "./Productos";
+import { axiosPetition, respuesta } from '../helper/fetch';
 import { useProductosContext } from '../context/productosContext';
-import axios from 'axios';
+import { useConsultarProductoContext } from '../context/consultarProductoContext';
+import { toast } from "react-toastify";
+import ConsultarProducto from "./ConsultarProducto";
 
 const ListadoProductos = () => {
 
-  const [data, setdata] = useState([]);
-  const [ok, setok] = useState(false);
   const { productosConsultar } = useProductosContext();
+  const { consultaProducto } = useConsultarProductoContext();
+  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async id => {
-      try {
-        const apiData = await axios.get(
-          `http://localhost:3001/producto`
-        );
-        setok(apiData.data.ok)
-        setdata(apiData.data.productos)
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const configMensaje = {
+    position: "bottom-center",
+    background: "#191c1f !important",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+  };
 
-    fetchData(1);
+  useEffect(async () => {
+
+    if (ConsultarProducto === '') {
+
+    }
+
+    await axiosPetition('producto');
+    setData(respuesta.productos);
+    if (!respuesta.ok) {
+      toast.error('Ha ocurrido un error al intentar obtener la lista de productos.', configMensaje);
+    }
   }, []);
 
 
@@ -48,10 +59,10 @@ const ListadoProductos = () => {
             </thead>
             <tbody>
               {data.map((datos, key) => {
-                if (productosConsultar) {
-                  return datos.codigo_producto === 'PN0001' ? <Productos props={datos} /> : ``;
+                if (consultaProducto !== '') {
+                  return datos.codigo_producto === consultaProducto || datos.nombre_producto === consultaProducto ? <Productos key={datos._id} props={datos} /> : ``;
                 } else {
-                  return <Productos key={key} props={datos} />;
+                  return <Productos key={datos._id} props={datos} />;
                 }
               })}
             </tbody>
