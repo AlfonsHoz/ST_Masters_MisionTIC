@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 exports.obtenerProductos = async (req, res = response) => {
   try {
     const productos = await Producto.find();
+
     res.status(200).json({
       ok: true,
       msg: "Lista de productos",
@@ -19,15 +20,12 @@ exports.obtenerProductos = async (req, res = response) => {
   }
 };
 
-exports.crearProducto = async (req, res) => {
-  const { codigo_producto, nombre_producto, precio_unitario, cantidad } =
-    req.body;
+exports.crearProducto = async (req, res = response) => {
+  const { codigo_producto, nombre_producto, precio_unitario } = req.body;
 
   try {
     let producto = await Producto.findOne({ codigo_producto });
-
     console.log(producto);
-
     if (producto) {
       return res.status(400).json({
         ok: false,
@@ -39,12 +37,11 @@ exports.crearProducto = async (req, res) => {
       codigo_producto,
       nombre_producto,
       precio_unitario,
-      cantidad,
     });
 
     await producto.save();
 
-    res.json({
+    res.status(201).json({
       ok: true,
       msg: "registro",
       producto,
@@ -54,6 +51,68 @@ exports.crearProducto = async (req, res) => {
     res.status(500).json({
       ok: false,
       msg: "Error interno, por favor hable con el administrador.",
+    });
+  }
+};
+
+exports.actualizarProducto = async (req, res = response) => {
+  const id = req.params.id;
+
+  try {
+    let producto = await Producto.findOne({ codigo_producto: id });
+
+    if (!producto) {
+      return res.status(404).json({
+        ok: false,
+        msg: `No existe el producto con codigo (${id}).`,
+      });
+    }
+
+    const nuevoProducto = {
+      ...req.body,
+    };
+
+    const productoActualizado = await Producto.findOneAndUpdate(
+      { codigo_producto: id },
+      nuevoProducto
+    );
+
+    res.status(201).json({
+      ok: true,
+      msg: "Producto actualizado exitosamente.",
+      producto: nuevoProducto,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      ok: false,
+      msg: "Error interno, hable con el administrador.",
+    });
+  }
+};
+
+exports.eliminarProducto = async (req, res = response) => {
+  const id = req.params.id;
+  try {
+    let producto = await Producto.findOne({ codigo_producto: id });
+
+    if (!producto) {
+      return res.status(404).json({
+        ok: false,
+        msg: `No existe el producto con código (${id})`,
+      });
+    }
+    await Producto.findOneAndRemove({ codigo_producto: id });
+
+    res.status(200).json({
+      ok: true,
+      msg: "Producto eliminado exitosamente",
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      ok: false,
+      msg: "Error interno, hable con el administrador",
     });
   }
 };
