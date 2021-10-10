@@ -14,6 +14,7 @@ const productoSchema = new Schema({
         type: Number,
         required: [true, 'El precio unitario es obligatorio.']
     }
+
 },
     {
         versionKey: false
