@@ -5,7 +5,7 @@ import borrar from "../assets/img/eliminar.svg";
 import { Link } from "react-router-dom";
 
 const Productos = ({ props }) => {
-  const { codigo_producto, nombre_producto, precio_unitario, Acciones } = props;
+  const { codigo_producto, nombre_producto, precio_unitario } = props;
   return (
     <tr>
       <td>{codigo_producto}</td>
@@ -17,7 +17,7 @@ const Productos = ({ props }) => {
         </Link>
         <img src={borrar}></img>
       </td>
-    </tr>
+    </tr >
   );
 };
 
