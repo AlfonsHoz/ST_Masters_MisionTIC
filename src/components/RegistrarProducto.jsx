@@ -3,6 +3,7 @@ import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import "../styles/registrarProducto.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 export const RegistrarProducto = () => {
   const [id, setId] = useState({});
@@ -50,6 +51,18 @@ export const RegistrarProducto = () => {
 
   const mostrarMensaje = (e) => {
     if (!(id.value === "" || descr.value === "" || precio.value === "")) {
+      axios
+        .post(`http://localhost:3001/producto`, {
+          identificacion: parseInt(id.value),
+          descripcion: descr.value,
+          precio: precio.value,
+        })
+        .then(function (response) {
+          console.log(response.headers);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
       toast.success("Usuario registrado correctamente!", errorMessage);
       cleanUpTextFields();
       e.preventDefault();
