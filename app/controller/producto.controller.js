@@ -22,7 +22,7 @@ exports.crearProducto = async (req, res) => {
         console.log(producto);
 
         if (producto) {
-            return res.status(400).json({
+            return res.json({
                 ok: false,
                 msg: 'Ya se encuentra registrado un producto con este código.'
             });
@@ -39,7 +39,7 @@ exports.crearProducto = async (req, res) => {
         });
 
     } catch (error) {
-        console.error(error);
+        // console.error(error);
         res.status(500).json({
             ok: false,
             msg: 'Error interno, por favor hable con el administrador.'

@@ -13,10 +13,6 @@ const productoSchema = new Schema({
     precio_unitario: {
         type: Number,
         required: [true, 'El precio unitario es obligatorio.']
-    },
-    cantidad: {
-        type: Number,
-        required: [true, 'La cantidad es obligatoria.']
     }
 },
     {
