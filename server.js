@@ -1,32 +1,25 @@
-require('dotenv').config()
-const bodyParser = require('body-parser')
-const express = require('express')
-const initDB = require('./config/db')
-const app = express()
+require('dotenv').config();
+const express = require('express');
+const initDB = require('./config/db');
+const app = express();
+const Cors = require('cors');
 
 const port = process.env.PORT
 
-const userRouters = require('./app/routes/usuario.routes')
-const productoRouters = require('./app/routes/producto.routes')
+const usuariosRoutes = require('./app/routes/usuario.routes')
+const productosRoutes = require('./app/routes/producto.routes')
 
-app.use(
-    bodyParser.json({
-        limit: '20mb'
-    })
-)
+app.use(express.json());
+app.use(Cors())
 
-app.use(
-    bodyParser.urlencoded({
-        limit: '20mb',
-        extended: true
-    })
-)
-app.use(userRouters)
-app.use(productoRouters)
+app.use(express.urlencoded());
+
+app.use(usuariosRoutes);
+app.use(productosRoutes);
 
 
 app.listen(port, () => {
-    console.log('La aplicación está en linea');
+    console.log('La aplicación está en linea en el puerto ' + port);
 })
 
-initDB()
+initDB();

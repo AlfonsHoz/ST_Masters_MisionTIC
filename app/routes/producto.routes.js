@@ -1,14 +1,47 @@
-const express = require('express')
+const express = require('express');
+const { check } = require('express-validator');
 
-const controller = require('../controller/producto.controller')
+const { obtenerProductos, crearProducto, actualizarProducto, eliminarProducto } = require('../controller/producto.controller');
 
-const router = express.Router()
+const { validarCampos } = require('../middlewares/validar_campos');
 
-const path = 'producto'
+const router = express.Router();
 
-router.get(
+const path = 'producto';
+
+router.get(`/${path}`, obtenerProductos);
+
+router.post(
     `/${path}`,
-    controller.getData
-)
+    [ // Middlewares
+        check('codigo_producto', 'El código del producto es obligatorio.').not().isEmpty(),
+        check('codigo_producto', 'El código del producto debe tener al menos 4 caracteres.').isLength({ min: 4 }),
+        check('nombre_producto', 'El nombre del producto es obligatorio.').not().isEmpty(),
+        check('nombre_producto', 'El nombre del producto debe tener al menos 4 caracteres.').isLength({ min: 4 }),
+        check('precio_unitario', 'El precio unitario del producto es obligatorio.').not().isEmpty(),
+        check('precio_unitario', 'El precio unitario debe ser un valor numérico.').isNumeric(),
+        check('precio_unitario', 'El precio unitario debe tener al menos 3 caracteres.').isLength({ min: 3 }),
+        validarCampos
+    ],
+    crearProducto);
 
-module.exports = router
+router.put(
+    `/${path}/:id`,
+    [ // Middlewares
+        check('codigo_producto', 'El código del producto es obligatorio.').not().isEmpty(),
+        check('codigo_producto', 'El código del producto debe tener al menos 4 caracteres.').isLength({ min: 4 }),
+        check('nombre_producto', 'El nombre del producto es obligatorio.').not().isEmpty(),
+        check('nombre_producto', 'El nombre del producto debe tener al menos 4 caracteres.').isLength({ min: 4 }),
+        check('precio_unitario', 'El precio unitario del producto es obligatorio.').not().isEmpty(),
+        check('precio_unitario', 'El precio unitario debe ser un valor numérico.').isNumeric(),
+        check('precio_unitario', 'El precio unitario debe tener al menos 3 caracteres.').isLength({ min: 3 }),
+        validarCampos
+    ],
+    actualizarProducto);
+
+
+router.delete(
+    `/${path}/:id`,
+    eliminarProducto),
+
+    module.exports = router;
