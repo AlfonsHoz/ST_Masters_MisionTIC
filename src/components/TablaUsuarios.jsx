@@ -6,13 +6,15 @@ import { Link } from "react-router-dom";
 import { useUsuariosEditarContext } from "../context/editarusuarioContext";
 
 export const TablaUsuarios = ({ props }) => {
-  const { setUsuariosEditar } = useUsuariosEditarContext();
-  const {
-    identificacion = "Sin coincidencias",
-    nombre = "Sin coincidencias",
-    rol = "Sin coincidencias",
-    estado = "Sin coincidencias"
-  } = props;
+
+  const { usuariosEditar, setUsuariosEditar } = useUsuariosEditarContext();
+
+  const { identificacion, nombre, rol, estado } = props;
+
+  const envioUsuario = () => {
+    setUsuariosEditar({ identificacion, nombre, rol, estado });
+    console.log(usuariosEditar);
+  }
 
   return (
     <tr>
@@ -22,11 +24,11 @@ export const TablaUsuarios = ({ props }) => {
       <td>{estado}</td>
       <td>
         <Link to='/usuarios/editar'>
-          <button
+          <img
+            src={lapiz}
             id='boton-editar-usuarios'
-            onClick={() => setUsuariosEditar({ identificacion })}>
-            <img src={lapiz} alt='' />
-          </button>
+            onClick={envioUsuario} >
+          </img>
         </Link>{" "}
         <img src={eliminar} alt='' />
       </td>
