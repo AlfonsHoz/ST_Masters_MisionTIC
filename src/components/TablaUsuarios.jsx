@@ -11,6 +11,7 @@ export const TablaUsuarios = ({ props }) => {
     identificacion = "Sin coincidencias",
     nombre = "Sin coincidencias",
     rol = "Sin coincidencias",
+    estado = "Sin coincidencias"
   } = props;
 
   return (
@@ -18,6 +19,7 @@ export const TablaUsuarios = ({ props }) => {
       <td>{identificacion}</td>
       <td>{nombre}</td>
       <td>{rol}</td>
+      <td>{estado}</td>
       <td>
         <Link to='/usuarios/editar'>
           <button

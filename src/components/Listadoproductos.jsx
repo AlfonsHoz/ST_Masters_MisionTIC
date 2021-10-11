@@ -5,7 +5,7 @@ import Productos from "./Productos";
 import { axiosPetition, respuesta } from '../helper/fetch';
 import { useConsultarProductoContext } from '../context/consultarProductoContext';
 import { toast } from "react-toastify";
-import ConsultarProducto from "./ConsultarProducto";
+
 
 const ListadoProductos = () => {
 
@@ -52,13 +52,14 @@ const ListadoProductos = () => {
               </tr>
             </thead>
             <tbody>
-              {data.map((datos, key) => {
+              {data?.map((datos, key) => {
                 if (consultaProducto !== '') {
                   return datos.codigo_producto === consultaProducto || datos.nombre_producto === consultaProducto ? <Productos key={datos._id} props={datos} /> : ``;
                 } else {
                   return <Productos key={datos._id} props={datos} />;
                 }
-              })}
+              })
+              }
             </tbody>
           </Table>
         </Col>
