@@ -1,0 +1,16 @@
+#content-tbl-prod {
+  padding-bottom: 9%;
+  padding: 0 5.8% 146px 5.8%;
+  background-color: #191c1f;
+}
+
+#titulo-consultar-producto {
+  font-size: 22.4px;
+  margin-bottom: 0;
+}
+
+#tabla-productos-registrados,
+#tabla-productos-registrados td,
+#tabla-productos-registrados th {
+  border-color: #191c1f;
+}
