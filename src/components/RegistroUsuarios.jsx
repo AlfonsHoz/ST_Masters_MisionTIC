@@ -2,34 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles/registrousuarios.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useForm } from "../hooks/useForm";
+import { axiosPetition, respuesta } from '../helper/fetch';
 
 const RegistroUsuarios = () => {
-  const [id, setId] = useState({});
-  const idRef = useRef();
-
-  const [name, setName] = useState({});
-  const nameRef = useRef();
-
-  const [rol, setRol] = useState({});
-  const rolRef = useRef();
-
-  const [pass, setPass] = useState({});
-  const passRef = useRef();
-
-  useEffect(() => {
-    idRef.current.focus();
-    setId(idRef.current);
-    setName(nameRef.current);
-    setRol(rolRef.current);
-    setPass(passRef.current);
-  }, []);
-
-  const cleanUpTextFields = () => {
-    id.value = "";
-    name.value = "";
-    rol.value = "vendedor";
-    pass.value = "";
-  };
 
   const configMensaje = {
     position: "bottom-center",
@@ -42,78 +18,112 @@ const RegistroUsuarios = () => {
     progress: undefined,
   };
 
-  const mostrarMensaje = (e) => {
-    if (!(id.value === "" || name.value === "" || pass.value === "")) {
-      toast.success("Usuario registrado correctamente!", configMensaje);
-      cleanUpTextFields();
-      e.preventDefault();
+  const [formUsuariosValues, handleUsuariosInputChange, resetUsuariosForm] = useForm({
+    identificacion: '',
+    nombre: '',
+    rol: '',
+    estado: 'Activo',
+    password: ''
+  });
+
+  const { identificacion, nombre, rol, estado, password } = formUsuariosValues;
+
+  const handleSubmit = async (e) => {
+
+    e.preventDefault();
+
+    await axiosPetition('usuarios', formUsuariosValues, 'POST');
+
+    if (respuesta.ok) {
+      resetUsuariosForm();
+      toast.success('Usuario registrado correctamente.', configMensaje);
     } else {
-      toast.error("Llene todos los campos!", configMensaje);
+      toast.error(respuesta.msg, configMensaje);
     }
-  };
+  }
 
   return (
     <>
-      <div id="reg-usr-container">
+      <div id='reg-usr-container'>
         <h3>Registrar usuario</h3>
-        <form action="">
-          <div className="form-reg-usrs">
-            <label className="lbl-reg-usr">
+        <form action='' onSubmit={handleSubmit}>
+          <div className='form-reg-usrs'>
+            <label className='lbl-reg-usr'>
               Identificador: <br />
               <input
-                id="refId"
-                ref={idRef}
-                className="text-field"
-                type="text"
-                placeholder="Identificación del usuario"
-              />{" "}
-            </label>
-            <label className="lbl-reg-usr">
-              Nombre: <br />
-              <input
-                ref={nameRef}
-                className="text-field"
-                type="text"
-                placeholder="Ingresa el nombre"
+                id='refId'
+                className='text-field'
+                type='text'
+                placeholder='Identificación del usuario'
+                name='identificacion'
+                value={identificacion}
+                onChange={handleUsuariosInputChange}
+                autoComplete='off'
+                required
               />
             </label>
-            <label className="lbl-reg-usr">
+            <label className='lbl-reg-usr'>
+              Nombre: <br />
+              <input
+                className='text-field'
+                type='text'
+                placeholder='Ingresa el nombre'
+                name='nombre'
+                value={nombre}
+                onChange={handleUsuariosInputChange}
+                autoComplete='off'
+                required
+              />
+            </label>
+            <label className='lbl-reg-usr'>
               Rol: <br />
-              <select ref={rolRef} name="rol" id="selector-rol">
-                <option value="vendedor">Vendedor</option>
-                <option value="admin">Administrador</option>
+              <select name='rol' value={rol} onChange={handleUsuariosInputChange} id='selector-rol' required>
+                <option value='Vendedor'>Vendedor</option>
+                <option value='Administrador'>Administrador</option>
+                <option value='Operario'>Operario</option>
               </select>
             </label>
           </div>
-          <div className="form-reg-usrs">
-            <label className="lbl-reg-usr">
+          <div className='form-reg-usrs'>
+            <label className='lbl-reg-usr'>
               Estado:
-              <input type="text" disabled className="text-field" value="Activo" />
+              <input
+                type='text'
+                disabled
+                className='text-field'
+                value={estado}
+                name='estado'
+                required
+              />
             </label>
-            <label className="lbl-reg-usr">
+            <label className='lbl-reg-usr'>
               Contraseña: <br />
               <input
-                ref={passRef}
-                className="text-field"
-                type="password"
-                placeholder="Ingresa la contraseña"
+                className='text-field'
+                type='password'
+                placeholder='Ingresa la contraseña'
+                name='password'
+                value={password}
+                onChange={handleUsuariosInputChange}
+                autoComplete='off'
+                required
               />
             </label>
             {
               // label vacio para arreglar el espacio en blanco.
             }
-            <label className="lbl-reg-usr"></label>
+            <label className='lbl-reg-usr'></label>
           </div>
-          <div id="bottom-btns-container">
-            <button type="button" onClick={mostrarMensaje} id="btn-registrar">
+          <div id='bottom-btns-container'>
+            <button type='submit' id='btn-registrar'>
               Registar usuario
             </button>
-            <button id="btn-limpiar" onClick={cleanUpTextFields}>
+            <button id='btn-limpiar'>
               Limpiar
             </button>
           </div>
         </form>
-        <ToastContainer theme="dark" />
+        <ToastContainer theme='dark' />
       </div>
     </>
   );

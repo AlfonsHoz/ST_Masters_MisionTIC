@@ -1,15 +1,37 @@
-import React from 'react';
-import '../styles/listadoUsuarios.css';
-import eliminar from '../assets/img/eliminar.svg';
-import lapiz from '../assets/img/lapiz.svg';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "../styles/listadoUsuarios.css";
+import eliminar from "../assets/img/eliminar.svg";
+import lapiz from "../assets/img/lapiz.svg";
+import { Link } from "react-router-dom";
+import { useUsuariosEditarContext } from "../context/editarusuarioContext";
 
 export const TablaUsuarios = ({ props }) => {
-    const { identificacion = 'Sin coincidencias', nombre = 'Sin coincidencias', rol = 'Sin coincidencias' } = props;
 
-    return (
-        <tr>
-            <td>{identificacion}</td><td>{nombre}</td><td>{rol}</td><td><Link to="/usuarios/editar"><img src={lapiz} alt="" /></Link> <img src={eliminar} alt="" /></td>
-        </tr>
-    );
-}
+  const { usuariosEditar, setUsuariosEditar } = useUsuariosEditarContext();
+
+  const { identificacion, nombre, rol, estado } = props;
+
+  const envioUsuario = () => {
+    setUsuariosEditar({ identificacion, nombre, rol, estado });
+    console.log(usuariosEditar);
+  }
+
+  return (
+    <tr>
+      <td>{identificacion}</td>
+      <td>{nombre}</td>
+      <td>{rol}</td>
+      <td>{estado}</td>
+      <td>
+        <Link to='/usuarios/editar'>
+          <img
+            src={lapiz}
+            id='boton-editar-usuarios'
+            onClick={envioUsuario} >
+          </img>
+        </Link>{" "}
+        <img src={eliminar} alt='' />
+      </td>
+    </tr>
+  );
+};

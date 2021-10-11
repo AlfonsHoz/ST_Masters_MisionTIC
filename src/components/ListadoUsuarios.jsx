@@ -2,16 +2,34 @@ import React, { useEffect, useState } from "react";
 import "../styles/listadoUsuarios.css";
 import { TablaUsuarios } from "./TablaUsuarios";
 import { Table } from 'react-bootstrap';
-import { useUsuariosContext } from '../context/usuariosContext';
+import { useConsultarUsuarioContext } from "../context/consultarUsuarioContext";
+import { toast } from "react-toastify";
+import { axiosPetition, respuesta } from "../helper/fetch";
 
 export const ListadoUsuarios = () => {
-  const [data, setdata] = useState([]);
-  const { usuariosConsultar } = useUsuariosContext();
 
-  useEffect(() => {
-    fetch("https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db")
-      .then((response) => response.json())
-      .then((dat) => setdata(dat.usuarios));
+  const { consultaUsuario } = useConsultarUsuarioContext();
+  const { busqueda, rol } = consultaUsuario;
+  const [data, setData] = useState([]);
+
+  const configMensaje = {
+    position: "bottom-center",
+    background: "#191c1f !important",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+  };
+
+  useEffect(async () => {
+
+    await axiosPetition('usuarios');
+    setData(respuesta.usuarios);
+    if (!respuesta.ok) {
+      toast.error('Ha ocurrido un error al intentar obtener la lista de productos.', configMensaje);
+    }
   }, []);
 
   return (
@@ -24,15 +42,25 @@ export const ListadoUsuarios = () => {
               <th>Identificación</th>
               <th>Nombre</th>
               <th>Rol</th>
+              <th>Estado</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((datos, key) => {
-              if (usuariosConsultar) {
-                return datos.identificacion === 1113692937 ? <TablaUsuarios props={datos} /> : ``;
+            {data?.map((datos, key) => {
+              if (busqueda !== '' && busqueda != undefined) {
+                if (rol === 'todos' && busqueda != undefined) {
+                  return datos.identificacion.toString() === busqueda || datos.nombre === busqueda ? <TablaUsuarios key={datos._id} props={datos} /> : ``;
+                } else {
+                  return datos.identificacion.toString() === busqueda && datos.rol === rol || datos.nombre === busqueda && datos.rol === rol ? <TablaUsuarios key={datos._id} props={datos} /> : ``;
+                }
               } else {
-                return <TablaUsuarios key={key} props={datos} />;
+                if (rol !== '' && rol != undefined && rol !== 'todos') {
+                  return datos.rol === rol ? <TablaUsuarios key={datos._id} props={datos} /> : ``;
+                } else {
+                  console.log(busqueda == undefined)
+                  return <TablaUsuarios key={datos._id} props={datos} />;
+                }
               }
             })}
           </tbody>
