@@ -43,7 +43,8 @@ router.post(
     check("password", "La contraseña del usuario es obligatoria.")
       .not()
       .isEmpty(),
-    validarCampos,
+    check("password", "La contraseña debe tener al menos 4 caracteres.").isLength({ min: 4 }),
+    validarCampos
   ],
   crearUsuario
 );
