@@ -1,114 +1,108 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import "../styles/registrarProducto.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useForm } from "../hooks/useForm";
+import { axiosPetition, respuesta } from '../helper/fetch';
+
 
 export const RegistrarProducto = () => {
-  const [id, setId] = useState({});
-  const idRef = useRef();
 
-  const [descr, setDescr] = useState({});
-  const descrRef = useRef();
+  const [formProductsValues, handleProductsInputChange, resetProductsForm] = useForm({
+    codigo_producto: '',
+    nombre_producto: '',
+    precio_unitario: ''
+  });
 
-  const [precio, setPrecio] = useState({});
-  const precioRef = useRef();
+  const { codigo_producto, nombre_producto, precio_unitario } = formProductsValues;
 
-  useEffect(() => {
-    descrRef.current.focus();
-    setId(idRef.current);
-    setDescr(descrRef.current);
-    setPrecio(precioRef.current);
-  }, []);
-
-  const cleanUpTextFields = () => {
-    id.value = "";
-    descr.value = "";
-    precio.value = "";
-  };
-
-  const submitTextFields = () => {
-    console.log(id.value, descr.value, precio.value);
-    if (!(id.value === "" || descr.value === "" || precio.value === "")) {
-      alert("Se ha agregado el producto.");
-      cleanUpTextFields();
-    } else {
-      alert("Ingrese toda la información, por favor.");
-    }
-  };
-
-  const errorMessage = {
+  const configMensaje = {
     position: "bottom-center",
     background: "#191c1f !important",
-    autoClose: 5000,
+    autoClose: 3000,
     hideProgressBar: false,
     closeOnClick: true,
-    pauseOnHover: true,
+    pauseOnHover: false,
     draggable: true,
     progress: undefined,
   };
 
-  const mostrarMensaje = (e) => {
-    if (!(id.value === "" || descr.value === "" || precio.value === "")) {
-      toast.success("Usuario registrado correctamente!", errorMessage);
-      cleanUpTextFields();
-      e.preventDefault();
+  const handleSubmit = async (e) => {
+
+    e.preventDefault();
+
+    await axiosPetition('producto', formProductsValues, 'POST');
+
+    if (respuesta.ok) {
+      resetProductsForm();
+      toast.success('Producto registrado correctamente.', configMensaje);
     } else {
-      toast.error("Llene todos los campos!", errorMessage);
+      toast.error(respuesta.msg, configMensaje);
     }
-  };
+
+  }
 
   return (
     <Container id="container_reg_prod" fluid>
       <h3 id="titulo-registrar-producto">Registrar producto</h3>
-      <Form id="formulario-registrar-productos">
+      <Form id="formulario-registrar-productos" onSubmit={handleSubmit}>
         <Row id="fila_inputs_reg_prod">
-          <Col col-4>
+          <Col col-4="true">
             <Form.Group>
               <Form.Label>Identificador:</Form.Label>
               <Form.Control
-                ref={idRef}
                 type="text"
                 placeholder="Identificador del producto"
+                name="codigo_producto"
+                value={codigo_producto}
+                onChange={handleProductsInputChange}
+                required
               ></Form.Control>
             </Form.Group>
           </Col>
-          <Col col-4>
+          <Col col-4="true">
             <Form.Group>
               <Form.Label>Descripción:</Form.Label>
               <Form.Control
-                ref={descrRef}
                 type="text"
                 placeholder="Ingrese la descripción"
+                name="nombre_producto"
+                value={nombre_producto}
+                onChange={handleProductsInputChange}
+                required
               ></Form.Control>
             </Form.Group>
           </Col>
-          <Col col-4>
+          <Col col-4="true">
             <Form.Group>
               <Form.Label>Precio:</Form.Label>
               <Form.Control
-                ref={precioRef}
                 type="number"
                 placeholder="Ingrese el precio"
+                name="precio_unitario"
+                value={precio_unitario}
+                onChange={handleProductsInputChange}
+                required
               ></Form.Control>
             </Form.Group>
           </Col>
         </Row>
         <Row id="fila_botones_reg_prod">
-          <Col col-6 className="d-flex justify-content-end">
+          <Col col-6="true" className="d-flex justify-content-end">
             <Button
               id="btn_reg_pro"
-              onClick={mostrarMensaje}
+              type="submit"
               className="boton-generico-header"
             >
               Registrar producto
             </Button>
           </Col>
-          <Col col-6 className="d-flex justify-content-start">
+          <Col col-6="true" className="d-flex justify-content-start">
             <Button
               id="btn_cancel_pro"
               className="boton-generico-cancelar"
-              onClick={cleanUpTextFields}
+              onClick={resetProductsForm}
             >
               Limpiar
             </Button>

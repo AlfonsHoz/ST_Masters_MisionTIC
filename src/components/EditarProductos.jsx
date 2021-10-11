@@ -3,20 +3,47 @@ import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import "../styles/editar_productos.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useProductosContext } from '../context/productosContext';
+import { axiosPetition, respuesta } from '../helper/fetch';
+import { useForm } from "../hooks/useForm";
 
 const ProductosEditar = () => {
-  const mostrarMensaje = () => {
-    toast.success("Producto actualizado correctamente!", {
-      position: "bottom-center",
-      background: "#191c1f !important",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  };
+
+  const { productoEditar } = useProductosContext();
+
+  const [formProductsValues, handleProductsInputChange, resetProductsForm] = useForm({
+    codigo_producto: productoEditar.codigo_producto,
+    nombre_producto: productoEditar.nombre_producto,
+    precio_unitario: productoEditar.precio_unitario
+  });
+
+  const { codigo_producto, nombre_producto, precio_unitario } = formProductsValues;
+
+
+  const configMensaje = {
+    position: "bottom-center",
+    background: "#191c1f !important",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  }
+
+  const handleSubmit = async (e) => {
+
+    e.preventDefault();
+
+    await axiosPetition(`producto/${productoEditar.codigo_producto}`, formProductsValues, 'PUT');
+
+    if (respuesta.ok) {
+      resetProductsForm();
+      toast.success('Producto actualizado correctamente.', configMensaje);
+    } else {
+      toast.error(respuesta.msg, configMensaje);
+    }
+  }
 
   return (
     <Container fluid id="container" className="m-0">
@@ -25,7 +52,7 @@ const ProductosEditar = () => {
           <h2>Actualizar producto</h2>
         </Col>
       </Row>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Row>
           {/*-------------CONTENIDO DEL FORMULARIO ---------------*/}
           <Col id="contenido_form" className="col-12">
@@ -37,7 +64,9 @@ const ProductosEditar = () => {
                       <Form.Label>Identificador:</Form.Label>
                       <Form.Control
                         type="text"
-                        placeholder="Numero de identificacion"
+                        placeholder="Código de producto"
+                        value={codigo_producto}
+                        name='codigo_producto'
                         readOnly
                       ></Form.Control>
                     </Form.Group>
@@ -52,6 +81,9 @@ const ProductosEditar = () => {
                       <Form.Control
                         type="text"
                         placeholder="Descripcion producto"
+                        value={nombre_producto}
+                        name='nombre_producto'
+                        onChange={handleProductsInputChange}
                       ></Form.Control>
                     </Form.Group>
                   </Col>
@@ -65,6 +97,9 @@ const ProductosEditar = () => {
                       <Form.Control
                         type="number"
                         placeholder="Precio"
+                        value={precio_unitario}
+                        name='precio_unitario'
+                        onChange={handleProductsInputChange}
                       ></Form.Control>
                     </Form.Group>
                   </Col>
@@ -73,7 +108,7 @@ const ProductosEditar = () => {
             </Row>
             <Row>
               <Col col={6} id="col-actu" className="d-flex justify-content-end">
-                <Button id="boton_actualizar" onClick={mostrarMensaje}>
+                <Button type='submit' id="boton_actualizar">
                   Actualizar producto
                 </Button>
               </Col>
@@ -91,7 +126,7 @@ const ProductosEditar = () => {
           {/* --------------------------------------------------------- */}
         </Row>
       </Form>
-      <ToastContainer />
+      <ToastContainer theme='dark' />
     </Container>
   );
 };

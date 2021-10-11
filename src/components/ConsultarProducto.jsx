@@ -1,11 +1,18 @@
 import React from "react";
 import { Col, Container, Form, FormGroup, Row, Button } from "react-bootstrap";
 import "../styles/consultarProducto.css";
-import { useProductosContext } from "../context/productosContext";
+import { useConsultarProductoContext } from "../context/consultarProductoContext";
+import { useForm } from "../hooks/useForm";
 
 const ConsultarProducto = () => {
 
-  const { productosConsultar, setProductosConsultar } = useProductosContext();
+  const { setConsultaProducto } = useConsultarProductoContext();
+
+  const [formFindProductsValues, handleFindProductsInputChange] = useForm({
+    busqueda: '',
+  });
+
+  const { busqueda } = formFindProductsValues;
 
   return (
     <Container fluid id="cont-cons-pro">
@@ -21,16 +28,17 @@ const ConsultarProducto = () => {
                 className="campo-buscar-producto"
                 type="text"
                 placeholder="Ingresa el codigo o nombre del producto"
+                name="busqueda"
+                onChange={handleFindProductsInputChange}
+                required
+                autoComplete='off'
               ></Form.Control>
-              <Button onClick={(e) => {
-                setProductosConsultar(!productosConsultar);
+              <Button type='submit' onClick={(e) => {
+                setConsultaProducto(busqueda);
                 e.preventDefault();
-              }} id="boton-producto" className="boton-generico-header">{
-                  productosConsultar ?
-                    "Todos los productos"
-                    :
-                    "Consultar"
-                }</Button>
+              }} id="boton-producto" className="boton-generico-header">
+                Consultar
+              </Button>
             </FormGroup>
           </Form>
         </Col>

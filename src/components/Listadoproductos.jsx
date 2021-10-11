@@ -2,17 +2,34 @@ import React, { useEffect, useState } from "react";
 import { Container, Table, Row, Col } from "react-bootstrap";
 import "../styles/listadoproducto.css";
 import Productos from "./Productos";
-import { useProductosContext } from '../context/productosContext';
+import { axiosPetition, respuesta } from '../helper/fetch';
+import { useConsultarProductoContext } from '../context/consultarProductoContext';
+import { toast } from "react-toastify";
+
 
 const ListadoProductos = () => {
 
-  const [data, setdata] = useState([]);
-  const { productosConsultar } = useProductosContext();
+  const { consultaProducto } = useConsultarProductoContext();
+  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch("https://my-json-server.typicode.com/AlfonsHoz/jsonprueba/db")
-      .then((response) => response.json())
-      .then((dat) => setdata(dat.productos));
+  const configMensaje = {
+    position: "bottom-center",
+    background: "#191c1f !important",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+  };
+
+  useEffect(async () => {
+
+    await axiosPetition('producto');
+    setData(respuesta.productos);
+    if (!respuesta.ok) {
+      toast.error('Ha ocurrido un error al intentar obtener la lista de productos.', configMensaje);
+    }
   }, []);
 
 
@@ -35,13 +52,14 @@ const ListadoProductos = () => {
               </tr>
             </thead>
             <tbody>
-              {data.map((datos, key) => {
-                if (productosConsultar) {
-                  return datos.codigo_producto === 'PN0001' ? <Productos props={datos} /> : ``;
+              {data?.map((datos, key) => {
+                if (consultaProducto !== '') {
+                  return datos.codigo_producto === consultaProducto || datos.nombre_producto === consultaProducto ? <Productos key={datos._id} props={datos} /> : ``;
                 } else {
-                  return <Productos key={key} props={datos} />;
+                  return <Productos key={datos._id} props={datos} />;
                 }
-              })}
+              })
+              }
             </tbody>
           </Table>
         </Col>
