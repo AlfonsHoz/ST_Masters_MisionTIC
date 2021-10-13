@@ -136,9 +136,8 @@ const EditarUsuarios = () => {
                     <Form.Group className="mb-3" controlId="grupo_email">
                       <Form.Label>Identificador:</Form.Label>
                       <Form.Control
-                        ref={refId}
                         type="text"
-                        placeholder={identificacion}
+                        placeholder="Numero de identificacion"
                       ></Form.Control>
                     </Form.Group>
                   </Col>
@@ -147,12 +146,10 @@ const EditarUsuarios = () => {
                   <Col>
                     <Form.Group className="mb-3" controlId="grupo_email">
                       <Form.Label>Estado:</Form.Label>
-                      <Form.Select
-                        ref={refEstado}
-                        aria-label="Default select example"
-                      >
-                        <option value="activo">Activo</option>
-                        <option value="inactivo">Inactivo</option>
+                      <Form.Select aria-label="Default select example">
+                        <option>Seleccione...</option>
+                        <option value="1">Activo</option>
+                        <option value="2">Retirado</option>
                       </Form.Select>
                     </Form.Group>
                   </Col>
@@ -164,9 +161,8 @@ const EditarUsuarios = () => {
                     <Form.Group className="mb-3" controlId="grupo_nombre">
                       <Form.Label>Nombre:</Form.Label>
                       <Form.Control
-                        ref={refNombre}
                         type="text"
-                        placeholder={nombre}
+                        placeholder="Nombre usuario"
                       ></Form.Control>
                     </Form.Group>
                   </Col>
@@ -176,7 +172,6 @@ const EditarUsuarios = () => {
                     <Form.Group className="mb-3" controlId="grupo_contraseña">
                       <Form.Label>Contraseña:</Form.Label>
                       <Form.Control
-                        ref={refpass1}
                         type="password"
                         placeholder="Contraseña"
                       ></Form.Control>
@@ -189,12 +184,10 @@ const EditarUsuarios = () => {
                   <Col>
                     <Form.Group className="mb-3" controlId="grupo_rol">
                       <Form.Label>Rol:</Form.Label>
-                      <Form.Select
-                        ref={refRol}
-                        aria-label="Default select example"
-                      >
-                        <option value="vendedor">Vendedor</option>
-                        <option value="admin">Administrador</option>
+                      <Form.Select aria-label="Default select example">
+                        <option>Seleccione</option>
+                        <option value="1">Vendedor</option>
+                        <option value="2">Administrador</option>
                       </Form.Select>
                     </Form.Group>
                   </Col>
@@ -204,7 +197,6 @@ const EditarUsuarios = () => {
                     <Form.Group className="mb-3" controlId="grupo_contra_new">
                       <Form.Label>Contraseña nueva:</Form.Label>
                       <Form.Control
-                        ref={refpassRepeated}
                         type="password"
                         placeholder="Contraseña"
                       ></Form.Control>

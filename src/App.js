@@ -31,50 +31,48 @@ function App() {
   return (
     <>
       <Router>
-        <Route exact path='/'>
+        <Route exact path="/">
           <Login />
         </Route>
 
         <VentasContext.Provider value={{ ventasConsultar, setVentasConsultar }}>
-          <Route exact path='/ventas'>
+          <Route exact path="/ventas">
             <Ventas />
           </Route>
-          <Route exact path='/ventas/registrar'>
+          <Route exact path="/ventas/registrar">
             <VentasReg />
           </Route>
-
-          <Route exact path='/ventas/editar'>
+          <Route exact path="/ventas/editar">
             <VentasEdit />
           </Route>
         </VentasContext.Provider>
 
         <ProductosContext.Provider
-          value={{ productosConsultar, setProductosConsultar }}>
-          <Route exact path='/productos'>
+          value={{ productosConsultar, setProductosConsultar }}
+        >
+          <Route exact path="/productos">
             <Productos />
           </Route>
-          <Route exact path='/productos/registrar'>
+          <Route exact path="/productos/registrar">
             <ProductoRegistrar />
           </Route>
-          <Route exact path='/productos/editar'>
+          <Route exact path="/productos/editar">
             <ProductosEditarPage />
           </Route>
         </ProductosContext.Provider>
 
         <UsuariosContext.Provider
-          value={{ usuariosConsultar, setUsuariosConsultar }}>
-          <UsuariosEditarContext.Provider
-            value={{ usuariosEditar, setUsuariosEditar }}>
-            <Route exact path='/usuarios'>
-              <Usuarios />
-            </Route>
-            <Route exact path='/usuarios/registrar'>
-              <UsuariosRegistrarPage />
-            </Route>
-            <Route exact path='/usuarios/editar'>
-              <UsuariosEditarPage />
-            </Route>
-          </UsuariosEditarContext.Provider>
+          value={{ usuariosConsultar, setUsuariosConsultar }}
+        >
+          <Route exact path="/usuarios">
+            <Usuarios />
+          </Route>
+          <Route exact path="/usuarios/registrar">
+            <UsuariosRegistrarPage />
+          </Route>
+          <Route exact path="/usuarios/editar">
+            <UsuariosEditarPage />
+          </Route>
         </UsuariosContext.Provider>
       </Router>
     </>
