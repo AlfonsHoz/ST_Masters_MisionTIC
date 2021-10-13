@@ -45,9 +45,10 @@ const ListadoProductos = () => {
           <Table id="tabla-productos-registrados" striped hover variant="dark" className="text-center">
             <thead>
               <tr>
-                <th>Identificador</th>
+                <th>Identificador Único</th>
                 <th>Descripción</th>
-                <th>Precio Unitario</th>
+                <th>Valor Unitario</th>
+                <th>Estado</th>
                 <th>Acciones</th>
               </tr>
             </thead>

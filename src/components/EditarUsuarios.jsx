@@ -79,8 +79,9 @@ const EditarUsuarios = () => {
                         value={estado}
                         onChange={handleUsuariosInputChange}>
                         <option>Seleccione...</option>
-                        <option value='Activo'>Activo</option>
-                        <option value='Inactivo'>Inactivo</option>
+                        <option value='Pendiente'>Pendiente</option>
+                        <option value='Autorizado'>Autorizado</option>
+                        <option value='No Autorizado'>No Autorizado</option>
                       </Form.Select>
                     </Form.Group>
                   </Col>

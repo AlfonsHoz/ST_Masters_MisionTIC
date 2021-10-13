@@ -22,7 +22,7 @@ const RegistroUsuarios = () => {
     identificacion: '',
     nombre: '',
     rol: '',
-    estado: 'Activo',
+    estado: 'Pendiente',
     password: ''
   });
 

@@ -61,10 +61,10 @@ const ProductosEditar = () => {
                 <Row>
                   <Col>
                     <Form.Group className="mb-3" controlId="grupo_email">
-                      <Form.Label>Identificador:</Form.Label>
+                      <Form.Label>Identificador del producto:</Form.Label>
                       <Form.Control
                         type="text"
-                        placeholder="Código de producto"
+                        placeholder="Ingrese el identificador del producto"
                         value={codigo_producto}
                         name='codigo_producto'
                         readOnly
@@ -80,7 +80,7 @@ const ProductosEditar = () => {
                       <Form.Label>Descripción:</Form.Label>
                       <Form.Control
                         type="text"
-                        placeholder="Descripcion producto"
+                        placeholder="Descripción del producto"
                         value={nombre_producto}
                         name='nombre_producto'
                         onChange={handleProductsInputChange}
