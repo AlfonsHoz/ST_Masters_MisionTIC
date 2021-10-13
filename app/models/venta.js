@@ -23,7 +23,7 @@ const ventaSchema = new Schema({
         required: [true, 'La cédula del usuario es obligatoria.']
     },
     productos: {
-        type: Object,
+        type: Array,
         required: [true, 'No se puede registrar una venta sin productos.']
     }
 },
