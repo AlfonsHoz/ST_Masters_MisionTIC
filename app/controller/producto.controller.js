@@ -27,7 +27,7 @@ exports.crearProducto = async (req, res = response) => {
     let producto = await Producto.findOne({ codigo_producto });
     console.log(producto);
     if (producto) {
-      return res.status(400).json({
+      return res.json({
         ok: false,
         msg: "Ya se encuentra registrado un producto con este código.",
       });
@@ -47,7 +47,7 @@ exports.crearProducto = async (req, res = response) => {
       producto,
     });
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     res.status(500).json({
       ok: false,
       msg: "Error interno, por favor hable con el administrador.",
@@ -56,13 +56,14 @@ exports.crearProducto = async (req, res = response) => {
 };
 
 exports.actualizarProducto = async (req, res = response) => {
+  //
   const id = req.params.id;
 
   try {
     let producto = await Producto.findOne({ codigo_producto: id });
 
     if (!producto) {
-      return res.status(404).json({
+      return res.json({
         ok: false,
         msg: `No existe el producto con codigo (${id}).`,
       });
@@ -80,7 +81,7 @@ exports.actualizarProducto = async (req, res = response) => {
     res.status(201).json({
       ok: true,
       msg: "Producto actualizado exitosamente.",
-      producto: nuevoProducto,
+      producto: productoActualizado,
     });
   } catch (err) {
     console.log(err);
@@ -115,4 +116,10 @@ exports.eliminarProducto = async (req, res = response) => {
       msg: "Error interno, hable con el administrador",
     });
   }
+  await Producto.findOneAndRemove({ codigo_producto: id });
+
+  res.status(200).json({
+    ok: true,
+    msg: "Producto eliminado exitosamente",
+  });
 };
