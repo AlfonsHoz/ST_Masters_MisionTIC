@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 import { Login } from "./components/Login_Bootstrap";
 
@@ -29,6 +30,11 @@ function App() {
   const [usuariosEditar, setUsuariosEditar] = useState("");
 
   return (
+    <Auth0Provider
+    domain="st-masters.us.auth0.com"
+    clientId="hnI7qZHfG2S7q03F0BTB1wbIlKSVGsym"
+    redirectUri={window.location.origin}
+    >
     <>
       <Router>
         <Route exact path='/'>
@@ -77,6 +83,7 @@ function App() {
         </UsuariosContext.Provider>
       </Router>
     </>
+    </Auth0Provider>
   );
 }
 
