@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../components/Navbar'
 import Header from '../../components/Header'
-import { RegistrarVenta } from '../../components/RegistrarVenta'
+import { RegistrarVenta } from '../../components/ventas/registrar/RegistrarVenta'
 
 const VentasPage = () => {
 

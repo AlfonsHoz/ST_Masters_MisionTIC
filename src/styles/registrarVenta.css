@@ -24,6 +24,19 @@ ToastContainer {
 
 #boton-registrar-venta {
   margin-top: 1rem;
+  width: 16rem;
+}
+
+.itemMenuVenta {
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 32px;
+  margin-right: 8px;
+}
+
+.seccionMenuVenta {
+  color: white;
+  font-size: 20px;
 }
 
 .columna {
@@ -50,7 +63,7 @@ ToastContainer {
 }
 
 .campoDesactivado {
-  background-color: #303436;
+  background-color: #212529;
   border: none;
 }
 
@@ -118,6 +131,12 @@ ToastContainer {
 #volver:hover {
   cursor: pointer;
   color: #caa840;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @media screen and (max-width: 740px) {

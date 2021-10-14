@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
-import ListadoUsuarios from "../../components/ListadoUsuarios";
-import ConsultarUsuario from "../../components/ConsultarUsuario";
+import ListadoUsuarios from "../../components/usuarios/ListadoUsuarios";
+import ConsultarUsuario from "../../components/usuarios/ConsultarUsuario";
 import { ConsultarUsuarioContext } from "../../context/consultarUsuarioContext";
 
 const UsuariosPage = () => {

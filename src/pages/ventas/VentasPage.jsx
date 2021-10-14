@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from '../../components/Navbar'
 import Header from '../../components/Header'
-import Consultarventas from '../../components/Consultarventas'
-import Listadoventas from '../../components/Listadoventas'
+import ConsultarVentas from '../../components/ventas/consultar/ConsultarVentas'
+import TablaVentas from '../../components/ventas/consultar/TablaVentas'
 
 const VentasPage = () => {
 
@@ -10,8 +10,8 @@ const VentasPage = () => {
     <>
       <Navbar />
       <Header textoBoton={"Nueva venta"} texto={"ventas"} link={"/ventas/registrar"} />
-      <Consultarventas />
-      <Listadoventas />
+      <ConsultarVentas />
+      <TablaVentas />
     </>
   )
 }
