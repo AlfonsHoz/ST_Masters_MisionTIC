@@ -2,9 +2,10 @@ import React from "react";
 import "../styles/login.css";
 import logo from "../assets/img/logo.svg";
 import logo_google from "../assets/img/logo-google.svg";
-import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react"
 
 export const Login = () => {
+  const { loginWithRedirect } = useAuth0();
   return (
     <section id="login">
       <div id="col-izq">
@@ -25,17 +26,15 @@ export const Login = () => {
                 Olvidé mi contraseña
               </a>
             </div>
-            <Link to="/ventas">
-              <button id="boton-login" class="boton-generico" type="submit">
+              <button 
+              onClick= {() => loginWithRedirect()} id="boton-login" class="boton-generico" type="submit">
                 Iniciar sesión
               </button>
-            </Link>
-            <Link to={"/ventas"}>
-              <button id="boton-gmail" class="boton-generico" type="submit">
+              <button 
+              onClick= {() => loginWithRedirect()} id="boton-login" class="boton-generico" type="submit" id="boton-gmail" class="boton-generico" type="submit">
                 <img id="logo_google" src={logo_google} alt="logo de google" />
                 Iniciar con Gmail
               </button>
-            </Link>
           </form>
         </div>
       </div>
