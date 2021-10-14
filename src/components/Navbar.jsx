@@ -34,23 +34,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-/*
-<nav>
-<ul>
-  <Link to="/ventas">
-    <li>Gestionar ventas</li>
-  </Link>
-  <Link to="/usuarios">
-    <li>Gestionar usuarios</li>
-  </Link>
-  <img src={logo} alt="Logo" />
-  <Link to="/productos">
-    <li>Gestionar productos</li>
-  </Link>
-  <Link to="/">
-    <li>Cerrar sesión</li>
-  </Link>
-</ul>
-</nav>
-*/

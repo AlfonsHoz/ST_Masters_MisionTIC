@@ -3,13 +3,10 @@ import { Container, Table, Row, Col } from "react-bootstrap";
 import "../styles/listadoproducto.css";
 import Productos from "./Productos";
 import { axiosPetition, respuesta } from "../helper/fetch";
-import { useProductosContext } from "../context/productosContext";
 import { useConsultarProductoContext } from "../context/consultarProductoContext";
 import { toast } from "react-toastify";
-import ConsultarProducto from "./ConsultarProducto";
 
 const ListadoProductos = () => {
-  const { productosConsultar } = useProductosContext();
   const { consultaProducto } = useConsultarProductoContext();
   const [data, setData] = useState([]);
 
@@ -25,9 +22,6 @@ const ListadoProductos = () => {
   };
 
   useEffect(async () => {
-    if (ConsultarProducto === "") {
-    }
-
     await axiosPetition("producto");
     setData(respuesta.productos);
     if (!respuesta.ok) {
@@ -56,14 +50,15 @@ const ListadoProductos = () => {
           >
             <thead>
               <tr>
-                <th>Identificador</th>
+                <th>Identificador Único</th>
                 <th>Descripción</th>
-                <th>Precio Unitario</th>
+                <th>Valor Unitario</th>
+                <th>Estado</th>
                 <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
-              {data.map((datos, key) => {
+              {data?.map((datos, key) => {
                 if (consultaProducto !== "") {
                   return datos.codigo_producto === consultaProducto ||
                     datos.nombre_producto === consultaProducto ? (

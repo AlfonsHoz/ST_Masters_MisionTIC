@@ -1,28 +1,20 @@
-#login {
-  display: flex;
+@media screen and (max-width: 992px) {
+  #col-der {
+    display: none;
+  }
 }
 
 #col-izq {
-  display: flex;
-  flex-direction: column;
-  background-color: #1a1e20;
+  background-color: #191c1f;
   height: 100vh;
-  width: 40vw;
-  padding: 0px 0 0 45px;
-  align-items: center;
-  justify-content: center;
 }
 
 #content-izq {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
+  padding: 50px;
 }
 
 #col-der {
-  background-image: url("../assets/img/fondo-cabecera.jpeg");
-  height: 100vh;
-  width: 60vw;
+  background-image: url("../assets/img/pexels-pixabay-73833.jpg");
   color: white;
   text-align: center;
   background-position: center center;
@@ -38,7 +30,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(34, 14, 14, 0.79);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 #col-der img {
@@ -51,17 +43,18 @@
 #col-der h1 {
   color: #e2be4c;
   position: relative;
-  top: 18vh;
+  top: 21vh;
   font-size: 40px;
+  font-weight: bold;
 }
 
 label {
   color: white;
   margin-bottom: 8px;
-  font-size: 18px;
 }
 
 h3 {
+  font-size: 28px;
   color: white;
   margin-bottom: 0;
 }
@@ -74,45 +67,19 @@ h3 {
   margin-bottom: 30px;
 }
 
-#formulario {
-  display: flex;
-  flex-direction: column;
-}
-
-#formulario > input {
-  padding-left: 15px;
-  margin-bottom: 32px;
+#campo-login {
   border: 1.6px solid #303436;
   border-radius: 5px;
-  width: 480px;
-  height: 43px;
-  background-color: #1a1e20;
+  background-color: #191c1f;
   color: white;
   outline: none;
   font-size: 15.8px;
+  width: 100%;
 }
 
-#ayudas {
-  display: flex;
-  justify-content: space-between;
+#campo-login:focus {
+  background-color: #191c1f;
   color: white;
-}
-
-#checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-#checkbox > input {
-  margin: 0;
-  margin-right: 5px;
-  padding: 0;
-  background-color: #1a1e20;
-}
-
-#texto-checkbox {
-  padding-bottom: 4px;
 }
 
 #olvido-contraseña {
@@ -125,24 +92,17 @@ h3 {
   cursor: pointer;
 }
 
-.boton-generico {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 490px;
+#boton-login {
+  width: 100%;
   border-radius: 21px;
   border: none;
   margin-top: 35px;
-  /* font-weight: bold; */
+  color: #1a1e20;
+  font-weight: 500;
+  background-color: #dab74a;
   height: 50px;
   font-size: 18px;
   outline: none;
-}
-
-#boton-login {
-  color: #1a1e20;
-  background-color: #dab74a;
-  /* font-weight: 490 !important; */
 }
 
 #boton-login:hover {
@@ -151,6 +111,12 @@ h3 {
 }
 
 #boton-gmail {
+  width: 100%;
+  padding: 35px;
+  border-radius: 21px;
+  border: none;
+  margin-top: 20px;
+  font-size: 18px;
   color: #ffffff;
   background-color: #303436;
 }
@@ -161,7 +127,7 @@ h3 {
 }
 
 #logo_google {
-  width: 19px;
+  width: 70px;
   margin-right: 10px;
-  margin-bottom: 3px;
+  margin-bottom: 17px;
 }
