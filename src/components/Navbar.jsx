@@ -1,10 +1,12 @@
 import React from "react";
 import logo from "../assets/img/logo.svg";
 import { Link } from "react-router-dom";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import "../styles/navbar.css";
+import {useAuth0} from "@auth0/auth0-react"
 
 const NavBar = () => {
+  const {logout} = useAuth0();
   return (
     <>
       <Navbar collapseOnSelect expand="lg" variant="dark" fixed="top">
@@ -23,7 +25,7 @@ const NavBar = () => {
                 <Nav.Link href="/productos">Gestionar Productos</Nav.Link>
               </Link>
               <Link to="/" className="Link">
-              <Nav.Link href="/productos">Cerrar sesión</Nav.Link>
+              <Nav.Link as = {Button} onClick = {() => logout ({returnTo: "http://localhost:3000"})} >Cerrar sesión</Nav.Link> 
               </Link>
             </Nav>
           </Navbar.Collapse>

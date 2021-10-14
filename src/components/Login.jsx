@@ -27,11 +27,11 @@ export const Login = () => {
               </a>
             </div>
               <button 
-              onClick= {() => loginWithRedirect()} id="boton-login" class="boton-generico" type="submit">
+              id="boton-login" class="boton-generico" type="submit">
                 Iniciar sesión
               </button>
               <button 
-              onClick= {() => loginWithRedirect()} id="boton-login" class="boton-generico" type="submit" id="boton-gmail" class="boton-generico" type="submit">
+              id="boton-login" class="boton-generico" type="submit" id="boton-gmail" class="boton-generico" type="submit">
                 <img id="logo_google" src={logo_google} alt="logo de google" />
                 Iniciar con Gmail
               </button>

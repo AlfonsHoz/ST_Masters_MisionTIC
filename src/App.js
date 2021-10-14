@@ -33,7 +33,7 @@ function App() {
     <Auth0Provider
     domain="st-masters.us.auth0.com"
     clientId="hnI7qZHfG2S7q03F0BTB1wbIlKSVGsym"
-    redirectUri={window.location.origin}
+    redirectUri={"http://localhost:3000/usuarios"}
     >
     <>
       <Router>
