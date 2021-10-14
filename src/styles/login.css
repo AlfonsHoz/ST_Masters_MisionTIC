@@ -123,7 +123,8 @@ h3 {
 
 #boton-gmail:hover {
   cursor: pointer;
-  background-color: #2f3335;
+  border: solid;
+  border-color: #caa840;
 }
 
 #logo_google {
