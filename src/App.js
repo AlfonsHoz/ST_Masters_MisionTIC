@@ -40,54 +40,50 @@ function App() {
         <Route exact path='/'>
           <Login />
         </Route>
+        <PrivateRoute>
+          <VentasContext.Provider
+            value={{ ventasConsultar, setVentasConsultar }}>
+            <Route exact path='/ventas'>
+              <Ventas />
+            </Route>
+            <Route exact path='/ventas/registrar'>
+              <VentasReg />
+            </Route>
+            <Route exact path='/ventas/editar'>
+              <VentasEdit />
+            </Route>
+          </VentasContext.Provider>
+
+          <ProductosContext.Provider
+            value={{ productoEditar, setProductoEditar }}>
+            <Route exact path='/productos'>
+              <Productos />
+            </Route>
+            <Route exact path='/productos/registrar'>
+              <ProductoRegistrar />
+            </Route>
+            <Route exact path='/productos/editar'>
+              <ProductosEditarPage />
+            </Route>
+          </ProductosContext.Provider>
+
+          <UsuariosContext.Provider
+            value={{ usuariosConsultar, setUsuariosConsultar }}>
+            <UsuariosEditarContext.Provider
+              value={{ usuariosEditar, setUsuariosEditar }}>
+              <Route exact path='/usuarios'>
+                <Usuarios />
+              </Route>
+              <Route exact path='/usuarios/registrar'>
+                <UsuariosRegistrarPage />
+              </Route>
+              <Route exact path='/usuarios/editar'>
+                <UsuariosEditarPage />
+              </Route>
+            </UsuariosEditarContext.Provider>
+          </UsuariosContext.Provider>
+        </PrivateRoute>
       </Router>
-      <PrivateRoute>
-        <>
-          <Router>
-            <VentasContext.Provider
-              value={{ ventasConsultar, setVentasConsultar }}>
-              <Route exact path='/ventas'>
-                <Ventas />
-              </Route>
-              <Route exact path='/ventas/registrar'>
-                <VentasReg />
-              </Route>
-              <Route exact path='/ventas/editar'>
-                <VentasEdit />
-              </Route>
-            </VentasContext.Provider>
-
-            <ProductosContext.Provider
-              value={{ productoEditar, setProductoEditar }}>
-              <Route exact path='/productos'>
-                <Productos />
-              </Route>
-              <Route exact path='/productos/registrar'>
-                <ProductoRegistrar />
-              </Route>
-              <Route exact path='/productos/editar'>
-                <ProductosEditarPage />
-              </Route>
-            </ProductosContext.Provider>
-
-            <UsuariosContext.Provider
-              value={{ usuariosConsultar, setUsuariosConsultar }}>
-              <UsuariosEditarContext.Provider
-                value={{ usuariosEditar, setUsuariosEditar }}>
-                <Route exact path='/usuarios'>
-                  <Usuarios />
-                </Route>
-                <Route exact path='/usuarios/registrar'>
-                  <UsuariosRegistrarPage />
-                </Route>
-                <Route exact path='/usuarios/editar'>
-                  <UsuariosEditarPage />
-                </Route>
-              </UsuariosEditarContext.Provider>
-            </UsuariosContext.Provider>
-          </Router>
-        </>
-      </PrivateRoute>
     </Auth0Provider>
   );
 }
