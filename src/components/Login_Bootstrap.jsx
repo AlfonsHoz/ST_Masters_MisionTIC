@@ -4,8 +4,12 @@ import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import logo_google from "../assets/img/logo-google.svg";
 import { Link } from "react-router-dom";
 import "../styles/login_bootstrap.css";
+import { useAuth0 } from "@auth0/auth0-react";
+import PrivateRoute from "../components/PrivateRoute.jsx";
+
 
 export const Login = () => {
+  const { loginWithRedirect } = useAuth0();
   return (
     <section id="login">
       <Container fluid>
@@ -58,12 +62,7 @@ export const Login = () => {
                           Iniciar sesión
                         </Button>
                       </Link>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <Link to="/ventas">
-                        <Button
+                        <Button onClick={() => loginWithRedirect()}
                           id="boton-gmail"
                           class="boton-generico"
                           type="submit"
@@ -75,7 +74,6 @@ export const Login = () => {
                           />
                           Iniciar con Gmail
                         </Button>
-                      </Link>
                     </Col>
                   </Row>
                 </Form>
@@ -89,5 +87,6 @@ export const Login = () => {
         </Row>
       </Container>
     </section>
+
   );
 };

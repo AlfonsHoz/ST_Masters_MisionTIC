@@ -1,9 +1,19 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import "../styles/registrarVenta.css";
 import { TablaProductosVenta } from "./TablaProductosVenta";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Table } from "react-bootstrap";
+=======
+
+import React, { useState, useEffect } from 'react';
+import '../styles/registrarVenta.css';
+import { TablaProductosVenta } from './TablaProductosVenta';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Table } from 'react-bootstrap';
+>>>>>>> 4dab99bec8ed73a60e1e2649ae906eb77969536d
 
 export const RegistrarVenta = () => {
   const [data, setdata] = useState([]);

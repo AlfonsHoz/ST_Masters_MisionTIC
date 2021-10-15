@@ -48,7 +48,7 @@ export const RegistrarProducto = () => {
         <Row id='fila_inputs_reg_prod'>
           <Col col-4='true'>
             <Form.Group>
-              <Form.Label>Identificador:</Form.Label>
+              <Form.Label>Identificador del producto:</Form.Label>
               <Form.Control
                 type='text'
                 placeholder='Identificador del producto'
@@ -72,11 +72,17 @@ export const RegistrarProducto = () => {
           </Col>
           <Col col-4='true'>
             <Form.Group>
-              <Form.Label>Precio:</Form.Label>
+              <Form.Label>Valor unitario:</Form.Label>
               <Form.Control
+<<<<<<< HEAD
                 type='number'
                 placeholder='Ingrese el precio'
                 name='precio_unitario'
+=======
+                type="number"
+                placeholder="Ingrese el valor unitario"
+                name="precio_unitario"
+>>>>>>> 4dab99bec8ed73a60e1e2649ae906eb77969536d
                 value={precio_unitario}
                 onChange={handleProductsInputChange}
                 required></Form.Control>

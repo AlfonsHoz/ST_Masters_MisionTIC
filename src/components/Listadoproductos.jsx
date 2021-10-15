@@ -49,7 +49,7 @@ const ListadoProductos = () => {
             className='text-center'>
             <thead>
               <tr>
-                <th>Identificador</th>
+                <th>Identificador Único</th>
                 <th>Descripción</th>
                 <th>Estado</th>
                 <th>Precio Unitario</th>
