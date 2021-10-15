@@ -10,7 +10,7 @@ export const ListaProductosVenta = ({ props }) => {
             <td>{nombre_producto}</td>
             <td>{precio_unitario}</td>
             <td>{cantidad}</td>
-            <td></td>
+            <td>{precio_unitario * cantidad}</td>
             <td>
                 <img src={eliminar} alt='' />
             </td>

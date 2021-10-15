@@ -1,11 +1,15 @@
 import React, { useRef, useState } from 'react';
 import { axiosPetition, respuesta } from '../../../helper/fetch';
+import carrito from '../../../assets/carrito.svg';
 import { toast } from 'react-toastify';
 import { TablaProductosVenta } from './TablaProductosVenta';
+import { useRegistrarVentaContext } from '../../../context/registrarVentaContext';
 
 export const InfoProducto = ({ configMensaje }) => {
 
-    const [productos, setProductos] = useState([]);
+    const { nuevaVenta, setNuevaVenta } = useRegistrarVentaContext();
+
+    const [productos, setProductos] = useState(nuevaVenta.productos);
     const [productoEncontrado, setProductoEncontrado] = useState();
 
     const filtro = useRef('');
@@ -59,16 +63,28 @@ export const InfoProducto = ({ configMensaje }) => {
     }
 
     const agregarProductos = () => {
-        const { ...resto } = productoEncontrado;
-        const cantidad = cantidad_producto.current.value;
-        setProductos([...productos, { ...resto, cantidad }]);
-        resetPrice();
-        resetName();
-        resetQuantity();
-        resetSearch();
-        setProductoEncontrado(null);
-        filtro.current.focus();
-        console.log(productos);
+        if (productoEncontrado !== undefined) {
+            if (parseInt(cantidad_producto.current.value.trim()) > 0) {
+                const { ...resto } = productoEncontrado;
+                const cantidad = cantidad_producto.current.value;
+                productos.push({ ...resto, cantidad });
+                setProductos(productos);
+                resetPrice();
+                resetName();
+                resetQuantity();
+                resetSearch();
+                setProductoEncontrado(null);
+                filtro.current.focus();
+                nuevaVenta.productos = productos;
+                nuevaVenta.total += (parseInt(productoEncontrado.precio_unitario) * parseInt(cantidad));
+                setNuevaVenta(nuevaVenta);
+                console.log(nuevaVenta);
+            } else {
+                toast.error('Ingrese una cantidad válida, por favor.', configMensaje);
+            }
+        } else {
+            toast.error('Busque un producto primero, por favor.', configMensaje);
+        }
     }
 
     return (
@@ -92,10 +108,14 @@ export const InfoProducto = ({ configMensaje }) => {
                 <div className="campoLabel">
                     <label htmlFor="cantidadProducto">Cantidad:</label>
                     <input className="campoGenerico" name="cantidadProducto" ref={cantidad_producto}
-                        // onKeyPress={agregarProductos}
+                        onKeyPress={(e) => {
+                            if (e.key === 'Enter') {
+                                agregarProductos();
+                            }
+                        }}
                         type="number" placeholder="Ingresa la cantidad" autoComplete="off" />
                 </div>
-                <button className="boton-generico" onClick={agregarProductos}>Agregar producto</button>
+                <button id="btn-agregar-pdcto" className="boton-generico" onClick={agregarProductos}><img id="carrito" src={carrito} /></button>
             </div>
             <div id="contenedorListadoProductos">
                 <div id="tablaProductos">

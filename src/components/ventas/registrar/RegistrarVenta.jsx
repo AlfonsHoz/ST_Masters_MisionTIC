@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import '../../../styles/registrarVenta.css';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import uno from '../../../assets/img/uno.png';
 import uno_dorado from '../../../assets/img/uno_dorado.png';
@@ -15,10 +15,13 @@ import { InfoProducto } from './InfoProducto';
 import { InfoVendedor } from './InfoVendedor';
 import { InfoVenta } from './InfoVenta';
 import { InfoCliente } from './InfoCliente';
+import { useRegistrarVentaContext } from '../../../context/registrarVentaContext';
+import { axiosPetition, respuesta } from '../../../helper/fetch';
 
 export const RegistrarVenta = () => {
 
     const [componente, setComponente] = useState('InfoCliente');
+    const { nuevaVenta, setNuevaVenta } = useRegistrarVentaContext();
 
     const configMensaje = {
         position: "bottom-center",
@@ -30,6 +33,31 @@ export const RegistrarVenta = () => {
         draggable: true,
         progress: undefined,
     };
+
+    const registrarVenta = async (e) => {
+
+        e.preventDefault();
+
+        await axiosPetition('ventas', nuevaVenta, 'POST');
+
+        if (respuesta.ok) {
+            setNuevaVenta({
+                fecha_venta: '',
+                codigo: '',
+                total: 0,
+                id_vendedor: '',
+                vendedor: '',
+                id_cliente: '',
+                cliente: '',
+                estado: 'En Proceso',
+                productos: []
+            });
+            setComponente('InfoCliente');
+            toast.success('Venta registrada correctamente.', configMensaje);
+        } else {
+            toast.error(respuesta.msg, configMensaje);
+        }
+    }
 
     return (
         <div id="contenedor">
@@ -90,7 +118,7 @@ export const RegistrarVenta = () => {
             }
             <ToastContainer theme='dark' />
             <button id="boton-registrar-venta" className="boton-generico-header"
-            // onClick={mostrarMensaje}
+                onClick={registrarVenta}
             >Agregar venta</button>
         </div >
     );

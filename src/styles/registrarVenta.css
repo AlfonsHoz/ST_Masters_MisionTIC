@@ -2,6 +2,20 @@ ToastContainer {
   background: #191c1f !important;
 }
 
+#carrito {
+  width: 30px;
+}
+
+#btn-agregar-pdcto {
+  background-color: #212529;
+  border: 1px solid #e2be4c;
+  width: 5.5rem;
+}
+
+#btn-agregar-pdcto:hover {
+  background-color: #22262b;
+}
+
 #tabla-registrar-venta,
 #tabla-registrar-venta td,
 #tabla-registrar-venta th {
@@ -64,7 +78,8 @@ ToastContainer {
 
 .campoDesactivado {
   background-color: #212529;
-  border: none;
+  border: 1.5px solid #54575a;
+  border-radius: 10px;
 }
 
 .selector {
