@@ -4,18 +4,18 @@ import "../styles/registrarProducto.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useForm } from "../hooks/useForm";
-import { axiosPetition, respuesta } from '../helper/fetch';
-
+import { axiosPetition, respuesta } from "../helper/fetch";
 
 export const RegistrarProducto = () => {
+  const [formProductsValues, handleProductsInputChange, resetProductsForm] =
+    useForm({
+      codigo_producto: "",
+      nombre_producto: "",
+      precio_unitario: "",
+    });
 
-  const [formProductsValues, handleProductsInputChange, resetProductsForm] = useForm({
-    codigo_producto: '',
-    nombre_producto: '',
-    precio_unitario: ''
-  });
-
-  const { codigo_producto, nombre_producto, precio_unitario } = formProductsValues;
+  const { codigo_producto, nombre_producto, precio_unitario } =
+    formProductsValues;
 
   const configMensaje = {
     position: "bottom-center",
@@ -29,86 +29,92 @@ export const RegistrarProducto = () => {
   };
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
 
-    await axiosPetition('producto', formProductsValues, 'POST');
+    await axiosPetition("producto", formProductsValues, "POST");
 
     if (respuesta.ok) {
       resetProductsForm();
-      toast.success('Producto registrado correctamente.', configMensaje);
+      toast.success("Producto registrado correctamente.", configMensaje);
     } else {
       toast.error(respuesta.msg, configMensaje);
     }
-
-  }
+  };
 
   return (
-    <Container id="container_reg_prod" fluid>
-      <h3 id="titulo-registrar-producto">Registrar producto</h3>
-      <Form id="formulario-registrar-productos" onSubmit={handleSubmit}>
-        <Row id="fila_inputs_reg_prod">
-          <Col col-4="true">
+    <Container id='container_reg_prod' fluid>
+      <h3 id='titulo-registrar-producto'>Registrar producto</h3>
+      <Form id='formulario-registrar-productos' onSubmit={handleSubmit}>
+        <Row id='fila_inputs_reg_prod'>
+          <Col col-4='true'>
             <Form.Group>
               <Form.Label>Identificador:</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="Identificador del producto"
-                name="codigo_producto"
+                type='text'
+                placeholder='Identificador del producto'
+                name='codigo_producto'
                 value={codigo_producto}
                 onChange={handleProductsInputChange}
-                required
-              ></Form.Control>
+                required></Form.Control>
             </Form.Group>
           </Col>
-          <Col col-4="true">
+          <Col col-4='true'>
             <Form.Group>
               <Form.Label>Descripción:</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="Ingrese la descripción"
-                name="nombre_producto"
+                type='text'
+                placeholder='Ingrese la descripción'
+                name='nombre_producto'
                 value={nombre_producto}
                 onChange={handleProductsInputChange}
-                required
-              ></Form.Control>
+                required></Form.Control>
             </Form.Group>
           </Col>
-          <Col col-4="true">
+          <Col col-4='true'>
             <Form.Group>
               <Form.Label>Precio:</Form.Label>
               <Form.Control
-                type="number"
-                placeholder="Ingrese el precio"
-                name="precio_unitario"
+                type='number'
+                placeholder='Ingrese el precio'
+                name='precio_unitario'
                 value={precio_unitario}
                 onChange={handleProductsInputChange}
-                required
-              ></Form.Control>
+                required></Form.Control>
             </Form.Group>
           </Col>
         </Row>
-        <Row id="fila_botones_reg_prod">
-          <Col col-6="true" className="d-flex justify-content-end">
+        <Row>
+          <Col>
+            <Form.Label>Estado:</Form.Label>
+            <Form.Select
+              aria-label='Default select example'
+              name='rol'
+              value=''>
+              <option>Seleccione</option>
+              <option value='disponible'>Disponible</option>
+              <option value='no_disponible'>No disponible</option>
+            </Form.Select>
+          </Col>
+        </Row>
+        <Row id='fila_botones_reg_prod'>
+          <Col col-6='true' className='d-flex justify-content-end'>
             <Button
-              id="btn_reg_pro"
-              type="submit"
-              className="boton-generico-header"
-            >
+              id='btn_reg_pro'
+              type='submit'
+              className='boton-generico-header'>
               Registrar producto
             </Button>
           </Col>
-          <Col col-6="true" className="d-flex justify-content-start">
+          <Col col-6='true' className='d-flex justify-content-start'>
             <Button
-              id="btn_cancel_pro"
-              className="boton-generico-cancelar"
-              onClick={resetProductsForm}
-            >
+              id='btn_cancel_pro'
+              className='boton-generico-cancelar'
+              onClick={resetProductsForm}>
               Limpiar
             </Button>
           </Col>
         </Row>
-        <ToastContainer theme="dark" />
+        <ToastContainer theme='dark' />
       </Form>
     </Container>
   );

@@ -1,24 +1,27 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import "../styles/editar_productos.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useProductosContext } from '../context/productosContext';
-import { axiosPetition, respuesta } from '../helper/fetch';
+import { useProductosContext } from "../context/productosContext";
+import { axiosPetition, respuesta } from "../helper/fetch";
 import { useForm } from "../hooks/useForm";
 
 const ProductosEditar = () => {
-
   const { productoEditar } = useProductosContext();
+  const refEstado = useRef();
+  const [estadoState, setestado] = useState(productoEditar.estado);
 
-  const [formProductsValues, handleProductsInputChange, resetProductsForm] = useForm({
-    codigo_producto: productoEditar.codigo_producto,
-    nombre_producto: productoEditar.nombre_producto,
-    precio_unitario: productoEditar.precio_unitario
-  });
+  const [formProductsValues, handleProductsInputChange, resetProductsForm] =
+    useForm({
+      codigo_producto: productoEditar.codigo_producto,
+      nombre_producto: productoEditar.nombre_producto,
+      precio_unitario: productoEditar.precio_unitario,
+      estado: estadoState,
+    });
 
-  const { codigo_producto, nombre_producto, precio_unitario } = formProductsValues;
-
+  const { codigo_producto, nombre_producto, precio_unitario, estado } =
+    formProductsValues;
 
   const configMensaje = {
     position: "bottom-center",
@@ -29,95 +32,108 @@ const ProductosEditar = () => {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-  }
+  };
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
-
-    await axiosPetition(`producto/${productoEditar.codigo_producto}`, formProductsValues, 'PUT');
+    console.log(formProductsValues);
+    await axiosPetition(
+      `producto/${productoEditar.codigo_producto}`,
+      formProductsValues,
+      "PUT"
+    );
 
     if (respuesta.ok) {
       resetProductsForm();
-      toast.success('Producto actualizado correctamente.', configMensaje);
+      toast.success("Producto actualizado correctamente.", configMensaje);
     } else {
       toast.error(respuesta.msg, configMensaje);
     }
-  }
+  };
 
   return (
-    <Container fluid id="container" className="m-0">
+    <Container fluid id='container' className='m-0'>
       <Row>
-        <Col id="titulo" className="col-12 mt-6">
+        <Col id='titulo' className='col-12 mt-6'>
           <h2>Actualizar producto</h2>
         </Col>
       </Row>
       <Form onSubmit={handleSubmit}>
         <Row>
           {/*-------------CONTENIDO DEL FORMULARIO ---------------*/}
-          <Col id="contenido_form" className="col-12">
+          <Col id='contenido_form' className='col-12'>
             <Row>
-              <Col id="col-izquierda" className="xs-12 sm-12 md-12 lg-12">
+              <Col id='col-izquierda' className='xs-12 sm-12 md-12 lg-12'>
                 <Row>
                   <Col>
-                    <Form.Group className="mb-3" controlId="grupo_email">
+                    <Form.Group className='mb-3' controlId='grupo_email'>
                       <Form.Label>Identificador:</Form.Label>
                       <Form.Control
-                        type="text"
-                        placeholder="Código de producto"
+                        type='text'
+                        placeholder='Código de producto'
                         value={codigo_producto}
                         name='codigo_producto'
-                        readOnly
-                      ></Form.Control>
+                        readOnly></Form.Control>
                     </Form.Group>
                   </Col>
                 </Row>
               </Col>
-              <Col id="col-cent" className="xs-12 sm-12 md-12 lg-12">
+              <Col id='col-cent' className='xs-12 sm-12 md-12 lg-12'>
                 <Row>
                   <Col>
-                    <Form.Group className="mb-3" controlId="grupo_nombre">
+                    <Form.Group className='mb-3' controlId='grupo_nombre'>
                       <Form.Label>Descripción:</Form.Label>
                       <Form.Control
-                        type="text"
-                        placeholder="Descripcion producto"
+                        type='text'
+                        placeholder='Descripcion producto'
                         value={nombre_producto}
                         name='nombre_producto'
-                        onChange={handleProductsInputChange}
-                      ></Form.Control>
+                        onChange={handleProductsInputChange}></Form.Control>
                     </Form.Group>
                   </Col>
                 </Row>
-              </Col>
-              <Col id="col-derecha" className="xs-12 sm-12 md-12 lg-12">
                 <Row>
                   <Col>
-                    <Form.Group className="mb-3" controlId="grupo_rol">
+                    <Form.Label>Estado:</Form.Label>
+                    <Form.Select
+                      aria-label='Default select example'
+                      name='rol'
+                      ref={refEstado}
+                      onChange={() => setestado(refEstado.current.value)}>
+                      <option>Seleccione</option>
+                      <option value='disponible'>Disponible</option>
+                      <option value='no_disponible'>No disponible</option>
+                    </Form.Select>
+                  </Col>
+                </Row>
+              </Col>
+              <Col id='col-derecha' className='xs-12 sm-12 md-12 lg-12'>
+                <Row>
+                  <Col>
+                    <Form.Group className='mb-3' controlId='grupo_rol'>
                       <Form.Label>Precio:</Form.Label>
                       <Form.Control
-                        type="number"
-                        placeholder="Precio"
+                        type='number'
+                        placeholder='Precio'
                         value={precio_unitario}
                         name='precio_unitario'
-                        onChange={handleProductsInputChange}
-                      ></Form.Control>
+                        onChange={handleProductsInputChange}></Form.Control>
                     </Form.Group>
                   </Col>
                 </Row>
               </Col>
             </Row>
             <Row>
-              <Col col={6} id="col-actu" className="d-flex justify-content-end">
-                <Button type='submit' id="boton_actualizar">
+              <Col col={6} id='col-actu' className='d-flex justify-content-end'>
+                <Button type='submit' id='boton_actualizar'>
                   Actualizar producto
                 </Button>
               </Col>
               <Col
                 col={6}
-                id="col-cancel"
-                className="d-flex justify-content-start"
-              >
-                <Button id="boton_cancelar" p-10>
+                id='col-cancel'
+                className='d-flex justify-content-start'>
+                <Button id='boton_cancelar' p-10>
                   Cancelar
                 </Button>
               </Col>
