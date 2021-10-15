@@ -27,7 +27,6 @@ const Productos = ({ props }) => {
       <td>{nombre_producto}</td>
       <td>{estado}</td>
       <td>{precio_unitario}</td>
-      <td> </td>
       <td>
         <Link to='/productos/editar'>
           <img src={lapiz} onClick={envioProducto}></img>
