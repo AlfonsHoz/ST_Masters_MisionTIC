@@ -1,7 +1,7 @@
 const express = require('express');
 const { check } = require('express-validator');
 
-const { obtenerProductos, crearProducto, actualizarProducto, eliminarProducto } = require('../controller/producto.controller');
+const { obtenerProductos, obtenerUnProducto, obtenerCoincidenciasProducto, crearProducto, actualizarProducto, eliminarProducto } = require('../controller/producto.controller');
 
 const { validarCampos } = require('../middlewares/validar_campos');
 
@@ -10,6 +10,8 @@ const router = express.Router();
 const path = 'producto';
 
 router.get(`/${path}`, obtenerProductos);
+
+router.get(`/${path}/:filtro`, obtenerUnProducto);
 
 router.post(
     `/${path}`,

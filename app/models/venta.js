@@ -6,7 +6,7 @@ const ventaSchema = new Schema({
         required: [true, 'El código de venta es obligatorio.'],
         unique: true
     },
-    fecha: {
+    fecha_venta: {
         type: String,
         required: [true, 'La fecha de creación es obligatoria.']
     },
@@ -14,13 +14,25 @@ const ventaSchema = new Schema({
         type: String,
         required: [true, 'El estado de venta es obligatorio.']
     },
+    total: {
+        type: Number,
+        required: [true, 'El total es obligatorio.']
+    },
+    id_cliente: {
+        type: Number,
+        required: [true, 'La cédula del cliente es obligatoria.']
+    },
+    cliente: {
+        type: String,
+        required: [true, 'El nonmbre del cliente es obligatorio.']
+    },
+    id_vendedor: {
+        type: Number,
+        required: [true, 'La cédula del vendedor es obligatoria.']
+    },
     vendedor: {
         type: String,
         required: [true, 'El nombre del vendedor es obligatorio.']
-    },
-    id_usuario: {
-        type: Number,
-        required: [true, 'La cédula del usuario es obligatoria.']
     },
     productos: {
         type: Array,
