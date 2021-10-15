@@ -1,4 +1,5 @@
 const Venta = require("../models/venta");
+const Acum = require("../models/acum");
 const { response } = require("express");
 
 exports.obtenerVentas = async (req, res = response) => {
@@ -18,7 +19,17 @@ exports.obtenerVentas = async (req, res = response) => {
 };
 
 exports.crearVenta = async (req, res = response) => {
-  const { codigo, fecha_venta, estado, total, id_cliente, cliente, id_vendedor, vendedor, productos } = req.body;
+  const {
+    codigo,
+    fecha_venta,
+    estado,
+    total,
+    id_cliente,
+    cliente,
+    id_vendedor,
+    vendedor,
+    productos,
+  } = req.body;
   try {
     let venta = await Venta.findOne({ codigo });
 
@@ -29,13 +40,25 @@ exports.crearVenta = async (req, res = response) => {
       });
     }
 
-    venta = new Venta({ codigo, fecha_venta, estado, total, id_cliente, cliente, id_vendedor, vendedor, productos });
+    venta = new Venta({
+      codigo,
+      fecha_venta,
+      estado,
+      total,
+      id_cliente,
+      cliente,
+      id_vendedor,
+      vendedor,
+      productos,
+    });
 
-    await venta.save();
+    const acum = await Acum.find();
+
+    codigo = acum.acum;
 
     res.status(201).json({
       ok: true,
-      msg: "Registro de ventas"
+      msg: "Registro de ventas",
     });
   } catch (error) {
     console.log(error);
