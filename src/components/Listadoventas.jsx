@@ -11,7 +11,9 @@ const Listadoventas = () => {
 
   useEffect(async () => {
     await axiosPetition("ventas");
-    setdata(respuesta.ventas);
+    if(respuesta.ok){
+      setdata(respuesta.ventas);
+    }
   }, []);
 
   return (
