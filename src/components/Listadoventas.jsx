@@ -9,6 +9,7 @@ const Listadoventas = () => {
   const [data, setdata] = useState([]);
   const { ventasConsultar } = useVentasContext();
 
+  setTimeout(useEffect, 3000);
   useEffect(async () => {
     await axiosPetition("ventas");
     if (respuesta.ok) {

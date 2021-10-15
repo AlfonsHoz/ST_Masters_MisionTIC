@@ -86,10 +86,7 @@ export const RegistrarProducto = () => {
         <Row>
           <Col>
             <Form.Label>Estado:</Form.Label>
-            <Form.Select
-              aria-label='Default select example'
-              name='rol'
-              value=''>
+            <Form.Select aria-label='Default select example' name='rol'>
               <option>Seleccione</option>
               <option value='disponible'>Disponible</option>
               <option value='no_disponible'>No disponible</option>
