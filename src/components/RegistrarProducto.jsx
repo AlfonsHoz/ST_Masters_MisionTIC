@@ -74,15 +74,9 @@ export const RegistrarProducto = () => {
             <Form.Group>
               <Form.Label>Valor unitario:</Form.Label>
               <Form.Control
-<<<<<<< HEAD
                 type='number'
-                placeholder='Ingrese el precio'
+                placeholder='Ingrese el valor unitario'
                 name='precio_unitario'
-=======
-                type="number"
-                placeholder="Ingrese el valor unitario"
-                name="precio_unitario"
->>>>>>> 4dab99bec8ed73a60e1e2649ae906eb77969536d
                 value={precio_unitario}
                 onChange={handleProductsInputChange}
                 required></Form.Control>
