@@ -52,13 +52,28 @@ exports.crearVenta = async (req, res = response) => {
       productos,
     });
 
-    const acum = await Acum.find();
-
-    codigo = acum.acum;
-
     res.status(201).json({
       ok: true,
       msg: "Registro de ventas",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      ok: false,
+      msg: "Error interno, hable con el administrador.",
+    });
+  }
+};
+
+exports.obtenerUnaVenta = async (req, res = response) => {
+  try {
+    const busca = req.params.busca;
+    const venta = await Venta.findOne({ codigo: busca });
+
+    res.status(200).json({
+      ok: true,
+      msg: "Venta",
+      venta,
     });
   } catch (error) {
     console.log(error);
