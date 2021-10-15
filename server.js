@@ -10,6 +10,7 @@ const port = process.env.PORT;
 
 const usuariosRoutes = require("./app/routes/usuario.routes");
 const productosRoutes = require("./app/routes/producto.routes");
+const ventasRoutes = require("./app/routes/venta.routes");
 
 app.use(express.json());
 app.use(Cors());
