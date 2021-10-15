@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/editventprods.css";
+import "../../styles/editventprods.css";
 import ojo from "./images/ojo.svg";
 import borrar from "./images/eliminar.svg";
 import { Link } from "react-router-dom";

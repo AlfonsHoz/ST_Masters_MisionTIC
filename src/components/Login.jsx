@@ -9,37 +9,36 @@ import { useAuth0 } from "@auth0/auth0-react";
 export const Login = () => {
   const { loginWithRedirect } = useAuth0();
   return (
-    <section id="login">
+    <section id='login'>
       <Container fluid>
-        <Row id="principal">
+        <Row id='principal'>
           <Col
-            id="col-izq"
-            className="position-relative"
+            id='col-izq'
+            className='position-relative'
             col={12}
             sm={12}
             md={12}
-            lg={5}
-          >
-            <Row className="position-relative top-50 start-50 translate-middle">
-              <Col id="content-izq">
+            lg={5}>
+            <Row className='position-relative top-50 start-50 translate-middle'>
+              <Col id='content-izq'>
                 <Row>
-                  <Col className="text-center">
+                  <Col className='text-center'>
                     <h3>Bienvenido a</h3>
-                    <h1 id="titulo-principal">ST Masters</h1>
+                    <h1 id='titulo-principal'>ST Masters</h1>
                   </Col>
                 </Row>
                 <Row>
-                  <Col className="d-flex justify-content-center">
-                    <Link to="/ventas">
-                      <Button onClick={() => loginWithRedirect()}
-                        id="boton-gmail"
-                        class="boton-generico"
-                        type="submit"
-                      >
+                  <Col className='d-flex justify-content-center'>
+                    <Link to='/ventas'>
+                      <Button
+                        onClick={() => loginWithRedirect()}
+                        id='boton-gmail'
+                        class='boton-generico'
+                        type='submit'>
                         <img
-                          id="logo_google"
+                          id='logo_google'
                           src={logo_google}
-                          alt="logo de google"
+                          alt='logo de google'
                         />
                         <br />
                         Iniciar con Gmail
@@ -50,8 +49,8 @@ export const Login = () => {
               </Col>
             </Row>
           </Col>
-          <Col id="col-der" lg={7}>
-            <img id="logo" src={logo}></img>
+          <Col id='col-der' lg={7}>
+            <img id='logo' src={logo}></img>
             <h1>ST Masters</h1>
           </Col>
         </Row>
@@ -59,61 +58,3 @@ export const Login = () => {
     </section>
   );
 };
-
-{
-  /*                 <Form>
-                  <Row>
-                    <Col className="">
-                      <Form.Group className="mb-3">
-                        <Form.Label>Usuario:</Form.Label>
-                        <Form.Control
-                          id="campo-login"
-                          type="text"
-                          placeholder="Ingresa tu nombre de usuario"
-                        ></Form.Control>
-                      </Form.Group>
-                      <Form.Group className="mb-3">
-                        <Form.Label>Contraseña:</Form.Label>
-                        <Form.Control
-                          id="campo-login"
-                          type="password"
-                          placeholder="Ingresa tu contraseña"
-                        ></Form.Control>
-                      </Form.Group>
-                      <Form.Group className="d-flex justify-content-between">
-                        <Form.Check label="Recuérdame"></Form.Check>
-                        <a id="olvido-contraseña" href="#">
-                          Olvidé mi contraseña
-                        </a>
-                      </Form.Group>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <Link to="/ventas">
-                        <Button id="boton-login" type="submit">
-                          Iniciar sesión
-                        </Button>
-                      </Link>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <Link to="/ventas">
-                        <Button
-                          id="boton-gmail"
-                          class="boton-generico"
-                          type="submit"
-                        >
-                          <img
-                            id="logo_google"
-                            src={logo_google}
-                            alt="logo de google"
-                          />
-                          Iniciar con Gmail
-                        </Button>
-                      </Link>
-                    </Col>
-                  </Row>
-                </Form> */
-}

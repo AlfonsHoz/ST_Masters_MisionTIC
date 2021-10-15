@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import "../styles/listadoUsuarios.css";
+import "../../styles/listadoUsuarios.css";
 import { TablaUsuarios } from "./TablaUsuarios";
 import { Table } from "react-bootstrap";
-import { useConsultarUsuarioContext } from "../context/consultarUsuarioContext";
+import { useConsultarUsuarioContext } from "../../context/consultarUsuarioContext";
 import { toast } from "react-toastify";
-import { axiosPetition, respuesta } from "../helper/fetch";
+import { axiosPetition, respuesta } from "../../helper/fetch";
 
 export const ListadoUsuarios = () => {
   const { consultaUsuario } = useConsultarUsuarioContext();
   const { busqueda, rol } = consultaUsuario;
   const [data, setData] = useState([]);
+  const [ok, setok] = useState(true);
 
   const configMensaje = {
     position: "bottom-center",
@@ -25,13 +26,14 @@ export const ListadoUsuarios = () => {
   useEffect(async () => {
     await axiosPetition("usuarios");
     setData(respuesta.usuarios);
+    setok(respuesta.ok);
     if (!respuesta.ok) {
       toast.error(
         "Ha ocurrido un error al intentar obtener la lista de productos.",
         configMensaje
       );
     }
-  }, []);
+  }, [ok]);
 
   return (
     <div id='contenedorListadoUsuarios'>

@@ -1,10 +1,11 @@
 import React from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
-import "../styles/registrarProducto.css";
+import "../../styles/registrarProducto.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useForm } from "../hooks/useForm";
-import { axiosPetition, respuesta } from "../helper/fetch";
+import { useForm } from "../../hooks/useForm";
+import { axiosPetition, respuesta } from '../../helper/fetch';
+
 
 export const RegistrarProducto = () => {
   const [formProductsValues, handleProductsInputChange, resetProductsForm] =
@@ -42,37 +43,39 @@ export const RegistrarProducto = () => {
   };
 
   return (
-    <Container id="container_reg_prod" fluid>
-      <h3 id="titulo-registrar-producto">Registrar producto</h3>
-      <Form id="formulario-registrar-productos" onSubmit={handleSubmit}>
-        <Row id="fila_inputs_reg_prod">
-          <Col col-4="true">
+    <Container id='container_reg_prod' fluid>
+      <h3 id='titulo-registrar-producto'>Registrar producto</h3>
+      <Form id='formulario-registrar-productos' onSubmit={handleSubmit}>
+        <Row id='fila_inputs_reg_prod'>
+          <Col col-4='true'>
             <Form.Group>
               <Form.Label>Identificador del producto:</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="Identificador del producto"
-                name="codigo_producto"
+                type='text'
+                placeholder='Identificador del producto'
+                name='codigo_producto'
                 value={codigo_producto}
                 onChange={handleProductsInputChange}
+                autocomplete="off"
                 required
               ></Form.Control>
             </Form.Group>
           </Col>
-          <Col col-4="true">
+          <Col col-4='true'>
             <Form.Group>
               <Form.Label>Descripción:</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="Ingrese la descripción"
-                name="nombre_producto"
+                type='text'
+                placeholder='Ingrese la descripción'
+                name='nombre_producto'
                 value={nombre_producto}
                 onChange={handleProductsInputChange}
+                autocomplete="off"
                 required
               ></Form.Control>
             </Form.Group>
           </Col>
-          <Col col-4="true">
+          <Col col-4='true'>
             <Form.Group>
               <Form.Label>Valor unitario:</Form.Label>
               <Form.Control
@@ -81,33 +84,42 @@ export const RegistrarProducto = () => {
                 name="precio_unitario"
                 value={precio_unitario}
                 onChange={handleProductsInputChange}
+                autocomplete="off"
                 required
               ></Form.Control>
             </Form.Group>
           </Col>
+        </Row >
+        <Row>
+          <Col>
+            <Form.Label>Estado:</Form.Label>
+            <Form.Select aria-label='Default select example' name='rol'>
+              <option>Seleccione</option>
+              <option value='disponible'>Disponible</option>
+              <option value='no_disponible'>No disponible</option>
+            </Form.Select>
+          </Col>
         </Row>
-        <Row id="fila_botones_reg_prod">
-          <Col col-6="true" className="d-flex justify-content-end">
+        <Row id='fila_botones_reg_prod'>
+          <Col col-6='true' className='d-flex justify-content-end'>
             <Button
-              id="btn_reg_pro"
-              type="submit"
-              className="boton-generico-header"
-            >
+              id='btn_reg_pro'
+              type='submit'
+              className='boton-generico-header'>
               Registrar producto
             </Button>
           </Col>
-          <Col col-6="true" className="d-flex justify-content-start">
+          <Col col-6='true' className='d-flex justify-content-start'>
             <Button
-              id="btn_cancel_pro"
-              className="boton-generico-cancelar"
-              onClick={resetProductsForm}
-            >
+              id='btn_cancel_pro'
+              className='boton-generico-cancelar'
+              onClick={resetProductsForm}>
               Limpiar
             </Button>
           </Col>
         </Row>
-        <ToastContainer theme="dark" />
-      </Form>
-    </Container>
+        <ToastContainer theme='dark' />
+      </Form >
+    </Container >
   );
 };

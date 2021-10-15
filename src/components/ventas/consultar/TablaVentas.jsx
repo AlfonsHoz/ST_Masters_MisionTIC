@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "../styles/listadoventas.css";
-import Ventas from "./Ventas";
+import "../../../styles/listadoventas.css";
+import ListaVentas from "./ListaVentas";
 import { Table } from "react-bootstrap";
-import { useVentasContext } from "../context/ventasContext";
-import { axiosPetition, respuesta } from "../helper/fetch";
+import { useVentasContext } from "../../../context/ventasContext";
+import { axiosPetition, respuesta } from "../../../helper/fetch";
 
-const Listadoventas = () => {
+const TablaVentas = () => {
   const [data, setdata] = useState([]);
   const { ventasConsultar } = useVentasContext();
 
@@ -35,11 +35,11 @@ const Listadoventas = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((x, key) => {
+          {data?.map((x, key) => {
             if (ventasConsultar) {
-              return x.codigo === "V0001" ? <Ventas props={x} /> : ``;
+              return x.codigo === "V0001" ? <ListaVentas props={x} /> : ``;
             } else {
-              return <Ventas key={key} props={x} />;
+              return <ListaVentas key={key} props={x} />;
             }
           })}
         </tbody>
@@ -47,4 +47,4 @@ const Listadoventas = () => {
     </div>
   );
 };
-export default Listadoventas;
+export default TablaVentas;

@@ -1,9 +1,8 @@
 import React from "react";
-import ojo from "../assets/img/ojo.svg";
-import borrar from "../assets/img/eliminar.svg";
+import ojo from "../../../assets/img/ojo.svg";
 import { Link } from "react-router-dom";
 
-const Ventas = ({ props }) => {
+const ListaVentas = ({ props }) => {
   const { fecha_venta, codigo, total, vendedor } = props;
   return (
     <tr>
@@ -15,11 +14,9 @@ const Ventas = ({ props }) => {
         <Link to={"/ventas/editar"}>
           <img src={ojo} alt='' />
         </Link>
-
-        <img src={borrar} alt='' />
       </td>
     </tr>
   );
 };
 
-export default Ventas;
+export default ListaVentas;

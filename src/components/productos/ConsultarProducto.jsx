@@ -1,8 +1,8 @@
 import React from "react";
 import { Col, Container, Form, FormGroup, Row, Button } from "react-bootstrap";
-import "../styles/consultarProducto.css";
-import { useConsultarProductoContext } from "../context/consultarProductoContext";
-import { useForm } from "../hooks/useForm";
+import "../../styles/consultarProducto.css";
+import { useConsultarProductoContext } from "../../context/consultarProductoContext";
+import { useForm } from "../../hooks/useForm";
 
 const ConsultarProducto = () => {
 

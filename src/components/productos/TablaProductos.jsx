@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Container, Table, Row, Col } from "react-bootstrap";
-import "../styles/listadoproducto.css";
-import Productos from "./Productos";
-import { axiosPetition, respuesta } from "../helper/fetch";
-import { useConsultarProductoContext } from "../context/consultarProductoContext";
+import "../../styles/listadoproducto.css";
+import Productos from "./ListaProductos";
+import { axiosPetition, respuesta } from '../../helper/fetch';
+import { useConsultarProductoContext } from '../../context/consultarProductoContext';
 import { toast } from "react-toastify";
 
 const ListadoProductos = () => {
@@ -33,21 +33,20 @@ const ListadoProductos = () => {
   }, []);
 
   return (
-    <Container fluid id="content-tbl-prod">
-      <Row className="mb-4">
+    <Container fluid id='content-tbl-prod'>
+      <Row className='mb-4'>
         <Col>
-          <h2 id="titulo-consultar-producto">Listado productos</h2>
+          <h2 id='titulo-consultar-producto'>Listado productos</h2>
         </Col>
       </Row>
       <Row>
         <Col>
           <Table
-            id="tabla-productos-registrados"
+            id='tabla-productos-registrados'
             striped
             hover
-            variant="dark"
-            className="text-center"
-          >
+            variant='dark'
+            className='text-center'>
             <thead>
               <tr>
                 <th>Identificador Único</th>

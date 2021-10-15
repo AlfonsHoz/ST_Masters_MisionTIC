@@ -1,8 +1,8 @@
 import React from 'react'
-import { useVentasContext } from '../context/ventasContext';
-import '../styles/consultarventas.css';
+import { useVentasContext } from '../../../context/ventasContext';
+import '../../../styles/consultarventas.css';
 
-const Consultarventas = () => {
+const ConsultarVentas = () => {
 
   const { ventasConsultar, setVentasConsultar } = useVentasContext();
 
@@ -41,4 +41,4 @@ const Consultarventas = () => {
 
 }
 
-export default Consultarventas
+export default ConsultarVentas

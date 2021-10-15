@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import "../styles/editarventas.css";
+import "../../../styles/editarventas.css";
 
 const EditarVentas = ({ props }) => {
   const [producto, setProducto] = useState({});
