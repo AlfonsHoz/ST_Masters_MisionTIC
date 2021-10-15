@@ -1,9 +1,8 @@
 import React from "react";
-import "../styles/listadoUsuarios.css";
-import eliminar from "../assets/img/eliminar.svg";
-import lapiz from "../assets/img/lapiz.svg";
+import "../../styles/listadoUsuarios.css";
+import lapiz from "../../assets/img/lapiz.svg";
 import { Link } from "react-router-dom";
-import { useUsuariosEditarContext } from "../context/editarusuarioContext";
+import { useUsuariosEditarContext } from "../../context/editarusuarioContext";
 
 export const TablaUsuarios = ({ props }) => {
 
@@ -30,7 +29,6 @@ export const TablaUsuarios = ({ props }) => {
             onClick={envioUsuario} >
           </img>
         </Link>{" "}
-        <img src={eliminar} alt='' />
       </td>
     </tr>
   );

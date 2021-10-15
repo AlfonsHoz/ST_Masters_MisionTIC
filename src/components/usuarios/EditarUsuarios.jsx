@@ -1,12 +1,12 @@
 import React from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
-import "../styles/editar_usuarios.css";
+import "../../styles/editar_usuarios.css";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useUsuariosEditarContext } from "../context/editarusuarioContext";
-import { useForm } from "../hooks/useForm";
-import { axiosPetition, respuesta } from "../helper/fetch";
+import { useUsuariosEditarContext } from "../../context/editarusuarioContext";
+import { useForm } from "../../hooks/useForm";
+import { axiosPetition, respuesta } from "../../helper/fetch";
 
 const EditarUsuarios = () => {
   const { usuariosEditar } = useUsuariosEditarContext();
@@ -86,9 +86,9 @@ const EditarUsuarios = () => {
                         onChange={handleUsuariosInputChange}
                       >
                         <option>Seleccione...</option>
-                        <option value="Pendiente">Pendiente</option>
-                        <option value="Autorizado">Autorizado</option>
-                        <option value="No Autorizado">No Autorizado</option>
+                        <option value='Pendiente'>Pendiente</option>
+                        <option value='Autorizado'>Autorizado</option>
+                        <option value='No Autorizado'>No Autorizado</option>
                       </Form.Select>
                     </Form.Group>
                   </Col>

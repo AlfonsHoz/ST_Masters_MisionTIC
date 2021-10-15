@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "../styles/listadoUsuarios.css";
+import "../../styles/listadoUsuarios.css";
 import { TablaUsuarios } from "./TablaUsuarios";
 import { Table } from "react-bootstrap";
-import { useConsultarUsuarioContext } from "../context/consultarUsuarioContext";
+import { useConsultarUsuarioContext } from "../../context/consultarUsuarioContext";
 import { toast } from "react-toastify";
-import { axiosPetition, respuesta } from "../helper/fetch";
+import { axiosPetition, respuesta } from "../../helper/fetch";
 
 export const ListadoUsuarios = () => {
   const { consultaUsuario } = useConsultarUsuarioContext();

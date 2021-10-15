@@ -1,9 +1,9 @@
 import React from "react";
-import "../styles/productos.css";
-import lapiz from "../assets/img/lapiz.svg";
-import borrar from "../assets/img/eliminar.svg";
+import "../../styles/productos.css";
+import lapiz from "../../assets/img/lapiz.svg";
+import borrar from "../../assets/img/eliminar.svg";
 import { Link } from "react-router-dom";
-import { useProductosContext } from "../context/productosContext";
+import { useProductosContext } from '../../context/productosContext';
 
 const Productos = ({ props }) => {
   const { productoEditar, setProductoEditar } = useProductosContext();
@@ -19,7 +19,7 @@ const Productos = ({ props }) => {
     });
   };
 
-  const eliminarProducto = () => {};
+  const eliminarProducto = () => { };
 
   return (
     <tr>

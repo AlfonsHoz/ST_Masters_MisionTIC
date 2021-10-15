@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import "../styles/registrousuarios.css";
+import React from "react";
+import "../../styles/registrousuarios.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useForm } from "../hooks/useForm";
-import { axiosPetition, respuesta } from "../helper/fetch";
+import { useForm } from "../../hooks/useForm";
+import { axiosPetition, respuesta } from '../../helper/fetch';
 
 const RegistroUsuarios = () => {
   const configMensaje = {
@@ -17,14 +17,13 @@ const RegistroUsuarios = () => {
     progress: undefined,
   };
 
-  const [formUsuariosValues, handleUsuariosInputChange, resetUsuariosForm] =
-    useForm({
-      identificacion: "",
-      nombre: "",
-      rol: "",
-      estado: "Pendiente",
-      password: "",
-    });
+  const [formUsuariosValues, handleUsuariosInputChange, resetUsuariosForm] = useForm({
+    identificacion: '',
+    nombre: '',
+    rol: '',
+    estado: 'Pendiente',
+    password: ''
+  });
 
   const { identificacion, nombre, rol, estado, password } = formUsuariosValues;
 

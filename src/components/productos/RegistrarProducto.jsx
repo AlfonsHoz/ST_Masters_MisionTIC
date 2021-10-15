@@ -1,10 +1,11 @@
 import React from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
-import "../styles/registrarProducto.css";
+import "../../styles/registrarProducto.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useForm } from "../hooks/useForm";
-import { axiosPetition, respuesta } from "../helper/fetch";
+import { useForm } from "../../hooks/useForm";
+import { axiosPetition, respuesta } from '../../helper/fetch';
+
 
 export const RegistrarProducto = () => {
   const [formProductsValues, handleProductsInputChange, resetProductsForm] =
@@ -55,7 +56,9 @@ export const RegistrarProducto = () => {
                 name='codigo_producto'
                 value={codigo_producto}
                 onChange={handleProductsInputChange}
-                required></Form.Control>
+                autocomplete="off"
+                required
+              ></Form.Control>
             </Form.Group>
           </Col>
           <Col col-4='true'>
@@ -67,22 +70,26 @@ export const RegistrarProducto = () => {
                 name='nombre_producto'
                 value={nombre_producto}
                 onChange={handleProductsInputChange}
-                required></Form.Control>
+                autocomplete="off"
+                required
+              ></Form.Control>
             </Form.Group>
           </Col>
           <Col col-4='true'>
             <Form.Group>
               <Form.Label>Valor unitario:</Form.Label>
               <Form.Control
-                type='number'
-                placeholder='Ingrese el valor unitario'
-                name='precio_unitario'
+                type="number"
+                placeholder="Ingrese el valor unitario"
+                name="precio_unitario"
                 value={precio_unitario}
                 onChange={handleProductsInputChange}
-                required></Form.Control>
+                autocomplete="off"
+                required
+              ></Form.Control>
             </Form.Group>
           </Col>
-        </Row>
+        </Row >
         <Row>
           <Col>
             <Form.Label>Estado:</Form.Label>
@@ -112,7 +119,7 @@ export const RegistrarProducto = () => {
           </Col>
         </Row>
         <ToastContainer theme='dark' />
-      </Form>
-    </Container>
+      </Form >
+    </Container >
   );
 };

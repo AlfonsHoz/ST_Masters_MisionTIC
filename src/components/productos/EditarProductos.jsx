@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
-import "../styles/editar_productos.css";
+import "../../styles/editar_productos.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useProductosContext } from "../context/productosContext";
-import { axiosPetition, respuesta } from "../helper/fetch";
-import { useForm } from "../hooks/useForm";
+import { useProductosContext } from '../../context/productosContext';
+import { axiosPetition, respuesta } from '../../helper/fetch';
+import { useForm } from "../../hooks/useForm";
 
 const ProductosEditar = () => {
   const { productoEditar } = useProductosContext();
@@ -71,11 +71,11 @@ const ProductosEditar = () => {
               <Col id='col-izquierda' className='xs-12 sm-12 md-12 lg-12'>
                 <Row>
                   <Col>
-                    <Form.Group className='mb-3' controlId='grupo_email'>
+                    <Form.Group className="mb-3" controlId="grupo_email">
                       <Form.Label>Identificador del producto:</Form.Label>
                       <Form.Control
-                        type='text'
-                        placeholder='Ingrese el identificador del producto'
+                        type="text"
+                        placeholder="Ingrese el identificador del producto"
                         value={codigo_producto}
                         name='codigo_producto'
                         readOnly></Form.Control>
@@ -89,8 +89,8 @@ const ProductosEditar = () => {
                     <Form.Group className='mb-3' controlId='grupo_nombre'>
                       <Form.Label>Descripción:</Form.Label>
                       <Form.Control
-                        type='text'
-                        placeholder='Descripción del producto'
+                        type="text"
+                        placeholder="Descripción del producto"
                         value={nombre_producto}
                         name='nombre_producto'
                         onChange={handleProductsInputChange}></Form.Control>

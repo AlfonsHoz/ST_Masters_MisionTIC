@@ -1,8 +1,8 @@
 
 import NavBar from "../../components/Navbar";
 import Header from "../../components/Header";
-import ConsultarProducto from "../../components/ConsultarProducto";
-import ListadoProductos from "../../components/Listadoproductos";
+import ConsultarProducto from "../../components/productos/ConsultarProducto";
+import ListadoProductos from "../../components/productos/TablaProductos";
 import { ConsultarProductoContext } from '../../context/consultarProductoContext';
 import { useState } from "react";
 

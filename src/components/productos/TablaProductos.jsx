@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Container, Table, Row, Col } from "react-bootstrap";
-import "../styles/listadoproducto.css";
-import Productos from "./Productos";
-import { axiosPetition, respuesta } from "../helper/fetch";
-import { useConsultarProductoContext } from "../context/consultarProductoContext";
+import "../../styles/listadoproducto.css";
+import Productos from "./ListaProductos";
+import { axiosPetition, respuesta } from '../../helper/fetch';
+import { useConsultarProductoContext } from '../../context/consultarProductoContext';
 import { toast } from "react-toastify";
 
 const ListadoProductos = () => {
@@ -51,8 +51,8 @@ const ListadoProductos = () => {
               <tr>
                 <th>Identificador Único</th>
                 <th>Descripción</th>
+                <th>Valor Unitario</th>
                 <th>Estado</th>
-                <th>Precio Unitario</th>
                 <th>Acciones</th>
               </tr>
             </thead>

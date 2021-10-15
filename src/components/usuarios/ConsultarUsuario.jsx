@@ -1,7 +1,7 @@
 import React from 'react';
-import { useConsultarUsuarioContext } from '../context/consultarUsuarioContext';
-import { useForm } from '../hooks/useForm';
-import '../styles/consultarUsuario.css';
+import { useConsultarUsuarioContext } from '../../context/consultarUsuarioContext';
+import { useForm } from '../../hooks/useForm';
+import '../../styles/consultarUsuario.css';
 
 const ConsultarUsuario = () => {
 
