@@ -4,8 +4,10 @@ import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import logo_google from "../assets/img/logo-google.svg";
 import { Link } from "react-router-dom";
 import "../styles/login.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const Login = () => {
+  const { loginWithRedirect } = useAuth0();
   return (
     <section id="login">
       <Container fluid>
@@ -29,7 +31,7 @@ export const Login = () => {
                 <Row>
                   <Col className="d-flex justify-content-center">
                     <Link to="/ventas">
-                      <Button
+                      <Button onClick={() => loginWithRedirect()}
                         id="boton-gmail"
                         class="boton-generico"
                         type="submit"
