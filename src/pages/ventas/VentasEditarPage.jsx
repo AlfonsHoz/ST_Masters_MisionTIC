@@ -10,7 +10,7 @@ const VentasPage = () => {
       <Header
         textoBoton={"Consultar ventas"}
         texto={"ventas"}
-        link={"/ventas/consultar"}
+        link={"/ventas"}
       />
       <EditarVentas />
     </>

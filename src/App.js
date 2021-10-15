@@ -11,6 +11,7 @@ import { VentasContext } from "./context/ventasContext";
 import { UsuariosContext } from "./context/usuariosContext";
 import { ProductosContext } from "./context/productosContext";
 import { UsuariosEditarContext } from "./context/editarusuarioContext";
+import { LoadingContext } from "./context/loadingContext";
 
 import Ventas from "./pages/ventas/VentasPage";
 import VentasReg from "./pages/ventas/VentasRegistrarPage";
@@ -29,6 +30,7 @@ function App() {
   const [usuariosConsultar, setUsuariosConsultar] = useState(false);
   const [productoEditar, setProductoEditar] = useState({});
   const [usuariosEditar, setUsuariosEditar] = useState("");
+  const [loading, setLoading] = useState(true);
 
   return (
     <Auth0Provider
