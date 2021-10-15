@@ -20,6 +20,43 @@ exports.obtenerProductos = async (req, res = response) => {
 
 }
 
+exports.obtenerUnProducto = async (req, res = response) => {
+    try {
+        const filtro = req.params.filtro;
+        const producto = await Producto.findOne({ codigo_producto: filtro });
+
+        res.status(200).json({
+            ok: true,
+            msg: "Producto encontrado",
+            producto,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            ok: false,
+            msg: "Error interno, hable con el administrador.",
+        });
+    }
+};
+
+exports.obtenerCoincidenciasProducto = async (req, res = response) => {
+    try {
+        const filtro = req.params.filtro;
+        const producto = await Producto.find({ codigo_producto: new RegExp(filtro, "i") });
+
+        res.status(200).json({
+            ok: true,
+            msg: "Producto encontrado",
+            producto,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            ok: false,
+            msg: "Error interno, hable con el administrador.",
+        });
+    }
+};
 
 exports.crearProducto = async (req, res = response) => {
 
