@@ -2,53 +2,12 @@ import React from "react";
 import logo from "../assets/img/logo.svg";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import logo_google from "../assets/img/logo-google.svg";
-<<<<<<< HEAD
-import { useAuth0 } from "@auth0/auth0-react"
-=======
 import { Link } from "react-router-dom";
 import "../styles/login.css";
->>>>>>> ccfae933fb560fcc26d10d1e48de502a57a670a9
 
 export const Login = () => {
-  const { loginWithRedirect } = useAuth0();
   return (
     <section id="login">
-<<<<<<< HEAD
-      <div id="col-izq">
-        <div id="content-izq">
-          <h3>Bienvenido a</h3>
-          <h1 id="titulo-principal">ST Masters</h1>
-          <form id="formulario" action="">
-            <label htmlFor="usuario">Usuario:</label>
-            <input type="text" placeholder="Ingresa tu nombre de usuario" />
-            <label htmlFor="contraseña">Contraseña:</label>
-            <input type="password" placeholder="Ingresa tu contraseña" />
-            <div id="ayudas">
-              <div id="checkbox">
-                <input type="checkbox" name="recordar" id="recordar" />{" "}
-                <span id="texto-checkbox">Recuérdame</span>
-              </div>
-              <a id="olvido-contraseña" href="#">
-                Olvidé mi contraseña
-              </a>
-            </div>
-              <button 
-              id="boton-login" class="boton-generico" type="submit">
-                Iniciar sesión
-              </button>
-              <button 
-              id="boton-login" class="boton-generico" type="submit" id="boton-gmail" class="boton-generico" type="submit">
-                <img id="logo_google" src={logo_google} alt="logo de google" />
-                Iniciar con Gmail
-              </button>
-          </form>
-        </div>
-      </div>
-      <div id="col-der">
-        <img id="logo" src={logo}></img>
-        <h1>ST Masters</h1>
-      </div>
-=======
       <Container fluid>
         <Row id="principal">
           <Col
@@ -95,7 +54,6 @@ export const Login = () => {
           </Col>
         </Row>
       </Container>
->>>>>>> ccfae933fb560fcc26d10d1e48de502a57a670a9
     </section>
   );
 };
