@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Auth0Provider } from "@auth0/auth0-react";
+import PrivateRoute from "./components/PrivateRoute";
 
 import { Login } from "./components/Login_Bootstrap";
 
@@ -34,13 +35,15 @@ function App() {
     domain="st-masters.us.auth0.com"
     clientId="hnI7qZHfG2S7q03F0BTB1wbIlKSVGsym"
     redirectUri={"http://localhost:3000/usuarios"}
+    audience='api-autenticacion-st-masters'
     >
-    <>
-      <Router>
+    <Router>
         <Route exact path='/'>
           <Login />
-        </Route>
-
+        </Route></Router>
+    <PrivateRoute>
+    <>
+    <Router>
         <VentasContext.Provider value={{ ventasConsultar, setVentasConsultar }}>
           <Route exact path='/ventas'>
             <Ventas />
@@ -83,6 +86,7 @@ function App() {
         </UsuariosContext.Provider>
       </Router>
     </>
+    </PrivateRoute>
     </Auth0Provider>
   );
 }

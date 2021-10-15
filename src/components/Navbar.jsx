@@ -25,7 +25,7 @@ const NavBar = () => {
                 <Nav.Link href="/productos">Gestionar Productos</Nav.Link>
               </Link>
               <Link to="/" className="Link">
-              <Nav.Link as = {Button} onClick = {() => logout ({returnTo: "http://localhost:3000"})} >Cerrar sesión</Nav.Link> 
+              <Nav.Link onClick = {() => logout ({returnTo: "http://localhost:3000"})} >Cerrar sesión</Nav.Link> 
               </Link>
             </Nav>
           </Navbar.Collapse>
