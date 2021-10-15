@@ -17,7 +17,6 @@ const ProductosEditar = () => {
       codigo_producto: productoEditar.codigo_producto,
       nombre_producto: productoEditar.nombre_producto,
       precio_unitario: productoEditar.precio_unitario,
-      estado: estadoState,
     });
 
   const { codigo_producto, nombre_producto, precio_unitario, estado } =
@@ -36,10 +35,16 @@ const ProductosEditar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formProductsValues);
+    const productosValues = {
+      codigo_producto: codigo_producto,
+      nombre_producto: nombre_producto,
+      precio_unitario: parseInt(precio_unitario),
+      estado: estadoState,
+    };
+    console.log(productosValues);
     await axiosPetition(
       `producto/${productoEditar.codigo_producto}`,
-      formProductsValues,
+      productosValues,
       "PUT"
     );
 
