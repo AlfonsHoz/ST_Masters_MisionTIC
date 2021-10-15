@@ -6,9 +6,7 @@ import { axiosPetition, respuesta } from '../../helper/fetch';
 import { useConsultarProductoContext } from '../../context/consultarProductoContext';
 import { toast } from "react-toastify";
 
-
 const ListadoProductos = () => {
-
   const { consultaProducto } = useConsultarProductoContext();
   const [data, setData] = useState([]);
 
@@ -24,25 +22,31 @@ const ListadoProductos = () => {
   };
 
   useEffect(async () => {
-
-    await axiosPetition('producto');
+    await axiosPetition("producto");
     setData(respuesta.productos);
     if (!respuesta.ok) {
-      toast.error('Ha ocurrido un error al intentar obtener la lista de productos.', configMensaje);
+      toast.error(
+        "Ha ocurrido un error al intentar obtener la lista de productos.",
+        configMensaje
+      );
     }
   }, []);
 
-
   return (
-    <Container fluid id="content-tbl-prod">
-      <Row className="mb-4">
+    <Container fluid id='content-tbl-prod'>
+      <Row className='mb-4'>
         <Col>
-          <h2 id="titulo-consultar-producto">Listado productos</h2>
+          <h2 id='titulo-consultar-producto'>Listado productos</h2>
         </Col>
       </Row>
       <Row>
         <Col>
-          <Table id="tabla-productos-registrados" striped hover variant="dark" className="text-center">
+          <Table
+            id='tabla-productos-registrados'
+            striped
+            hover
+            variant='dark'
+            className='text-center'>
             <thead>
               <tr>
                 <th>Identificador Único</th>
@@ -54,13 +58,17 @@ const ListadoProductos = () => {
             </thead>
             <tbody>
               {data?.map((datos, key) => {
-                if (consultaProducto !== '') {
-                  return datos.codigo_producto === consultaProducto || datos.nombre_producto === consultaProducto ? <Productos key={datos._id} props={datos} /> : ``;
+                if (consultaProducto !== "") {
+                  return datos.codigo_producto === consultaProducto ||
+                    datos.nombre_producto === consultaProducto ? (
+                    <Productos key={datos._id} props={datos} />
+                  ) : (
+                    ``
+                  );
                 } else {
                   return <Productos key={datos._id} props={datos} />;
                 }
-              })
-              }
+              })}
             </tbody>
           </Table>
         </Col>
@@ -69,4 +77,3 @@ const ListadoProductos = () => {
   );
 };
 export default ListadoProductos;
-
