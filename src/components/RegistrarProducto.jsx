@@ -4,18 +4,18 @@ import "../styles/registrarProducto.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useForm } from "../hooks/useForm";
-import { axiosPetition, respuesta } from '../helper/fetch';
-
+import { axiosPetition, respuesta } from "../helper/fetch";
 
 export const RegistrarProducto = () => {
+  const [formProductsValues, handleProductsInputChange, resetProductsForm] =
+    useForm({
+      codigo_producto: "",
+      nombre_producto: "",
+      precio_unitario: "",
+    });
 
-  const [formProductsValues, handleProductsInputChange, resetProductsForm] = useForm({
-    codigo_producto: '',
-    nombre_producto: '',
-    precio_unitario: ''
-  });
-
-  const { codigo_producto, nombre_producto, precio_unitario } = formProductsValues;
+  const { codigo_producto, nombre_producto, precio_unitario } =
+    formProductsValues;
 
   const configMensaje = {
     position: "bottom-center",
@@ -29,19 +29,17 @@ export const RegistrarProducto = () => {
   };
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
 
-    await axiosPetition('producto', formProductsValues, 'POST');
+    await axiosPetition("producto", formProductsValues, "POST");
 
     if (respuesta.ok) {
       resetProductsForm();
-      toast.success('Producto registrado correctamente.', configMensaje);
+      toast.success("Producto registrado correctamente.", configMensaje);
     } else {
       toast.error(respuesta.msg, configMensaje);
     }
-
-  }
+  };
 
   return (
     <Container id="container_reg_prod" fluid>
@@ -50,7 +48,7 @@ export const RegistrarProducto = () => {
         <Row id="fila_inputs_reg_prod">
           <Col col-4="true">
             <Form.Group>
-              <Form.Label>Identificador:</Form.Label>
+              <Form.Label>Identificador del producto:</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Identificador del producto"
@@ -76,10 +74,10 @@ export const RegistrarProducto = () => {
           </Col>
           <Col col-4="true">
             <Form.Group>
-              <Form.Label>Precio:</Form.Label>
+              <Form.Label>Valor unitario:</Form.Label>
               <Form.Control
                 type="number"
-                placeholder="Ingrese el precio"
+                placeholder="Ingrese el valor unitario"
                 name="precio_unitario"
                 value={precio_unitario}
                 onChange={handleProductsInputChange}
