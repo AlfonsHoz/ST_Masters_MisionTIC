@@ -83,3 +83,39 @@ exports.obtenerUnaVenta = async (req, res = response) => {
     });
   }
 };
+
+exports.actualizarVenta = async (req, res = response) => {
+  const cod = req.params.cod;
+
+  try {
+    let venta = await Venta.findOne({ codigo: cod });
+
+    if (!venta) {
+      return res.json({
+        ok: false,
+        msg: `No existe la venta con codigo (${cod}).`,
+      });
+    }
+
+    const nuevaVenta = {
+      ...req.body,
+    };
+
+    const ventaActualizada = await Venta.findOneAndUpdate(
+      { codigo: cod },
+      nuevaVenta
+    );
+
+    res.status(201).json({
+      ok: true,
+      msg: "Producto actualizado exitosamente.",
+      producto: ventaActualizada,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      ok: false,
+      msg: "Error interno, hable con el administrador.",
+    });
+  }
+};
