@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Auth0Provider } from "@auth0/auth0-react";
+import { Auth0Provider, useAuth0 } from "@auth0/auth0-react";
 import PrivateRoute from "./components/PrivateRoute";
 
 import { Login } from "./components/Login";
@@ -11,7 +11,6 @@ import { VentasContext } from "./context/ventasContext";
 import { UsuariosContext } from "./context/usuariosContext";
 import { ProductosContext } from "./context/productosContext";
 import { UsuariosEditarContext } from "./context/editarusuarioContext";
-import { LoadingContext } from "./context/loadingContext";
 
 import Ventas from "./pages/ventas/VentasPage";
 import VentasReg from "./pages/ventas/VentasRegistrarPage";
@@ -30,7 +29,6 @@ function App() {
   const [usuariosConsultar, setUsuariosConsultar] = useState(false);
   const [productoEditar, setProductoEditar] = useState({});
   const [usuariosEditar, setUsuariosEditar] = useState("");
-  const [loading, setLoading] = useState(true);
 
   return (
     <Auth0Provider
