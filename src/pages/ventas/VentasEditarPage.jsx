@@ -5,7 +5,6 @@ import { axiosPetition, respuesta } from '../../helper/fetch';
 import { EditarVentas } from "../../components/ventas/editar/EditarVentas";
 import { EditarVentaContext } from '../../context/editarVentaContext';
 import { useVentasContext } from "../../context/ventasContext";
-import { Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const VentasPage = () => {

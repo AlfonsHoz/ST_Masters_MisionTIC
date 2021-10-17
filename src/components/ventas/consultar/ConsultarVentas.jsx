@@ -20,16 +20,10 @@ const ConsultarVentas = () => {
         <form id="formularioConsultarVentas" action="">
           <div id="contenedorConsultarVentas">
             <div className="campoLabel">
-              <label htmlFor="favoriteOnly">Filtrar por:</label>
-              <select className="campoConsultarVenta" name="favoriteOnly" id="selector-ventas">
-                <option id="identificador">Identificador de la venta</option>
-                <option id="nombreUsuario">Nombre del usuario</option>
-                <option id="ID">Numero de identificacion del usuario</option>
-              </select>
             </div>
             <div className="campoLabel">
               <label htmlFor="ingreseDatos">Buscar:</label>
-              <input className="campoConsultarVenta" id="ingreseDatos" type="text" value={busqueda} onChange={handleFindVentaInputChange} name="busqueda" placeholder="Ingrese datos"></input>
+              <input className="campoConsultarVenta" id="ingreseDatos" type="text" value={busqueda} onChange={handleFindVentaInputChange} name="busqueda" placeholder="Ingrese el identificador de venta"></input>
             </div>
           </div>
           <button
