@@ -1,18 +1,5 @@
 import React from "react";
 import { Col, Container, Form, FormGroup, Row, Button } from "react-bootstrap";
-<<<<<<< HEAD:src/components/ConsultarProducto.jsx
-import "../styles/consultarProducto.css";
-import { useProductosContext } from "../context/productosContext";
-import { useConsultarProductoContext } from "../context/consultarProductoContext";
-import { useForm } from "../hooks/useForm";
-
-const ConsultarProducto = () => {
-
-  const { productosConsultar, setProductosConsultar } = useProductosContext();
-  const { setConsultaProducto } = useConsultarProductoContext();
-
-  const [formFindProductsValues, handleFindProductsInputChange, resetFindProductsForm] = useForm({
-=======
 import "../../styles/consultarProducto.css";
 import { useConsultarProductoContext } from "../../context/consultarProductoContext";
 import { useForm } from "../../hooks/useForm";
@@ -22,7 +9,6 @@ const ConsultarProducto = () => {
   const { setConsultaProducto } = useConsultarProductoContext();
 
   const [formFindProductsValues, handleFindProductsInputChange] = useForm({
->>>>>>> 00582c7c4575cd10eba15d5a4fb7c9f249d39d05:src/components/productos/ConsultarProducto.jsx
     busqueda: '',
   });
 
@@ -49,26 +35,15 @@ const ConsultarProducto = () => {
               ></Form.Control>
               <Button type='submit' onClick={(e) => {
                 setConsultaProducto(busqueda);
-<<<<<<< HEAD:src/components/ConsultarProducto.jsx
-                setProductosConsultar(!productosConsultar);
-                e.preventDefault();
-              }} id="boton-producto" className="boton-generico-header">{
-                  busqueda !== '' ?
-                    "Todos los productos"
-                    :
-                    "Consultar"
-                }</Button>
-=======
                 e.preventDefault();
               }} id="boton-producto" className="boton-generico-header">
                 Consultar
               </Button>
->>>>>>> 00582c7c4575cd10eba15d5a4fb7c9f249d39d05:src/components/productos/ConsultarProducto.jsx
             </FormGroup>
           </Form>
         </Col>
       </Row>
-    </Container>
+    </Container >
   );
 };
 
