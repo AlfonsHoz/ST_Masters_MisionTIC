@@ -1,16 +1,20 @@
-import React from 'react';
-import Navbar from '../../components/Navbar';
-import Header from '../../components/Header';
-import EditarUsuarios from '../../components/EditarUsuarios';
+import React from "react";
+import Navbar from "../../components/Navbar";
+import Header from "../../components/Header";
+import EditarUsuarios from "../../components/usuarios/EditarUsuarios";
 
 const UsuariosEditarPage = () => {
-    return (
-        <>
-            <Navbar />
-            <Header textoBoton='Consultar usuario' texto='usuarios' link="/usuarios" />
-            <EditarUsuarios />
-        </>
-    );
-}
+  return (
+    <>
+      <Navbar />
+      <Header
+        textoBoton='Consultar usuario'
+        texto='usuarios'
+        link='/usuarios'
+      />
+      <EditarUsuarios />
+    </>
+  );
+};
 
 export default UsuariosEditarPage;

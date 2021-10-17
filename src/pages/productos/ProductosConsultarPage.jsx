@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import ConsultarProducto from "../../components/ConsultarProducto";
+import { useConsultarProductoContext } from "../../context/consultarProductoContext";
+import PrivateRoute from "../../components/PrivateRoute";
 
 const VentasPage = () => {
   return (

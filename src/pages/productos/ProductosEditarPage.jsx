@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
-import EditarProductos from "../../components/EditarProductos";
+import EditarProductos from "../../components/productos/EditarProductos";
 
 const ProductosEditarPage = () => {
   return (
@@ -10,7 +10,7 @@ const ProductosEditarPage = () => {
       <Header
         textoBoton={"Consultar productos"}
         texto={"productos"}
-        link={"/productos/consultar"}
+        link={"/productos"}
       />
       <EditarProductos />
     </>
