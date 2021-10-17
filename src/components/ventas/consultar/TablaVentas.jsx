@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import "../../../styles/listadoventas.css";
 import ListaVentas from "./ListaVentas";
 import { Table } from "react-bootstrap";
-import { useVentasContext } from "../../../context/ventasContext";
 import { axiosPetition, respuesta } from "../../../helper/fetch";
+import { useConsultarVentaContext } from "../../../context/consultarVentaContext";
 
 const TablaVentas = () => {
+  const { consultaVenta } = useConsultarVentaContext();
   const [data, setdata] = useState([]);
-  const { ventasConsultar } = useVentasContext();
 
   useEffect(async () => {
     await axiosPetition("ventas");
@@ -34,8 +34,8 @@ const TablaVentas = () => {
         </thead>
         <tbody>
           {data?.map((x, key) => {
-            if (ventasConsultar) {
-              return x.codigo === "V0001" ? <ListaVentas props={x} /> : ``;
+            if (consultaVenta.trim() !== '') {
+              return x.codigo === consultaVenta.trim() ? <ListaVentas props={x} /> : ``;
             } else {
               return <ListaVentas key={key} props={x} />;
             }

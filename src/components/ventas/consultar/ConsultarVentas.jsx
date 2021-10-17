@@ -1,10 +1,17 @@
 import React from 'react'
-import { useVentasContext } from '../../../context/ventasContext';
+import { useConsultarVentaContext } from '../../../context/consultarVentaContext';
 import '../../../styles/consultarventas.css';
+import { useForm } from '../../../hooks/useForm';
 
 const ConsultarVentas = () => {
 
-  const { ventasConsultar, setVentasConsultar } = useVentasContext();
+  const { setConsultaVenta } = useConsultarVentaContext();
+
+  const [formFindVentaValues, handleFindVentaInputChange] = useForm({
+    busqueda: ''
+  });
+
+  const { busqueda } = formFindVentaValues;
 
   return (
     <div className="consultarventas">
@@ -22,17 +29,17 @@ const ConsultarVentas = () => {
             </div>
             <div className="campoLabel">
               <label htmlFor="ingreseDatos">Buscar:</label>
-              <input className="campoConsultarVenta" id="ingreseDatos" type="text" name="text" placeholder="Ingrese datos"></input>
+              <input className="campoConsultarVenta" id="ingreseDatos" type="text" value={busqueda} onChange={handleFindVentaInputChange} name="busqueda" placeholder="Ingrese datos"></input>
             </div>
           </div>
           <button
             id="botonConsultarVentas"
             className="boton-generico-header"
             onClick={(e) => {
-              setVentasConsultar(!ventasConsultar);
+              setConsultaVenta(busqueda);
               e.preventDefault();
             }}
-          >{ventasConsultar ? "Todas las ventas" : "Consultar"}</button>
+          >Consultar</button>
         </form>
       </div>
     </div>

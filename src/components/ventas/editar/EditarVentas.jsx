@@ -1,86 +1,115 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link } from 'react-router-dom';
-import "../../../styles/editarventas.css";
 
-const EditarVentas = ({ props }) => {
-  const [producto, setProducto] = useState({});
-  const [cantidad, setCantidad] = useState({});
-  const refProd = useRef();
-  const refCant = useRef();
+import React, { useState, useEffect } from 'react';
+import '../../../styles/editarventas.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import uno from '../../../assets/img/uno.png';
+import uno_dorado from '../../../assets/img/uno_dorado.png';
+import dos_dorado from '../../../assets/img/dos_dorado.png';
+import dos from '../../../assets/img/dos.png';
+import tres_dorado from '../../../assets/img/tres_dorado.png';
+import tres from '../../../assets/img/tres.png';
+import cuatro_dorado from '../../../assets/img/cuatro_dorado.png';
+import cuatro from '../../../assets/img/cuatro.png';
+import { InfoProducto } from './InfoProducto';
+import { InfoVendedor } from './InfoVendedor';
+import { InfoVenta } from './InfoVenta';
+import { InfoCliente } from './InfoCliente';
+import { axiosPetition, respuesta } from '../../../helper/fetch';
+import { useEditarVentaContext } from '../../../context/editarVentaContext';
 
-  useEffect(() => {
-    refProd.current.focus();
-    refCant.current.focus();
-    setProducto(refProd);
-    setCantidad(refCant);
-  }, []);
+export const EditarVentas = ({ configMensaje }) => {
+
+  const [componente, setComponente] = useState('InfoCliente');
+  const { editarVenta, setEditarVenta } = useEditarVentaContext();
+
+
+  const actualizarVenta = async (e) => {
+
+    e.preventDefault();
+
+    await axiosPetition(`ventas/${editarVenta.codigo}`, editarVenta, 'PUT');
+
+    if (respuesta.ok) {
+      setEditarVenta({
+        fecha_venta: '',
+        codigo: '',
+        total: 0,
+        id_vendedor: '',
+        vendedor: '',
+        id_cliente: '',
+        cliente: '',
+        estado: 'En Proceso',
+        productos: []
+      });
+      setComponente('InfoCliente');
+      toast.success('Venta actualizada correctamente.', configMensaje);
+    } else {
+      toast.error(respuesta.msg, configMensaje);
+    }
+  }
 
   return (
-    <div className="EditarVentas">
-      <div>
-        <h2 id="act-ven">Detalle de venta </h2>
-        <div id="primerDiv">
-          <label id="cod-ven">
-            Código venta <br />
-            <input
-              type="number"
-              id="ing-cod"
-              placeholder="Ingrese código venta"
-            ></input>
-            <p></p>
-          </label>
-          <div id="eti-ID">
-            <label id="id-ven">
-              ID Vendedor: <br />
-              <input
-                type="number"
-                id="number"
-                placeholder="Ingrese el id"
-              ></input>
-            </label>
-          </div>
-          <label id="nom-ven">
-            Nombre vendedor: <br />
-            <input
-              type="text"
-              id="ingr-nom"
-              placeholder="Ingrese el nombre"
-            ></input>
-          </label>
-        </div>
-      </div>
-      <div id="segundoDiv">
-        <div id="botones">
-          <label id="prod">
-            Producto: <br />
-            <input
-              ref={refProd}
-              type="text"
-              id="ingr-prod"
-              placeholder="Ingresa el código o nombre"
-            />
-          </label>
-          <label id="cant">
-            Cantidad: <br />
-            <input
-              ref={refCant}
-              type="number"
-              id="ingr-cant"
-              placeholder="Ingresa la cantidad"
-            />
-          </label>
-        </div>
-        <div id="tercerDiv"></div>
-        <button type="submit" className="agre-prod">
-          {" "}
-          Agregar producto{" "}
-        </button>
-        <button type="submit" className="boton-actualizar">
-          Actualizar
-        </button>
-      </div>
-    </div>
-  );
-};
+    <div id="contenedor">
+      <h2 id="tituloNuevaVenta">Actualizar venta • <span className="seccionMenuVenta">{
+        componente === 'InfoCliente' ?
+          'Información del cliente'
+          :
+          componente === 'InfoVendedor' ?
+            'Información del vendedor'
+            :
+            componente === 'InfoProducto' ?
+              "Agregar productos"
+              :
+              "Información de la venta"
+      }</span></h2>
+      <div className="columna">
+        <img className="itemMenuVenta" alt="imagen numero uno" src={
+          componente === 'InfoCliente' ?
+            uno_dorado
+            :
+            uno
+        }
+          onClick={() => setComponente('InfoCliente')} />
+        <img className="itemMenuVenta" alt="imagen numero dos" src={
+          componente === 'InfoVendedor' ?
+            dos_dorado
+            :
+            dos
+        }
+          onClick={() => setComponente('InfoVendedor')} />
+        <img className="itemMenuVenta" alt="imagen numero tres" src={
+          componente === 'InfoProducto' ?
+            tres_dorado
+            :
+            tres
+        }
+          onClick={() => setComponente('InfoProducto')} />
+        <img className="itemMenuVenta" alt="imagen numero cuatro" src={
+          componente === 'InfoVenta' ?
+            cuatro_dorado
+            :
+            cuatro
+        }
+          onClick={() => setComponente('InfoVenta')} />
 
-export default EditarVentas;
+      </div>
+      {
+        componente === 'InfoCliente' ?
+          <InfoCliente configMensaje={configMensaje} setComponente={setComponente} />
+          :
+          componente === 'InfoVendedor' ?
+            <InfoVendedor configMensaje={configMensaje} />
+            :
+            componente === 'InfoProducto' ?
+              <InfoProducto configMensaje={configMensaje} />
+              :
+              <InfoVenta configMensaje={configMensaje} />
+      }
+      <ToastContainer theme='dark' />
+      <button id="boton-registrar-venta" className="boton-generico-header"
+        onClick={actualizarVenta}
+      >Actualizar venta</button>
+    </div >
+  );
+}
