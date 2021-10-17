@@ -26,10 +26,10 @@ import ProductoRegistrar from "./pages/productos/ProductosRegistrarPage";
 import ProductosEditarPage from "./pages/productos/ProductosEditarPage";
 
 function App() {
-  const [ventasConsultar, setVentasConsultar] = useState(false);
   const [usuariosConsultar, setUsuariosConsultar] = useState(false);
   const [productoEditar, setProductoEditar] = useState({});
   const [usuariosEditar, setUsuariosEditar] = useState("");
+  const [ventasEditar, setVentasEditar] = useState("");
   const [loading, setLoading] = useState(true);
 
   return (
@@ -44,7 +44,7 @@ function App() {
         </Route>
         <PrivateRoute>
           <VentasContext.Provider
-            value={{ ventasConsultar, setVentasConsultar }}>
+            value={{ ventasEditar, setVentasEditar }}>
             <Route exact path='/ventas'>
               <Ventas />
             </Route>
