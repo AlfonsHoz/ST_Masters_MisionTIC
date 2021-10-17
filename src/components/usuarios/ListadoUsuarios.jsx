@@ -81,7 +81,6 @@ export const ListadoUsuarios = () => {
                     ``
                   );
                 } else {
-                  console.log(busqueda == undefined);
                   return <TablaUsuarios key={datos._id} props={datos} />;
                 }
               }
