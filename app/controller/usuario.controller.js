@@ -23,7 +23,8 @@ exports.obtenerUsuarios = async (req, res = response) => {
 exports.obtenerUnUsuario = async (req, res = response) => {
     try {
         const cod = req.params.cod;
-        const usuario = await Usuario.findOne({ identificacion: cod });
+        console.log(cod);
+        const usuario = await Usuario.findOne({ email: cod.toString() });
 
         res.status(200).json({
             ok: true,
@@ -39,6 +40,10 @@ exports.obtenerUnUsuario = async (req, res = response) => {
     }
 };
 
+// exports.o = async(req, callback) => {
+//     const token = console.log('token', req.headers.authorization);
+// }
+
 exports.buscarPorRol = async (req, res = response) => {
     const rol = req.params.rol;
     const filtro = req.params.filtro;
@@ -46,7 +51,7 @@ exports.buscarPorRol = async (req, res = response) => {
     try {
         const usuarios = await Usuario.find({
             $or: [
-                { rol: rol, identificacion: filtro },
+                { rol: rol, email: filtro },
                 { rol: rol, nombre: filtro },
             ],
         });
@@ -66,52 +71,50 @@ exports.buscarPorRol = async (req, res = response) => {
 };
 
 exports.crearUsuario = async (req, res = response) => {
-    const { identificacion, nombre, rol, estado, password } = req.body;
+    const { email, nombre, rol, estado } = req.body;
 
     try {
-        let usuario = await Usuario.findOne({ identificacion });
+        let usuario = await Usuario.findOne({ email });
 
         console.log(usuario);
 
         if (usuario) {
             return res.status(400).json({
                 ok: false,
-                msg: `El usuario con identificación '${identificacion}' ya se encuentra registrado.`,
+                msg: `El email '${email}' ya se encuentra registrado.`,
+            });
+        } else {
+
+            const nuevoUsuario = new Usuario({ email, nombre, rol, estado });
+
+            await nuevoUsuario.save();
+
+            res.status(201).json({
+                ok: true,
+                msg: "Usuario registrado exitosamente.",
+                nuevoUsuario,
             });
         }
-
-        usuario = new Usuario({ identificacion, nombre, rol, estado, password });
-
-        // Encriptar la contraseña
-        const salt = bcrypt.genSaltSync();
-        usuario.password = bcrypt.hashSync(password, salt);
-
-        await usuario.save();
-
-        res.status(201).json({
-            ok: true,
-            msg: "Usuario registrado exitosamente.",
-            usuario,
-        });
     } catch (err) {
         // console.log(err);
         res.status(500).json({
             ok: false,
-            msg: "Error interno, por favor hable con el administrador.",
+            msg: "Error interno, por favor hable con el administrador.", 
+            err: err,
         });
     }
 };
 
 exports.actualizarUsuario = async (req, res = response) => {
-    const identificacion = req.params.id;
+    const email = req.params.id;
 
     try {
-        let usuario = await Usuario.findOne({ identificacion });
+        let usuario = await Usuario.findOne({ email });
 
         if (!usuario) {
             return res.status(404).json({
                 ok: false,
-                msg: `No existe el usuario con identificación (${identificacion}).`,
+                msg: `No existe el usuario con identificación (${email}).`,
             });
         }
 
@@ -120,7 +123,7 @@ exports.actualizarUsuario = async (req, res = response) => {
         };
 
         const usuarioActualizado = await Usuario.findOneAndUpdate(
-            { identificacion },
+            { email },
             nuevoUsuario
         );
 
@@ -139,19 +142,19 @@ exports.actualizarUsuario = async (req, res = response) => {
 };
 
 exports.eliminarUsuario = async (req, res = response) => {
-    const identificacion = req.params.id;
+    const email = req.params.id;
 
     try {
-        let usuario = await Usuario.findOne({ identificacion });
+        let usuario = await Usuario.findOne({ email });
 
         if (!usuario) {
             return res.status(404).json({
                 ok: false,
-                msg: `No existe el usuario con identificación (${identificacion}).`,
+                msg: `No existe el usuario con identificación (${email}).`,
             });
         }
 
-        await Usuario.findOneAndRemove({ identificacion });
+        await Usuario.findOneAndRemove({ email });
 
         res.status(200).json({
             ok: true,

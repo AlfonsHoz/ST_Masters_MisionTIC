@@ -1,9 +1,9 @@
 const { Schema, model } = require('mongoose');
 
 const usuarioSchema = new Schema({
-    identificacion: {
-        type: Number,
-        required: [true, 'La identificación del usuario es obligatoria.'],
+    email: {
+        type: String,
+        required: [true, 'El email del usuario es obligatorio.'],
         unique: true
     },
     nombre: {
@@ -18,10 +18,6 @@ const usuarioSchema = new Schema({
         type: String,
         required: [true, 'El estado del usuario es obligatorio.']
     },
-    password: {
-        type: String,
-        required: [true, 'La contraseña del usuario es obligatoria.']
-    }
 },
     {
         versionKey: false

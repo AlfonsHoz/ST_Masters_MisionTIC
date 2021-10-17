@@ -18,6 +18,7 @@
     "express-jwt-authz": "^2.4.1",
     "express-validator": "^6.12.2",
     "jwks-rsa": "^2.0.4",
+    "jwt-decode": "^3.1.2",
     "mongoose": "^6.0.9",
     "nodemon": "^2.0.13"
   }
