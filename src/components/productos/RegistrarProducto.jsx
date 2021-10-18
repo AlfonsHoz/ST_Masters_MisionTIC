@@ -12,7 +12,7 @@ export const RegistrarProducto = () => {
       codigo_producto: "",
       nombre_producto: "",
       precio_unitario: 0,
-      estado: "",
+      estado: "disponible",
     });
 
   const { codigo_producto, nombre_producto, precio_unitario, estado } =
