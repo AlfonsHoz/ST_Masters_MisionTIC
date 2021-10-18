@@ -35,7 +35,7 @@ function App() {
     <Auth0Provider
       domain='st-masters.us.auth0.com'
       clientId='hnI7qZHfG2S7q03F0BTB1wbIlKSVGsym'
-      redirectUri={"http://localhost:3000/usuarios"}
+      redirectUri={"https://stmasters.herokuapp.com/usuarios"}
       audience='api-autenticacion-st-masters'>
       <Router>
         <Route exact path='/'>

@@ -9,8 +9,8 @@ const NavBar = () => {
   const { user, logout } = useAuth0();
 
   const cerrarSesion = () => {
-    logout({ returnTo: 'http://localhost:3000'});
-    localStorage.setItem('token', null);
+    logout({ returnTo: "https://stmasters.herokuapp.com/" });
+    localStorage.setItem("token", null);
   };
   return (
     <>
@@ -23,15 +23,16 @@ const NavBar = () => {
                 <Nav.Link href='/ventas'>Gestionar Ventas</Nav.Link>
               </Link>
               <Link to='/usuarios' className='Link'>
-                <Nav.Link href='/usuarios' usuario= {user}>Gestionar Usuarios</Nav.Link>
+                <Nav.Link href='/usuarios' usuario={user}>
+                  Gestionar Usuarios
+                </Nav.Link>
               </Link>
               <img id='img_navbar' src={logo} alt='Logo' />
               <Link to='/productos' className='Link'>
                 <Nav.Link href='/productos'>Gestionar Productos</Nav.Link>
               </Link>
               <Link to='/' className='Link'>
-                <Nav.Link
-                  onClick={() => cerrarSesion()}>
+                <Nav.Link onClick={() => cerrarSesion()}>
                   Cerrar sesión
                 </Nav.Link>
               </Link>

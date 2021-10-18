@@ -45,7 +45,7 @@ const PrivateRoute = ({ children }) => {
   if (isLoading) return <div>Loading...</div>;
 
   if (!isAuthenticated) {
-    return "http://localhost:3000";
+    return "https://stmasters.herokuapp.com/";
   }
 
   return <>{children}</>;
