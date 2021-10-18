@@ -26,7 +26,7 @@ exports.crearVenta = async (req, res = response) => {
     total,
     id_cliente,
     cliente,
-    id_vendedor,
+    email,
     vendedor,
     productos,
   } = req.body;
@@ -47,10 +47,12 @@ exports.crearVenta = async (req, res = response) => {
       total,
       id_cliente,
       cliente,
-      id_vendedor,
+      email,
       vendedor,
       productos,
     });
+
+    await venta.save();
 
     res.status(201).json({
       ok: true,

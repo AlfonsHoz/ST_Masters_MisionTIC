@@ -24,7 +24,7 @@ router.post(
     check("fecha_venta", "La fecha de venta es obligatoria.").not().isEmpty(),
     check("estado", "El estado de venta es obligatorio.").not().isEmpty(),
     check("total", "El total de la venta es obligatorio.").not().isEmpty(),
-    check("id_cliente", "La identificación del cliente es obligatoria.")
+    check("email", "El email del vendedor es obligatorio.")
       .not()
       .isEmpty(),
     check(
@@ -36,7 +36,7 @@ router.post(
       "cliente",
       "El nombre del cliente debe tener al menos 4 caracteres."
     ).isLength({ min: 4 }),
-    check("id_vendedor", "El identificador del vendedor es obligatorio.")
+    check("email", "El email del vendedor es obligatorio.")
       .not()
       .isEmpty(),
     check("vendedor", "El nombre del vendedor es obligatorio.").not().isEmpty(),
@@ -56,7 +56,7 @@ router.put(
     check("fecha_venta", "La fecha de venta es obligatoria.").not().isEmpty(),
     check("estado", "El estado de venta es obligatorio.").not().isEmpty(),
     check("total", "El total de la venta es obligatorio.").not().isEmpty(),
-    check("id_cliente", "La identificación del cliente es obligatoria.")
+    check("email", "El email del vendedor obligatorio.")
       .not()
       .isEmpty(),
     check(
@@ -68,7 +68,7 @@ router.put(
       "cliente",
       "El nombre del cliente debe tener al menos 4 caracteres."
     ).isLength({ min: 4 }),
-    check("id_vendedor", "El identificador del vendedor es obligatorio.")
+    check("email", "El email del vendedor es obligatorio.")
       .not()
       .isEmpty(),
     check("vendedor", "El nombre del vendedor es obligatorio.").not().isEmpty(),

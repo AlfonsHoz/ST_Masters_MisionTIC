@@ -26,9 +26,9 @@ const ventaSchema = new Schema({
         type: String,
         required: [true, 'El nonmbre del cliente es obligatorio.']
     },
-    id_vendedor: {
-        type: Number,
-        required: [true, 'La cédula del vendedor es obligatoria.']
+    email: {
+        type: String,
+        required: [true, 'El email del vendedor es obligatorio.']
     },
     vendedor: {
         type: String,
