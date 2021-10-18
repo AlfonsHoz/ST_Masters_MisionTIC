@@ -49,6 +49,7 @@ router.post(
       "precio_unitario",
       "El precio unitario debe tener al menos 3 caracteres."
     ).isLength({ min: 3 }),
+    check("estado", "El estado del producto es obligatorio.").not().isEmpty(),
     validarCampos,
   ],
   crearProducto
@@ -83,6 +84,7 @@ router.put(
       "precio_unitario",
       "El precio unitario debe tener al menos 3 caracteres."
     ).isLength({ min: 3 }),
+    check("estado", "El estado del producto es obligatorio.").not().isEmpty(),
     validarCampos,
   ],
   actualizarProducto
