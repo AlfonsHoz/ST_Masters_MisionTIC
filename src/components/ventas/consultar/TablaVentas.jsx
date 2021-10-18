@@ -11,7 +11,9 @@ const TablaVentas = () => {
 
   useEffect(async () => {
     await axiosPetition("ventas");
-    setdata(respuesta.ventas);
+    if(respuesta.ok){
+      setdata(respuesta.ventas);
+    }
   }, []);
 
   return (

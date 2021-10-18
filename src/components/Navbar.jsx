@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../assets/img/logo.svg";
 import { Link } from "react-router-dom";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
@@ -6,7 +6,12 @@ import "../styles/navbar.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const NavBar = () => {
-  const { logout } = useAuth0();
+  const { user, logout } = useAuth0();
+
+  const cerrarSesion = () => {
+    logout({ returnTo: 'http://localhost:3000'});
+    localStorage.setItem('token', null);
+  };
   return (
     <>
       <Navbar collapseOnSelect expand='lg' variant='dark' fixed='top'>
@@ -18,7 +23,7 @@ const NavBar = () => {
                 <Nav.Link href='/ventas'>Gestionar Ventas</Nav.Link>
               </Link>
               <Link to='/usuarios' className='Link'>
-                <Nav.Link href='/usuarios'>Gestionar Usuarios</Nav.Link>
+                <Nav.Link href='/usuarios' usuario= {user}>Gestionar Usuarios</Nav.Link>
               </Link>
               <img id='img_navbar' src={logo} alt='Logo' />
               <Link to='/productos' className='Link'>
@@ -26,10 +31,7 @@ const NavBar = () => {
               </Link>
               <Link to='/' className='Link'>
                 <Nav.Link
-                  onClick={() => {
-                    localStorage.clear();
-                    logout({ returnTo: "http://localhost:3000" });
-                  }}>
+                  onClick={() => cerrarSesion()}>
                   Cerrar sesión
                 </Nav.Link>
               </Link>
