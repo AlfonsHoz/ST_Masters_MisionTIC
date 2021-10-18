@@ -31,11 +31,12 @@ export const EditarVentas = ({ configMensaje }) => {
     await axiosPetition(`ventas/${editarVenta.codigo}`, editarVenta, 'PUT');
 
     if (respuesta.ok) {
+
       setEditarVenta({
         fecha_venta: '',
         codigo: '',
         total: 0,
-        id_vendedor: '',
+        email: '',
         vendedor: '',
         id_cliente: '',
         cliente: '',

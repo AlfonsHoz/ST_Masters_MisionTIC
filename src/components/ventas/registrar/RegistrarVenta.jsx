@@ -45,7 +45,7 @@ export const RegistrarVenta = () => {
                 fecha_venta: '',
                 codigo: '',
                 total: 0,
-                id_vendedor: '',
+                email: '',
                 vendedor: '',
                 id_cliente: '',
                 cliente: '',

@@ -7,9 +7,9 @@ export const InfoVendedor = ({ configMensaje }) => {
 
     const { editarVenta, setEditarVenta } = useEditarVentaContext();
     const [nombreVendedor, setNombreVendedor] = useState(editarVenta.vendedor);
-    const [idVendedor, setIdVendedor] = useState(editarVenta.id_vendedor);
+    const [emailVendedor, setEmailVendedor] = useState(editarVenta.email);
 
-    const id_vendedor = useRef('');
+    const email = useRef('');
     const nombre_vendedor = useRef('');
 
     const resetSeller = () => {
@@ -18,8 +18,8 @@ export const InfoVendedor = ({ configMensaje }) => {
 
     const handlerSearchOneSeller = async () => {
 
-        const vendedor_busqueda = id_vendedor.current.value;
-        setIdVendedor(id_vendedor.current.value);
+        const vendedor_busqueda = email.current.value;
+        setEmailVendedor(email.current.value);
 
 
         if (vendedor_busqueda !== '') {
@@ -31,22 +31,22 @@ export const InfoVendedor = ({ configMensaje }) => {
                 if (respuesta.usuario !== null) {
                     nombre_vendedor.current.value = respuesta.usuario.nombre;
                     editarVenta.vendedor = respuesta.usuario.nombre;
-                    editarVenta.id_vendedor = respuesta.usuario.identificacion;
+                    editarVenta.email = respuesta.usuario.email;
                     setNombreVendedor(nombre_vendedor.current.value);
                 } else {
                     resetSeller();
                     editarVenta.vendedor = '';
-                    editarVenta.id_vendedor = '';
+                    editarVenta.email = '';
                 }
             } else {
                 resetSeller();
                 editarVenta.vendedor = '';
-                editarVenta.id_vendedor = '';
+                editarVenta.email = '';
             }
         } else {
             resetSeller();
             editarVenta.vendedor = '';
-            editarVenta.id_vendedor = '';
+            editarVenta.email = '';
         }
 
         setEditarVenta(editarVenta);
@@ -56,15 +56,15 @@ export const InfoVendedor = ({ configMensaje }) => {
         <>
             <div className="columna">
                 <div className="campoLabel">
-                    <label htmlFor="id_vendedor">Identificador del vendedor:</label>
+                    <label htmlFor="email">Email del vendedor:</label>
                     <input
                         id="campoVendedor"
                         className="campoGenerico"
-                        name="id_vendedor"
-                        ref={id_vendedor}
-                        value={idVendedor}
-                        type="number"
-                        placeholder="Ingrese el identificador del vendedor"
+                        name="email"
+                        ref={email}
+                        value={emailVendedor}
+                        type="text"
+                        placeholder="Ingrese el email del vendedor"
                         onChange={handlerSearchOneSeller} />
                 </div>
                 <div className="campoLabel">
