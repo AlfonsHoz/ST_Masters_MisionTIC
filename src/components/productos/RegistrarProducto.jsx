@@ -4,18 +4,18 @@ import "../../styles/registrarProducto.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useForm } from "../../hooks/useForm";
-import { axiosPetition, respuesta } from '../../helper/fetch';
-
+import { axiosPetition, respuesta } from "../../helper/fetch";
 
 export const RegistrarProducto = () => {
   const [formProductsValues, handleProductsInputChange, resetProductsForm] =
     useForm({
       codigo_producto: "",
       nombre_producto: "",
-      precio_unitario: "",
+      precio_unitario: 0,
+      estado: "",
     });
 
-  const { codigo_producto, nombre_producto, precio_unitario } =
+  const { codigo_producto, nombre_producto, precio_unitario, estado } =
     formProductsValues;
 
   const configMensaje = {
@@ -56,9 +56,8 @@ export const RegistrarProducto = () => {
                 name='codigo_producto'
                 value={codigo_producto}
                 onChange={handleProductsInputChange}
-                autocomplete="off"
-                required
-              ></Form.Control>
+                autocomplete='off'
+                required></Form.Control>
             </Form.Group>
           </Col>
           <Col col-4='true'>
@@ -70,31 +69,31 @@ export const RegistrarProducto = () => {
                 name='nombre_producto'
                 value={nombre_producto}
                 onChange={handleProductsInputChange}
-                autocomplete="off"
-                required
-              ></Form.Control>
+                autocomplete='off'
+                required></Form.Control>
             </Form.Group>
           </Col>
           <Col col-4='true'>
             <Form.Group>
               <Form.Label>Valor unitario:</Form.Label>
               <Form.Control
-                type="number"
-                placeholder="Ingrese el valor unitario"
-                name="precio_unitario"
+                type='number'
+                placeholder='Ingrese el valor unitario'
+                name='precio_unitario'
                 value={precio_unitario}
                 onChange={handleProductsInputChange}
-                autocomplete="off"
-                required
-              ></Form.Control>
+                autocomplete='off'
+                required></Form.Control>
             </Form.Group>
           </Col>
-        </Row >
+        </Row>
         <Row>
           <Col>
             <Form.Label>Estado:</Form.Label>
-            <Form.Select aria-label='Default select example' name='rol'>
-              <option>Seleccione</option>
+            <Form.Select
+              aria-label='Default select example'
+              name='estado'
+              onChange={handleProductsInputChange}>
               <option value='disponible'>Disponible</option>
               <option value='no_disponible'>No disponible</option>
             </Form.Select>
@@ -119,7 +118,7 @@ export const RegistrarProducto = () => {
           </Col>
         </Row>
         <ToastContainer theme='dark' />
-      </Form >
-    </Container >
+      </Form>
+    </Container>
   );
 };
