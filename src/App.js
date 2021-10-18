@@ -25,10 +25,14 @@ import ProductoRegistrar from "./pages/productos/ProductosRegistrarPage";
 import ProductosEditarPage from "./pages/productos/ProductosEditarPage";
 
 function App() {
-  const [ventasConsultar, setVentasConsultar] = useState(false);
   const [usuariosConsultar, setUsuariosConsultar] = useState(false);
   const [productoEditar, setProductoEditar] = useState({});
   const [usuariosEditar, setUsuariosEditar] = useState("");
+<<<<<<< HEAD
+=======
+  const [ventasEditar, setVentasEditar] = useState("");
+  const [loading, setLoading] = useState(true);
+>>>>>>> 31ed9e6d6a64b4d14853fd216c564e4f64bb6ee9
 
   return (
     <Auth0Provider
@@ -42,7 +46,7 @@ function App() {
         </Route>
         <PrivateRoute>
           <VentasContext.Provider
-            value={{ ventasConsultar, setVentasConsultar }}>
+            value={{ ventasEditar, setVentasEditar }}>
             <Route exact path='/ventas'>
               <Ventas />
             </Route>

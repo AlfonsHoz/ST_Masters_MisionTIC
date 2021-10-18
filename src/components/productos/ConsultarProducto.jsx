@@ -43,7 +43,7 @@ const ConsultarProducto = () => {
           </Form>
         </Col>
       </Row>
-    </Container>
+    </Container >
   );
 };
 
