@@ -17,6 +17,7 @@ const ProductosEditar = () => {
       codigo_producto: productoEditar.codigo_producto,
       nombre_producto: productoEditar.nombre_producto,
       precio_unitario: productoEditar.precio_unitario,
+      estado: productoEditar.estado,
     });
 
   const { codigo_producto, nombre_producto, precio_unitario, estado } =
@@ -35,12 +36,7 @@ const ProductosEditar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const productosValues = {
-      codigo_producto: codigo_producto,
-      nombre_producto: nombre_producto,
-      precio_unitario: parseInt(precio_unitario),
-      estado: estadoState,
-    };
+
     console.log(productosValues);
     await axiosPetition(
       `producto/${productoEditar.codigo_producto}`,
@@ -102,9 +98,8 @@ const ProductosEditar = () => {
                     <Form.Label>Estado:</Form.Label>
                     <Form.Select
                       aria-label='Default select example'
-                      name='rol'
-                      ref={refEstado}
-                      onChange={() => setestado(refEstado.current.value)}>
+                      name='estado'
+                      onChange={handleProductsInputChange}>
                       <option value='disponible'>Disponible</option>
                       <option value='no_disponible'>No disponible</option>
                     </Form.Select>
