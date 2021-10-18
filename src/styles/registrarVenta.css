@@ -2,6 +2,20 @@ ToastContainer {
   background: #191c1f !important;
 }
 
+#carrito {
+  width: 30px;
+}
+
+#btn-agregar-pdcto {
+  background-color: #212529;
+  border: 1px solid #e2be4c;
+  width: 5.5rem;
+}
+
+#btn-agregar-pdcto:hover {
+  background-color: #22262b;
+}
+
 #tabla-registrar-venta,
 #tabla-registrar-venta td,
 #tabla-registrar-venta th {
@@ -24,6 +38,19 @@ ToastContainer {
 
 #boton-registrar-venta {
   margin-top: 1rem;
+  width: 16rem;
+}
+
+.itemMenuVenta {
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 32px;
+  margin-right: 8px;
+}
+
+.seccionMenuVenta {
+  color: white;
+  font-size: 20px;
 }
 
 .columna {
@@ -50,8 +77,9 @@ ToastContainer {
 }
 
 .campoDesactivado {
-  background-color: #303436;
-  border: none;
+  background-color: #212529;
+  border: 1.5px solid #54575a;
+  border-radius: 10px;
 }
 
 .selector {
@@ -118,6 +146,12 @@ ToastContainer {
 #volver:hover {
   cursor: pointer;
   color: #caa840;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @media screen and (max-width: 740px) {

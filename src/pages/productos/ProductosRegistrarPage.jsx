@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../components/Header";
 import NavBar from "../../components/Navbar";
-import { RegistrarProducto } from "../../components/RegistrarProducto";
+import { RegistrarProducto } from "../../components/productos/RegistrarProducto";
 
 const ProductosRegistrarPage = () => {
   return (
