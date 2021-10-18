@@ -26,13 +26,11 @@ router.post(
   `/${path}`,
   [
     // Middlewares
-    check("email", "El email del usuario es obligatorio.")
-      .not()
-      .isEmpty(),
+    check("email", "El email del usuario es obligatorio.").not().isEmpty(),
     check("nombre", "El nombre del usuario es obligatorio.").not().isEmpty(),
     check("rol", "El rol del usuario es obligatorio.").not().isEmpty(),
     check("estado", "El estado del usuario es obligatorio.").not().isEmpty(),
-    validarCampos
+    validarCampos,
   ],
   crearUsuario
 );
@@ -42,23 +40,10 @@ router.delete(`/${path}/:id`, eliminarUsuario);
 router.put(
   `/${path}/:id`,
   [
-    check("email", "La identificación del usuario es obligatoria.")
-      .not()
-      .isEmpty(),
-    check(
-      "email",
-      "La identificación del usuario debe ser un valor numérico."
-    ).isNumeric(),
-    check(
-      "email",
-      "La identificación debe tener al menos 6 caracteres."
-    ).isLength({ min: 6 }),
+    check("email", "El email del usuario es obligatoria.").not().isEmpty(),
     check("nombre", "El nombre del usuario es obligatorio.").not().isEmpty(),
     check("rol", "El rol del usuario es obligatorio.").not().isEmpty(),
     check("estado", "El estado del usuario es obligatorio.").not().isEmpty(),
-    check("password", "La contraseña del usuario es obligatoria.")
-      .not()
-      .isEmpty(),
     validarCampos,
   ],
   actualizarUsuario
