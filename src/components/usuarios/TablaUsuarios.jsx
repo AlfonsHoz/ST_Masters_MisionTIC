@@ -5,19 +5,18 @@ import { Link } from "react-router-dom";
 import { useUsuariosEditarContext } from "../../context/editarusuarioContext";
 
 export const TablaUsuarios = ({ props }) => {
-
   const { usuariosEditar, setUsuariosEditar } = useUsuariosEditarContext();
 
-  const { identificacion, nombre, rol, estado } = props;
+  const { email, nombre, rol, estado } = props;
 
   const envioUsuario = () => {
-    setUsuariosEditar({ identificacion, nombre, rol, estado });
+    setUsuariosEditar({ email, nombre, rol, estado });
     console.log(usuariosEditar);
-  }
+  };
 
   return (
     <tr>
-      <td>{identificacion}</td>
+      <td>{email}</td>
       <td>{nombre}</td>
       <td>{rol}</td>
       <td>{estado}</td>
@@ -26,8 +25,7 @@ export const TablaUsuarios = ({ props }) => {
           <img
             src={lapiz}
             id='boton-editar-usuarios'
-            onClick={envioUsuario} >
-          </img>
+            onClick={envioUsuario}></img>
         </Link>{" "}
       </td>
     </tr>

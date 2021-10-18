@@ -47,7 +47,7 @@ export const ListadoUsuarios = () => {
           className='text-center'>
           <thead>
             <tr>
-              <th>Identificación</th>
+              <th>Email</th>
               <th>Nombre</th>
               <th>Rol</th>
               <th>Estado</th>
