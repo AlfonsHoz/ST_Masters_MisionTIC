@@ -33,6 +33,7 @@ export const ListadoUsuarios = () => {
         configMensaje
       );
     }
+    window.location.reload();
   }, []);
 
   return (

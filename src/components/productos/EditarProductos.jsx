@@ -37,10 +37,9 @@ const ProductosEditar = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(productosValues);
     await axiosPetition(
       `producto/${productoEditar.codigo_producto}`,
-      productosValues,
+      formProductsValues,
       "PUT"
     );
 
