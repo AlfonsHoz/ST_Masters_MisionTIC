@@ -5,8 +5,11 @@ import { Table } from "react-bootstrap";
 import { useConsultarUsuarioContext } from "../../context/consultarUsuarioContext";
 import { toast } from "react-toastify";
 import { axiosPetition, respuesta } from "../../helper/fetch";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const ListadoUsuarios = () => {
+  const { isAuthenticated } = useAuth0();
+
   const { consultaUsuario } = useConsultarUsuarioContext();
   const { busqueda, rol } = consultaUsuario;
   const [data, setData] = useState([]);
@@ -31,7 +34,7 @@ export const ListadoUsuarios = () => {
         configMensaje
       );
     }
-  }, []);
+  }, [isAuthenticated]);
 
   return (
     <div id='contenedorListadoUsuarios'>
