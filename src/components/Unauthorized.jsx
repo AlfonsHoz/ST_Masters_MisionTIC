@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./Navbar";
-import "../../styles/unauthorized.css";
+import "../styles/unauthorized.css";
 
 const Unauthorized = () => {
   return (
