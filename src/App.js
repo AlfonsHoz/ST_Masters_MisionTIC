@@ -36,7 +36,7 @@ function App() {
   const useRol = () => {
     if (rolGlobal === "pendiente") {
       return (
-        <>
+        <PrivateRoute>
           <Route exact path='/ventas'>
             <Unauthorized />
           </Route>
@@ -64,11 +64,11 @@ function App() {
           <Route exact path='/usuarios/editar'>
             <Unauthorized />
           </Route>
-        </>
+        </PrivateRoute>
       );
     } else if (rolGlobal === "vendedor") {
       return (
-        <>
+        <PrivateRoute>
           <VentasContext.Provider value={{ ventasEditar, setVentasEditar }}>
             <Route exact path='/ventas'>
               <Ventas />
@@ -98,11 +98,11 @@ function App() {
           <Route exact path='/usuarios/editar'>
             <Unauthorized />
           </Route>
-        </>
+        </PrivateRoute>
       );
     } else if (rolGlobal === "Admin") {
       return (
-        <>
+        <PrivateRoute>
           <VentasContext.Provider value={{ ventasEditar, setVentasEditar }}>
             <Route exact path='/ventas'>
               <Ventas />
@@ -142,7 +142,7 @@ function App() {
               </Route>
             </UsuariosEditarContext.Provider>
           </UsuariosContext.Provider>
-        </>
+        </PrivateRoute>
       );
     }
   };
@@ -158,7 +158,7 @@ function App() {
           <Login />
         </Route>
         <RolContext.Provider value={{ rolGlobal, setRolGlobal }}>
-          <PrivateRoute>{useRol}</PrivateRoute>
+          <>{useRol}</>
         </RolContext.Provider>
       </Router>
     </Auth0Provider>
