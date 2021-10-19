@@ -2,21 +2,19 @@ import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { axiosPetition, respuesta } from "../helper/fetch";
 import { Link } from "react-router-dom";
+import { useRolContext } from "../context/rolContext";
 
 const PrivateRoute = ({ children }) => {
-  const {
-    user,
-    isAuthenticated,
-    isLoading,
-    loginWithRedirect,
-    getAccessTokenSilently,
-  } = useAuth0();
+  const { setRolGlobal } = useRolContext();
+
+  const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
+    useAuth0();
 
   const manageUser = async () => {
     const userEmail = user.email;
     await axiosPetition(`usuarios/${userEmail}`);
     if (respuesta.usuario != null) {
-      console.log(respuesta, userEmail);
+      setRolGlobal(respuesta.usuario.rol);
     } else {
       const newUser = {
         email: user.email,
@@ -26,6 +24,7 @@ const PrivateRoute = ({ children }) => {
       };
       console.log(newUser);
       await axiosPetition(`usuarios`, newUser, "POST");
+      setRolGlobal("pendiente");
     }
   };
 

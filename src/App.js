@@ -11,6 +11,7 @@ import { VentasContext } from "./context/ventasContext";
 import { UsuariosContext } from "./context/usuariosContext";
 import { ProductosContext } from "./context/productosContext";
 import { UsuariosEditarContext } from "./context/editarusuarioContext";
+import { RolContext } from "./context/rolContext";
 
 import Ventas from "./pages/ventas/VentasPage";
 import VentasReg from "./pages/ventas/VentasRegistrarPage";
@@ -23,13 +24,14 @@ import UsuariosEditarPage from "./pages/usuarios/UsuariosEditarPage";
 import Productos from "./pages/productos/ProductosPage";
 import ProductoRegistrar from "./pages/productos/ProductosRegistrarPage";
 import ProductosEditarPage from "./pages/productos/ProductosEditarPage";
+import Unauthorized from "./components/Unauthorized";
 
 function App() {
   const [usuariosConsultar, setUsuariosConsultar] = useState(false);
   const [productoEditar, setProductoEditar] = useState({});
   const [usuariosEditar, setUsuariosEditar] = useState("");
   const [ventasEditar, setVentasEditar] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [rolGlobal, setRolGlobal] = useState("");
 
   return (
     <Auth0Provider
@@ -41,48 +43,125 @@ function App() {
         <Route exact path='/'>
           <Login />
         </Route>
-        <PrivateRoute>
-          <VentasContext.Provider value={{ ventasEditar, setVentasEditar }}>
-            <Route exact path='/ventas'>
-              <Ventas />
-            </Route>
-            <Route exact path='/ventas/registrar'>
-              <VentasReg />
-            </Route>
-            <Route exact path='/ventas/editar'>
-              <VentasEdit />
-            </Route>
-          </VentasContext.Provider>
+        <RolContext.Provider value={{ rolGlobal, setRolGlobal }}>
+          <PrivateRoute>
+            {() => {
+              if (rolGlobal === "pendiente") {
+                return (
+                  <>
+                    <Route exact path='/ventas'>
+                      <Unauthorized />
+                    </Route>
+                    <Route exact path='/ventas/registrar'>
+                      <Unauthorized />
+                    </Route>
+                    <Route exact path='/ventas/editar'>
+                      <Unauthorized />
+                    </Route>
+                    <Route exact path='/productos'>
+                      <Unauthorized />
+                    </Route>
+                    <Route exact path='/productos/registrar'>
+                      <Unauthorized />
+                    </Route>
+                    <Route exact path='/productos/editar'>
+                      <Unauthorized />
+                    </Route>
+                    <Route exact path='/usuarios'>
+                      <Unauthorized />
+                    </Route>
+                    <Route exact path='/usuarios/registrar'>
+                      <Unauthorized />
+                    </Route>
+                    <Route exact path='/usuarios/editar'>
+                      <Unauthorized />
+                    </Route>
+                  </>
+                );
+              } else if (rolGlobal === "vendedor") {
+                return (
+                  <>
+                    <VentasContext.Provider
+                      value={{ ventasEditar, setVentasEditar }}>
+                      <Route exact path='/ventas'>
+                        <Ventas />
+                      </Route>
+                      <Route exact path='/ventas/registrar'>
+                        <VentasReg />
+                      </Route>
+                      <Route exact path='/ventas/editar'>
+                        <VentasEdit />
+                      </Route>
+                    </VentasContext.Provider>
+                    <Route exact path='/productos'>
+                      <Unauthorized />
+                    </Route>
+                    <Route exact path='/productos/registrar'>
+                      <Unauthorized />
+                    </Route>
+                    <Route exact path='/productos/editar'>
+                      <Unauthorized />
+                    </Route>
+                    <Route exact path='/usuarios'>
+                      <Unauthorized />
+                    </Route>
+                    <Route exact path='/usuarios/registrar'>
+                      <Unauthorized />
+                    </Route>
+                    <Route exact path='/usuarios/editar'>
+                      <Unauthorized />
+                    </Route>
+                  </>
+                );
+              } else if (rolGlobal === "Admin") {
+                return (
+                  <>
+                    <VentasContext.Provider
+                      value={{ ventasEditar, setVentasEditar }}>
+                      <Route exact path='/ventas'>
+                        <Ventas />
+                      </Route>
+                      <Route exact path='/ventas/registrar'>
+                        <VentasReg />
+                      </Route>
+                      <Route exact path='/ventas/editar'>
+                        <VentasEdit />
+                      </Route>
+                    </VentasContext.Provider>
+                    <ProductosContext.Provider
+                      value={{ productoEditar, setProductoEditar }}>
+                      <Route exact path='/productos'>
+                        <Productos />
+                      </Route>
+                      <Route exact path='/productos/registrar'>
+                        <ProductoRegistrar />
+                      </Route>
+                      <Route exact path='/productos/editar'>
+                        <ProductosEditarPage />
+                      </Route>
+                    </ProductosContext.Provider>
 
-          <ProductosContext.Provider
-            value={{ productoEditar, setProductoEditar }}>
-            <Route exact path='/productos'>
-              <Productos />
-            </Route>
-            <Route exact path='/productos/registrar'>
-              <ProductoRegistrar />
-            </Route>
-            <Route exact path='/productos/editar'>
-              <ProductosEditarPage />
-            </Route>
-          </ProductosContext.Provider>
-
-          <UsuariosContext.Provider
-            value={{ usuariosConsultar, setUsuariosConsultar }}>
-            <UsuariosEditarContext.Provider
-              value={{ usuariosEditar, setUsuariosEditar }}>
-              <Route exact path='/usuarios'>
-                <Usuarios />
-              </Route>
-              <Route exact path='/usuarios/registrar'>
-                <UsuariosRegistrarPage />
-              </Route>
-              <Route exact path='/usuarios/editar'>
-                <UsuariosEditarPage />
-              </Route>
-            </UsuariosEditarContext.Provider>
-          </UsuariosContext.Provider>
-        </PrivateRoute>
+                    <UsuariosContext.Provider
+                      value={{ usuariosConsultar, setUsuariosConsultar }}>
+                      <UsuariosEditarContext.Provider
+                        value={{ usuariosEditar, setUsuariosEditar }}>
+                        <Route exact path='/usuarios'>
+                          <Usuarios />
+                        </Route>
+                        <Route exact path='/usuarios/registrar'>
+                          <UsuariosRegistrarPage />
+                        </Route>
+                        <Route exact path='/usuarios/editar'>
+                          <UsuariosEditarPage />
+                        </Route>
+                      </UsuariosEditarContext.Provider>
+                    </UsuariosContext.Provider>
+                  </>
+                );
+              }
+            }}
+          </PrivateRoute>
+        </RolContext.Provider>
       </Router>
     </Auth0Provider>
   );

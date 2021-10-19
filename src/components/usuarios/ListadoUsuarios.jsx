@@ -3,13 +3,11 @@ import "../../styles/listadoUsuarios.css";
 import { TablaUsuarios } from "./TablaUsuarios";
 import { Table } from "react-bootstrap";
 import { useConsultarUsuarioContext } from "../../context/consultarUsuarioContext";
-import { useLoadingContext } from "../../context/loadingContext";
 import { toast } from "react-toastify";
 import { axiosPetition, respuesta } from "../../helper/fetch";
 
 export const ListadoUsuarios = () => {
   const { consultaUsuario } = useConsultarUsuarioContext();
-  const { setLoadingC } = useLoadingContext();
   const { busqueda, rol } = consultaUsuario;
   const [data, setData] = useState([]);
 
