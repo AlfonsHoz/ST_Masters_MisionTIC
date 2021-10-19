@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import ConsultarProducto from "../../components/ConsultarProducto";
@@ -8,7 +8,8 @@ import PrivateRoute from "../../components/PrivateRoute";
 const VentasPage = () => {
   return (
     <>
-      <useConsultarProductoContext.Provider values={{ consultarProducto, setConsultarProducto }}>
+      <useConsultarProductoContext.Provider
+        values={{ consultarProducto, setConsultarProducto }}>
         <Navbar />
         <Header
           textoBoton={"Nueva venta"}

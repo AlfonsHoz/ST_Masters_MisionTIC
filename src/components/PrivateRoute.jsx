@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { axiosPetition, respuesta } from "../helper/fetch";
-import { Link } from "react-router-dom";
 import { useRolContext } from "../context/rolContext";
 
 const PrivateRoute = ({ children }) => {

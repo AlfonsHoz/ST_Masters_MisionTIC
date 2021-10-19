@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import "../../styles/editar_productos.css";
 import { ToastContainer, toast } from "react-toastify";
