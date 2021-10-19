@@ -35,8 +35,6 @@ export const ListadoUsuarios = () => {
     }
   }, []);
 
-  window.location.reload();
-
   return (
     <div id='contenedorListadoUsuarios'>
       <h2 id='tituloListadoUsuarios'>Listado de usuarios</h2>
