@@ -33,8 +33,9 @@ export const ListadoUsuarios = () => {
         configMensaje
       );
     }
-    window.location.reload();
   }, []);
+
+  window.location.reload();
 
   return (
     <div id='contenedorListadoUsuarios'>
