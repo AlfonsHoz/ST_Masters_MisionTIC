@@ -37,6 +37,7 @@ const PrivateRoute = ({ children }) => {
     if (isAuthenticated) {
       fetchAuth0Token();
       manageUser();
+      window.location.reload();
     }
   }, [isAuthenticated]);
 
