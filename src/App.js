@@ -33,6 +33,120 @@ function App() {
   const [ventasEditar, setVentasEditar] = useState("");
   const [rolGlobal, setRolGlobal] = useState("");
 
+  const useRol = () => {
+    if (rolGlobal === "pendiente") {
+      return (
+        <>
+          <Route exact path='/ventas'>
+            <Unauthorized />
+          </Route>
+          <Route exact path='/ventas/registrar'>
+            <Unauthorized />
+          </Route>
+          <Route exact path='/ventas/editar'>
+            <Unauthorized />
+          </Route>
+          <Route exact path='/productos'>
+            <Unauthorized />
+          </Route>
+          <Route exact path='/productos/registrar'>
+            <Unauthorized />
+          </Route>
+          <Route exact path='/productos/editar'>
+            <Unauthorized />
+          </Route>
+          <Route exact path='/usuarios'>
+            <Unauthorized />
+          </Route>
+          <Route exact path='/usuarios/registrar'>
+            <Unauthorized />
+          </Route>
+          <Route exact path='/usuarios/editar'>
+            <Unauthorized />
+          </Route>
+        </>
+      );
+    } else if (rolGlobal === "vendedor") {
+      return (
+        <>
+          <VentasContext.Provider value={{ ventasEditar, setVentasEditar }}>
+            <Route exact path='/ventas'>
+              <Ventas />
+            </Route>
+            <Route exact path='/ventas/registrar'>
+              <VentasReg />
+            </Route>
+            <Route exact path='/ventas/editar'>
+              <VentasEdit />
+            </Route>
+          </VentasContext.Provider>
+          <Route exact path='/productos'>
+            <Unauthorized />
+          </Route>
+          <Route exact path='/productos/registrar'>
+            <Unauthorized />
+          </Route>
+          <Route exact path='/productos/editar'>
+            <Unauthorized />
+          </Route>
+          <Route exact path='/usuarios'>
+            <Unauthorized />
+          </Route>
+          <Route exact path='/usuarios/registrar'>
+            <Unauthorized />
+          </Route>
+          <Route exact path='/usuarios/editar'>
+            <Unauthorized />
+          </Route>
+        </>
+      );
+    } else if (rolGlobal === "Admin") {
+      return (
+        <>
+          <VentasContext.Provider value={{ ventasEditar, setVentasEditar }}>
+            <Route exact path='/ventas'>
+              <Ventas />
+            </Route>
+            <Route exact path='/ventas/registrar'>
+              <VentasReg />
+            </Route>
+            <Route exact path='/ventas/editar'>
+              <VentasEdit />
+            </Route>
+          </VentasContext.Provider>
+          <ProductosContext.Provider
+            value={{ productoEditar, setProductoEditar }}>
+            <Route exact path='/productos'>
+              <Productos />
+            </Route>
+            <Route exact path='/productos/registrar'>
+              <ProductoRegistrar />
+            </Route>
+            <Route exact path='/productos/editar'>
+              <ProductosEditarPage />
+            </Route>
+          </ProductosContext.Provider>
+
+          <UsuariosContext.Provider
+            value={{ usuariosConsultar, setUsuariosConsultar }}>
+            <UsuariosEditarContext.Provider
+              value={{ usuariosEditar, setUsuariosEditar }}>
+              <Route exact path='/usuarios'>
+                <Usuarios />
+              </Route>
+              <Route exact path='/usuarios/registrar'>
+                <UsuariosRegistrarPage />
+              </Route>
+              <Route exact path='/usuarios/editar'>
+                <UsuariosEditarPage />
+              </Route>
+            </UsuariosEditarContext.Provider>
+          </UsuariosContext.Provider>
+        </>
+      );
+    }
+  };
+
   return (
     <Auth0Provider
       domain='st-masters.us.auth0.com'
@@ -44,123 +158,7 @@ function App() {
           <Login />
         </Route>
         <RolContext.Provider value={{ rolGlobal, setRolGlobal }}>
-          <PrivateRoute>
-            {() => {
-              if (rolGlobal === "pendiente") {
-                return (
-                  <>
-                    <Route exact path='/ventas'>
-                      <Unauthorized />
-                    </Route>
-                    <Route exact path='/ventas/registrar'>
-                      <Unauthorized />
-                    </Route>
-                    <Route exact path='/ventas/editar'>
-                      <Unauthorized />
-                    </Route>
-                    <Route exact path='/productos'>
-                      <Unauthorized />
-                    </Route>
-                    <Route exact path='/productos/registrar'>
-                      <Unauthorized />
-                    </Route>
-                    <Route exact path='/productos/editar'>
-                      <Unauthorized />
-                    </Route>
-                    <Route exact path='/usuarios'>
-                      <Unauthorized />
-                    </Route>
-                    <Route exact path='/usuarios/registrar'>
-                      <Unauthorized />
-                    </Route>
-                    <Route exact path='/usuarios/editar'>
-                      <Unauthorized />
-                    </Route>
-                  </>
-                );
-              } else if (rolGlobal === "vendedor") {
-                return (
-                  <>
-                    <VentasContext.Provider
-                      value={{ ventasEditar, setVentasEditar }}>
-                      <Route exact path='/ventas'>
-                        <Ventas />
-                      </Route>
-                      <Route exact path='/ventas/registrar'>
-                        <VentasReg />
-                      </Route>
-                      <Route exact path='/ventas/editar'>
-                        <VentasEdit />
-                      </Route>
-                    </VentasContext.Provider>
-                    <Route exact path='/productos'>
-                      <Unauthorized />
-                    </Route>
-                    <Route exact path='/productos/registrar'>
-                      <Unauthorized />
-                    </Route>
-                    <Route exact path='/productos/editar'>
-                      <Unauthorized />
-                    </Route>
-                    <Route exact path='/usuarios'>
-                      <Unauthorized />
-                    </Route>
-                    <Route exact path='/usuarios/registrar'>
-                      <Unauthorized />
-                    </Route>
-                    <Route exact path='/usuarios/editar'>
-                      <Unauthorized />
-                    </Route>
-                  </>
-                );
-              } else if (rolGlobal === "Admin") {
-                return (
-                  <>
-                    <VentasContext.Provider
-                      value={{ ventasEditar, setVentasEditar }}>
-                      <Route exact path='/ventas'>
-                        <Ventas />
-                      </Route>
-                      <Route exact path='/ventas/registrar'>
-                        <VentasReg />
-                      </Route>
-                      <Route exact path='/ventas/editar'>
-                        <VentasEdit />
-                      </Route>
-                    </VentasContext.Provider>
-                    <ProductosContext.Provider
-                      value={{ productoEditar, setProductoEditar }}>
-                      <Route exact path='/productos'>
-                        <Productos />
-                      </Route>
-                      <Route exact path='/productos/registrar'>
-                        <ProductoRegistrar />
-                      </Route>
-                      <Route exact path='/productos/editar'>
-                        <ProductosEditarPage />
-                      </Route>
-                    </ProductosContext.Provider>
-
-                    <UsuariosContext.Provider
-                      value={{ usuariosConsultar, setUsuariosConsultar }}>
-                      <UsuariosEditarContext.Provider
-                        value={{ usuariosEditar, setUsuariosEditar }}>
-                        <Route exact path='/usuarios'>
-                          <Usuarios />
-                        </Route>
-                        <Route exact path='/usuarios/registrar'>
-                          <UsuariosRegistrarPage />
-                        </Route>
-                        <Route exact path='/usuarios/editar'>
-                          <UsuariosEditarPage />
-                        </Route>
-                      </UsuariosEditarContext.Provider>
-                    </UsuariosContext.Provider>
-                  </>
-                );
-              }
-            }}
-          </PrivateRoute>
+          <PrivateRoute>{useRol}</PrivateRoute>
         </RolContext.Provider>
       </Router>
     </Auth0Provider>
