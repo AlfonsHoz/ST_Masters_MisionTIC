@@ -1,0 +1,57 @@
+.consultarventas {
+  background-color: #191c1f;
+  padding: 10px 5px;
+}
+
+.campoLabel {
+  display: flex;
+}
+
+#texto-container {
+  padding-top: 2rem;
+}
+
+#formularioConsultarVentas {
+  display: flex;
+  flex-direction: column;
+}
+
+#contenedorConsultarVentas {
+  padding: 0.8% 0 1.3rem 5.8%;
+  display: flex;
+  flex-direction: row;
+}
+
+#titulo-ventas {
+  margin-left: 6%;
+  color: azure;
+  font-size: 22.4px;
+}
+
+#ingreseDatos:focus {
+  outline: none;
+}
+
+.campoConsultarVenta {
+  display: inline-block;
+  background-color: #191c1f;
+  border-radius: 10px;
+  border: 1px solid #54575a;
+  font-size: 16px;
+  padding: 10px;
+  color: #d6d8d4;
+  margin-right: 2rem;
+  text-align: center;
+  width: 19rem;
+}
+
+#selector-ventas:focus {
+  outline: none;
+}
+
+#botonConsultarVentas,
+#consultar-ventas-link {
+  position: static;
+  width: 250px;
+  margin-left: 5.8%;
+}

@@ -1,0 +1,134 @@
+@media screen and (max-width: 992px) {
+  #col-der {
+    display: none;
+  }
+}
+
+#col-izq {
+  background-color: #191c1f;
+  height: 100vh;
+}
+
+#content-izq {
+  padding: 50px;
+}
+
+#col-der {
+  background-image: url("../assets/img/pexels-pixabay-73833.jpg");
+  color: white;
+  text-align: center;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#col-der:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#col-der img {
+  position: relative;
+  width: 40vh;
+  height: 40vh;
+  top: 25vh;
+}
+
+#col-der h1 {
+  color: #e2be4c;
+  position: relative;
+  top: 21vh;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+label {
+  color: white;
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 0;
+}
+
+#titulo-principal {
+  font-size: 28px;
+  margin-top: 0;
+  color: #e2be4c;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#campo-login {
+  border: 1.6px solid #303436;
+  border-radius: 5px;
+  background-color: #191c1f;
+  color: white;
+  outline: none;
+  font-size: 15.8px;
+  width: 100%;
+}
+
+#campo-login:focus {
+  background-color: #191c1f;
+  color: white;
+}
+
+#olvido-contraseña {
+  color: #e2be4c;
+  text-decoration: underline;
+}
+
+#olvido-contraseña:hover {
+  color: #caa840;
+  cursor: pointer;
+}
+
+#boton-login {
+  width: 100%;
+  border-radius: 21px;
+  border: none;
+  margin-top: 35px;
+  color: #1a1e20;
+  font-weight: 500;
+  background-color: #dab74a;
+  height: 50px;
+  font-size: 18px;
+  outline: none;
+}
+
+#boton-login:hover {
+  cursor: pointer;
+  background-color: #caa840;
+}
+
+#boton-gmail {
+  width: 100%;
+  padding: 35px;
+  border-radius: 21px;
+  border: none;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #303436;
+}
+
+#boton-gmail:hover {
+  cursor: pointer;
+  border: solid;
+  border-color: #caa840;
+}
+
+#logo_google {
+  width: 70px;
+  margin-right: 10px;
+  margin-bottom: 17px;
+}

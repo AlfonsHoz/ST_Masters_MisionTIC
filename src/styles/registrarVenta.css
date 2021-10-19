@@ -1,0 +1,162 @@
+ToastContainer {
+  background: #191c1f !important;
+}
+
+#carrito {
+  width: 30px;
+}
+
+#btn-agregar-pdcto {
+  background-color: #212529;
+  border: 1px solid #e2be4c;
+  width: 5.5rem;
+}
+
+#btn-agregar-pdcto:hover {
+  background-color: #22262b;
+}
+
+#tabla-registrar-venta,
+#tabla-registrar-venta td,
+#tabla-registrar-venta th {
+  border-color: #191c1f;
+}
+
+#tituloNuevaVenta {
+  color: #e2be4c;
+  font-size: 22.4px;
+  font-weight: bold;
+  padding-top: 2rem;
+}
+
+#contenedor {
+  background-color: #191c1f;
+  padding: 0.8% 0 0 5.8%;
+  display: flex;
+  flex-direction: column;
+}
+
+#boton-registrar-venta {
+  margin-top: 1rem;
+  width: 16rem;
+}
+
+.itemMenuVenta {
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 32px;
+  margin-right: 8px;
+}
+
+.seccionMenuVenta {
+  color: white;
+  font-size: 20px;
+}
+
+.columna {
+  display: flex;
+}
+
+.campoLabel {
+  display: flex;
+  flex-direction: column;
+}
+
+.campoGenerico {
+  color: white;
+  background-color: #191c1f;
+  border: 1.5px solid #54575a;
+  border-radius: 10px;
+  width: 17rem;
+  outline: none;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-right: 2rem;
+  text-align: center;
+}
+
+.campoDesactivado {
+  background-color: #212529;
+  border: 1.5px solid #54575a;
+  border-radius: 10px;
+}
+
+.selector {
+  height: 45px;
+}
+
+.campoLargo {
+  width: 38rem;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.boton-generico {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 17rem;
+  border-radius: 21px;
+  border: none;
+  margin-top: 30px;
+  /* font-weight: bold; */
+  height: 45px;
+  font-size: 16px;
+  outline: none;
+  color: white;
+  background-color: #303436;
+}
+
+.boton-generico:hover {
+  cursor: pointer;
+  background-color: #2f3335;
+}
+
+#contenedorListadoProductos {
+  display: flex;
+  flex-direction: column;
+  padding-right: 3%;
+  padding-top: 2%;
+  background-color: #191c1f;
+}
+
+#tablaProductos {
+  color: white;
+  margin-right: 5.8%;
+}
+
+/* #tablaProductos > table {
+  border-collapse: collapse;
+} */
+
+#volver {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 90px;
+  text-align: end;
+  text-decoration: underline;
+  color: #e2be4c;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#volver:hover {
+  cursor: pointer;
+  color: #caa840;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media screen and (max-width: 740px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}

@@ -1,0 +1,44 @@
+#tituloUsuario {
+  color: white;
+  /* margin-bottom: 25px; */
+  font-size: 22.4px;
+  margin-left: 0;
+  margin-bottom: 1rem;
+}
+
+#consultarUsuarios {
+  background-color: #191c1f;
+  padding: 2rem 0 0 5.8%;
+  display: flex;
+  flex-direction: column;
+}
+
+#campoLabel {
+  display: flex;
+  flex-direction: column;
+}
+
+#contenedorForm {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+}
+
+.campo-buscar-usuario {
+  text-align: center;
+  color: white;
+  background-color: #191c1f;
+  border: 1.5px solid #54575a;
+  border-radius: 10px;
+  width: 23rem;
+  outline: none;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-right: 2rem;
+}
+
+#boton-registrar-usuario {
+  position: static;
+  width: 250px;
+}
