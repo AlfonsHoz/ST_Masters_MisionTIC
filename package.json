@@ -2,6 +2,9 @@
   "name": "st_masters_misiontic",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.4"
+  },
   "dependencies": {
     "@auth0/auth0-react": "^1.8.0",
     "@material-ui/styles": "^4.11.4",
