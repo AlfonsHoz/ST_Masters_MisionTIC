@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { React, useState, Suspense } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -6,6 +6,7 @@ import { Auth0Provider, useAuth0 } from "@auth0/auth0-react";
 import PrivateRoute from "./components/PrivateRoute";
 
 import { Login } from "./components/Login";
+import Loading from "./components/Loading";
 
 import { VentasContext } from "./context/ventasContext";
 import { UsuariosContext } from "./context/usuariosContext";
