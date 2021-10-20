@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { axiosPetition, respuesta } from "../helper/fetch";
 import { useRolContext } from "../context/rolContext";
 import Loading from "./Loading";
-import Unauthorized from "./components/Unauthorized";
+import Unauthorized from "../components/Unauthorized";
 
 const PrivateRoute = ({ children }) => {
   const { setRolGlobal } = useRolContext();
