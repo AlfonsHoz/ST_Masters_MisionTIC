@@ -34,6 +34,7 @@ const PrivateRoute = ({ children }) => {
       const accessToken = await getAccessTokenSilently({
         audience: "api-autenticacion-st-masters",
       });
+      console.log('Access token', accessToken);
       setToken(accessToken);
       localStorage.setItem("token", accessToken);
     };
@@ -46,7 +47,7 @@ const PrivateRoute = ({ children }) => {
 
   if (isLoading) return <div>Loading...</div>;
 
-  if (isAuthenticated) {
+  if (isAuthenticated && token != '') {
     return <>{isLoading ? <Loading /> : children}</>;
   }
 
