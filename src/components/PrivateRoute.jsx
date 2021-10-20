@@ -7,7 +7,7 @@ import Loading from "./Loading";
 const PrivateRoute = ({ children }) => {
   const { setRolGlobal } = useRolContext();
 
-  const { getAccessTokenSilently, user, isAuthenticated, isLoading  } =
+  const { getAccessTokenSilently, user, isAuthenticated, isLoading } =
     useAuth0();
 
   const [userData, setUserData] = useState({})
@@ -21,38 +21,34 @@ const PrivateRoute = ({ children }) => {
     };
 
     const manageUser = async () => {
-    const userEmail = user.email;
-    await axiosPetition(`usuarios/${userEmail}`);
-    if (respuesta.usuario != null) {
-      setUserData(respuesta.usuario);
-      setRolGlobal(respuesta.usuario.rol);
-console.log(respuesta.usuario)
-    } else {
-      const newUser = {
-        email: user.email,
-        nombre: user.name,
-        rol: "pendiente",
-        estado: "inactivo",
-      };
+      const userEmail = user.email;
+      await axiosPetition(`usuarios/${userEmail}`);
+      if (respuesta.usuario != null) {
+        setUserData(respuesta.usuario);
+        setRolGlobal(respuesta.usuario.rol);
+      } else {
+        const newUser = {
+          email: user.email,
+          nombre: user.name,
+          rol: "pendiente",
+          estado: "inactivo",
+        };
 
-      await axiosPetition(`usuarios`, newUser, "POST");
-      setRolGlobal("pendiente");
-    }
-  };
-  
+        await axiosPetition(`usuarios`, newUser, "POST");
+        setRolGlobal("pendiente");
+      }
+    };
+
     if (isAuthenticated) {
       fetchAuth0Token();
       manageUser();
+      return <>{isLoading ? <Loading /> : children}</>;
+    } else if (!isAuthenticated) {
+      return "https://stmasters.herokuapp.com/";
     }
-    
-    if (isLoading) return <div>Loading...</div>;
-  }, [isAuthenticated, getAccessTokenSilently, userData]);
-console.log(isAuthenticated)
-  if (!isAuthenticated) {
-    return "https://stmasters.herokuapp.com/";
-  }
 
-  return <>{isLoading ? <Loading /> : children}</>;
+  }, [isAuthenticated, getAccessTokenSilently, userData]);
+
 };
 
 export default PrivateRoute;
