@@ -12,13 +12,21 @@ const PrivateRoute = ({ children }) => {
 
   const [userData, setUserData] = useState({})
 
-  const manageUser = async () => {
+  useEffect(() => {
+    const fetchAuth0Token = async () => {
+      const accessToken = await getAccessTokenSilently({
+        audience: "api-autenticacion-st-masters",
+      });
+      localStorage.setItem("token", accessToken);
+    };
+
+    const manageUser = async () => {
     const userEmail = user.email;
     await axiosPetition(`usuarios/${userEmail}`);
     if (respuesta.usuario != null) {
       setUserData(respuesta.usuario);
       setRolGlobal(respuesta.usuario.rol);
-      console.log(respuesta.usuario)
+console.log(respuesta.usuario)
     } else {
       const newUser = {
         email: user.email,
@@ -31,19 +39,12 @@ const PrivateRoute = ({ children }) => {
       setRolGlobal("pendiente");
     }
   };
-
-  useEffect(() => {
-    const fetchAuth0Token = async () => {
-      const accessToken = await getAccessTokenSilently({
-        audience: "api-autenticacion-st-masters",
-      });
-      localStorage.setItem("token", accessToken);
-    };
+  
     if (isAuthenticated) {
-      manageUser();
       fetchAuth0Token();
-
+      manageUser();
     }
+    
     if (isLoading) return <div>Loading...</div>;
   }, [isAuthenticated, getAccessTokenSilently, userData]);
 console.log(isAuthenticated)
