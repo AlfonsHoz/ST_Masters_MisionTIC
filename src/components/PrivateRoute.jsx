@@ -13,14 +13,11 @@ const PrivateRoute = ({ children }) => {
 
   const [userData, setUserData] = useState({});
 
-  const [token, setToken] = useState();
-
   useEffect(() => {
     const fetchAuth0Token = async () => {
       const accessToken = await getAccessTokenSilently({
         audience: "api-autenticacion-st-masters",
       });
-      setToken(accessToken);
       localStorage.setItem("token", accessToken);
     };
 
