@@ -4,7 +4,6 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Auth0Provider, useAuth0 } from "@auth0/auth0-react";
 //import PrivateRoute from "./components/PrivateRoute";
-const PrivateRoute = React.lazy(() => import("./components/PrivateRoute"));
 
 import { Login } from "./components/Login";
 import Loading from "./components/Loading";
@@ -27,6 +26,8 @@ import Productos from "./pages/productos/ProductosPage";
 import ProductoRegistrar from "./pages/productos/ProductosRegistrarPage";
 import ProductosEditarPage from "./pages/productos/ProductosEditarPage";
 import Unauthorized from "./components/Unauthorized";
+
+const PrivateRoute = React.lazy(() => import("./components/PrivateRoute"));
 
 function App() {
   const [usuariosConsultar, setUsuariosConsultar] = useState(false);
