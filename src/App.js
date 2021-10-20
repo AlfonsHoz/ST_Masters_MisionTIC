@@ -26,8 +26,6 @@ import ProductoRegistrar from "./pages/productos/ProductosRegistrarPage";
 import ProductosEditarPage from "./pages/productos/ProductosEditarPage";
 import Unauthorized from "./components/Unauthorized";
 
-const OtherComponent = React.lazy(() => import('./OtherComponent'));
-
 function App() {
   const [usuariosConsultar, setUsuariosConsultar] = useState(false);
   const [productoEditar, setProductoEditar] = useState({});
