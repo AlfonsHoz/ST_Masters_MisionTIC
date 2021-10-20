@@ -4,17 +4,23 @@ import ListaVentas from "./ListaVentas";
 import { Table } from "react-bootstrap";
 import { axiosPetition, respuesta } from "../../../helper/fetch";
 import { useConsultarVentaContext } from "../../../context/consultarVentaContext";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const TablaVentas = () => {
   const { consultaVenta } = useConsultarVentaContext();
   const [data, setdata] = useState([]);
 
+  const { getAccessTokenSilently, user, isAuthenticated  } =
+  useAuth0();
+
   useEffect(async () => {
+    if (isAuthenticated) {
     await axiosPetition("ventas");
     if (respuesta.ok) {
       setdata(respuesta.ventas);
     }
-  }, []);
+    }
+  }, [getAccessTokenSilently, user, isAuthenticated]);
 
   return (
     <div className='listadoventas-container'>
