@@ -42,7 +42,7 @@ const PrivateRoute = ({ children }) => {
 
     }
     if (isLoading) return <div>Loading...</div>;
-  }, [isAuthenticated]);
+  }, [isAuthenticated, getAccessTokenSilently]);
 console.log(isAuthenticated)
   if (!isAuthenticated) {
     return "https://stmasters.herokuapp.com/";
