@@ -45,7 +45,6 @@ const EditarUsuarios = () => {
 
     if (respuesta.ok) {
       toast.success("Usuario actualizado correctamente.", configMensaje);
-      setRolGlobal(respuesta.usuario.rol);
     } else {
       toast.error(respuesta.msg, configMensaje);
     }
