@@ -39,9 +39,8 @@ const PrivateRoute = ({ children }) => {
       fetchAuth0Token();
       manageUser();
     }
+    if (isLoading) return <div>Loading...</div>;
   }, [isAuthenticated]);
-
-  if (isLoading) return <div>Loading...</div>;
 
   if (!isAuthenticated) {
     return "https://stmasters.herokuapp.com/";
