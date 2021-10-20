@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useUsuariosEditarContext } from "../../context/editarusuarioContext";
+import { RolContext } from "../../context/rolContext";
 import { useForm } from "../../hooks/useForm";
 import { axiosPetition, respuesta } from "../../helper/fetch";
 
 const EditarUsuarios = () => {
   const { usuariosEditar } = useUsuariosEditarContext();
+  const { setRolGlobal } = useRolContext();
 
   const [formUsuariosValues, handleUsuariosInputChange, resetUsuariosForm] =
     useForm({
@@ -43,6 +45,7 @@ const EditarUsuarios = () => {
 
     if (respuesta.ok) {
       toast.success("Usuario actualizado correctamente.", configMensaje);
+      setRolGlobal(respuesta.usuario.rol);
     } else {
       toast.error(respuesta.msg, configMensaje);
     }
