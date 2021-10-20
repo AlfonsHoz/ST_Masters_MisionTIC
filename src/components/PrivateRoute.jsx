@@ -1,17 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { axiosPetition, respuesta } from "../helper/fetch";
 import { useRolContext } from "../context/rolContext";
 import Loading from "./Loading";
-import Unauthorized from "../components/Unauthorized";
 
 const PrivateRoute = ({ children }) => {
   const { setRolGlobal } = useRolContext();
 
-  const { getAccessTokenSilently, user, isAuthenticated, isLoading } =
+  const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
     useAuth0();
 
-  const [userData, setUserData] = useState({});
+  const manageUser = async () => {
+    const userEmail = user.email;
+    await axiosPetition(`usuarios/${userEmail}`);
+    if (respuesta.usuario != null) {
+      setRolGlobal(respuesta.usuario.rol);
+    } else {
+      const newUser = {
+        email: user.email,
+        nombre: user.name,
+        rol: "pendiente",
+        estado: "inactivo",
+      };
+
+      await axiosPetition(`usuarios`, newUser, "POST");
+      setRolGlobal("pendiente");
+    }
+  };
 
   useEffect(() => {
     const fetchAuth0Token = async () => {
@@ -20,36 +35,19 @@ const PrivateRoute = ({ children }) => {
       });
       localStorage.setItem("token", accessToken);
     };
-
-    const manageUser = async () => {
-      const userEmail = user.email;
-      await axiosPetition(`usuarios/${userEmail}`);
-      if (respuesta.usuario != null) {
-        setUserData(respuesta.usuario);
-        setRolGlobal(respuesta.usuario.rol);
-      } else {
-        const newUser = {
-          email: user.email,
-          nombre: user.name,
-          rol: "pendiente",
-          estado: "inactivo",
-        };
-
-        await axiosPetition(`usuarios`, newUser, "POST");
-        setRolGlobal("pendiente");
-      }
-    };
-
     if (isAuthenticated) {
       fetchAuth0Token();
       manageUser();
-      return <>{isLoading ? <Loading /> : children}</>
     }
+  }, [isAuthenticated, getAccessTokenSilently]);
 
-    return <Unauthorized />
+  if (isLoading) return <div>Loading...</div>;
 
-  }, [isAuthenticated, getAccessTokenSilently, userData]);
+  if (isAuthenticated) {
+    return <>{isLoading ? <Loading /> : children}</>;
+  }
 
+  return "https://stmasters.herokuapp.com/";
 };
 
 export default PrivateRoute;
