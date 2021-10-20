@@ -37,8 +37,9 @@ const PrivateRoute = ({ children }) => {
       localStorage.setItem("token", accessToken);
     };
     if (isAuthenticated) {
-      fetchAuth0Token();
       manageUser();
+      fetchAuth0Token();
+
     }
   }, [isAuthenticated]);
 
