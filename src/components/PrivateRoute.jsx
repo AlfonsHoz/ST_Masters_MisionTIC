@@ -45,7 +45,7 @@ const PrivateRoute = ({ children }) => {
 
     }
     if (isLoading) return <div>Loading...</div>;
-  }, [isAuthenticated, getAccessTokenSilently]);
+  }, [isAuthenticated, getAccessTokenSilently, setUserData]);
 console.log(isAuthenticated)
   if (!isAuthenticated) {
     return "https://stmasters.herokuapp.com/";
