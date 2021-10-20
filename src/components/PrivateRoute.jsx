@@ -3,10 +3,11 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { axiosPetition, respuesta } from "../helper/fetch";
 import { useRolContext } from "../context/rolContext";
 import Loading from "./Loading";
+import Unauthorized from "../components/Unauthorized";
 
 const PrivateRoute = ({ children }) => {
   const { setRolGlobal } = useRolContext();
-
+  const [token, setToken] = useState('');
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
     useAuth0();
 
@@ -33,6 +34,7 @@ const PrivateRoute = ({ children }) => {
       const accessToken = await getAccessTokenSilently({
         audience: "api-autenticacion-st-masters",
       });
+      setToken(accessToken);
       localStorage.setItem("token", accessToken);
     };
     if (isAuthenticated) {
@@ -43,11 +45,11 @@ const PrivateRoute = ({ children }) => {
 
   if (isLoading) return <div>Loading...</div>;
 
-  if (isAuthenticated) {
+  if (isAuthenticated && token !== '') {
     return <>{isLoading ? <Loading /> : children}</>;
   }
 
-  return "https://stmasters.herokuapp.com/";
+  return <Unauthorized />;
 };
 
 export default PrivateRoute;
