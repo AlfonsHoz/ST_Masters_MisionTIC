@@ -40,16 +40,17 @@ const PrivateRoute = ({ children }) => {
     if (isAuthenticated) {
       fetchAuth0Token();
       manageUser();
+      console.log('Token', token);
     }
   }, [isAuthenticated, getAccessTokenSilently]);
 
   if (isLoading) return <div>Loading...</div>;
 
-  if (isAuthenticated && token !== '') {
+  if (isAuthenticated) {
     return <>{isLoading ? <Loading /> : children}</>;
   }
 
-  return <Unauthorized />;
+  return "https://stmasters.herokuapp.com/";
 };
 
 export default PrivateRoute;
