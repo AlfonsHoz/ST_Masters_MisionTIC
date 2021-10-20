@@ -7,7 +7,7 @@ import Loading from "./Loading";
 const PrivateRoute = ({ children }) => {
   const { setRolGlobal } = useRolContext();
 
-  const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
+  const { getAccessTokenSilently, user, isAuthenticated, isLoading  } =
     useAuth0();
 
   const manageUser = async () => {
