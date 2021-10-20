@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useUsuariosEditarContext } from "../../context/editarusuarioContext";
-import { RolContext } from "../../context/rolContext";
+import { useRolContext } from "../../context/rolContext";
 import { useForm } from "../../hooks/useForm";
 import { axiosPetition, respuesta } from "../../helper/fetch";
 
