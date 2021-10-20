@@ -2,18 +2,15 @@ import React, { useState, Suspense } from "react";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import ConsultarVentas from "../../components/ventas/consultar/ConsultarVentas";
-//import TablaVentas from "../../components/ventas/consultar/TablaVentas";
+import TablaVentas from "../../components/ventas/consultar/TablaVentas";
 import { ConsultarVentaContext } from "../../context/consultarVentaContext";
 import Loading from "../../components/Loading";
-const TablaVentas = React.lazy(() =>
-  import("../../components/ventas/consultar/TablaVentas")
-);
 
 const VentasPage = () => {
   const [consultaVenta, setConsultaVenta] = useState("");
 
   return (
-    <Suspense fallback={Loading}>
+    <>
       <Navbar />
       <Header
         textoBoton={"Nueva venta"}
@@ -25,7 +22,7 @@ const VentasPage = () => {
         <ConsultarVentas />
         <TablaVentas />
       </ConsultarVentaContext.Provider>
-    </Suspense>
+    </>
   );
 };
 
