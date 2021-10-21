@@ -60,21 +60,21 @@ function App() {
             <ProductosContext.Provider
               value={{ productoEditar, setProductoEditar }}>
               <Route exact path='/productos'>
-                {rolGlobal === "pendiente" || rolGlobal === "vendedor" ? (
+                {rolGlobal === "pendiente" || rolGlobal === "Vendedor" ? (
                   <Unauthorized />
                 ) : (
                   <Productos />
                 )}
               </Route>
               <Route exact path='/productos/registrar'>
-                {rolGlobal === "pendiente" || rolGlobal === "vendedor" ? (
+                {rolGlobal === "pendiente" || rolGlobal === "Vendedor" ? (
                   <Unauthorized />
                 ) : (
                   <ProductoRegistrar />
                 )}
               </Route>
               <Route exact path='/productos/editar'>
-                {rolGlobal === "pendiente" || rolGlobal === "vendedor" ? (
+                {rolGlobal === "pendiente" || rolGlobal === "Vendedor" ? (
                   <Unauthorized />
                 ) : (
                   <ProductosEditarPage />
@@ -87,21 +87,21 @@ function App() {
               <UsuariosEditarContext.Provider
                 value={{ usuariosEditar, setUsuariosEditar }}>
                 <Route exact path='/usuarios'>
-                  {rolGlobal === "pendiente" || rolGlobal === "vendedor" ? (
+                  {rolGlobal === "pendiente" || rolGlobal === "Vendedor" ? (
                     <Unauthorized />
                   ) : (
                     <Usuarios />
                   )}
                 </Route>
                 <Route exact path='/usuarios/registrar'>
-                  {rolGlobal === "pendiente" || rolGlobal === "vendedor" ? (
+                  {rolGlobal === "pendiente" || rolGlobal === "Vendedor" ? (
                     <Unauthorized />
                   ) : (
                     <UsuariosRegistrarPage />
                   )}
                 </Route>
                 <Route exact path='/usuarios/editar'>
-                  {rolGlobal === "pendiente" || rolGlobal === "vendedor" ? (
+                  {rolGlobal === "pendiente" || rolGlobal === "Vendedor" ? (
                     <Unauthorized />
                   ) : (
                     <UsuariosEditarPage />
