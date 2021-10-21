@@ -56,14 +56,14 @@ export const ListadoUsuarios = () => {
             {data?.map((datos, key) => {
               if (busqueda !== "" && busqueda != undefined) {
                 if (rol === "Todos" && busqueda != undefined) {
-                  return datos.identificacion.toString() === busqueda ||
+                  return datos.email === busqueda ||
                     datos.nombre === busqueda ? (
                     <TablaUsuarios key={datos._id} props={datos} />
                   ) : (
                     ``
                   );
                 } else {
-                  return (datos.identificacion.toString() === busqueda &&
+                  return (datos.email === busqueda &&
                     datos.rol === rol) ||
                     (datos.nombre === busqueda && datos.rol === rol) ? (
                     <TablaUsuarios key={datos._id} props={datos} />
