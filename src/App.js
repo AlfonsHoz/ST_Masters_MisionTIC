@@ -60,7 +60,7 @@ function App() {
             <ProductosContext.Provider
               value={{ productoEditar, setProductoEditar }}>
               <Route exact path='/productos'>
-                {rolGlobal === "pendiente" || rolGlobal === "Vendedor" ? (
+                {rolGlobal === "pendiente" ? (
                   <Unauthorized />
                 ) : (
                   <Productos />
@@ -74,7 +74,7 @@ function App() {
                 )}
               </Route>
               <Route exact path='/productos/editar'>
-                {rolGlobal === "pendiente" || rolGlobal === "Vendedor" ? (
+                {rolGlobal === "pendiente" ? (
                   <Unauthorized />
                 ) : (
                   <ProductosEditarPage />
