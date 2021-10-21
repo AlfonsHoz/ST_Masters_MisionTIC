@@ -55,7 +55,7 @@ export const ListadoUsuarios = () => {
           <tbody>
             {data?.map((datos, key) => {
               if (busqueda !== "" && busqueda != undefined) {
-                if (rol === "todos" && busqueda != undefined) {
+                if (rol === "Todos" && busqueda != undefined) {
                   return datos.identificacion.toString() === busqueda ||
                     datos.nombre === busqueda ? (
                     <TablaUsuarios key={datos._id} props={datos} />
@@ -72,7 +72,7 @@ export const ListadoUsuarios = () => {
                   );
                 }
               } else {
-                if (rol !== "" && rol != undefined && rol !== "todos") {
+                if (rol !== "" && rol != undefined && rol !== "Todos") {
                   return datos.rol === rol ? (
                     <TablaUsuarios key={datos._id} props={datos} />
                   ) : (
