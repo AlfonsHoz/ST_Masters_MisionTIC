@@ -106,7 +106,7 @@ const ProductosEditar = () => {
                       value={estado}
                       onChange={handleProductsInputChange}>
                       <option value='Disponible'>Disponible</option>
-                      <option value='No Disponible'>No disponible</option>
+                      <option value='No disponible'>No disponible</option>
                     </Form.Select>
                   </Col>
                 </Row>

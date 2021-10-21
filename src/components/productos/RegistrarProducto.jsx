@@ -96,7 +96,7 @@ export const RegistrarProducto = () => {
               value={estado}
               onChange={handleProductsInputChange}>
               <option value='Disponible'>Disponible</option>
-              <option value='No Disponible'>No Disponible</option>
+              <option value='No disponible'>No Disponible</option>
             </Form.Select>
           </Col>
         </Row>
