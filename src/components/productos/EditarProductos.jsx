@@ -11,6 +11,8 @@ import { useHistory } from 'react-router-dom';
 const ProductosEditar = () => {
   const { productoEditar } = useProductosContext();
 
+  const history = useHistory();
+
   const [formProductsValues, handleProductsInputChange, resetProductsForm] =
     useForm({
       codigo_producto: productoEditar.codigo_producto,
@@ -36,7 +38,6 @@ const ProductosEditar = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const history = useHistory();
 
     console.log(formProductsValues);
 
