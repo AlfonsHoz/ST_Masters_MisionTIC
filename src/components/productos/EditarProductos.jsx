@@ -6,12 +6,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { useProductosContext } from "../../context/productosContext";
 import { axiosPetition, respuesta } from "../../helper/fetch";
 import { useForm } from "../../hooks/useForm";
-import { Redirect } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 const ProductosEditar = () => {
   const { productoEditar } = useProductosContext();
-  const refEstado = useRef();
-  const [estadoState, setestado] = useState(productoEditar.estado);
 
   const [formProductsValues, handleProductsInputChange, resetProductsForm] =
     useForm({
@@ -38,6 +36,8 @@ const ProductosEditar = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const history = useHistory();
+
     console.log(formProductsValues);
 
     await axiosPetition(
@@ -49,7 +49,7 @@ const ProductosEditar = () => {
     if (respuesta.ok) {
       resetProductsForm();
       toast.success("Producto actualizado correctamente.", configMensaje);
-      return <Redirect to='/productos' />
+      history.push('/productos');
     } else {
       toast.error(respuesta.msg, configMensaje);
     }
