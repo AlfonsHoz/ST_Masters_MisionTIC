@@ -12,7 +12,7 @@ export const RegistrarProducto = () => {
       codigo_producto: "",
       nombre_producto: "",
       precio_unitario: 0,
-      estado: "disponible",
+      estado: "Disponible",
     });
 
   const { codigo_producto, nombre_producto, precio_unitario, estado } =
@@ -93,9 +93,10 @@ export const RegistrarProducto = () => {
             <Form.Select
               aria-label='Default select example'
               name='estado'
+              value={estado}
               onChange={handleProductsInputChange}>
-              <option value='disponible'>Disponible</option>
-              <option value='no_disponible'>No disponible</option>
+              <option value='Disponible'>Disponible</option>
+              <option value='No Disponible'>No Disponible</option>
             </Form.Select>
           </Col>
         </Row>

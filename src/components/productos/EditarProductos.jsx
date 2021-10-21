@@ -132,7 +132,7 @@ const ProductosEditar = () => {
                 col={6}
                 id='col-cancel'
                 className='d-flex justify-content-start'>
-                <Button id='boton_cancelar' p-10>
+                <Button type="submit" id='boton_cancelar' p-10>
                   Cancelar
                 </Button>
               </Col>
