@@ -32,7 +32,10 @@ function App() {
   const [productoEditar, setProductoEditar] = useState({});
   const [usuariosEditar, setUsuariosEditar] = useState("");
   const [ventasEditar, setVentasEditar] = useState("");
-  const [rolGlobal, setRolGlobal] = useState("");
+  const [rolGlobal, setRolGlobal] = useState({
+    rol: '',
+    estado: ''
+  });
 
   return (
     <Auth0Provider
@@ -48,19 +51,19 @@ function App() {
           <PrivateRoute>
             <VentasContext.Provider value={{ ventasEditar, setVentasEditar }}>
               <Route exact path='/ventas'>
-                {rolGlobal === "Vendedor" || rolGlobal === "Admin" ? <Ventas /> : <Unauthorized />}
+                {rolGlobal.estado === "Autorizado" && (rolGlobal.rol === "Vendedor" || rolGlobal.rol === "Admin") ? <Ventas /> : <Unauthorized />}
               </Route>
               <Route exact path='/ventas/registrar'>
-                {rolGlobal === "Vendedor" || rolGlobal === "Admin" ? <VentasReg /> : <Unauthorized />}
+                {rolGlobal.estado === "Autorizado" && (rolGlobal.rol === "Vendedor" || rolGlobal.rol === "Admin") ? <VentasReg /> : <Unauthorized />}
               </Route>
               <Route exact path='/ventas/editar'>
-                {rolGlobal === "Vendedor" || rolGlobal === "Admin" ? <VentasEdit /> : <Unauthorized />}
+                {rolGlobal.estado === "Autorizado" && (rolGlobal.rol === "Vendedor" || rolGlobal.rol === "Admin") ? <VentasEdit /> : <Unauthorized />}
               </Route>
             </VentasContext.Provider>
             <ProductosContext.Provider
               value={{ productoEditar, setProductoEditar }}>
               <Route exact path='/productos'>
-                {rolGlobal === "Vendedor" || rolGlobal === "Admin" ? (
+                {rolGlobal.estado === "Autorizado" && (rolGlobal.rol === "Vendedor" || rolGlobal.rol === "Admin") ? (
                   <Productos />
                 ) : (
                   <Unauthorized />
@@ -68,14 +71,14 @@ function App() {
                 )}
               </Route>
               <Route exact path='/productos/registrar'>
-                {rolGlobal === "Vendedor" || rolGlobal === "Admin" ? (
+                {rolGlobal.estado === "Autorizado" && (rolGlobal.rol === "Vendedor" || rolGlobal.rol === "Admin") ? (
                   <ProductoRegistrar />
                 ) : (
                   <Unauthorized />
                 )}
               </Route>
               <Route exact path='/productos/editar'>
-                {rolGlobal === "Vendedor" || rolGlobal === "Admin" ? (
+                {rolGlobal.estado === "Autorizado" && (rolGlobal.rol === "Vendedor" || rolGlobal.rol === "Admin") ? (
                   <ProductosEditarPage />
                 ) : (
                   <Unauthorized />
@@ -88,21 +91,21 @@ function App() {
               <UsuariosEditarContext.Provider
                 value={{ usuariosEditar, setUsuariosEditar }}>
                 <Route exact path='/usuarios'>
-                  {rolGlobal === "Admin" ? (
+                  {rolGlobal.estado === "Autorizado" && rolGlobal.rol === "Admin" ? (
                     <Usuarios />
                   ) : (
                     <Unauthorized />
                   )}
                 </Route>
                 <Route exact path='/usuarios/registrar'>
-                  {rolGlobal === "Admin" ? (
+                  {rolGlobal.estado === "Autorizado" && rolGlobal.rol === "Admin" ? (
                     <UsuariosRegistrarPage />
                   ) : (
                     <Unauthorized />
                   )}
                 </Route>
                 <Route exact path='/usuarios/editar'>
-                  {rolGlobal === "Admin" ? (
+                  {rolGlobal.estado === "Autorizado" && rolGlobal.rol === "Admin" ? (
                     <UsuariosEditarPage />
                   ) : (
                     <Unauthorized />

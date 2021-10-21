@@ -24,17 +24,23 @@ const PrivateRoute = ({ children }) => {
         const userEmail = user.email;
         await axiosPetition(`usuarios/${userEmail}`);
         if (respuesta.usuario != null) {
-          setRolGlobal(respuesta.usuario.rol);
+          setRolGlobal({
+            rol: respuesta.usuario.rol,
+            estado: respuesta.usuario.estado
+          });
         } else {
           const newUser = {
             email: user.email,
             nombre: user.name,
-            rol: "pendiente",
-            estado: "inactivo",
+            rol: "Vendedor",
+            estado: "Pendiente"
           };
 
           await axiosPetition(`usuarios`, newUser, "POST");
-          setRolGlobal("pendiente");
+          setRolGlobal({
+            rol: "Vendedor",
+            estado: "Pendiente"
+          });
         }
       }
     };
