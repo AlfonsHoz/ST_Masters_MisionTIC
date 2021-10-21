@@ -98,9 +98,10 @@ const ProductosEditar = () => {
                     <Form.Select
                       aria-label='Default select example'
                       name='estado'
+                      value={estado}
                       onChange={handleProductsInputChange}>
-                      <option value='disponible'>Disponible</option>
-                      <option value='no_disponible'>No disponible</option>
+                      <option value='Disponible'>Disponible</option>
+                      <option value='No Disponible'>No disponible</option>
                     </Form.Select>
                   </Col>
                 </Row>
