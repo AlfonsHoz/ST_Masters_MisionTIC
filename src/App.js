@@ -67,7 +67,7 @@ function App() {
                 )}
               </Route>
               <Route exact path='/productos/registrar'>
-                {rolGlobal === "pendiente" || rolGlobal === "Vendedor" ? (
+                {rolGlobal === "pendiente" ? (
                   <Unauthorized />
                 ) : (
                   <ProductoRegistrar />
