@@ -6,11 +6,12 @@ import "react-toastify/dist/ReactToastify.css";
 import { useProductosContext } from "../../context/productosContext";
 import { axiosPetition, respuesta } from "../../helper/fetch";
 import { useForm } from "../../hooks/useForm";
+import { useHistory } from 'react-router-dom';
 
 const ProductosEditar = () => {
   const { productoEditar } = useProductosContext();
-  const refEstado = useRef();
-  const [estadoState, setestado] = useState(productoEditar.estado);
+
+  const history = useHistory();
 
   const [formProductsValues, handleProductsInputChange, resetProductsForm] =
     useForm({
@@ -37,6 +38,9 @@ const ProductosEditar = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+
+    console.log(formProductsValues);
+
     await axiosPetition(
       `producto/${productoEditar.codigo_producto}`,
       formProductsValues,
@@ -46,6 +50,7 @@ const ProductosEditar = () => {
     if (respuesta.ok) {
       resetProductsForm();
       toast.success("Producto actualizado correctamente.", configMensaje);
+      history.push('/productos');
     } else {
       toast.error(respuesta.msg, configMensaje);
     }
@@ -98,9 +103,10 @@ const ProductosEditar = () => {
                     <Form.Select
                       aria-label='Default select example'
                       name='estado'
+                      value={estado}
                       onChange={handleProductsInputChange}>
-                      <option value='disponible'>Disponible</option>
-                      <option value='no_disponible'>No disponible</option>
+                      <option value='Disponible'>Disponible</option>
+                      <option value='No disponible'>No disponible</option>
                     </Form.Select>
                   </Col>
                 </Row>
@@ -131,7 +137,7 @@ const ProductosEditar = () => {
                 col={6}
                 id='col-cancel'
                 className='d-flex justify-content-start'>
-                <Button id='boton_cancelar' p-10>
+                <Button type="submit" id='boton_cancelar' p-10>
                   Cancelar
                 </Button>
               </Col>

@@ -31,7 +31,6 @@ const Productos = ({ props }) => {
         <Link to='/productos/editar'>
           <img src={lapiz} onClick={envioProducto}></img>
         </Link>
-        <img src={borrar}></img>
       </td>
     </tr>
   );

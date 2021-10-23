@@ -23,10 +23,10 @@ const ConsultarUsuario = () => {
                     <div id="campoLabel">
                         <label htmlFor="filtroUsuario">Filtrar por:</label>
                         <select name="filtroUsuario" className="campo-buscar-usuario" name="rol" value={rol} onChange={handleFindUsuarioInputChange}>
-                            <option value="todos">Todos los roles</option>
-                            <option value="vendedor">Vendedor</option>
-                            <option value="operario">Operario</option>
-                            <option value="admin">Administrador</option>
+                            <option value="Todos">Todos los roles</option>
+                            <option value="Vendedor">Vendedor</option>
+                            <option value="Operario">Operario</option>
+                            <option value="Admin">Administrador</option>
                         </select>
                     </div>
                     <div id="campoLabel">

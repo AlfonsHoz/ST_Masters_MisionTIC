@@ -84,9 +84,9 @@ const EditarUsuarios = () => {
                         name='estado'
                         value={estado}
                         onChange={handleUsuariosInputChange}>
-                        <option>Seleccione...</option>
-                        <option value='activo'>Activo</option>
-                        <option value='inactivo'>Inactivo</option>
+                        <option value='Pendiente'>Pendiente</option>
+                        <option value='Autorizado'>Autorizado</option>
+                        <option value='No Autorizado'>No Autorizado</option>
                       </Form.Select>
                     </Form.Group>
                   </Col>
@@ -117,8 +117,6 @@ const EditarUsuarios = () => {
                         name='rol'
                         value={rol}
                         onChange={handleUsuariosInputChange}>
-                        <option>Seleccione</option>
-                        <option value='pendiente'>Pendiente</option>
                         <option value='Vendedor'>Vendedor</option>
                         <option value='Admin'>Administrador</option>
                       </Form.Select>

@@ -51,8 +51,8 @@ const ListadoProductos = () => {
               <tr>
                 <th>Identificador Único</th>
                 <th>Descripción</th>
-                <th>Valor Unitario</th>
                 <th>Estado</th>
+                <th>Valor Unitario</th>
                 <th>Acciones</th>
               </tr>
             </thead>
