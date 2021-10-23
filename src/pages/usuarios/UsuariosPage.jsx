@@ -14,9 +14,9 @@ const UsuariosPage = () => {
         value={{ consultaUsuario, setConsultaUsuario }}>
         <Navbar />
         <Header
-          textoBoton='Nuevo usuario'
+          textoBoton='Consultar usuario'
           texto='usuarios'
-          link='/usuarios/registrar'
+          link='/usuarios'
         />
         <ConsultarUsuario />
         <ListadoUsuarios />
