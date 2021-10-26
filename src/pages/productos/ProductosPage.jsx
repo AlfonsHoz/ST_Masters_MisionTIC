@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import ConsultarProducto from "../../components/productos/ConsultarProducto";
 import ListadoProductos from "../../components/productos/TablaProductos";
 import { ConsultarProductoContext } from "../../context/consultarProductoContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRolContext } from "../../context/rolContext";
 import { useAuth0 } from "@auth0/auth0-react";
 import { axiosPetition, respuesta } from "../../helper/fetch";
