@@ -4,22 +4,8 @@ import Navbar from "../../components/Navbar";
 import ListadoUsuarios from "../../components/usuarios/ListadoUsuarios";
 import ConsultarUsuario from "../../components/usuarios/ConsultarUsuario";
 import { ConsultarUsuarioContext } from "../../context/consultarUsuarioContext";
-import { useRolContext } from "../../context/rolContext";
-import { useAuth0 } from "@auth0/auth0-react";
-import { axiosPetition, respuesta } from "../../helper/fetch";
 
 const UsuariosPage = () => {
-  const { setRolGlobal } = useRolContext();
-  const { user } = useAuth0();
-
-  useEffect(async () => {
-    await axiosPetition(`usuarios/${user.email}`);
-    setRolGlobal({
-      rol: respuesta.rol,
-      estado: respuesta.estado,
-    });
-  }, []);
-
   const [consultaUsuario, setConsultaUsuario] = useState("");
 
   return (

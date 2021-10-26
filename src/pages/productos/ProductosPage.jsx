@@ -4,22 +4,8 @@ import ConsultarProducto from "../../components/productos/ConsultarProducto";
 import ListadoProductos from "../../components/productos/TablaProductos";
 import { ConsultarProductoContext } from "../../context/consultarProductoContext";
 import { useState, useEffect } from "react";
-import { useRolContext } from "../../context/rolContext";
-import { useAuth0 } from "@auth0/auth0-react";
-import { axiosPetition, respuesta } from "../../helper/fetch";
 
 const ProductosPage = () => {
-  const { setRolGlobal } = useRolContext();
-  const { user } = useAuth0();
-
-  useEffect(async () => {
-    await axiosPetition(`usuarios/${user.email}`);
-    setRolGlobal({
-      rol: respuesta.rol,
-      estado: respuesta.estado,
-    });
-  }, []);
-
   const [consultaProducto, setConsultaProducto] = useState("");
 
   return (
