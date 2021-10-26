@@ -14,7 +14,10 @@ const ProductosPage = () => {
 
   useEffect(async () => {
     await axiosPetition(`usuarios/${user.email}`);
-    setRolGlobal(respuesta.rol);
+    setRolGlobal({
+      rol: respuesta.rol,
+      estado: respuesta.estado,
+    });
   }, []);
 
   const [consultaProducto, setConsultaProducto] = useState("");
