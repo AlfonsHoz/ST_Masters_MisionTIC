@@ -12,7 +12,7 @@ const ProductosPage = () => {
   const { setRolGlobal } = useRolContext();
   const { user } = useAuth0();
 
-  useEffect(() => {
+  useEffect(async () => {
     await axiosPetition(`usuarios/${user.email}`);
     setRolGlobal(respuesta.rol);
   }, []);
