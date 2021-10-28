@@ -17,7 +17,7 @@ export const TablaProductosVenta = ({ listaProductos = {} }) => {
                     })
                 }
                 <tr>
-                    <td>TOTAL:</td>
+                    <td><span id="total">TOTAL:</span></td>
                     <td></td>
                     <td></td>
                     <td></td>

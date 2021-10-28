@@ -3,6 +3,11 @@ import eliminar from "../../../assets/img/eliminar.svg";
 
 export const ListaProductosVenta = ({ props }) => {
   const { codigo_producto, nombre_producto, precio_unitario, cantidad } = props;
+
+  const eliminarProducto = () => {
+
+  }
+
   return (
     <>
       <tr>
@@ -12,7 +17,10 @@ export const ListaProductosVenta = ({ props }) => {
         <td>{cantidad}</td>
         <td>{precio_unitario * cantidad}</td>
         <td>
-          <img src={eliminar} alt='' />
+          <img
+            src={eliminar}
+            alt=''
+            onClick={eliminarProducto} />
         </td>
       </tr>
     </>

@@ -14,3 +14,8 @@
 #tabla-productos-registrados th {
   border-color: #191c1f;
 }
+
+#total {
+  color: #e2be4c;
+  font-weight: bold;
+}
