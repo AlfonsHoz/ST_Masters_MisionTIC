@@ -15,13 +15,10 @@ import { InfoProducto } from './InfoProducto';
 import { InfoVendedor } from './InfoVendedor';
 import { InfoVenta } from './InfoVenta';
 import { InfoCliente } from './InfoCliente';
-import { useRegistrarVentaContext } from '../../../context/registrarVentaContext';
-import { axiosPetition, respuesta } from '../../../helper/fetch';
 
 export const RegistrarVenta = () => {
 
     const [componente, setComponente] = useState('InfoCliente');
-    const { nuevaVenta, setNuevaVenta } = useRegistrarVentaContext();
 
     const configMensaje = {
         position: "bottom-center",
@@ -33,31 +30,6 @@ export const RegistrarVenta = () => {
         draggable: true,
         progress: undefined,
     };
-
-    const registrarVenta = async (e) => {
-
-        e.preventDefault();
-
-        await axiosPetition('ventas', nuevaVenta, 'POST');
-
-        if (respuesta.ok) {
-            setNuevaVenta({
-                fecha_venta: '',
-                codigo: '',
-                total: 0,
-                email: '',
-                vendedor: '',
-                id_cliente: '',
-                cliente: '',
-                estado: 'En Proceso',
-                productos: []
-            });
-            setComponente('InfoCliente');
-            toast.success('Venta registrada correctamente.', configMensaje);
-        } else {
-            toast.error(respuesta.msg, configMensaje);
-        }
-    }
 
     return (
         <div id="contenedor">
@@ -89,19 +61,19 @@ export const RegistrarVenta = () => {
                 }
                     onClick={() => setComponente('InfoVendedor')} />
                 <img className="itemMenuVenta" alt="imagen numero tres" src={
-                    componente === 'InfoProducto' ?
+                    componente === 'InfoVenta' ?
                         tres_dorado
                         :
                         tres
                 }
-                    onClick={() => setComponente('InfoProducto')} />
+                    onClick={() => setComponente('InfoVenta')} />
                 <img className="itemMenuVenta" alt="imagen numero cuatro" src={
-                    componente === 'InfoVenta' ?
+                    componente === 'InfoProducto' ?
                         cuatro_dorado
                         :
                         cuatro
                 }
-                    onClick={() => setComponente('InfoVenta')} />
+                    onClick={() => setComponente('InfoProducto')} />
 
             </div>
             {
@@ -117,9 +89,7 @@ export const RegistrarVenta = () => {
                             <InfoVenta configMensaje={configMensaje} />
             }
             <ToastContainer theme='dark' />
-            <button id="boton-registrar-venta" className="boton-generico-header"
-                onClick={registrarVenta}
-            >Agregar venta</button>
+
         </div >
     );
 }

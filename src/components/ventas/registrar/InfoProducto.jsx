@@ -4,6 +4,7 @@ import carrito from '../../../assets/carrito.svg';
 import { toast } from 'react-toastify';
 import { TablaProductosVenta } from './TablaProductosVenta';
 import { useRegistrarVentaContext } from '../../../context/registrarVentaContext';
+import { axiosPetition, respuesta } from '../../../helper/fetch';
 
 export const InfoProducto = ({ configMensaje }) => {
 
@@ -87,6 +88,31 @@ export const InfoProducto = ({ configMensaje }) => {
         }
     }
 
+    const registrarVenta = async (e) => {
+
+        e.preventDefault();
+
+        await axiosPetition('ventas', nuevaVenta, 'POST');
+
+        if (respuesta.ok) {
+            setNuevaVenta({
+                fecha_venta: '',
+                codigo: '',
+                total: 0,
+                email: '',
+                vendedor: '',
+                id_cliente: '',
+                cliente: '',
+                estado: 'En Proceso',
+                productos: []
+            });
+            setComponente('InfoCliente');
+            toast.success('Venta registrada correctamente.', configMensaje);
+        } else {
+            toast.error(respuesta.msg, configMensaje);
+        }
+    }
+
     return (
         <>
             <div className="columna">
@@ -127,6 +153,9 @@ export const InfoProducto = ({ configMensaje }) => {
                     }
                 </div>
             </div>
+            <button id="boton-registrar-venta" className="boton-generico-header"
+                onClick={registrarVenta}
+            >Agregar venta</button>
         </>
     );
 }
