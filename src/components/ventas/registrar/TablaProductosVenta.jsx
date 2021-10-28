@@ -1,8 +1,12 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import { useRegistrarVentaContext } from '../../../context/registrarVentaContext';
 import { ListaProductosVenta } from './ListaProductosVenta';
 
 export const TablaProductosVenta = ({ listaProductos = {} }) => {
+
+    const { nuevaVenta, setNuevaVenta } = useRegistrarVentaContext();
+
     return (
         <Table id="tabla-registrar-venta" striped hover variant="dark" className="text-center">
             <thead>
@@ -22,7 +26,7 @@ export const TablaProductosVenta = ({ listaProductos = {} }) => {
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>150000</td>
+                    <td>{nuevaVenta.total}</td>
                 </tr>
             </tbody>
         </Table>
