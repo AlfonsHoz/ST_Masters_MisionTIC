@@ -4,7 +4,7 @@ import carrito from '../../../assets/carrito.svg';
 import { toast } from 'react-toastify';
 import { TablaProductosVenta } from './TablaProductosVenta';
 import { useRegistrarVentaContext } from '../../../context/registrarVentaContext';
-import { axiosPetition, respuesta } from '../../../helper/fetch';
+import { useHistory } from 'react-router-dom';
 
 export const InfoProducto = ({ configMensaje }) => {
 
@@ -12,6 +12,8 @@ export const InfoProducto = ({ configMensaje }) => {
 
     const [productos, setProductos] = useState(nuevaVenta.productos);
     const [productoEncontrado, setProductoEncontrado] = useState();
+
+    const history = useHistory();
 
     const filtro = useRef('');
     const valor_unitario = useRef('');
@@ -106,7 +108,7 @@ export const InfoProducto = ({ configMensaje }) => {
                 estado: 'En Proceso',
                 productos: []
             });
-            setComponente('InfoCliente');
+            history.push('/ventas');
             toast.success('Venta registrada correctamente.', configMensaje);
         } else {
             toast.error(respuesta.msg, configMensaje);
