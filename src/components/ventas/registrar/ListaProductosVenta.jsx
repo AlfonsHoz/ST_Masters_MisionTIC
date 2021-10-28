@@ -15,14 +15,6 @@ export const ListaProductosVenta = ({ props }) => {
           <img src={eliminar} alt='' />
         </td>
       </tr>
-      <tr>
-        <td>TOTAL:</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>150000</td>
-      </tr>
     </>
   );
 };

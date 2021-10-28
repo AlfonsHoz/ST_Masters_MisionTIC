@@ -16,6 +16,14 @@ export const TablaProductosVenta = ({ listaProductos = {} }) => {
                         return <ListaProductosVenta key={key} props={datos} />;
                     })
                 }
+                <tr>
+                    <td>TOTAL:</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>150000</td>
+                </tr>
             </tbody>
         </Table>
     )
