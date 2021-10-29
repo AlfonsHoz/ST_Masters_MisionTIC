@@ -22,11 +22,11 @@ export const TablaProductosVenta = ({ listaProductos = {} }) => {
                 }
                 <tr>
                     <td><span id="total">TOTAL:</span></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                     <td>{nuevaVenta.total}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </Table>
